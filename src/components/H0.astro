@@ -1,0 +1,14 @@
+---
+export interface Props {
+	class?: string;
+  tag?: string
+}
+
+const { class: className, tag = 'h1', ...attrs } = Astro.props as Props
+
+const Tag = tag
+---
+
+<Tag class:list={['c-h0', className]} {...attrs}>
+	<slot />xx
+</Tag>

@@ -1,0 +1,31 @@
+#######  ##   ##  ######## ##   ##  ######   #######   #####   ######## ######   ######## #######           ######   #######   #####    ######   #####   ###  ##            #####    #####   
+ ##  ##   #   ##  ## ## ##  #   ##   ##  ##   ##  ##  ##   ##  ## ## ##  ## ###  ## ## ##  ##  ##            ## ###   ##  ##  ##   ##     ##    ##   ##   ### ##           ##   ##  ### ###  
+ ##      ##   ##     ##    ##   ##   ##  ##   ##      ##          ##     ##  ##     ##     ##                ##  ##   ##      ##          ##    ##        ######           ##   ##  ##   ##  
+ ####    ##   ##     ##    ##   ##   #####    ####     #####      ##     ######     ##     ####              ##  ##   ####     #####      ##    ##  ###   ## ###           ##       ##   ##  
+ ##      ##   ##     ##    ##   ##   ##  ##   ##           ##     ##     ##  ##     ##     ##                ##  ##   ##           ##     ##    ##   ##   ##  ##           ##   ##  ##   ##  
+ ##      ### ###     ##    ### ###   ##  ##   ##  ##  ##   ##     ##     ##  ##     ##     ##  ##            ## ###   ##  ##  ##   ##     ##    ##   ##   ##  ##           ##   ##  ### ###  
+####      #####     ####    #####   #### ### #######   #####     ####   ###  ##    ####   #######           ######   #######   #####    ######   #####   ###  ##            #####    #####   
+                                                                                                                                                                                             
+/* COMPANIES */
+
+  Web site build by Wilson Fletcher
+  Website: http://www.wilsonfletcher.com
+  Contact: info@wilsonfletcher.com
+
+/* TEAM */
+
+  Senior Web Developer: Lance Guyatt
+  Contact: lance [at] wilsonfletcher.com
+
+  Founder Partner: Mark Wilson
+  Contact: mark [at] wilsonfletcher.com
+
+  Founder Partner: Stephanie Fletcher
+  Contact: steph [at] wilsonfletcher.com
+
+/* SITE */
+
+  Language: English
+  Doctype: HTML5
+  Standards: HTML5, CSS3
+  Components: AStroJS, UnoCSS

@@ -4,11 +4,11 @@ import H0 from '@components/H0.astro'
 ---
 
 <Layout>
-
-	<div class="bg-yellow">
-		<div class="container px-4 mx-auto lg:px-11">
-			<div class="lg:pl-[306px]">
+	<article class="bg-yellow">
+		<div class="foo">
+			<div class="lg:pl-foo">
 				<div class="prose text-[32px] lg:text-[48px] leading-none max-w-none">
+					<h1>Design the future. Create it now. Repeat.</h1>
 					<p>The future belongs to the future-makers.</p>
 					<p>
 						The innovators who take big leaps while others are celebrating small
@@ -25,20 +25,20 @@ import H0 from '@components/H0.astro'
 						next-generation products, services and ventures for 20 years.
 					</p>
 				</div>
+				<a href="#" class="button">Button</a>
 			</div>
 		</div>
-		<div class="grid gap-6">
-			<H0 class="md:hidden">Landing pages titles 80/80(-1% Kerning)</H0>
-			<H0 class="hidden md:block lg:hidden"
-				>Landing pages titles 100/100(-1% Kerning)</H0
-			>
-			<H0 class="hidden lg:block">Landing pages titles 120/120(-1% Kerning)</H0>
-			<h1 class="c-h1">Article page titles and main headings 80/80</h1>
-		</div>
-		<div class="prose">
-			<h2>sdsdsdsd</h2>
-			<h3>sdsdsdsd</h3>
-		</div>
-		<div class="h-8 w-8 bg-yellow"></div>
-	</div>
+		<section class="bg-[#001E20] text-white">
+			<div class="foo">
+				<h2>Services</h2>
+				<article>
+					<h3 class="c-h2">Innovation projects</h3>
+					<p>
+						Hands-on expert practitioner support for the bold new propositions,
+						radical rethinks and digital inventions you need to make work ASAP.
+					</p>
+				</article>
+			</div>
+		</section>
+	</article>
 </Layout>

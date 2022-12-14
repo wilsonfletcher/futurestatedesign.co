@@ -1,0 +1,45 @@
+---
+import { SEO } from 'astro-seo'
+
+import { SITE } from '@config'
+
+export interface Props {
+	name: string
+	description: string
+	url: string
+	image?: string
+}
+
+const {
+	name,
+	description,
+	url,
+	image = '/images/image-1.jpg',
+} = Astro.props as Props
+---
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<SEO
+		title={`${name} - ${SITE.name}`}
+		description={description}
+		openGraph={{
+			basic: {
+				title: description,
+				type: 'webpage',
+				image,
+				url,
+			},
+		}}
+		extend={{
+			link: [
+				{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+				{ rel: 'author', type: 'text/plain', href: '/humans.txt' },
+			],
+		}}
+	/>
+	<meta name="theme-color" content={SITE.themeColor} />
+	<link rel="stylesheet" href="https://use.typekit.net/gyw4mlp.css" />
+	<slot />
+</head>

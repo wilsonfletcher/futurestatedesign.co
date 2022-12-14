@@ -4,22 +4,40 @@ import {
   presetTypography,
   presetIcons,
   transformerDirectives,
+  presetAttributify,
 } from 'unocss'
 
 export default defineConfig({
   shortcuts: [
-    { 'container': 'px-2' },
+    { 'foo': 'w-full mx-auto px-4 lg:px-10 max-w-[80rem] border' },
     { 'c-h0': 'text-[5rem] leading-none tracking-[-0.01em] md:text-[6.25rem] lg:text-[7.5rem]' },
     { 'c-h1': 'text-[3.75rem] leading-none' },
-    { 'c-h2': 'text-[5rem] leading-none tracking-[-0.01em] md:text-[6.25rem] lg:text-[7.5rem]' },
-    { 'c-large-link': 'text-[3.75rem] leading-none' }
+    { 'c-h2': 'text-[5rem] leading-none' },
+    { 'c-h3': 'text-[3rem] leading-none' },
+    { 'c-label': 'text-base leading-body' },
+    { 'c-link': 'text-[1.625rem] leading-none' },
+    { 'c-link-large': 'text-[3.75rem] leading-none' },
+    { 'button': 'text-[1.125rem] leading-none inline-block p-3 border-2' },
+    { 'button--primary': 'bg-yellow' },
+    { 'lead': 'text-[3rem]' }
   ],
   transformers: [
     transformerDirectives(),
   ],
   presets: [
+    presetAttributify(),
     presetUno(),
-    presetTypography(),
+    presetTypography({
+      cssExtend: {
+        h1: {
+          'font-size': '12px',
+          'line-height': 1
+        },
+        'hr': {
+          color: 'red'
+        }
+      }
+    }),
     presetIcons({
       collections: {
         custom: {
@@ -34,7 +52,10 @@ export default defineConfig({
       lg: '1280px'
     },
     fontFamily: {
-      sans: 'Neue Haas Grotesk Display Pro',
+      sans: "'neue-haas-grotesk-display', sans-serif",
+    },
+    spacing: {
+      foo: '19.375rem',
     },
     colors: {
       yellow: 'rgba(245, 255, 81, 1)'

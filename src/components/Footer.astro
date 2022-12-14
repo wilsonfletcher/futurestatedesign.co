@@ -1,35 +1,63 @@
 ---
 import H0 from './H0.astro'
 import { SITE } from '@config'
+
+const { address } = SITE
 ---
 
 <div class="" role="contentinfo">
-	<div class="container mx-auto px-4">
-		<H0 tag="h2">Let's talk</H0>
-		<a href={SITE.email}>{SITE.email}</a>
-		{SITE.telephone}
-		<nav>
-			<ul>
-				<li>
-					<a
-						href={SITE.linkedin}
-						class="c-large-link flex items-center hover:underline"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<div class="i-mdi-linkedin text-[32px]"></div>
-						Linkedin
-						<span class="i-custom:external text-[32px]"></span>
-					</a>
-				</li>
-			</ul>
-      <div class="i-mdi-medium text-[32px]"></div>
-      <div class="i-mdi-instagram text-[32px]"></div>
-      <div class="i-mdi-twitter text-[32px]"></div>
-		</nav>
+	<div class="foo py-15">
+		<div class="lg:pl-foo">
+			<H0 tag="h2">Let's talk</H0>
+			<a href={SITE.email}>{SITE.email}</a>
+			<br />
+			{SITE.telephone}
+			<nav>
+				<ul>
+					<li>
+						<a
+							href={SITE.linkedin}
+							class="c-large-link flex items-center hover:underline"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<div class="i-mdi-linkedin text-[32px]"></div>
+							Linkedin
+							<span class="i-custom:external text-[32px]"></span>
+						</a>
+					</li>
+				</ul>
+				<div class="i-mdi-medium text-[32px]"></div>
+				<div class="i-mdi-instagram text-[32px]"></div>
+				<div class="i-mdi-twitter text-[32px]"></div>
+			</nav>
+		</div>
 	</div>
 
 	<div class="h-[1px] bg-black"></div>
 
-	<div class="container mx-auto px-4"></div>
+	<div class="foo lg:pl-350px py-5 lg:py-10">
+		<div class="grid gap-5 md:grid-cols-2">
+			<div class="prose text-[26px]">
+				<p>
+					{address.streetAddress}
+					<br />
+					{address.addressLocality}
+					<br />
+					{address.addressRegion}
+					<br />
+					{address.postalCode}
+				</p>
+			</div>
+			<div class="prose text-[26px]">
+				<p>
+					<a
+						href="https://www.iubenda.com/privacy-policy/60598168"
+						target="_blank">Privacy Policy</a
+					>
+				</p>
+				<p>&copy; 2023 All rights reserved</p>
+			</div>
+		</div>
+	</div>
 </div>

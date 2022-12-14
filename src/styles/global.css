@@ -2,8 +2,6 @@
 	--color-yellow: 245, 255, 81;
 }
 
-@layer base {
-	html {
-		@apply font-sans;
-	}
+html {
+	@apply font-sans leading-none;
 }

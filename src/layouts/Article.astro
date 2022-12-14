@@ -60,7 +60,16 @@ const meta = { name, description, image, url }
 						<main class="bg-red">
 							<article>
 								<h1 class="c-h0">{name}</h1>
-								<div class="prose text-[24px] max-w-none">
+								<div class="body">
+									We set up Wilson Fletcher because it was the only way we could
+									do the work we wanted to do, in the way we wanted to do it. We
+									started a business to focus on the strategy and design of
+									digital services because we believed that they would
+									ultimately power every aspect of life and work. 26/34
+								</div>
+								<div
+									class="prose text-[24px] lg:text-[26px] leading-[34px] max-w-none"
+								>
 									<slot />
 									{image && <img src={image} alt="" />}
 								</div>

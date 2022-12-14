@@ -1,7 +1,12 @@
-:root {
-	--color-yellow: 245, 255, 81;
-}
-
 html {
 	@apply font-sans leading-none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-normal;
 }

@@ -1,0 +1,20 @@
+---
+export interface Props {
+	class?: string
+	tag?: string
+}
+
+const { class: className, tag = 'span', ...attrs } = Astro.props as Props
+
+const Tag = tag
+---
+
+<Tag class:list={['badge', className]} {...attrs}>
+	<slot />
+</Tag>
+
+<style>
+	.badge {
+		@apply text-2rem leading-none font-bold p-2 inline-flex;
+	}
+</style>

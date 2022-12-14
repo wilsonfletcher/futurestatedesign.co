@@ -1,0 +1,29 @@
+---
+import Badge from '@components/Badge.astro'
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout>
+	<article>
+		<div class="foo">
+			<div class="flex flex-col gap-6">
+				<Badge class="bg-red text-white">H1_Large</Badge>
+				<p class="h0 font-700">Landing pages titles</p>
+				<Badge class="bg-red text-white">H1</Badge>
+				<p class="h0">Landing pages titles</p>
+				<Badge class="bg-red text-white">H1_Large</Badge>
+				<p class="h1">Article page titles and main headings</p>
+				<Badge class="bg-red text-white">H2</Badge>
+				<p class="h2">Section headings and body titles</p>
+				<Badge class="bg-red text-white">H3</Badge>
+				<p class="h3">Large introductions and sub-titles</p>
+			</div>
+		</div>
+	</article>
+</Layout>
+
+<style>
+	.badge {
+		@apply self-start;
+	}
+</style>

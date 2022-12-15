@@ -1,5 +1,6 @@
 ---
 import { Schema } from 'astro-seo-schema'
+import { SITE } from '@config'
 
 import type { MarkdownLayoutProps } from 'astro'
 
@@ -26,26 +27,40 @@ const meta = { name, description, image, url }
 <!DOCTYPE html>
 <html lang="en">
 	<BaseHead {...meta}>
-		<Schema
-			item={{
-				'@context': 'https://schema.org',
-				'@type': 'Article',
-				name,
-				description,
-				image,
-				datePublished,
-				author: [
-					{
-						'@type': 'Person',
-						name: 'Mark Wilson',
-					},
-					{
-						'@type': 'Person',
-						name: 'Stephanie Fletcher',
-					},
-				],
-			}}
-		/>
+		<>
+			<Schema
+				item={{
+					'@context': 'https://schema.org',
+					'@type': 'Article',
+					name,
+					description,
+					image,
+					datePublished,
+					author: [
+						{
+							'@type': 'Person',
+							name: 'Mark Wilson',
+							worksFor: 'fsdc',
+						},
+						{
+							'@type': 'Person',
+							name: 'Stephanie Fletcher',
+							worksFor: 'fsdc',
+						},
+					],
+					copyrightHolder: 'fsdc',
+				}}
+			/>
+			<Schema
+				item={{
+					'@id': 'fsdc',
+					'@context': 'https://schema.org',
+					'@type': 'Organization',
+					name: SITE.name,
+					description: SITE.description,
+				}}
+			/>
+		</>
 	</BaseHead>
 
 	<body>

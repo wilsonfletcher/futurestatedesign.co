@@ -18,12 +18,24 @@ import Layout from '../layouts/Layout.astro'
 				<Badge class="bg-red text-white">H3</Badge>
 				<p class="h3">Large introductions and sub-titles</p>
 			</div>
+			<div class="grid grid-cols-2">
+				<div>
+					<Badge>Button</Badge>
+					<br />
+					<a href="#" class="button button--primary">18/18 button copy</a>
+				</div>
+				<div>
+					<Badge>Button</Badge>
+					<br />
+					<a href="#" class="button button--secondary">18/18 button copy</a>
+				</div>
+			</div>
 		</div>
 	</article>
 </Layout>
 
 <style>
 	.badge {
-		@apply self-start;
+		@apply self-start bg-red text-white;
 	}
 </style>

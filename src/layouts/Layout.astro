@@ -37,6 +37,7 @@ const url = Astro.url
 	</BaseHead>
 	<body>
 		<div class="flex flex-col min-h-screen">
+			<slot name="pre" />
 			<Header />
 			<main class="flex-auto">
 				<slot />

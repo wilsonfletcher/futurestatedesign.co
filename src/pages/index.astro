@@ -1,13 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import H0 from '@components/H0.astro'
+
+const services = await Astro.glob('../data/services/**/*.mdx')
 ---
 
 <Layout>
+	<div role="alert" bg="white" slot="pre">
+		<div class="foo">
+			<div class="flex gap-6">
+				<p>
+					Futurestate Design Co. are the artists formerly known as <strong
+						>Wilson Fletcher</strong
+					>. Read our founders’ announcement on the change of brand.
+				</p>
+				<a href="/the-next-twenty" class="button button--primary">Read more</a>
+			</div>
+		</div>
+	</div>
 	<article class="bg-yellow">
 		<div class="foo">
 			<div class="lg:pl-foo">
-				<h1>Design the future. Create it now. Repeat.</h1>
+				<h1 class="h1">Design the future.<br />Create it now. <br />Repeat.</h1>
 				<div class="prose text-2rem lg:text-3rem max-w-none">
 					<p>The future belongs to the future-makers.</p>
 					<p>
@@ -24,20 +37,32 @@ import H0 from '@components/H0.astro'
 						designers and technologists. We’ve helped companies create
 						next-generation products, services and ventures for 20 years.
 					</p>
+					<p>
+						If you want to be a future-maker, we’d love to work with you. If you
+						don’t, no hard feelings, we’re ready when you are.
+					</p>
 				</div>
 			</div>
 		</div>
 
-		<section class="bg-[#001E20] text-white">
+		<section class="bg-[#001E20] text-white py-10">
 			<div class="foo">
-				<h2>Services</h2>
-				<article>
-					<h3 class="c-h2">Innovation projects</h3>
-					<p>
-						Hands-on expert practitioner support for the bold new propositions,
-						radical rethinks and digital inventions you need to make work ASAP.
-					</p>
-				</article>
+				<h2 class="sr-only">Services</h2>
+				<div class="space-y-12 divide-y">
+					{
+						services.map(service => (
+							<article class="grid gap-6 md:gap-10 md:grid-cols-[auto_1fr] bg-lime">
+								<div class="md:w-270px md:flex items-center justify-center">
+									<Fragment set:html={service.frontmatter.image} />
+								</div>
+								<div>
+									<h3 class="h2 mb-3 lg:mb-8">{service.frontmatter.name}</h3>
+									<p class="h3">{service.frontmatter.description}</p>
+								</div>
+							</article>
+						))
+					}
+				</div>
 			</div>
 		</section>
 	</article>

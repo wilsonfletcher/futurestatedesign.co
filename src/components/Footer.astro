@@ -1,5 +1,4 @@
 ---
-import H0 from './H0.astro'
 import { SITE } from '@config'
 
 const { address } = SITE
@@ -27,25 +26,25 @@ const social = [
 ]
 ---
 
-<div class="" role="contentinfo">
+<div role="contentinfo">
 	<div class="foo">
 		<div class="py-15 lg:pl-foo">
 			<h2 class="h0 mb-8">Let's talk</h2>
-			<a class="h3 block link mb-4" href={SITE.email}>{SITE.email}</a>
-			<a class="h3">{SITE.telephone}</a>
+			<a class="h3 link inline-block mb-4" href={SITE.email}>{SITE.email}</a>
+			<a class="h3 link inline-block" href="tel:+442038658704">{SITE.telephone}</a>
 			<nav class="mt-10">
-				<ul class="flex flex-col gap-6">
+				<ul class="inline-flex flex-col gap-6">
 					{
 						social.map(social => (
 							<li>
 								<a
 									href={social.url}
-									class="link flex gap-4 items-center"
+									class="body link inline-flex gap-4 items-center"
 									target="_blank"
 									rel="noopener noreferrer">
 									<div class={`${social.icon} text-2rem`} />
 									{social.name}
-									<span class="i-custom:external text-2rem" />
+									<span class="i-custom:arrow text-2rem border" />
 								</a>
 							</li>
 						))

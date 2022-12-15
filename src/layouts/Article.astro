@@ -75,14 +75,15 @@ const meta = { name, headline, description, image, url }
 					<div class="grid gap-5 lg:grid-cols-[220px_1fr] lg:gap-90px pt-10">
 						<div>
 							<Header class="mb-120px" />
-							<a href="/" class="">Back</a>
+							<a href="/" class="flex items-center gap-4 body">
+								<div class="i-custom:arrow text-50px -rotate-135deg"></div>
+								Back
+							</a>
 						</div>
 						<main>
 							<article>
 								<h1 class="h0">{name}</h1>
-								<div
-									class="prose text-[24px] lg:text-[26px] leading-[34px] max-w-none"
-								>
+								<div class="prose">
 									<slot />
 									{image && <img src={image} alt="" />}
 								</div>

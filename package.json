@@ -1,24 +1,21 @@
 {
-  "name": "@example/basics",
-  "type": "module",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "devDependencies": {
-    "@astrojs/mdx": "^0.12.2",
-    "@iconify-json/mdi": "^1.1.36",
-    "astro": "^1.6.15",
-    "astro-seo": "^0.6.0",
-    "astro-seo-schema": "^1.2.0",
-    "unocss": "^0.47.6"
-  },
-  "dependencies": {
-    "aws-cli": "^0.0.2"
-  }
+	"name": "@example/basics",
+	"type": "module",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"devDependencies": {
+		"@astrojs/mdx": "^0.12.2",
+		"@iconify-json/mdi": "^1.1.36",
+		"astro": "^1.6.15",
+		"astro-seo": "^0.6.0",
+		"astro-seo-schema": "^1.2.0",
+		"unocss": "^0.47.6"
+	}
 }

@@ -1,10 +1,15 @@
 ---
+import { SITE } from '@config'
 import Layout from '../layouts/Layout.astro'
 
 const services = await Astro.glob('../data/services/**/*.mdx')
+const meta = {
+	title: `${SITE.name} ___A business innovation company.`,
+	description: 'Design the future. Create it now. Repeat.',
+}
 ---
 
-<Layout>
+<Layout {...meta}>
 	<div role="alert" class="bg-white" slot="pre">
 		<div class="foo">
 			<div class="flex gap-6">
@@ -17,11 +22,12 @@ const services = await Astro.glob('../data/services/**/*.mdx')
 			</div>
 		</div>
 	</div>
-	<article class="bg-yellow">
+	<article>
 		<div class="foo">
 			<div class="lg:pl-foo">
-				<h1 class="h1">Design the future.<br />Create it now. <br />Repeat.</h1>
-				<div class="prose text-2rem lg:text-3rem max-w-none">
+				<h1 class="h0">Design the future.<br />Create it now. <br />Repeat.</h1>
+
+				<div class="prose text-32px lg:(text-48px)">
 					<p>The future belongs to the future-makers.</p>
 					<p>
 						The innovators who take big leaps while others are celebrating small
@@ -51,13 +57,13 @@ const services = await Astro.glob('../data/services/**/*.mdx')
 				<div class="space-y-12 divide-y">
 					{
 						services.map(service => (
-							<article class="grid gap-6 md:gap-10 md:grid-cols-[auto_1fr] bg-lime">
+							<article class="grid gap-6 md:gap-10 md:grid-cols-[auto_1fr]">
 								<div class="md:w-270px md:flex items-center justify-center">
 									<Fragment set:html={service.frontmatter.image} />
 								</div>
 								<div>
 									<h3 class="h2 mb-3 lg:mb-8">{service.frontmatter.name}</h3>
-									<p class="h3">{service.frontmatter.description}</p>
+									<p class="h4">{service.frontmatter.description}</p>
 								</div>
 							</article>
 						))

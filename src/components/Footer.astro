@@ -26,25 +26,34 @@ const social = [
 ]
 ---
 
-<div role="contentinfo">
+<div role="contentinfo" class="bg-white text-black">
 	<div class="foo">
 		<div class="py-15 lg:pl-foo">
 			<h2 class="h0 mb-8">Let's talk</h2>
-			<a class="h3 link inline-block mb-4" href={SITE.email}>{SITE.email}</a>
-			<a class="h3 link inline-block" href="tel:+442038658704">{SITE.telephone}</a>
+			<div class="space-y-4">
+				<a class="h3 link inline-flex" href={SITE.email}>
+					<span>{SITE.email}</span>
+					<span class="i-custom:arrow ml-0.25em"></span>
+				</a>
+				<br />
+				<a class="h3 link inline-flex" href="tel:+442038658704">
+					<span>{SITE.telephone}</span>
+					<span class="i-custom:arrow ml-0.25em"></span>
+				</a>
+			</div>
 			<nav class="mt-10">
-				<ul class="inline-flex flex-col gap-6">
+				<ul class="flex flex-col justify-start gap-4">
 					{
 						social.map(social => (
 							<li>
 								<a
 									href={social.url}
-									class="body link inline-flex gap-4 items-center"
+									class="body link inline-flex items-center justify-start"
 									target="_blank"
 									rel="noopener noreferrer">
-									<div class={`${social.icon} text-2rem`} />
-									{social.name}
-									<span class="i-custom:arrow text-2rem border" />
+									<span class={`${social.icon} mr-0.5em`} />
+									<span>{social.name}</span>
+									<span class="i-custom:arrow ml-0.25em" />
 								</a>
 							</li>
 						))
@@ -55,7 +64,7 @@ const social = [
 
 		<div class="h-[2px] bg-black"></div>
 
-		<div class="foo lg:pl-350px py-5 lg:py-10">
+		<div class="lg:pl-foo py-5 lg:py-10">
 			<div class="grid gap-4 md:gap-10 md:grid-cols-2">
 				<div>
 					<p class="body">
@@ -71,10 +80,14 @@ const social = [
 				<div>
 					<p class="body mb-4">
 						<a
-							class="hover:underline"
+							class="link inline-flex items-center"
 							href="https://www.iubenda.com/privacy-policy/60598168"
-							target="_blank">Privacy Policy</a
+							target="_blank"
+							rel="noopener noreferrer"
 						>
+							<span>Privacy Policy</span>
+							<span class="i-custom:arrow ml-0.25em"></span>
+						</a>
 					</p>
 					<p class="body">&copy; {SITE.copyrightYear} All rights reserved</p>
 				</div>

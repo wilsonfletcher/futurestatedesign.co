@@ -1,27 +1,29 @@
 ---
 import { Schema } from 'astro-seo-schema'
-import { SITE } from '@config'
-
 import type { MarkdownLayoutProps } from 'astro'
+
+import '@styles/global.css'
+
+// import { SITE } from '@config'
+
+import SchemaOrganizationFutureStateDesignCo from '@components/Schema/Organization/FutureStateDesignCo.astro'
+import BaseHead from '@components/BaseHead.astro'
+import Header from '@components/Header.astro'
+import Footer from '@components/Footer.astro'
 
 type Props = MarkdownLayoutProps<{
 	name: string
+	headline: string
 	description: string
 	image?: string
 	datePublished?: string
 }>
 
 const { frontmatter } = Astro.props as Props
-const { name, description, image, datePublished } = frontmatter
-
-import '@styles/global.css'
-
-import BaseHead from '@components/BaseHead.astro'
-import Header from '@components/Header.astro'
-import Footer from '@components/Footer.astro'
+const { name, description, headline, image, datePublished } = frontmatter
 
 const url = Astro.url
-const meta = { name, description, image, url }
+const meta = { name, headline, description, image, url }
 ---
 
 <!DOCTYPE html>
@@ -33,33 +35,36 @@ const meta = { name, description, image, url }
 					'@context': 'https://schema.org',
 					'@type': 'Article',
 					name,
+					headline: name,
 					description,
 					image,
 					datePublished,
 					author: [
 						{
 							'@type': 'Person',
-							name: 'Mark Wilson',
+							givenName: 'Mark',
+							familyName: 'Wilson',
+							jobTitle: 'Managing Partner & CEO',
+							image: 'https://futurestate.design/images/mark-wilson.jpg',
+							sameAs: ['https://www.linkedin.com/in/mwilson/'],
 							worksFor: 'fsdc',
 						},
 						{
 							'@type': 'Person',
-							name: 'Stephanie Fletcher',
+							givenName: 'Stephanie',
+							familyName: 'Fletcher',
+							jobTitle: 'Managing Partner & CDO',
+							image: 'https://futurestate.design/images/stephanie-fletcher.jpg',
+							sameAs: [
+								'https://www.linkedin.com/in/stephanie-fletcher-6840152/',
+							],
 							worksFor: 'fsdc',
 						},
 					],
 					copyrightHolder: 'fsdc',
 				}}
 			/>
-			<Schema
-				item={{
-					'@id': 'fsdc',
-					'@context': 'https://schema.org',
-					'@type': 'Organization',
-					name: SITE.name,
-					description: SITE.description,
-				}}
-			/>
+			<SchemaOrganizationFutureStateDesignCo />
 		</>
 	</BaseHead>
 

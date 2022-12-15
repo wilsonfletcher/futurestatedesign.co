@@ -1,9 +1,13 @@
 const BASE_URL = import.meta.env.PUBLIC_BASE_URL;
 
+const name = 'Futurestate Design Co.'
+
 export const SITE = {
-  name: 'Futurestate Design Co.',
+  name,
   description: 'A business innovation company',
-  url: 'https://futurestatedesign.co',
+  url: BASE_URL,
+  image: `${BASE_URL}/images/image.png`,
+  logo: `${BASE_URL}/logo.svg`,
   email: 'info@futurestatedesign.co',
   themeColor: '#F5FF51',
   telephone: '+44 (0)203 865 8704',

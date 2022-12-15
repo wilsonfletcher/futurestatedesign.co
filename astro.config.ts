@@ -9,10 +9,6 @@ export default defineConfig({
   },
   integrations: [
     mdx(),
-    Unocss({
-      presets: [
-        /* no presets by default */
-      ]
-    }),
+    Unocss(),
   ],
 });

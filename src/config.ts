@@ -15,7 +15,7 @@ export const SITE = {
   instagram: 'https://www.instagram.com/_wilsonfletcher',
   medium: 'https://medium.com/thehumanlayer',
   twitter: 'https://twitter.com/wilsonfletcher',
-  copyrightYear: new Date(),
+  copyrightYear: 2022,
   address: {
     streetAddress: '202-208 New North Road',
     addressLocality: 'Unit 10 New North House',

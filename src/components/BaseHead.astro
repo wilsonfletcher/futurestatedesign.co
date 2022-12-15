@@ -1,6 +1,5 @@
 ---
 import { SEO } from 'astro-seo'
-
 import { SITE } from '@config'
 
 export interface Props {
@@ -12,9 +11,9 @@ export interface Props {
 
 const {
 	name,
-	description,
-	url,
-	image = '/images/image-1.jpg',
+	description = SITE.description,
+	url = SITE.url,
+	image = SITE.image,
 } = Astro.props as Props
 ---
 

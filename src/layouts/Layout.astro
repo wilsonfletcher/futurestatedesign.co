@@ -35,11 +35,14 @@ const meta = { title, description, url }
 	<body>
 		<div class="flex flex-col min-h-screen">
 			<slot name="pre" />
-			<!-- <Header /> -->
+			<Header class="bg-yellow" />
+
 			<main class="flex-auto">
 				<slot />
 			</main>
+
 			<Footer />
+
 		</div>
 	</body>
 </html>

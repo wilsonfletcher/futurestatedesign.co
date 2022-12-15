@@ -4,72 +4,89 @@ import Layout from '../layouts/Layout.astro'
 
 const services = await Astro.glob('../data/services/**/*.mdx')
 const meta = {
-	title: `${SITE.name} ___A business innovation company.`,
-	description: 'Design the future. Create it now. Repeat.',
+  title: `${SITE.name} ___A business innovation company.`,
+  description: 'Design the future. Create it now. Repeat.',
 }
 ---
 
 <Layout {...meta}>
-	<div role="alert" class="bg-white" slot="pre">
-		<div class="foo">
-			<div class="flex gap-6">
-				<p>
-					Futurestate Design Co. are the artists formerly known as <strong
-						>Wilson Fletcher</strong
-					>. Read our founders’ announcement on the change of brand.
-				</p>
-				<a href="/the-next-twenty" class="button button--primary">Read more</a>
-			</div>
-		</div>
-	</div>
-	<article>
-		<div class="foo">
-			<div class="lg:pl-foo">
-				<h1 class="h0">Design the future.<br />Create it now. <br />Repeat.</h1>
+  <!-- <div role="alert" class="bg-white py-5" slot="pre">
+    <div class="foo">
+      <div class="flex lg:(items-center)">
+        <span class="i-custom:wf text-32px flex-none"></span>
+        <p>
+          <strong>Futurestate Design Co.</strong> are the artists formerly known
+          as <strong>Wilson Fletcher</strong>. Read our founders’ announcement
+          on the change of brand.
+        </p>
+        <div class="flex">
+          <a href="/the-next-twenty" class="button button--primary">Read more</a
+          >
+          <span class="i-custom:close text-32px"></span>
+        </div>
+      </div>
+    </div>
+  </div> -->
 
-				<div class="prose text-32px lg:(text-48px)">
-					<p>The future belongs to the future-makers.</p>
-					<p>
-						The innovators who take big leaps while others are celebrating small
-						steps; who invent new markets while others are trying to defend the
-						old ones.
-					</p>
-					<p>
-						Here at Futurestate we’re on a mission to help as many
-						forward-thinking companies as possible become successful innovators.
-					</p>
-					<p>
-						We’re a super-experienced team of strategists, researchers,
-						designers and technologists. We’ve helped companies create
-						next-generation products, services and ventures for 20 years.
-					</p>
-					<p>
-						If you want to be a future-maker, we’d love to work with you. If you
-						don’t, no hard feelings, we’re ready when you are.
-					</p>
-				</div>
-			</div>
-		</div>
+  <article class="bg-yellow">
+    <div class="pt-80px pb-200px lg:(pt-100px)">
+      <div class="foo">
+        <div class="lg:pl-foo">
+          <h1 class="h0">
+            Design the future.<br />Create it now. <br />Repeat.
+          </h1>
+        </div>
+      </div>
+    </div>
 
-		<section class="bg-[#001E20] text-white py-10">
-			<div class="foo">
-				<h2 class="sr-only">Services</h2>
-				<div class="space-y-12 divide-y">
-					{
-						services.map(service => (
-							<article class="grid gap-6 md:gap-10 md:grid-cols-[auto_1fr]">
-								<div class="md:w-270px md:flex items-center justify-center">
-									<Fragment set:html={service.frontmatter.image} />
-								</div>
-								<div>
-									<h3 class="h2 mb-3 lg:mb-8">{service.frontmatter.name}</h3>
-									<p class="h4">{service.frontmatter.description}</p>
-								</div>
-							</article>
-						))
-					}
-				</div>
-			</div>
-		</section>
-	</article>
+    <div class="relative">
+      <div class="h-1px w-64px bg-black absolute top-0 left-0 lg:(w-110px)">
+      </div>
+      <div class="foo py-64px lg:(py-180px)">
+        <div class="lg:pl-foo">
+          <div class="text-32px space-y-1.25em lg:(text-48px)">
+            <p>The future belongs to the future-makers.</p>
+            <p>
+              The innovators who take big leaps while others are celebrating
+              small steps; who invent new markets while others are trying to
+              defend the old ones.
+            </p>
+            <p>
+              Here at Futurestate we’re on a mission to help as many
+              forward-thinking companies as possible become successful
+              innovators.
+            </p>
+            <p>
+              We’re a super-experienced team of strategists, researchers,
+              designers and technologists. We’ve helped companies create
+              next-generation products, services and ventures for 20 years.
+            </p>
+            <p>
+              If you want to be a future-maker, we’d love to work with you. If
+              you don’t, no hard feelings, we’re ready when you are.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="bg-[#001E20] text-white py-10 lg:(py-140px)">
+      <div class="foo">
+        <h2 class="sr-only">Services</h2>
+        {
+          services.map((service) => (
+            <article class="grid gap-6 md:gap-10 md:grid-cols-[auto_1fr]">
+              <div class="md:w-270px md:flex items-center justify-center">
+                <Fragment set:html={service.frontmatter.image} />
+              </div>
+              <div>
+                <h3 class="h2 mb-3 lg:mb-8">{service.frontmatter.name}</h3>
+                <p class="h4">{service.frontmatter.description}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </article>
 </Layout>

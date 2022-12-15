@@ -4,19 +4,17 @@ import type { MarkdownLayoutProps } from 'astro'
 
 import '@styles/global.css'
 
-// import { SITE } from '@config'
-
 import SchemaOrganizationFutureStateDesignCo from '@components/Schema/Organization/FutureStateDesignCo.astro'
 import BaseHead from '@components/BaseHead.astro'
-import Header from '@components/Header.astro'
+import Logo from '@components/Logo.astro'
 import Footer from '@components/Footer.astro'
 
 type Props = MarkdownLayoutProps<{
-	name: string
-	headline: string
-	description: string
-	image?: string
-	datePublished?: string
+  name: string
+  headline: string
+  description: string
+  image?: string
+  datePublished?: string
 }>
 
 const { frontmatter } = Astro.props as Props
@@ -28,71 +26,73 @@ const meta = { name, headline, description, image, url }
 
 <!DOCTYPE html>
 <html lang="en">
-	<BaseHead {...meta}>
-		<>
-			<Schema
-				item={{
-					'@context': 'https://schema.org',
-					'@type': 'Article',
-					name,
-					headline: name,
-					description,
-					image,
-					datePublished,
-					author: [
-						{
-							'@type': 'Person',
-							givenName: 'Mark',
-							familyName: 'Wilson',
-							jobTitle: 'Managing Partner & CEO',
-							image: 'https://futurestate.design/images/mark-wilson.jpg',
-							sameAs: ['https://www.linkedin.com/in/mwilson/'],
-							worksFor: 'fsdc',
-						},
-						{
-							'@type': 'Person',
-							givenName: 'Stephanie',
-							familyName: 'Fletcher',
-							jobTitle: 'Managing Partner & CDO',
-							image: 'https://futurestate.design/images/stephanie-fletcher.jpg',
-							sameAs: [
-								'https://www.linkedin.com/in/stephanie-fletcher-6840152/',
-							],
-							worksFor: 'fsdc',
-						},
-					],
-					copyrightHolder: 'fsdc',
-				}}
-			/>
-			<SchemaOrganizationFutureStateDesignCo />
-		</>
-	</BaseHead>
+  <BaseHead {...meta}>
+    <>
+      <Schema
+        item={{
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          name,
+          headline: name,
+          description,
+          image,
+          datePublished,
+          author: [
+            {
+              '@type': 'Person',
+              givenName: 'Mark',
+              familyName: 'Wilson',
+              jobTitle: 'Managing Partner & CEO',
+              image: 'https://futurestate.design/images/mark-wilson.jpg',
+              sameAs: ['https://www.linkedin.com/in/mwilson/'],
+              worksFor: 'fsdc',
+            },
+            {
+              '@type': 'Person',
+              givenName: 'Stephanie',
+              familyName: 'Fletcher',
+              jobTitle: 'Managing Partner & CDO',
+              image: 'https://futurestate.design/images/stephanie-fletcher.jpg',
+              sameAs: [
+                'https://www.linkedin.com/in/stephanie-fletcher-6840152/',
+              ],
+              worksFor: 'fsdc',
+            },
+          ],
+          copyrightHolder: 'fsdc',
+        }}
+      />
+      <SchemaOrganizationFutureStateDesignCo />
+    </>
+  </BaseHead>
 
-	<body class="bg-#001E20 text-white">
-		<div class="flex flex-col min-h-screen">
-			<div class="flex-auto">
-				<div class="foo">
-					<div class="grid gap-5 lg:grid-cols-[220px_1fr] lg:gap-90px pt-10">
-						<div>
-							<Header class="mb-120px" />
-							<a href="/" class="body inline-flex items-center">
-								<div class="i-custom:arrow -rotate-135deg mr-0.25em"></div>
-								Back
-							</a>
-						</div>
-						<main>
-							<article>
-								<h1 class="h0">{name}</h1>
-								<div class="prose">
-									<slot />
-									{image && <img src={image} alt="" />}
-								</div>
-							</article>
-						</main>
-					</div>
-				</div>
-			</div>
-			<Footer />
-		</div>
-	</body>
+  <body>
+    <div class="flex flex-col min-h-screen">
+      <div class="flex-auto bg-#001E20 text-white">
+        <div class="foo">
+          <div class="grid gap-5 pt-10 lg:(pt-60px grid-cols-[220px_1fr] gap-90px)">
+            <div role="banner">
+              <a href="/">
+                <Logo class="w-220px" />
+              </a>
+            </div>
+            <a href="/" class="body inline-flex items-center">
+              <div class="i-custom:arrow -rotate-135deg mr-0.25em"></div>
+              Back
+            </a>
+          </div>
+          <main>
+            <article>
+              <h1 class="h0">{name}</h1>
+              <div class="prose">
+                <slot />
+                {image && <img src={image} alt="" />}
+              </div>
+            </article>
+          </main>
+        </div>
+      </div>
+    </div>
+    <Footer />
+  </body>
 </html>

@@ -17,8 +17,8 @@ export const SITE = {
   twitter: 'https://twitter.com/wilsonfletcher',
   copyrightYear: 2022,
   address: {
-    streetAddress: '202-208 New North Road',
-    addressLocality: 'Unit 10 New North House',
+    streetAddress: 'Unit 10 New North House',
+    addressLocality: '202-208 New North Road',
     addressRegion: 'London',
     postalCode: 'N1 7BJ',
     addressCountry: 'United Kingdom'

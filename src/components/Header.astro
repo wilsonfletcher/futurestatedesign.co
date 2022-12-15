@@ -2,14 +2,17 @@
 import Logo from './Logo.astro'
 
 export interface Props {
-	class?: string
+  class?: string
 }
 
 const { class: className, ...attrs } = Astro.props as Props
 ---
 
-<div role="banner" class:list={[className]} {...attrs}>
-	<a href="/">
-		<Logo />
-	</a>
+<div role="banner" class:list={['header pt-10 lg:(pt-60px)', className]} {...attrs}>
+  <div class="foo grid gap-6 lg:(gap-0 grid-cols-[310px_1fr] items-center)">
+    <a href="/">
+      <Logo class="w-220px" />
+    </a>
+    <div class="h3">___A business innovation company.</div>
+  </div>
 </div>

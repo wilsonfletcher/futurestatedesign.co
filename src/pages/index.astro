@@ -10,23 +10,36 @@ const meta = {
 ---
 
 <Layout {...meta}>
-  <!-- <div role="alert" class="bg-white py-5" slot="pre">
+  <div
+    role="alert"
+    class="bg-white py-4 lg:(py-5)"
+    slot="pre"
+    x-data="{ open: true }"
+    x-show="open"
+  >
     <div class="foo">
-      <div class="flex lg:(items-center)">
-        <span class="i-custom:wf text-32px flex-none"></span>
-        <p>
-          <strong>Futurestate Design Co.</strong> are the artists formerly known
-          as <strong>Wilson Fletcher</strong>. Read our founders’ announcement
-          on the change of brand.
-        </p>
-        <div class="flex">
-          <a href="/the-next-twenty" class="button button--primary">Read more</a
-          >
-          <span class="i-custom:close text-32px"></span>
+      <div class="flex items-start lg:(items-center)">
+        <div class="flex flex-auto mr-5 lg:(mr-8 items-center)">
+          <a href="https://wilsonfletcher.com" target="_blank">
+            <span class="i-custom:wf text-32px mr-4"></span>
+          </a>
+          <div class="flex-auto lg:(flex items-center justify-between)">
+            <p class="text-14px leading-18px mb-4 lg:(text-16px mb-0)">
+              <strong>Futurestate Design Co.</strong> are the artists formerly known
+              as <strong>Wilson Fletcher</strong>. Read our founders’
+              announcement on the change of brand.
+            </p>
+            <a href="/the-next-twenty" class="button button--primary"
+              >Read more</a
+            >
+          </div>
         </div>
+        <button type="button" x-on:click="open = ! open">
+          <span class="i-custom:close text-26px"></span>
+        </button>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <article class="bg-yellow">
     <div class="pt-80px pb-200px lg:(pt-100px)">
@@ -75,11 +88,11 @@ const meta = {
         <h2 class="sr-only">Services</h2>
         {
           services.map((service) => (
-            <article class="grid gap-6 md:gap-10 md:grid-cols-[auto_1fr]">
-              <div class="md:w-270px md:flex items-center justify-center">
+            <article class="grid gap-6 md:(md:grid-cols-[auto_1fr] gap-10) mb-12 last:(mb-0)">
+              <div class="md:(w-270px h-270px flex items-center justify-center)">
                 <Fragment set:html={service.frontmatter.image} />
               </div>
-              <div>
+              <div class="border-b pb-12">
                 <h3 class="h2 mb-3 lg:mb-8">{service.frontmatter.name}</h3>
                 <p class="h4">{service.frontmatter.description}</p>
               </div>

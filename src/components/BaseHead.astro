@@ -3,42 +3,45 @@ import { SEO } from 'astro-seo'
 import { SITE } from '@config'
 
 export interface Props {
-	title: string
-	description?: string
-	url?: string
-	image?: string
+  title: string
+  description?: string
+  url?: string
+  image?: string
 }
 
 const {
-	title,
-	description = SITE.description,
-	url = SITE.url,
-	image = SITE.image,
+  title,
+  description = SITE.description,
+  url = SITE.url,
+  image = SITE.image,
 } = Astro.props as Props
 ---
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width" />
-	<SEO
-		title={title}
-		description={description}
-		openGraph={{
-			basic: {
-				title: description,
-				type: 'webpage',
-				image,
-				url,
-			},
-		}}
-		extend={{
-			link: [
-				{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-				{ rel: 'author', type: 'text/plain', href: '/humans.txt' },
-			],
-		}}
-	/>
-	<meta name="theme-color" content={SITE.themeColor} />
-	<link rel="stylesheet" href="https://use.typekit.net/gyw4mlp.css" />
-	<slot />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <SEO
+    title={title}
+    description={description}
+    openGraph={{
+      basic: {
+        title: description,
+        type: 'webpage',
+        image,
+        url,
+      },
+      image: {
+        alt: 'Foo',
+      },
+    }}
+    extend={{
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'author', type: 'text/plain', href: '/humans.txt' },
+      ],
+    }}
+  />
+  <meta name="theme-color" content={SITE.themeColor} />
+  <link rel="stylesheet" href="https://use.typekit.net/gyw4mlp.css" />
+  <slot />
 </head>

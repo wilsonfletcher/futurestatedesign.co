@@ -20,7 +20,7 @@ export default defineConfig({
     { 'h4': 'text-21px leading-[1.33333333] lg:(text-35px)' },
     { 'label': 'text-base leading-body' },
     { 'link': 'hover:(underline)' },
-    { 'button': 'text-18px font-bold inline-block py-16px px-12px border-2px' },
+    { 'button': 'text-18px font-bold inline-block p-10px border-2px lg:(p-14px)' },
     { 'button--primary': 'border-black hover:(bg-black text-white)' },
     { 'button--secondary': 'border-black bg-black text-white hover:(bg-gray border-gray text-white)' },
     { 'body': 'text-24px leading-[calc(32/24)] lg:(text-26px leading-[calc(34/26)])' },

@@ -9,9 +9,9 @@ import Footer from '@components/Footer.astro'
 import '@styles/global.css'
 
 export interface Props {
-	title?: string
-	description?: string
-	url?: string
+  title?: string
+  description?: string
+  url?: string
 }
 
 const { title, description, url } = Astro.props as Props
@@ -20,29 +20,28 @@ const meta = { title, description, url }
 
 <!DOCTYPE html>
 <html lang="en">
-	<BaseHead {...meta}>
-		<Schema
-			item={{
-				'@context': 'https://schema.org',
-				'@type': 'WebPage',
-				name: SITE.name,
-				description: SITE.description,
-				url: `${SITE.url}/`,
-				copyrightYear: 2022,
-			}}
-		/>
-	</BaseHead>
-	<body>
-		<div class="flex flex-col min-h-screen">
-			<slot name="pre" />
-			<Header class="bg-yellow" />
+  <BaseHead {...meta}>
+    <Schema
+      item={{
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: SITE.name,
+        description: SITE.description,
+        url: `${SITE.url}`,
+        copyrightYear: SITE.copyrightYear,
+      }}
+    />
+  </BaseHead>
+  <body>
+    <div class="flex flex-col w-full min-h-screen">
+      <slot name="pre" />
+      <Header class="bg-yellow" />
 
-			<main class="flex-auto">
-				<slot />
-			</main>
+      <main class="flex-auto">
+        <slot />
+      </main>
 
-			<Footer />
-
-		</div>
-	</body>
+      <Footer />
+    </div>
+  </body>
 </html>

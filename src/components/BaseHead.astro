@@ -12,8 +12,8 @@ export interface Props {
 const {
   title,
   description = SITE.description,
-  url = SITE.url,
-  image = SITE.image,
+  url = '',
+  image = '',
 } = Astro.props as Props
 ---
 
@@ -27,8 +27,8 @@ const {
       basic: {
         title: description,
         type: 'webpage',
-        image,
-        url,
+        image: `${SITE.url}${image}`,
+        url: `${SITE.url}${url}`,
       },
       image: {
         alt: 'Foo',

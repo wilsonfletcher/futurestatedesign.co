@@ -14,7 +14,7 @@ export interface Props {
 	url?: string
 }
 
-const { title, description, url = Astro.url } = Astro.props as Props
+const { title, description, url } = Astro.props as Props
 const meta = { title, description, url }
 ---
 

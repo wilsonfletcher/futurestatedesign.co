@@ -3,53 +3,54 @@ import { Schema } from 'astro-seo-schema'
 import { SITE } from '@config'
 
 const {
-	name,
-	description,
-	url,
-	email,
-	logo,
-	telephone,
-	address,
-	instagram,
-	linkedin,
-	medium,
-	twitter,
+  id,
+  name,
+  description,
+  url,
+  email,
+  logo,
+  telephone,
+  address,
+  instagram,
+  linkedin,
+  medium,
+  twitter,
 } = SITE
 const {
-	streetAddress,
-	addressLocality,
-	addressRegion,
-	postalCode,
-	addressCountry,
+  streetAddress,
+  addressLocality,
+  addressRegion,
+  postalCode,
+  addressCountry,
 } = address
 ---
 
 <Schema
-	item={{
-		'@id': 'fsdc',
-		'@context': 'https://schema.org',
-		'@type': 'Organization',
-		name,
-		description,
-		url,
-		logo,
-		sameAs: [instagram, linkedin, medium, twitter],
-		contactPoint: [
-			{
-				'@type': 'ContactPoint',
-				telephone,
-				contactType: 'Sales',
-				email,
-			},
-		],
-		email,
-		address: {
-			'@type': 'PostalAddress',
-			streetAddress,
-			addressLocality,
-			addressRegion,
-			postalCode,
-			addressCountry,
-		},
-	}}
+  item={{
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': id,
+    name,
+    description,
+    url,
+    logo,
+    sameAs: [instagram, linkedin, medium, twitter],
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone,
+        contactType: 'Sales',
+        email,
+      },
+    ],
+    email,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress,
+      addressLocality,
+      addressRegion,
+      postalCode,
+      addressCountry,
+    },
+  }}
 />

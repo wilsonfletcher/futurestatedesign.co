@@ -3,6 +3,7 @@ const BASE_URL = import.meta.env.PUBLIC_BASE_URL;
 const name = 'Futurestate Design Co.'
 
 export const SITE = {
+  id: `${BASE_URL}#futurestate-design-co`,
   name,
   description: 'A business innovation company',
   url: BASE_URL,

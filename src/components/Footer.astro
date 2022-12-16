@@ -3,95 +3,98 @@ import { SITE } from '@config'
 
 const { address } = SITE
 const social = [
-	{
-		icon: 'i-custom:linkedin',
-		name: 'Linkedin',
-		url: SITE.linkedin,
-	},
-	{
-		icon: 'i-custom:instagram',
-		name: 'Instagram',
-		url: SITE.instagram,
-	},
-	{
-		icon: 'i-custom:medium',
-		name: 'Medium',
-		url: SITE.medium,
-	},
-	{
-		icon: 'i-mdi:twitter',
-		name: 'Twitter',
-		url: SITE.twitter,
-	},
+  {
+    icon: 'i-custom:linkedin',
+    name: 'Linkedin',
+    url: SITE.linkedin,
+  },
+  {
+    icon: 'i-custom:instagram',
+    name: 'Instagram',
+    url: SITE.instagram,
+  },
+  {
+    icon: 'i-custom:medium',
+    name: 'Medium',
+    url: SITE.medium,
+  },
+  {
+    icon: 'i-mdi:twitter',
+    name: 'Twitter',
+    url: SITE.twitter,
+  },
 ]
 ---
 
 <div role="contentinfo" class="bg-white text-black">
-	<div class="foo">
-		<div class="py-15 lg:pl-foo">
-			<h2 class="h0 mb-8">Let's talk</h2>
-			<div class="space-y-4">
-				<a class="h3 link inline-flex" href={SITE.email}>
-					<span>{SITE.email}</span>
-					<span class="i-custom:arrow ml-0.25em"></span>
-				</a>
-				<br />
-				<a class="h3 link inline-flex" href="tel:+442038658704">
-					<span>{SITE.telephone}</span>
-					<span class="i-custom:arrow ml-0.25em"></span>
-				</a>
-			</div>
-			<nav class="mt-10">
-				<ul class="flex flex-col justify-start gap-4">
-					{
-						social.map(social => (
-							<li>
-								<a
-									href={social.url}
-									class="body link inline-flex items-center justify-start"
-									target="_blank"
-									rel="noopener noreferrer">
-									<span class={`${social.icon} mr-0.5em`} />
-									<span>{social.name}</span>
-									<span class="i-custom:arrow ml-0.25em" />
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</nav>
-		</div>
+  <div class="foo">
+    <div class="py-15 lg:pl-foo">
+      <h2 class="h0 mb-8">Let's talk</h2>
+      <div class="space-y-4">
+        <a class="h3 link inline-flex" href={SITE.email}>
+          <span>{SITE.email}</span>
+          <span class="i-custom:arrow ml-0.25em"></span>
+        </a>
+        <br />
+        <a class="h3 link inline-flex" href="tel:+442038658704">
+          <span>{SITE.telephone}</span>
+          <span class="i-custom:arrow ml-0.25em"></span>
+        </a>
+      </div>
+      <nav class="mt-10">
+        <ul class="flex flex-col justify-start gap-4">
+          {
+            social.map((social) => (
+              <li>
+                <a
+                  href={social.url}
+                  class="body link inline-flex items-center justify-start"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span class={`${social.icon} mr-0.5em`} />
+                  <span>{social.name}</span>
+                  <span class="i-custom:arrow ml-0.25em" />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
 
-		<div class="h-[2px] bg-black"></div>
+    <div class="h-[2px] bg-black"></div>
 
-		<div class="lg:pl-foo py-5 lg:py-10">
-			<div class="grid gap-4 md:gap-10 md:grid-cols-2">
-				<div>
-					<p class="body">
-						{address.streetAddress}
-						<br />
-						{address.addressLocality}
-						<br />
-						{address.addressRegion}
-						<br />
-						{address.postalCode}
-					</p>
-				</div>
-				<div>
-					<p class="body mb-4">
-						<a
-							class="link inline-flex items-center"
-							href="https://www.iubenda.com/privacy-policy/60598168"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<span>Privacy Policy</span>
-							<span class="i-custom:arrow ml-0.25em"></span>
-						</a>
-					</p>
-					<p class="body">&copy; {SITE.copyrightYear} All rights reserved</p>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="lg:pl-foo py-5 lg:py-10">
+      <div class="grid gap-4 md:gap-10 md:grid-cols-2">
+        <div>
+          <p class="body">
+            {address.streetAddress}
+            <br />
+            {address.addressLocality}
+            <br />
+            {address.addressRegion}
+            <br />
+            {address.postalCode}
+          </p>
+        </div>
+        <div>
+          <p class="body mb-4">
+            <a
+              class="link inline-flex items-center"
+              href="https://www.iubenda.com/privacy-policy/60598168"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Privacy Policy</span>
+              <span class="i-custom:arrow ml-0.25em"></span>
+            </a>
+          </p>
+          <p class="body">
+            &copy; {SITE.copyrightYear} <span class="sr-only" id={SITE.id}>{SITE.name}</span> All rights reserved
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

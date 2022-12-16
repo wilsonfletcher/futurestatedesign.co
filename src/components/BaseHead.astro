@@ -31,6 +31,7 @@ const {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <SEO
+    canonical={`${SITE.url}/`}
     title={title}
     description={description}
     openGraph={{
@@ -40,25 +41,46 @@ const {
         image: `${SITE.url}${image.url}`,
         url: `${SITE.url}${url}`,
       },
+
+      optional: {
+        siteName: SITE.name,
+        locale: SITE.locale,
+        description,
+      },
+
       image: {
         width: image.width,
         height: image.height,
         alt: image.alt,
       },
     }}
+    twitter={{
+      card: 'summary_large_image',
+      site: '@wilsonfletcher',
+      creator: '@wilsonfletcher',
+    }}
     extend={{
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'author', type: 'text/plain', href: '/humans.txt' },
-        { rel: 'mainfest', href: '/site.webmanifest' },
+        // { rel: 'mainfest', href: '/site.webmanifest' },
+        {
+          rel: 'manifest',
+          href: '/manifest.webmanifest',
+          crossOrigin: 'use-credentials',
+        },
         {
           rel: 'mask-icon',
-          href: 'safari-pinned-tab.svg',
+          href: '/safari-pinned-tab.svg',
+        },
+        {
+          rel: 'apple-touch-icon',
+          href: '/apple-touch-icon.png',
         },
       ],
+      meta: [{ name: 'theme-color', content: SITE.themeColor }],
     }}
   />
-  <meta name="theme-color" content={SITE.themeColor} />
   <script is:inline>
     ;(function () {
       var config = {
@@ -89,6 +111,5 @@ const {
       s.parentNode.insertBefore(tk, s)
     })()
   </script>
-  <!-- <link rel="stylesheet" href="https://use.typekit.net/gyw4mlp.css" /> -->
   <slot />
 </head>

@@ -11,11 +11,13 @@ export const SITE = {
   logo: `${BASE_URL}/logo.svg`,
   email: 'info@futurestatedesign.co',
   themeColor: '#F5FF51',
+  backgroundColor: '#000000',
   telephone: '+44 (0)203 865 8704',
   linkedin: 'https://www.linkedin.com/company/wilson-fletcher',
   instagram: 'https://www.instagram.com/_wilsonfletcher',
   medium: 'https://medium.com/thehumanlayer',
   twitter: 'https://twitter.com/wilsonfletcher',
+  locale: 'en-GB',
   copyrightYear: 2022,
   address: {
     streetAddress: 'Unit 10 New North House',

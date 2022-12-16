@@ -91,6 +91,7 @@ export default defineConfig({
     colors: {
       yellow: 'rgba(245, 255, 81, 1)',
       red: '#FF5C00',
+      qux: 'rgba(0, 30, 32)',
     }
   }
 })

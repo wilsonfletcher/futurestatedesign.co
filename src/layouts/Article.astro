@@ -14,22 +14,28 @@ type Props = MarkdownLayoutProps<{
   name: string
   headline: string
   description: string
-  image?: string
+  image?: {
+    url?: string
+    width?: number
+    height?: number
+    alt?: string
+  }
   datePublished?: string
 }>
 
 const { frontmatter } = Astro.props as Props
-const { name, description, headline, image, datePublished, url } = frontmatter
+const { name, description, image, datePublished, url } = frontmatter
 
 const meta = {
   title: `${name} - ${SITE.name}`,
   description,
-  image,
   url,
+  image,
 }
 ---
 
-<!DOCTYPE html>
+<pre>{JSON.stringify(meta, null, 2)}</pre>
+
 <html lang="en">
   <BaseHead {...meta}>
     <>
@@ -40,7 +46,10 @@ const meta = {
           name,
           headline: name,
           description,
-          image,
+          image: {
+            '@type': 'ImageObject',
+            url: image ? image.url : '',
+          },
           datePublished,
           author: [
             {
@@ -73,7 +82,7 @@ const meta = {
 
   <body>
     <div class="flex flex-col min-h-screen">
-      <div class="flex-auto bg-#001E20 text-white">
+      <div class="flex-auto bg-qux text-white">
         <div class="foo">
           <div
             class="grid gap-5 pt-10 lg:(pt-60px grid-cols-[220px_1fr] gap-90px)"
@@ -94,7 +103,17 @@ const meta = {
               <h1 class="h0">{name}</h1>
               <div class="prose">
                 <slot />
-                {image && <img src={image} alt="" />}
+                {
+                  image && image.url && (
+                    <img
+                      src={image.url}
+                      width={image.width}
+                      height={image.height}
+                      alt={image.alt}
+                      loading="lazy"
+                    />
+                  )
+                }
               </div>
             </article>
           </main>

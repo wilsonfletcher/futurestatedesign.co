@@ -1,18 +1,17 @@
 ---
 import { SITE } from '@config'
 import Layout from '../layouts/Layout.astro'
-import Notification from '@components/Notification.astro'
 
 const services = await Astro.glob('../data/services/**/*.mdx')
+
 const meta = {
   title: `${SITE.name} ___A business innovation company.`,
   description: 'Design the future. Create it now. Repeat.',
+  url: '/',
 }
 ---
 
 <Layout {...meta}>
-  <Notification slot="pre" />
-
   <article class="bg-yellow">
     <div class="pt-80px pb-200px lg:(pt-100px)">
       <div class="foo">

@@ -15,9 +15,9 @@ export interface Props {
 }
 
 const {
-  title,
+  title = SITE.name,
   description = SITE.description,
-  url = '',
+  url = '/',
   image = {
     url: '/images/image.png',
     width: 1200,

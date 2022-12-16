@@ -21,3 +21,7 @@ html {
 .prose hr {
 	@apply mb-1em;
 }
+
+.prose a {
+	@apply underline;
+}

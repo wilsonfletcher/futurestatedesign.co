@@ -135,17 +135,6 @@ const meta = {
 
               <div class="prose">
                 <slot />
-                {
-                  image && image.url && (
-                    <img
-                      src={image.url}
-                      width={image.width}
-                      height={image.height}
-                      alt={image.alt}
-                      loading="lazy"
-                    />
-                  )
-                }
               </div>
             </div>
           </div>

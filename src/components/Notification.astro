@@ -22,8 +22,11 @@ const { ...props } = Astro.props
             as <strong>Wilson Fletcher</strong>. Read our founders’ announcement
             on the change of brand.
           </p>
-          <a href="/the-next-twenty" class="button button--primary">Read more</a
-          >
+          <a href="/the-next-twenty" class="button button--primary"
+            >Read more <span class="sr-only"
+              >about our founders’ announcement on the change of brand.
+            </span>
+          </a>
         </div>
       </div>
       <button type="button" x-on:click="open = ! open">

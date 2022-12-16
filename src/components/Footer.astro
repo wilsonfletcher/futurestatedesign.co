@@ -8,21 +8,6 @@ const social = [
     name: 'Linkedin',
     url: SITE.linkedin,
   },
-  {
-    icon: 'i-custom:instagram',
-    name: 'Instagram',
-    url: SITE.instagram,
-  },
-  {
-    icon: 'i-custom:medium',
-    name: 'Medium',
-    url: SITE.medium,
-  },
-  {
-    icon: 'i-mdi:twitter',
-    name: 'Twitter',
-    url: SITE.twitter,
-  },
 ]
 ---
 
@@ -31,12 +16,18 @@ const social = [
     <div class="py-15 lg:pl-foo">
       <h2 class="h0 mb-8">Let's talk</h2>
       <div class="space-y-4">
-        <a class="h3 link inline-flex" href={SITE.email}>
+        <a
+          class="link text-26px inline-flex lg:(text-60px)"
+          href={`mailto:${SITE.email}`}
+        >
           <span>{SITE.email}</span>
           <span class="i-custom:arrow ml-0.25em"></span>
         </a>
         <br />
-        <a class="h3 link inline-flex" href="tel:+442038658704">
+        <a
+          class="link text-26px inline-flex lg:(text-60px)"
+          href="tel:+442038658704"
+        >
           <span>{SITE.telephone}</span>
           <span class="i-custom:arrow ml-0.25em"></span>
         </a>
@@ -91,7 +82,8 @@ const social = [
             </a>
           </p>
           <p class="body">
-            &copy; {SITE.copyrightYear} <span class="sr-only" id={SITE.id}>{SITE.name}</span> All rights reserved
+            &copy; {SITE.copyrightYear}
+            <span class="sr-only" id={SITE.id}>{SITE.name}</span> All rights reserved
           </p>
         </div>
       </div>

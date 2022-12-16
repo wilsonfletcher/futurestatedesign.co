@@ -16,7 +16,7 @@
     "@iconify-json/mdi": "^1.1.36",
     "@types/alpinejs": "^3.7.1",
     "alpinejs": "^3.10.5",
-    "astro-compress": "^1.1.22",
+    "astro-html-beautifier": "^1.0.4",
     "astro-seo-schema": "^1.2.0",
     "astro-seo": "^0.6.0",
     "astro": "^1.6.15",

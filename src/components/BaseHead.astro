@@ -12,6 +12,7 @@ export interface Props {
     height?: number
     alt?: string
   }
+  noindex?: boolean
 }
 
 const {
@@ -24,6 +25,7 @@ const {
     height: 630,
     alt: 'Futurestate Design Co logo',
   },
+  noindex = false,
 } = Astro.props as Props
 ---
 
@@ -34,6 +36,7 @@ const {
     canonical={`${SITE.url}/`}
     title={title}
     description={description}
+    noindex={noindex}
     openGraph={{
       basic: {
         title: description,

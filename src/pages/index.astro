@@ -1,4 +1,5 @@
 ---
+import Hero from '@components/Hero.astro'
 import { SITE } from '@config'
 import Layout from '../layouts/Layout.astro'
 
@@ -12,21 +13,13 @@ const meta = {
 ---
 
 <Layout {...meta}>
-  <article class="bg-yellow">
-    <div class="pt-80px pb-200px lg:(pt-100px)">
-      <div class="foo">
-        <div class="lg:pl-foo">
-          <h1 class="h0">
-            Design the future.<br />Create it now. <br />Repeat.
-          </h1>
-        </div>
-      </div>
-    </div>
+  <article>
+    <Hero name="Design the future.<br />Create it now. <br />Repeat." />
 
     <div class="relative">
       <div class="h-1px w-64px bg-black absolute top-0 left-0 lg:(w-110px)">
       </div>
-      <div class="foo py-64px lg:(py-180px)">
+      <div class="foo py-60px lg:(py-120px)">
         <div class="lg:pl-foo">
           <div class="text-32px space-y-1.25em lg:(text-48px)">
             <p>The future belongs to the future-makers.</p>
@@ -51,16 +44,16 @@ const meta = {
       </div>
     </div>
 
-    <section class="bg-qux text-white py-10 lg:(py-140px)">
+    <section class="bg-qux text-white py-8 lg:(py-100px)">
       <div class="foo">
         <h2 class="sr-only">Services</h2>
         {
           services.map((service) => (
-            <article class="grid gap-6 md:(md:grid-cols-[auto_1fr] gap-10) mb-12 last:(mb-0)">
-              <div class="md:(w-270px h-270px flex items-center justify-center)">
+            <article class="card">
+              <div class="card__aside">
                 <Fragment set:html={service.frontmatter.image} />
               </div>
-              <div class="border-b pb-12">
+              <div class="card__main">
                 <h3 class="h2 mb-3 lg:mb-8">{service.frontmatter.name}</h3>
                 <p class="h4">{service.frontmatter.description}</p>
               </div>

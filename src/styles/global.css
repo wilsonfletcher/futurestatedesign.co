@@ -1,27 +1,47 @@
 html {
-	@apply font-sans leading-none;
+  @apply font-sans leading-none;
 }
 
 .prose {
-	@apply body;
+  @apply body;
 }
 
 .prose h2 {
-	@apply h2 mb-[0.8em];
+  @apply h2 mb-[0.8em];
 }
 
 .prose .h3 {
-	@apply mb-1em;
+  @apply mb-1em;
 }
 
 .prose p:not(.h3) {
-	@apply mb-[1.33333333em];
+  @apply mb-[1.33333333em];
 }
 
 .prose hr {
-	@apply mb-1em;
+  @apply mb-1em;
 }
 
 .prose a {
-	@apply underline;
+  @apply underline;
+}
+
+.card {
+  @apply grid gap-6 mb-12 md:(grid-cols-[auto_1fr] gap-10);
+}
+
+.card:last-of-type {
+  @apply mb-0;
+}
+
+.card__aside {
+	@apply md:(w-270px h-270px flex items-center justify-center);
+}
+
+.card__main {
+  @apply border-b pb-12;
+}
+
+.card:last-of-type .card__main {
+	@apply border-none pb-0;
 }

@@ -1,12 +1,14 @@
 ---
 import Badge from '@components/Badge.astro'
 import Layout from '../layouts/Layout.astro'
+
+const meta = { title: 'Foo', noindex: true }
 ---
 
-<Layout>
-  <article>
+<Layout {...meta}>
+  <article class="py-10 lg:(py-60px)">
     <div class="foo">
-      <div class="flex flex-col gap-6">
+      <div class="flex flex-col items-start gap-6">
         <Badge class="bg-red text-white">H1_Large</Badge>
         <p class="h0 font-700">Landing pages titles</p>
         <Badge class="bg-red text-white">H1</Badge>

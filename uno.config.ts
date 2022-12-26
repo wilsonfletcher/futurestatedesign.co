@@ -1,10 +1,10 @@
 import {
   defineConfig,
-  presetUno,
+  presetWind,
   // presetTypography,
   presetIcons,
   transformerDirectives,
-  // presetAttributify,
+  presetAttributify,
   transformerVariantGroup,
 } from 'unocss'
 // import presetRemToPx from '@unocss/preset-rem-to-px'
@@ -12,7 +12,7 @@ import {
 
 export default defineConfig({
   shortcuts: [
-    { 'foo': 'w-full mx-auto px-16px max-w-1280px lg:(px-40px)' },
+    { 'foo': 'w-full mx-auto px-16px max-w-1280px md:(px-40px)' },
     { 'h0': 'text-80px tracking-[-0.01em] md:(text-100px) lg:(text-120px)' },
     { 'h1': 'text-60px lg:(text-80px)' },
     { 'h2': 'text-40px lg:(text-60px)' },
@@ -31,8 +31,9 @@ export default defineConfig({
     transformerVariantGroup(),
   ],
   presets: [
-    // presetAttributify(),
-    presetUno(),
+    presetAttributify(),
+    presetWind(),
+
     // presetRemToPx(),
     // presetTypography({
     //   cssExtend: {
@@ -60,6 +61,7 @@ export default defineConfig({
     //     },
     //   }
     // }),
+    
     presetIcons({
       extraProperties: {
         display: 'block',

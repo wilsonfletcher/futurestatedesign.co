@@ -12,14 +12,14 @@
   },
   "devDependencies": {
     "@astrojs/alpinejs": "^0.1.2",
-    "@astrojs/mdx": "^0.12.2",
-    "@iconify-json/mdi": "^1.1.36",
+    "@astrojs/mdx": "^0.13.0",
+    "@iconify-json/mdi": "^1.1.39",
     "@types/alpinejs": "^3.7.1",
     "alpinejs": "^3.10.5",
     "astro-html-beautifier": "^1.0.4",
-    "astro-seo-schema": "^1.2.0",
-    "astro-seo": "^0.6.0",
-    "astro": "^1.6.15",
-    "unocss": "^0.47.6"
+    "astro-seo-schema": "^1.2.2",
+    "astro-seo": "^0.6.1",
+    "astro": "^1.7.2",
+    "unocss": "^0.48.0"
   }
 }

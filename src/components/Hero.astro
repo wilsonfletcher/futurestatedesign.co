@@ -1,0 +1,15 @@
+---
+export interface Props {
+  name: string
+}
+
+const { name } = Astro.props as Props
+---
+
+<div class="pt-80px pb-200px lg:(pt-100px)">
+  <div class="foo">
+    <div class="lg:(pl-foo)">
+      <h1 class="h0"><Fragment set:html={name} /></h1>
+    </div>
+  </div>
+</div>

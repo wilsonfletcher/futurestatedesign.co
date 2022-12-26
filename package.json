@@ -16,10 +16,11 @@
     "@iconify-json/mdi": "^1.1.39",
     "@types/alpinejs": "^3.7.1",
     "alpinejs": "^3.10.5",
-    "astro-html-beautifier": "^1.0.4",
-    "astro-seo-schema": "^1.2.2",
-    "astro-seo": "^0.6.1",
     "astro": "^1.7.2",
+    "astro-html-beautifier": "^1.0.4",
+    "astro-seo": "^0.6.1",
+    "astro-seo-schema": "^1.2.2",
+    "esbuild": "^0.16.10",
     "unocss": "^0.48.0"
   }
 }

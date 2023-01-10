@@ -18,7 +18,7 @@ export const SITE = {
   medium: 'https://medium.com/thehumanlayer',
   twitter: 'https://twitter.com/wilsonfletcher',
   locale: 'en-GB',
-  copyrightYear: 2022,
+  copyrightYear: 2023,
   address: {
     streetAddress: 'Unit 10 New North House',
     addressLocality: '202-208 New North Road',

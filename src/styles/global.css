@@ -2,7 +2,7 @@ html {
   @apply font-sans leading-none;
 }
 
-.prose {
+/* .prose {
   @apply body;
 }
 
@@ -24,7 +24,7 @@ html {
 
 .prose a {
   @apply underline;
-}
+} */
 
 .card {
   @apply grid gap-6 mb-12 md:(grid-cols-[auto_1fr] gap-10);

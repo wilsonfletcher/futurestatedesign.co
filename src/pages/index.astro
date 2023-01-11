@@ -14,7 +14,9 @@ const meta = {
 
 <Layout {...meta}>
   <article>
-    <Hero name="Design the future.<br />Create it now. <br />Repeat." />
+    <Hero
+      name={`<span class="font-bold block">Design the future.</span><span class="font-medium block">Create it now.</span>Repeat.`}
+    />
 
     <div class="relative">
       <div class="h-1px w-64px bg-black absolute top-0 left-0 lg:(w-110px)">
@@ -46,7 +48,7 @@ const meta = {
 
     <section class="bg-qux text-white py-8 lg:(py-100px)">
       <div class="foo">
-        <h2 class="sr-only">Services</h2>
+        <h2 class="sr-only">Business innovation experts</h2>
         {
           services.map((service) => (
             <article class="card">

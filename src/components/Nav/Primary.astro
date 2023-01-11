@@ -1,0 +1,44 @@
+---
+const data = [
+  {
+    name: 'Us',
+    url: '/thinking',
+  },
+  {
+    name: 'You',
+    url: '/clients',
+  },
+  {
+    name: 'The Futurestate Manifesto',
+    url: '/futurestate-manifesto',
+  },
+  {
+    name: 'Futurestate Design &trade;',
+    url: 'https://futurestate.design/',
+  },
+  {
+    name: 'Business Engines',
+    url: '#',
+  },
+]
+---
+
+<nav class="py-4">
+  <div class="foo">
+    <div class="lg:pl-foo">
+      <h3 class="h3">Read more about:</h3>
+      <ul>
+        {
+          data.map(({ name, url }) => (
+            <li class="border-b border-black/20">
+              <a href={url} class="h3 flex items-center py-5 justify-between">
+                <span class="underline" set:html={name} />
+                <span class="i-custom:arrow" />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,79 @@
+---
+import Layout from '@layouts/Layout.astro'
+
+const clients = await Astro.glob('../clients/*.md')
+clients.sort((a, b) => a.frontmatter.order - b.frontmatter.order)
+
+const name = 'Clients (About you)'
+const description =
+  'So you’re thinking of working with us? You are both wise and beautiful.'
+---
+
+<Layout title={name} description={description} url="/clients">
+  <article>
+    <div class="foo">
+      <div class="grid lg:grid-cols-[1fr_2fr]">
+        <h1>{name}</h1>
+        <div>
+          <div class="prose body">
+            <p class="h1 not-prose">
+              So you’re thinking of working with us? You are both wise and
+              beautiful.
+            </p>
+            <h2>In addition, the people we work with best are:</h2>
+            <ul>
+              <li>
+                Forward thinking, open-minded and motivated to do great work
+                that makes a real difference
+              </li>
+              <li>
+                Believers in difference: people who understand that being
+                distinctive is critical
+              </li>
+              <li>
+                Confident leaders who want to maximise their chance of success
+                with new perspectives and new ideas
+              </li>
+              <li>
+                Committed to the cause: people who will work as hard as we do to
+                get the best results
+              </li>
+            </ul>
+            <hr />
+            <section>
+              <h2 class="h3">You’ll be in great company</h2>
+              <p>
+                You’ll join a family of brilliant organisations that we have
+                been privileged to partner with. Here are some of them.
+              </p>
+              <div class="grid gap-5 grid-cols-2 md:(grid-cols-3)">
+                {
+                  clients.map((client) => (
+                    <article class="client">
+                      <h3 class="sr-only">{client.frontmatter.name}</h3>
+                      <div
+                        class="aspect-video relative"
+                        set:html={client.frontmatter.logo}
+                      />
+                    </article>
+                  ))
+                }
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style is:global>
+  .client {
+    @apply bg-yellow;
+  }
+
+  .client svg {
+    border: 1px solid red;
+    @apply object-contain object-center absolute w-full h-full inset-0;
+  }
+</style>

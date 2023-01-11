@@ -1,7 +1,8 @@
 import {
   defineConfig,
   presetWind,
-  // presetTypography,
+  presetUno,
+  presetTypography,
   presetIcons,
   transformerDirectives,
   presetAttributify,
@@ -32,36 +33,34 @@ export default defineConfig({
   ],
   presets: [
     presetAttributify(),
+    presetUno(),
+
     presetWind(),
 
     // presetRemToPx(),
-    // presetTypography({
-    //   cssExtend: {
-    //     // 24px/32px / 26px/34px
-    //     '.h3': {
-    //       background: 'red',
-    //     },
-    //     h1: {
-    //       'font-size': '',
-    //       'font-weight': 'normal',
-    //       'line-height': 1,
-    //     },
-    //     h2: {
-    //       'font-size': '1.66666667em',
-    //       'font-weight': 'normal',
-    //       'line-height': 1,
-    //       'background': 'lime',
-    //     },
-    //     h3: {
-    //       'font-weight': 'normal',
-    //       'line-height': 1
-    //     },
-    //     p: {
-    //       'line-height': '1.33333333'
-    //     },
-    //   }
-    // }),
-    
+    presetTypography({
+      cssExtend: {
+        h1: {
+          'font-weight': 'normal',
+          'line-height': 1,
+        },
+        h2: {
+          'font-size': '1.66666667em',
+          'font-weight': 'normal',
+          'line-height': 1,
+          'background': 'lime',
+          'margin': 0,
+        },
+        h3: {
+          'font-weight': 'normal',
+          'line-height': 1
+        },
+        'p, ul': {
+          'background-color': 'red',
+        },
+      }
+    }),
+
     presetIcons({
       extraProperties: {
         display: 'block',

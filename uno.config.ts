@@ -16,7 +16,7 @@ export default defineConfig({
     { 'foo': 'w-full mx-auto px-16px max-w-1280px md:(px-40px)' },
     { 'h0': 'text-80px tracking-[-0.01em] md:(text-100px) lg:(text-120px)' },
     { 'h1': 'text-60px lg:(text-80px)' },
-    { 'h2': 'text-40px lg:(text-60px)' },
+    { 'h2': 'text-40px lg:(text-60px) leading-none' },
     { 'h3': 'text-32px lg:(text-48px)' },
     { 'h4': 'text-21px leading-[1.33333333] lg:(text-35px)' },
     { 'label': 'text-base leading-body' },

@@ -1,0 +1,32 @@
+---
+import '@styles/global.css'
+
+import NavPrimary from '@components/Nav/Primary.astro'
+import Footer from '@components/Footer.astro';
+import BaseHead from '@components/BaseHead.astro';
+import { SITE } from '@config';
+
+const { frontmatter } = Astro.props
+const { name, description } = frontmatter
+---
+
+<html lang="en">
+  <BaseHead title={`${name} - ${SITE.name}`} />
+  <div class="flex flex-col w-full min-h-screen">
+    <main class="flex-auto">
+      <article class="flex-auto">
+        <div class="foo">
+          <div class="lg:(pl-foo)">
+            <h1>{name}</h1>
+            <p class="intro">{description}</p>
+            <div class="prose">
+              <slot />
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <NavPrimary />
+    <Footer />
+  </div>
+</html>

@@ -11,18 +11,26 @@ const manifesto = await Astro.glob('../data/manifesto/**.mdx')
 <Default>
   <section>
     <div class="container">
-      <div class="lg:pl-foo">
-        <h1 class="h0">{name}</h1>
-        <p class="h1">
-          This is what makes us tick: our manifesto is a set of principles that
-          underpin everything <a href="#" class="underline">about us</a>.
-        </p>
+      <div class="grid lg:grid-cols-[2fr,6fr] gap-10">
+        <div />
+        <div class="cols-start-3">
+          <h1 class="h0">{name}</h1>
+          <p class="h1">
+            This is what makes us tick: our manifesto is a set of principles
+            that underpin everything <a href="#" class="underline">about us</a>.
+          </p>
+        </div>
       </div>
       <div class="divide-y space-y-5 divide-black/40">
         {
           manifesto.map((item) => (
-            <article class="grid lg:grid-cols-[310px,_1fr]">
-              <h2 class="text-black/60 text-[160px]">{item.frontmatter.id}</h2>
+            <article class="grid gap-10 lg:grid-cols-[2fr,6fr]">
+              <div>
+                <h2 class="text-black/60 text-[160px]">
+                  {item.frontmatter.id}
+                </h2>
+              </div>
+
               <p class="intro">{item.frontmatter.description}</p>
             </article>
           ))

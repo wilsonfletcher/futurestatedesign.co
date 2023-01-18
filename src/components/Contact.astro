@@ -5,32 +5,40 @@ import IconArrow from '@components/Icon/Arrow.astro'
 <div class="py-20 bg-qux text-white">
   <div class="container">
     <div class="lg:pl-cols-6">
-      <h2 class="h0">Let’s talk</h2>
-      <p class="h2 text-white/40">
-        Tell us where you want to be.<br />
-        We’ll make sure you get there.
-      </p>
-      <div class="max-w-cols-5">
-        <form>
-          <div class="space-y-10">
-            <input
-              type="text"
-              placeholder="My name is..."
-              class="block w-full bg-transparent border-x-0 border-t-0 border-b border-white/50 px-0"
-            />
-            <input
-              type="email"
-              placeholder="My email address is..."
-              class="block w-full"
-            />
-            <button type="submit" class="button button--primary max-w-cols-2">
-              <span class="flex justify-between">
-                Let's talk
-                <IconArrow />
-              </span>
-            </button>
-          </div>
-        </form>
+      <div class="grid md:grid-cols-6">
+        <div class="md:col-span-5">
+          <h2 class="h0">Let’s talk</h2>
+          <p class="h2 text-white/40">
+            Tell us where you want to be.<br />
+            We’ll make sure you get there.
+          </p>
+          <form>
+            <div class="grid gap-10">
+              <div>
+                <input
+                  type="text"
+                  placeholder="My name is..."
+                  class="block w-full bg-transparent border-x-0 border-t-0 border-b border-white/50 px-0"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="My email address is..."
+                  class="block w-full bg-transparent border-x-0 border-t-0 border-b border-white/50 px-0"
+                />
+              </div>
+              <div class="grid md:grid-cols-5 gap-10">
+                <button type="submit" class="button button--primary md:col-span-2">
+                  <span class="flex justify-between">
+                    Let's talk
+                    <IconArrow />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>

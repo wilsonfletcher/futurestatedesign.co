@@ -1,7 +1,11 @@
 ---
+import { getPage } from '../prismic.js'
+
 import IconArrow from '@components/Icon/Arrow.astro'
 import { SITE } from '@config'
 import Default from '@layouts/Default.astro'
+
+// const { data } = await getPage('home')
 
 const services = await Astro.glob('../data/services/**/*.mdx')
 
@@ -12,12 +16,13 @@ const meta = {
 }
 ---
 
+<!-- <pre>{JSON.stringify(data, null, 2)}</pre> -->
 <Default {...meta}>
   <article>
     <div class="py-20">
       <div class="container">
         <div class="lg:pl-cols-6">
-          <p class="text-8xl">
+          <p class="text-8xl tracking-[-0.01em]">
             <span class="font-black block">Design the future.</span><span
               class="font-bold block">Create it now.</span
             >Repeat.

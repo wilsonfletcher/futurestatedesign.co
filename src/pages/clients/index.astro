@@ -1,58 +1,37 @@
 ---
 import Default from '@layouts/Default.astro'
+import IconArrow from '@components/Icon/Arrow.astro'
 
-const clients = await Astro.glob('../clients/*.md')
+const clients = await Astro.glob('../../data/clients/*.md')
 clients.sort((a, b) => a.frontmatter.order - b.frontmatter.order)
 
-const name = 'Clients (About you)'
-const description =
-  'So you’re thinking of working with us? You are both wise and beautiful.'
+const name = 'Our work'
+const description = `We've worked with clients in many industry sectors. Each presents
+              demanding challenges, whether overcoming large-scale disruption or
+              racing to harness the potential of new technologies, business
+              models and customer behaviours.`
 ---
 
 <Default title={name} description={description} url="/clients">
   <article>
-    <div class="container">
-      <div class="grid lg:grid-cols-[1fr_2fr]">
-        <h1>{name}</h1>
-        <div>
-          <div class="prose body">
-            <p class="h1 not-prose">
-              So you’re thinking of working with us? You are both wise and
-              beautiful.
-            </p>
-            <h2>In addition, the people we work with best are:</h2>
-            <ul>
-              <li>
-                Forward thinking, open-minded and motivated to do great work
-                that makes a real difference
-              </li>
-              <li>
-                Believers in difference: people who understand that being
-                distinctive is critical
-              </li>
-              <li>
-                Confident leaders who want to maximise their chance of success
-                with new perspectives and new ideas
-              </li>
-              <li>
-                Committed to the cause: people who will work as hard as we do to
-                get the best results
-              </li>
-            </ul>
-            <hr />
+    <div class="mb-44">
+      <div class="container">
+        <div class="grid gap-10 lg:grid-cols-[2fr,6fr]">
+          <div></div>
+          <div>
+            <h1 class="text-[110px] leading-none mb-12">{name}</h1>
+
+            <p class="text-5xl mb-10">{description}</p>
+
             <section>
-              <h2 class="h3">You’ll be in great company</h2>
-              <p>
-                You’ll join a family of brilliant organisations that we have
-                been privileged to partner with. Here are some of them.
-              </p>
-              <div class="grid gap-5 grid-cols-2 md:(grid-cols-3)">
+              <h2 class="sr-only">Clients</h2>
+              <div class="grid gap-5 grid-cols-2 md:grid-cols-6 md:gap-10">
                 {
                   clients.map((client) => (
-                    <article class="client">
+                    <article class="relative bg-black/20">
                       <h3 class="sr-only">{client.frontmatter.name}</h3>
                       <div
-                        class="aspect-video relative"
+                        class="aspect-w-16 aspect-h-9"
                         set:html={client.frontmatter.logo}
                       />
                     </article>
@@ -64,16 +43,125 @@ const description =
         </div>
       </div>
     </div>
+
+    <section>
+      <div class="container">
+        <div class="grid gap-10 lg:grid-cols-[2fr,6fr]">
+          <div>
+            <h2 class="h3">
+              Recent successes
+              <IconArrow />
+            </h2>
+          </div>
+          <div>
+            <article
+              class="grid grid-cols-[4fr,2fr] gap-10 py-8 border-t border-t-black/40"
+            >
+              <div>
+                <h3 class="h4 mb-3">
+                  Simplified and digitized the mortgage-origination process
+                </h3>
+                <p class="body">
+                  At a large bank, cutting approval time for new loans from 2–10
+                  days to 15 minutes, and reducing origination cost by 70
+                  percent
+                </p>
+              </div>
+              <div class="bg-[#D9D9D9] h-[170px]"></div>
+            </article>
+
+            <article
+              class="grid grid-cols-[4fr,2fr] gap-10 py-8 border-t border-t-black/40"
+            >
+              <div>
+                <h3 class="h4 mb-3">
+                  Helped a telecom company transform its service-dispatching
+                  process through automation,
+                </h3>
+                <p class="body">
+                  Yielding better management of service technicians and
+                  customer-service calls
+                </p>
+              </div>
+              <div class="bg-[#D9D9D9] h-[170px]"></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-qux text-white py-[200px]">
+      <h2 class="sr-only">Testimonials</h2>
+      <div
+        class="relative w-full flex gap-10 snap-x snap-mandatory overflow-x-auto"
+      >
+        <div class="snap-center shrink-0">
+          <div class="shrink-0 w-4 sm:w-48"></div>
+        </div>
+        <div class="snap-center shrink-0">
+          <div class="bg-white text-black w-[730px] mx-auto p-12 shrink-0">
+            <div class="w-[100px] h-[100px] mx-auto mb-12">
+              <div class="aspect-w-1 aspect-h-1">
+                <img
+                  src="/images/photo.jpg"
+                  alt=""
+                  class="object-cover object-center"
+                />
+              </div>
+            </div>
+            <blockquote class="text-center">
+              <p class="h4">
+                ‘Its been really beneficial. It provided the whole company a
+                unified picture to get behind and helped us understand the
+                entire customer lifecycle’
+              </p>
+              <cite class="body text-black/50 not-italic">Founder, Axate</cite>
+            </blockquote>
+          </div>
+        </div>
+        <div class="snap-center shrink-0">
+          <div class="bg-white text-black max-w-[730px] mx-auto p-12 shrink-0">
+            <div class="w-[100px] h-[100px] mx-auto mb-12">
+              <div class="aspect-w-1 aspect-h-1">
+                <img
+                  src="/images/photo.jpg"
+                  alt=""
+                  class="object-cover object-center"
+                />
+              </div>
+            </div>
+            <blockquote class="text-center">
+              <p class="h4">
+                ‘Its been really beneficial. It provided the whole company a
+                unified picture to get behind and helped us understand the
+                entire customer lifecycle’
+              </p>
+              <cite class="body text-black/50 not-italic">Founder, Axate</cite>
+            </blockquote>
+          </div>
+        </div>
+        <div class="snap-center shrink-0">
+          <div class="bg-white text-black w-[730px] mx-auto p-12 shrink-0">
+            <div class="w-[100px] h-[100px] mx-auto mb-12">
+              <div class="aspect-w-1 aspect-h-1">
+                <img
+                  src="/images/photo.jpg"
+                  alt=""
+                  class="object-cover object-center"
+                />
+              </div>
+            </div>
+            <blockquote class="text-center">
+              <p class="h4">
+                ‘Its been really beneficial. It provided the whole company a
+                unified picture to get behind and helped us understand the
+                entire customer lifecycle’
+              </p>
+              <cite class="body text-black/50 not-italic">Founder, Axate</cite>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
   </article>
 </Default>
-
-<style is:global>
-  .client {
-    @apply bg-yellow;
-  }
-
-  .client svg {
-    border: 1px solid red;
-    @apply object-contain object-center absolute w-full h-full inset-0;
-  }
-</style>

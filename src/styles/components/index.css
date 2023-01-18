@@ -12,7 +12,15 @@
   }
 
   .h3 {
-    @apply text-[32px] lg:text-[48px] font-regular;
+    @apply text-[32px] lg:text-[48px] font-roman;
+  }
+
+  .h4 {
+    @apply text-[21px] leading-[28px] font-roman lg:text-[35px] lg:leading-[44px] ;
+  }
+
+  .body {
+    @apply text-[18px] leading-[24px] lg:text-[24px] lg:leading-[32px];
   }
 
   .button {
@@ -21,25 +29,5 @@
     &--primary {
       @apply bg-yellow text-black;
     }
-  }
-
-  .card {
-    @apply grid gap-6 mb-12 md:grid-cols-[auto_1fr] md:gap-10;
-  }
-
-  .card:last-of-type {
-    @apply mb-0;
-  }
-
-  /* .card__aside {
-  @apply md:w-270px h-270px flex items-center justify-center;
-} */
-
-  .card__main {
-    @apply border-b pb-12;
-  }
-
-  .card:last-of-type .card__main {
-    @apply border-none pb-0;
   }
 }

@@ -11,10 +11,10 @@ const { class: className, ...attrs } = Astro.props as Props
 
 <div
   role="banner"
-  class:list={['h-59px lg:(h-99px) flex items-center border-b border-black', className]}
+  class:list={[className]}
   {...attrs}
 >
-  <div class="foo flex gap-5 items-center justify-between">
+  <div class="container flex gap-5 items-center justify-between">
     <a href="/" title={`Return to the ${SITE.name} homepage`}>
       {SITE.name}
     </a>
@@ -25,3 +25,9 @@ const { class: className, ...attrs } = Astro.props as Props
     <!-- <div class="h3">___A business innovation company.</div> -->
   </div>
 </div>
+
+<style>
+  [role='banner'] {
+    @apply h-[59px] flex items-center lg:h-[99px];
+  }
+</style>

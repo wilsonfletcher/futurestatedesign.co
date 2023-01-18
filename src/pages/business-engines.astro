@@ -1,13 +1,13 @@
 ---
 import Talk from '@components/Talk.astro'
-import Layout from '@layouts/Layout.astro'
+import Default from '@layouts/Default.astro'
 
 const name = 'Business Engines'
 ---
 
-<Layout title={name}>
+<Default title={name}>
   <article>
-    <div class="foo">
+    <div class="container">
       <div class="lg:(pl-foo)">
         <h1 class="h2">{name}</h1>
         <p class="intro">
@@ -56,7 +56,7 @@ const name = 'Business Engines'
     </div>
 
     <section class="bg-yellow">
-      <div class="foo">
+      <div class="container">
         <div class="flex flex-col gap-5 lg:(flex-row)">
           <h2 class="h3">Some of the ways we use it</h2>
 
@@ -83,4 +83,4 @@ const name = 'Business Engines'
     </section>
   </article>
   <Talk />
-</Layout>
+</Default>

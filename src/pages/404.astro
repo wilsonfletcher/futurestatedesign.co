@@ -1,13 +1,13 @@
 ---
 import Hero from '@components/Hero.astro'
-import Layout from '../layouts/Layout.astro'
+import Default from '../layouts/Default.astro'
 
 const name = 'Page not found.'
 const meta = { name }
 ---
 
-<Layout {...meta}>
+<Default {...meta}>
   <article>
     <Hero name={name} />
   </article>
-</Layout>
+</Default>

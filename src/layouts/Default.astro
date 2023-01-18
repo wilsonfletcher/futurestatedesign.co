@@ -8,6 +8,7 @@ import Footer from '@components/Footer.astro'
 import NavPrimary from '@components/Nav/Primary.astro'
 
 import '@styles/global.css'
+import Contact from '@components/Contact.astro'
 // import Notification from '@components/Notification.astro'
 
 export interface Props {
@@ -38,6 +39,14 @@ const meta = { title, description, url, image, noindex }
       <main class="flex-auto">
         <slot />
       </main>
+      <Contact />
+      <article class="py-20 bg-[#F7F7F7]">
+        <div class="container">
+          <div class="lg:pl-foo">
+            <p>Insights into new innovations in digital business, interesting trends and new ways of thinking about them.  </p>
+          </div>
+        </div>
+      </article> 
       <NavPrimary />
       <Footer />
     </div>

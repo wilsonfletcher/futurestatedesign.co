@@ -1,4 +1,6 @@
 ---
+import IconArrow from '@components/Icon/Arrow.astro'
+
 const data = [
   {
     name: 'Us',
@@ -23,17 +25,17 @@ const data = [
 ]
 ---
 
-<nav class="py-4">
-  <div class="foo">
+<nav class="py-24">
+  <div class="container">
     <div class="lg:pl-foo">
-      <h3 class="h3">Read more about:</h3>
+      <h3 class="h3 mb-20">Read more about:</h3>
       <ul>
         {
           data.map(({ name, url }) => (
-            <li class="border-b border-black/20">
+            <li class="border-b-2 border-black/40">
               <a href={url} class="h3 flex items-center py-5 justify-between">
                 <span class="underline" set:html={name} />
-                <span class="i-custom:arrow" />
+                <IconArrow />
               </a>
             </li>
           ))

@@ -1,0 +1,7 @@
+@import url('fonts');
+
+@layer base {
+  body {
+    @apply font-sans leading-none font-regular;
+  }
+}

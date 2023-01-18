@@ -1,5 +1,5 @@
 ---
-import Layout from '@layouts/Layout.astro'
+import Default from '@layouts/Default.astro'
 
 const clients = await Astro.glob('../clients/*.md')
 clients.sort((a, b) => a.frontmatter.order - b.frontmatter.order)
@@ -9,9 +9,9 @@ const description =
   'So you’re thinking of working with us? You are both wise and beautiful.'
 ---
 
-<Layout title={name} description={description} url="/clients">
+<Default title={name} description={description} url="/clients">
   <article>
-    <div class="foo">
+    <div class="container">
       <div class="grid lg:grid-cols-[1fr_2fr]">
         <h1>{name}</h1>
         <div>
@@ -65,7 +65,7 @@ const description =
       </div>
     </div>
   </article>
-</Layout>
+</Default>
 
 <style is:global>
   .client {

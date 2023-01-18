@@ -1,0 +1,33 @@
+---
+import Default from '@layouts/Default.astro'
+
+const name = 'Our Manifesto'
+const description =
+  'This is what makes us tick: our manifesto is a set of principles that underpin everything about us.'
+
+const manifesto = await Astro.glob('../data/manifesto/**.mdx')
+---
+
+<Default>
+  <section>
+    <div class="container">
+      <div class="lg:pl-foo">
+        <h1 class="h0">{name}</h1>
+        <p class="h1">
+          This is what makes us tick: our manifesto is a set of principles that
+          underpin everything <a href="#" class="underline">about us</a>.
+        </p>
+      </div>
+      <div class="divide-y space-y-5 divide-black/40">
+        {
+          manifesto.map((item) => (
+            <article class="grid lg:grid-cols-[310px,_1fr]">
+              <h2 class="text-black/60 text-[160px]">{item.frontmatter.id}</h2>
+              <p class="intro">{item.frontmatter.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Default>

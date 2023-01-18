@@ -1,7 +1,6 @@
 ---
 import { SEO } from 'astro-seo'
 import { SITE } from '@config'
-import TypeKit from './Head/TypeKit.astro'
 
 // const TYPEKIT_ID = import.meta.env.PUBLIC_TYPEKIT_ID
 // const GTM_ID = import.meta.env.PUBLIC_GTM_ID
@@ -89,7 +88,6 @@ const {
       meta: [{ name: 'theme-color', content: SITE.themeColor }],
     }}
   />
-  <TypeKit />
   <slot />
 </head>
 

@@ -1,7 +1,7 @@
 ---
-import Hero from '@components/Hero.astro'
+import IconArrow from '@components/Icon/Arrow.astro'
 import { SITE } from '@config'
-import Layout from '../layouts/Layout.astro'
+import Default from '@layouts/Default.astro'
 
 const services = await Astro.glob('../data/services/**/*.mdx')
 
@@ -12,57 +12,58 @@ const meta = {
 }
 ---
 
-<Layout {...meta}>
+<Default {...meta}>
   <article>
-    <Hero
-      name={`<span class="font-bold block">Design the future.</span><span class="font-medium block">Create it now.</span>Repeat.`}
-    />
-
-    <div class="relative">
-      <div class="h-1px w-64px bg-black absolute top-0 left-0 lg:(w-110px)">
-      </div>
-      <div class="foo py-60px lg:(py-120px)">
-        <div class="lg:pl-foo">
-          <div class="text-32px space-y-1.25em lg:(text-48px)">
-            <p>The future belongs to the future-makers.</p>
+    <div class="py-20">
+      <div class="container">
+        <div class="lg:pl-cols-6">
+          <p class="text-8xl">
+            <span class="font-black block">Design the future.</span><span
+              class="font-bold block">Create it now.</span
+            >Repeat.
+          </p>
+          <div class="prose prose-2xl">
+            <p>We design the future of companies, services and products.</p>
             <p>
-              The innovators who take big leaps while others are celebrating
-              small steps; who invent new markets while others are trying to
-              defend the old ones.
+              Our work is exclusively focused on enabling companies to take big
+              leaps forward; to invent their future and make it happen. We’ll
+              help you see past the short-term roadmap to do to your market what
+              a disruptor would do to you.
             </p>
-            <p>
-              Here at Futurestate we’re on a mission to help as many
-              forward-thinking companies as possible become successful
-              innovators.
-            </p>
-            <p>
-              We’re a super-experienced team of strategists, researchers,
-              designers and technologists. We’ve helped companies create
-              next-generation products, services and ventures for 20 years.
-            </p>
-            <p>If you want to be a future-maker, we’d love to work with you.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <section class="bg-qux text-white py-8 lg:(py-100px)">
-      <div class="foo">
-        <h2 class="sr-only">Business innovation experts</h2>
-        {
-          services.map((service) => (
-            <article class="card">
-              <div class="card__aside">
-                <Fragment set:html={service.frontmatter.image} />
-              </div>
-              <div class="card__main">
-                <h3 class="h2 mb-3 lg:mb-8">{service.frontmatter.name}</h3>
-                <p class="h4">{service.frontmatter.description}</p>
-              </div>
-            </article>
-          ))
-        }
+    <section class="py-10">
+      <div class="container">
+        <div class="grid gap-4 lg:grid-cols-8 lg:gap-10">
+          <div class="lg:col-span-2">
+            <h2 class="h3">
+              About us
+              <br />
+              <IconArrow />
+            </h2>
+          </div>
+          <div class="lg:col-span-6 bg-yellow">
+            <h3 class="h3">20 years, 350 companies etc...</h3>
+            <div class="prose prose-2xl prose-black max-w-none">
+              <p>
+                Our core team of innovation specialists can call on an extensive
+                network of expert practitioners, subject matter experts and
+                partner companies to support almost any need with top-tier
+                people.
+              </p>
+              <p>
+                We’ve worked with a lot of great people over the years (and
+                plenty who were not so great) and we only want our clients to
+                work with specialists and partners who we trust to do an
+                exceptional job.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </article>
-</Layout>
+</Default>

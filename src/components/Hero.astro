@@ -6,10 +6,10 @@ export interface Props {
 const { name } = Astro.props as Props
 ---
 
-<div class="pt-80px pb-200px lg:(pt-100px)">
-  <div class="foo">
-    <div class="lg:(pl-foo)">
-      <h1 class="h0 lg:(text-110px)"><Fragment set:html={name} /></h1>
+<div class="pt-20 pb-[200px] lg:pt-[100px]">
+  <div class="container">
+    <div class="lg:pl-foo">
+      <h1 class="h0 lg:text-[110px]"><Fragment set:html={name} /></h1>
     </div>
   </div>
 </div>

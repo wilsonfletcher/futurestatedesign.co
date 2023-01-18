@@ -1,0 +1,45 @@
+@layer components {
+  .h0 {
+    @apply text-[80px] tracking-[-0.01em] md:text-[100px] lg:text-[120px];
+  }
+
+  .h1 {
+    @apply text-[60px] lg:text-[80px];
+  }
+
+  .h2 {
+    @apply text-[40px] leading-none lg:text-[60px];
+  }
+
+  .h3 {
+    @apply text-[32px] lg:text-[48px] font-regular;
+  }
+
+  .button {
+    @apply text-[24px] leading-none inline-block px-8 py-4 rounded-full;
+
+    &--primary {
+      @apply bg-yellow text-black;
+    }
+  }
+
+  .card {
+    @apply grid gap-6 mb-12 md:grid-cols-[auto_1fr] md:gap-10;
+  }
+
+  .card:last-of-type {
+    @apply mb-0;
+  }
+
+  /* .card__aside {
+  @apply md:w-270px h-270px flex items-center justify-center;
+} */
+
+  .card__main {
+    @apply border-b pb-12;
+  }
+
+  .card:last-of-type .card__main {
+    @apply border-none pb-0;
+  }
+}

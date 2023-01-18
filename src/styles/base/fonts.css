@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'neue-haas-grotesk-display';
+  src: url('/fonts/NHaasGroteskDSPro-45Lt.woff2') format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'neue-haas-grotesk-display';
+  src: url('/fonts/NHaasGroteskDSPro-55rg.woff2') format('woff2');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'neue-haas-grotesk-display';
+  src: url('/fonts/NHaasGroteskDSPro-65Md.woff2') format('woff2');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'neue-haas-grotesk-display';
+  src: url('/fonts/NHaasGroteskDSPro-75Bd.woff2') format('woff2');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'neue-haas-grotesk-display';
+  src: url('/fonts/NHaasGroteskDSPro-95Blk.woff2') format('woff2');
+  font-weight: 900;
+}

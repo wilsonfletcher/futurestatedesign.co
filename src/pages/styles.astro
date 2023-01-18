@@ -1,16 +1,20 @@
 ---
 import Badge from '@components/Badge.astro'
-import Layout from '../layouts/Layout.astro'
+import Default from '../layouts/Default.astro'
 
-const meta = { title: 'Foo', noindex: true }
+const meta = { title: 'container', noindex: true }
 ---
 
-<Layout {...meta}>
-  <article class="py-10 lg:(py-60px)">
-    <div class="foo">
+<Default {...meta}>
+  <article class="py-10 lg:py-16">
+    <div class="container">
       <div class="flex flex-col items-start gap-6">
         <Badge class="bg-red text-white">H1_Large</Badge>
-        <p class="h0 font-700">Landing pages titles</p>
+        <p class="h0 font-light">Landing pages titles</p>
+        <p class="h0 font-regular">Landing pages titles</p>
+        <p class="h0 font-medium">Landing pages titles</p>
+        <p class="h0 font-bold">Landing pages titles</p>
+        <p class="h0 font-black">Landing pages titles</p>
         <Badge class="bg-red text-white">H1</Badge>
         <p class="h0">Landing pages titles</p>
         <Badge class="bg-red text-white">H1_Large</Badge>
@@ -34,4 +38,4 @@ const meta = { title: 'Foo', noindex: true }
       </div>
     </div>
   </article>
-</Layout>
+</Default>

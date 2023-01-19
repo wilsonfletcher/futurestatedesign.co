@@ -1,7 +1,11 @@
 @import url('fonts');
 
 @layer base {
+  html {
+    @apply font-sans leading-none font-regular;
+  }
+
   body {
-    @apply font-sans leading-none font-regular text-optimize;
+    @apply text-optimize;
   }
 }

@@ -11,27 +11,34 @@ const manifesto = await Astro.glob('../data/manifesto/**.mdx')
 <Default>
   <section>
     <div class="container">
-      <div class="grid lg:grid-cols-[2fr,6fr] gap-10">
-        <div />
+      <div class="lg:grid lg:grid-cols-default gap-10">
+        <div></div>
         <div class="cols-start-3">
-          <h1 class="h0">{name}</h1>
-          <p class="h1">
+          <h1 class="h0 mb-10">{name}</h1>
+          <p class="h1 mb-20">
             This is what makes us tick: our manifesto is a set of principles
-            that underpin everything <a href="#" class="underline">about us</a>.
+            that underpin everything <a href="/about-us" class="underline under">about us</a>.
           </p>
         </div>
       </div>
-      <div class="divide-y space-y-5 divide-black/40">
+
+      <div class="grid gap-10 md:grid-cols-2 mb-20">
         {
           manifesto.map((item) => (
-            <article class="grid gap-10 lg:grid-cols-[2fr,6fr]">
-              <div>
-                <h2 class="text-black/60 text-[160px]">
-                  {item.frontmatter.id}
+            <article class="bg-qux text-white p-10">
+              <div class="border-b-2 border-b-white/30 pb-12 mb-12">
+                <h2 class="flex gap-2 items-end">
+                  <span class="h3 text-yellow">0{item.frontmatter.id}</span>
+                  <span class="text-2xl text-white/50">
+                    Futurestate manifesto
+                  </span>
                 </h2>
               </div>
 
-              <p class="intro">{item.frontmatter.description}</p>
+              <p class="h4">
+                <em class="text-yellow not-italic">{item.frontmatter.name}</em>
+                {item.frontmatter.description}
+              </p>
             </article>
           ))
         }

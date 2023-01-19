@@ -12,6 +12,7 @@ export const SITE = {
   email: 'info@futurestatedesign.co',
   themeColor: '#F5FF51',
   backgroundColor: '#000000',
+  tel: '+442038658704',
   telephone: '+44 (0)203 865 8704',
   linkedin: 'https://www.linkedin.com/company/wilson-fletcher',
   instagram: 'https://www.instagram.com/_wilsonfletcher',

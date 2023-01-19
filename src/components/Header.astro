@@ -9,25 +9,40 @@ export interface Props {
 const { class: className, ...attrs } = Astro.props as Props
 ---
 
-<div
-  role="banner"
-  class:list={[className]}
-  {...attrs}
->
-  <div class="container flex gap-5 items-center justify-between">
-    <a href="/" title={`Return to the ${SITE.name} homepage`}>
-      {SITE.name}
-    </a>
-    <button class="inline-flex">
-      Menu
-      <span class="i-custom:arrow"></span>
-    </button>
-    <!-- <div class="h3">___A business innovation company.</div> -->
+<div role="banner" class:list={['py-8', className]} {...attrs}>
+  <div class="container">
+    <div class="flex flex-row-reverse lg:grid lg:grid-cols-default lg:gap-10">
+      <div class="lg:col-start-2 lg:flex lg:justify-between">
+        <a
+          href={`mailto:${SITE.email}`}
+          class="text-2xl font-bold hidden lg:block">{SITE.email}</a
+        >
+        <a href={`tel:${SITE.tel}`} class="text-2xl hidden lg:block"
+          >{SITE.telephone}</a
+        >
+
+        <a href="#menu" class="inline-flex items-center justify-center w-8 h-8">
+          <span class="sr-only">Menu</span>
+          <svg
+            width="22"
+            height="18"
+            viewBox="0 0 22 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 17C0 16.7348 0.105357 16.4804 0.292893 16.2929C0.48043 16.1054 0.734784 16 1 16H21C21.2652 16 21.5196 16.1054 21.7071 16.2929C21.8946 16.4804 22 16.7348 22 17C22 17.2652 21.8946 17.5196 21.7071 17.7071C21.5196 17.8946 21.2652 18 21 18H1C0.734784 18 0.48043 17.8946 0.292893 17.7071C0.105357 17.5196 0 17.2652 0 17ZM0 9C0 8.73478 0.105357 8.48043 0.292893 8.29289C0.48043 8.10536 0.734784 8 1 8H21C21.2652 8 21.5196 8.10536 21.7071 8.29289C21.8946 8.48043 22 8.73478 22 9C22 9.26522 21.8946 9.51957 21.7071 9.70711C21.5196 9.89464 21.2652 10 21 10H1C0.734784 10 0.48043 9.89464 0.292893 9.70711C0.105357 9.51957 0 9.26522 0 9ZM0 1C0 0.734784 0.105357 0.48043 0.292893 0.292893C0.48043 0.105357 0.734784 0 1 0H21C21.2652 0 21.5196 0.105357 21.7071 0.292893C21.8946 0.48043 22 0.734784 22 1C22 1.26522 21.8946 1.51957 21.7071 1.70711C21.5196 1.89464 21.2652 2 21 2H1C0.734784 2 0.48043 1.89464 0.292893 1.70711C0.105357 1.51957 0 1.26522 0 1Z"
+              fill="black"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="mr-auto">
+        <a href="/" title={`Return to the ${SITE.name} homepage`}>
+          <Logo />
+        </a>
+      </div>
+    </div>
   </div>
 </div>
-
-<style>
-  [role='banner'] {
-    @apply h-[59px] flex items-center lg:h-[99px];
-  }
-</style>

@@ -41,6 +41,13 @@ module.exports = {
 				'foo': 310,
 				'cols-6': '19.375rem', // 310
     	},
+			 gridTemplateColumns: {
+        // Simple 16 column grid
+        // '16': 'repeat(16, minmax(0, 1fr))',
+
+        // Complex site-specific column configuration
+        'default': '2fr, 6fr',
+      },
 			typography: ({ theme }) => ({
 				black: {
 					css: {

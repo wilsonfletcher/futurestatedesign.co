@@ -1,0 +1,74 @@
+---
+import Default from '@layouts/Default.astro'
+
+import { name, description, image, Content } from '../../data/pages/about.mdx'
+// import * as foo from '../../data/pages/about.mdx'
+import IconArrow from '@components/Icon/Arrow.astro'
+---
+
+<Default title={name} description={description} url="/clients">
+  <article>
+    <!-- <pre>{JSON.stringify(foo, null, 2)}</pre> -->
+    <div class="container">
+      <div class="lg:grid gap-10 lg:grid-cols-default mb-10">
+        <div class="lg:col-start-2">
+          <h1 class="title mb-10">{name}</h1>
+          <p class="h1">{description}</p>
+        </div>
+      </div>
+
+      <div class="mb-10 lg:pl-20">
+        <div class="md:flex md:gap-5">
+          <div>
+            <img src="/images/about-1.jpg" alt="" />
+          </div>
+          <div class="md:flex-auto py-5">
+            <a href="#" class="text-[30px] inline-flex items-center underline">
+              Our manifesto
+              <IconArrow />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:grid lg:gap-10 lg:grid-cols-default">
+        <div class="lg:col-start-2">
+          <div
+            class="prose prose-2xl max-w-none prose-p:leading-none prose-black"
+          >
+            <Content />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="container">
+        <figure>
+          <img src={image} alt="" class="w-full block mx-auto" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+
+    <section class="py-16">
+      <div class="container">
+        <div class="lg:grid lg:gap-10 lg:grid-cols-default">
+          <div class="lg:col-start-2">
+            <h2 class="h2 mb-10">Competencies</h2>
+            <ul class="h3">
+              Futurestate visioning / Commercial strategy / Service strategy /
+              Business architecture / Business model design / Experience mapping
+              / Market influences research / Competitive positioning /
+              Proposition development / Ecosystem strategy / Service mapping /
+              Brand and messaging / Content strategy / Service + Experience
+              design / Design systems / Future customer modelling / Service
+              prototyping / Technology architecture / Platform strategy /
+              Go-to-market strategy / Growth strategy / Customer migration /
+              Innovation culture / Leadership mentoring...
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</Default>

@@ -19,6 +19,10 @@
     @apply text-[21px] leading-[28px] font-roman lg:text-[35px] lg:leading-[44px] ;
   }
 
+  .title {
+    @apply text-[110px] leading-none tracking-[-1%];
+  }
+
   .body {
     @apply text-[18px] leading-[24px] lg:text-[24px] lg:leading-[32px];
   }

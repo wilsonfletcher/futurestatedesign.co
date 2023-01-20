@@ -1,14 +1,17 @@
 ---
+import Icon from './index.astro'
+
 interface Props {
   class?: string
+  viewBox?: string
 }
 
-const { class: className, ...attrs } = Astro.props as Props
+const { ...attrs } = Astro.props as Props
 ---
 
-<svg viewBox="0 0 20 20" class:list={['w-[1em] h-[1em]', className]} {...attrs}
-  ><path
+<Icon {...attrs}>
+  <path
     d="M5 15.751l10.26-10.26M15.149 5v10.26m-9.88-9.88h10.26"
     stroke="currentColor"
     stroke-width="1.2"></path>
-</svg>
+</Icon>

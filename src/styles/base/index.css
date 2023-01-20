@@ -2,7 +2,7 @@
 
 @layer base {
   html {
-    @apply font-sans leading-none font-regular;
+    @apply font-sans leading-none font-regular scroll-smooth;
   }
 
   body {

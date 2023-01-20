@@ -2,14 +2,17 @@
 import Default from '@layouts/Default.astro'
 import IconArrow from '@components/Icon/Arrow.astro'
 
-const clients = await Astro.glob('../../data/clients/*.md')
-clients.sort((a, b) => a.frontmatter.order - b.frontmatter.order)
+// const clients = await Astro.glob('../../data/clients/*.md')
+// clients.sort((a, b) => a.frontmatter.order - b.frontmatter.order)
 
 const name = 'Our work'
 const description = `We've worked with clients in many industry sectors. Each presents
               demanding challenges, whether overcoming large-scale disruption or
               racing to harness the potential of new technologies, business
               models and customer behaviours.`
+
+import { getAllClients } from '../../prismic.js'
+const clients = await getAllClients()
 ---
 
 <Default title={name} description={description} url="/clients">
@@ -23,22 +26,21 @@ const description = `We've worked with clients in many industry sectors. Each pr
 
             <p class="text-5xl mb-20">{description}</p>
 
-            <section>
-              <h2 class="sr-only">Clients</h2>
-              <div class="grid gap-5 grid-cols-2 md:grid-cols-6 md:gap-10">
-                {
-                  clients.map((client) => (
-                    <article class="relative bg-black/20">
-                      <h3 class="sr-only">{client.frontmatter.name}</h3>
-                      <div
-                        class="aspect-w-16 aspect-h-9"
-                        set:html={client.frontmatter.logo}
-                      />
-                    </article>
-                  ))
-                }
-              </div>
-            </section>
+            {
+              clients && (
+                <section>
+                  <h2 class="sr-only">Clients</h2>
+                  <div class="grid gap-5 grid-cols-2 md:grid-cols-6 md:gap-10">
+                    {clients.map((client) => (
+                      <article class="relative bg-black/20">
+                        <h3 class="sr-onlxy">{client.data.name[0].text}</h3>
+                        <div class="aspect-w-16 aspect-h-9" />
+                      </article>
+                    ))}
+                  </div>
+                </section>
+              )
+            }
           </div>
         </div>
       </div>

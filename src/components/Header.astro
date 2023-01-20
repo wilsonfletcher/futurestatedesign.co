@@ -12,12 +12,13 @@ const { class: className, ...attrs } = Astro.props as Props
 <div role="banner" class:list={['py-8', className]} {...attrs}>
   <div class="container">
     <div class="flex flex-row-reverse lg:grid lg:grid-cols-default lg:gap-10">
-      <div class="lg:col-start-2 lg:flex lg:justify-between">
+      <div class="lg:col-start-2 lg:flex lg:justify-between text-2xl">
         <a
           href={`mailto:${SITE.email}`}
-          class="text-2xl font-bold hidden lg:block">{SITE.email}</a
+          class="font-bold hidden hover:underline lg:block"
+          >{SITE.email}</a
         >
-        <a href={`tel:${SITE.tel}`} class="text-2xl hidden lg:block"
+        <a href={`tel:${SITE.tel}`} class="hidden hover:underline lg:block"
           >{SITE.telephone}</a
         >
 

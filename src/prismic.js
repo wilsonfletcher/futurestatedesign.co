@@ -1,15 +1,15 @@
-import * as prismic from '@prismicio/client'
+import Prismic from '@prismicio/client';
 
-const aipEndPoint = 'https://astro-prismic-demo.prismic.io/api/v2'
+const API_ENDPOINT = 'https://futurestatedesignco.cdn.prismic.io/api/v2'
+const Client = Prismic.createClient(API_ENDPOINT);
 
-const Client = prismic.createClient(aipEndPoint);
+console.log(API_ENDPOINT)
 
-export function getPage(slug) {
-  return Client.getByUID('page', slug)
-}
-
-export function getAllPosts() {
-  return Client.get(prismic.predicate.at('document.type', 'blog_post', {
-    orderings: ['my.blog_post.name.date desc']
-  }))
+export function getAllClients() {
+  return Client.getAllByType("client", {
+    orderings: {
+      field: 'my.client.name',
+      direction: 'asc'
+    }
+  });
 }

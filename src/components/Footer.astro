@@ -1,6 +1,8 @@
 ---
 import { SITE } from '@config'
 
+import IconLinkedIn from '@components/Icon/LinkedIn.astro'
+
 const social = [
   {
     icon: 'i-custom:linkedin',
@@ -20,11 +22,11 @@ const social = [
               <li>
                 <a
                   href={social.url}
-                  class="text-20px"
+                  class="text-xl"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span class={`${social.icon}`} />
+                  <IconLinkedIn />
                   <span class="sr-only">{social.name}</span>
                 </a>
               </li>
@@ -35,29 +37,30 @@ const social = [
     </div>
   </div>
 
-  <div class="border-t border-black">
+  <div class="border-t border-black py-6 text-xl">
     <div class="container">
-      <div class="py-5 text-21px">
-        <div class="grid gap-4 md:gap-10 md:grid-cols-[1fr_3fr]">
-          <a class="text-21px font-medium" href={`mailto:${SITE.email}`}>
-            {SITE.email}
+      <div
+        class="flex gap-4 flex-col lg:flex-row lg:items-center lg:justify-between"
+      >
+        <a href={`mailto:${SITE.email}`} class="font-medium hover:underline">
+          {SITE.email}
+        </a>
+        <div class="lg:flex lg:items-center lg:gap-10">
+          <a href={SITE.tel} class="hover:underline">
+            {SITE.telephone}
           </a>
-          <div class="grid gap-4 md:(gap-10 grid-cols-3)">
-            <a href="tel:+442038658704">
-              {SITE.telephone}
-            </a>
-            <a
-              href="https://www.iubenda.com/privacy-policy/60598168"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Privacy Policy
-            </a>
-            <p>
-              &copy; {SITE.copyrightYear}
-              <span class="sr-only" id={SITE.id}>{SITE.name}</span> All rights reserved
-            </p>
-          </div>
+          <a
+            href="https://www.iubenda.com/privacy-policy/60598168"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:underline"
+          >
+            Privacy Policy
+          </a>
+          <p>
+            &copy; {SITE.copyrightYear}
+            <span class="sr-only" id={SITE.id}>{SITE.name}</span> All rights reserved
+          </p>
         </div>
       </div>
     </div>

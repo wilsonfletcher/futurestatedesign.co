@@ -1,4 +1,4 @@
-import Prismic from '@prismicio/client';
+import * as Prismic from '@prismicio/client';
 
 const API_ENDPOINT = 'https://futurestatedesignco.cdn.prismic.io/api/v2'
 const Client = Prismic.createClient(API_ENDPOINT);

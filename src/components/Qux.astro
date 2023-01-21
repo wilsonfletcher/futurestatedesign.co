@@ -1,0 +1,26 @@
+---
+import Prose from '@components/Prose.astro'
+import IconArrow from '@components/Icon/Arrow.astro'
+
+interface Props {
+  name?: string
+}
+
+const { name } = Astro.props as Props
+---
+
+<section class:list={['py-10 border-y border-black/40 not-prose']}>
+  <h2 class="h3">{name}</h2>
+  <article>
+    <h3>Episode #6: The Human Layer: Why a Corona crisis is local</h3>
+    <div class="prose prose-black prose-lg md:prose-xl mb-5">
+      <p class="font-light">
+        A short summary here to outline the content of the podcast
+      </p>
+    </div>
+    <a href="#" class="list-link">
+      Listen now
+      <IconArrow />
+    </a>
+  </article>
+</section>

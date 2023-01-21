@@ -40,10 +40,29 @@
   }
 
   .list-link {
-    @apply text-[30px] inline-flex items-center bg-[pink] underline;
+    @apply text-[30px] inline-flex items-center bg-[pink] underline font-light;
   }
 
   .section {
     @apply grid gap-4 lg:grid-cols-8 lg:gap-10;
   }
 }
+
+/* Episode #6: The Human Layer: Why a Corona crisis is local A short summary here to outline the content of the podcast */
+
+position: absolute;
+width: 662px;
+height: 62px;
+left: 352px;
+top: 1917px;
+
+/* Body_Desktop */
+font-family: 'Neue Haas Grotesk Display Pro';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 32px;
+/* or 133% */
+
+color: #000000;
+

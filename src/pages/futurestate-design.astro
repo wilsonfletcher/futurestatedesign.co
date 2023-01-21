@@ -1,5 +1,6 @@
 ---
 import Contact from '@components/Contact.astro'
+import IconArrow from '@components/Icon/Arrow.astro'
 import Default from '@layouts/Default.astro'
 
 import { frontmatter, Content } from '../data/pages/futurestate-design.mdx'
@@ -63,7 +64,12 @@ const meta = { title: name, description, image }
       name="Futurestate workshops"
       description="Whether a workshop or a project talk to us"
     >
-      &nbsp;
+      <a href="#" class="button button--primary w-full md:max-w-[270px]">
+        <span class="flex justify-between items-center">
+          <span>Talk to us</span>
+          <IconArrow />
+        </span>
+      </a>
     </Contact>
   </article>
 </Default>

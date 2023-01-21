@@ -5,30 +5,33 @@ interface Props {
   name?: string
   description?: string
   url?: {
-    name: string
+    name?: string
     url: string
   }
+  class?: string
 }
 
 const {
   name = 'Let’s talk',
   description = 'Tell us what you are looking for to give us a feel for where you want to be...',
+  class: className,
+  ...attrs
 } = Astro.props as Props
 ---
 
-<div class="py-20 bg-[#19333C] text-white">
+<div class:list={['py-20', className]} {...attrs}>
   <div class="container">
     <div class="section">
       <div class="lg:col-start-3 lg:col-span-6 lg:grid lg:grid-cols-6">
         <div class="lg:col-span-5 space-y-10">
-          <h2 class="title">{name}</h2>
+          <h2 class="h0">{name}</h2>
           <p class="h2 text-white/40 relative pl-5">
             {description}
             <span class="absolute top-0 left-0 h-[1em] w-1 bg-yellow"></span>
           </p>
           <slot>
             <form>
-              <div class="grid gap-10">
+              <div class="space-y-10">
                 <div>
                   <input
                     type="text"
@@ -43,17 +46,15 @@ const {
                     class="input"
                   />
                 </div>
-                <div class="grid md:grid-cols-5 gap-10">
-                  <button
-                    type="submit"
-                    class="button button--primary md:col-span-2"
-                  >
-                    <span class="flex justify-between">
-                      Let's talk
-                      <IconArrow />
-                    </span>
-                  </button>
-                </div>
+                <button
+                  type="submit"
+                  class="button button--primary w-full md:w-[270px]"
+                >
+                  <span class="flex justify-between items-center">
+                    Let's talk
+                    <IconArrow />
+                  </span>
+                </button>
               </div>
             </form>
           </slot>

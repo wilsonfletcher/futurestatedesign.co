@@ -2,6 +2,7 @@
 import Default from '@layouts/Default.astro'
 import { frontmatter, Content } from '../data/pages/about.mdx'
 import IconArrow from '@components/Icon/Arrow.astro'
+import Contact from '@components/Contact.astro'
 
 const { name, description, url, image, seo } = frontmatter
 const meta = { title: name, description, url, image: seo.image }
@@ -74,5 +75,10 @@ const meta = { title: name, description, url, image: seo.image }
         </div>
       </div>
     </section>
+    <Contact
+      name="Let’s talk"
+      description="Tell us what you are looking for to give us a feel for where you want to be..."
+      class="bg-qux text-white"
+    />
   </article>
 </Default>

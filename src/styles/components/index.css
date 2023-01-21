@@ -1,6 +1,6 @@
 @layer components {
   .h0 {
-    @apply text-[80px] tracking-[-0.01em] md:text-[100px] lg:text-[120px];
+    @apply text-[80px] tracking-[-0.01em] md:text-[100px] lg:text-[120px] lg:leading-[80px];
   }
 
   .h1 {

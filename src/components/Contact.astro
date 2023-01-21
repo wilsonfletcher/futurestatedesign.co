@@ -4,10 +4,10 @@ import IconArrow from '@components/Icon/Arrow.astro'
 
 <div class="py-20 bg-qux text-white">
   <div class="container">
-    <div class="lg:pl-cols-6">
-      <div class="grid md:grid-cols-6">
-        <div class="md:col-span-5">
-          <h2 class="h0">Let’s talk</h2>
+    <div class="section">
+      <div class="lg:col-start-2 lg:grid lg:grid-cols-6">
+        <div class="lg:col-span-5">
+          <h2 class="title">Let’s talk</h2>
           <p class="h2 text-white/40">
             Tell us where you want to be.<br />
             We’ll make sure you get there.
@@ -29,7 +29,10 @@ import IconArrow from '@components/Icon/Arrow.astro'
                 />
               </div>
               <div class="grid md:grid-cols-5 gap-10">
-                <button type="submit" class="button button--primary md:col-span-2">
+                <button
+                  type="submit"
+                  class="button button--primary md:col-span-2"
+                >
                   <span class="flex justify-between">
                     Let's talk
                     <IconArrow />

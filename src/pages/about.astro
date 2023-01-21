@@ -1,18 +1,16 @@
 ---
 import Default from '@layouts/Default.astro'
-
-import { name, description, image, Content } from '../../data/pages/about.mdx'
-// import * as foo from '../../data/pages/about.mdx'
+import { frontmatter, Content } from '../data/pages/about.mdx'
 import IconArrow from '@components/Icon/Arrow.astro'
 
+const { name, description, url, image, seo } = frontmatter
+const meta = { title: name, description, url, image: seo.image }
 ---
 
-
-<Default title={name} description={description} url="/clients">
+<Default {...meta}>
   <article>
-    <!-- <pre>{JSON.stringify(foo, null, 2)}</pre> -->
     <div class="container">
-      <div class="lg:grid gap-10 lg:grid-cols-default mb-10">
+      <div class="section mb-10">
         <div class="lg:col-start-2">
           <h1 class="title mb-10">{name}</h1>
           <p class="h1">{description}</p>
@@ -33,7 +31,7 @@ import IconArrow from '@components/Icon/Arrow.astro'
         </div>
       </div>
 
-      <div class="lg:grid lg:gap-10 lg:grid-cols-default">
+      <div class="section">
         <div class="lg:col-start-2">
           <div
             class="prose prose-2xl max-w-none prose-p:leading-none prose-black"
@@ -47,14 +45,15 @@ import IconArrow from '@components/Icon/Arrow.astro'
     <div>
       <div class="container">
         <figure>
-          <img src={image} alt="" class="w-full block mx-auto" loading="lazy" />
+          <img src={image.url} alt={image.alt} class="w-full block mx-auto" loading="lazy" />
+          <figcaption class="sr-only">{image.alt}</figcaption>
         </figure>
       </div>
     </div>
 
     <section class="py-16">
       <div class="container">
-        <div class="lg:grid lg:gap-10 lg:grid-cols-default">
+        <div class="section">
           <div class="lg:col-start-2">
             <h2 class="h2 mb-10">Competencies</h2>
             <ul class="h3">

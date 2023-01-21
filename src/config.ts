@@ -26,7 +26,7 @@ export const SITE = {
     addressRegion: 'London',
     postalCode: 'N1 7BJ',
     addressCountry: 'United Kingdom'
-  }
+  },
 };
 
 export type Site = Mapped<typeof SITE>;

@@ -1,5 +1,13 @@
 const plugin = require('tailwindcss/plugin')
 
+const round = (num) =>
+  num
+    .toFixed(7)
+    .replace(/(\.[0-9]+?)0+$/, '$1')
+    .replace(/\.0$/, '');
+const rem = (px) => `${round(px / 16)}rem`;
+const em = (px, base) => `${round(px / base)}em`;
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -7,9 +15,8 @@ module.exports = {
 		colors: {
 			transparent: 'transparent',
       current: 'currentColor',
-			yellow: 'rgb(245, 255, 81)',
-			red: '#FF5C00',
-			qux: 'rgba(25, 51, 60)',
+			yellow: '#F5FF51',
+			qux: '#001E20',
 			black: '#000',
 			white: '#fff'
 		},
@@ -62,7 +69,14 @@ module.exports = {
   },
 	plugins: [
 		plugin(function ({ addUtilities, addComponents }) {
-      addComponents({
+      
+			// const section = {
+			// 	'.section': {
+			// 		backgroundColor: 'red',
+			// 	}
+			// }
+
+			addComponents({
         '.container': {
           width: '100%',
           maxWidth: '100%',
@@ -75,8 +89,10 @@ module.exports = {
             paddingLeft: '2.5rem',
             paddingRight: '2.5rem'
           }
-        }
+        },
       })
+
+			// addComponents(section)
 
       addUtilities({
         '.text-optimize': {

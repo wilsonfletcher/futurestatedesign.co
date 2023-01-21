@@ -1,28 +1,33 @@
 ---
 import Default from '@layouts/Default.astro'
 
-const name = 'Our Manifesto'
-const description =
-  'This is what makes us tick: our manifesto is a set of principles that underpin everything about us.'
+import { frontmatter, Content } from '../data/pages/futurestate-manifesto.mdx'
 
-const manifesto = await Astro.glob('../data/manifesto/**.mdx')
+interface Frontmatter {
+  id: string
+  name: string
+  description?: string
+}
+
+const { name, description, seo } = frontmatter
+const meta = { title: name, description: seo.description }
+
+const manifesto = await Astro.glob<Frontmatter>('../data/manifesto/**.mdx')
 manifesto.sort((a, b) => a.frontmatter.id - b.frontmatter.id)
 ---
 
-<Default title={name} description={description}>
+<Default {...meta}>
   <section>
     <div class="container">
-      <div class="lg:grid lg:grid-cols-default gap-10">
-        <div></div>
-        <div class="cols-start-3">
-          <h1 class="h0 mb-10">{name}</h1>
-          <p class="h1 mb-20 lg:pr-2.5">
-            This is what makes us tick: our manifesto is a set of principles
-            that underpin everything <a href="/about-us" class="underline"
-              >about us</a
-            >.
-          </p>
+      <div class="section mb-20">
+        <div class="col-start-2">
+          <h1 class="title mb-10">{name}</h1>
+          <p class="h1 lg:pr-2.5" set:html={description} />
         </div>
+      </div>
+
+      <div class="prose">
+        <Content />
       </div>
 
       <div class="grid gap-10 md:grid-cols-2 mb-20">

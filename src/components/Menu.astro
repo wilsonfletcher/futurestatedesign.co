@@ -1,28 +1,16 @@
 ---
 import IconArrow from '@components/Icon/Arrow.astro'
 
-const data = [
-  {
-    name: 'Us',
-    url: '/about-us',
-  },
-  {
-    name: 'You',
-    url: '/work',
-  },
-  {
-    name: 'The Futurestate Manifesto',
-    url: '/futurestate-manifesto',
-  },
-  {
-    name: 'Futurestate Design &trade;',
-    url: '/futurestate-design',
-  },
-  {
-    name: 'Business Engines',
-    url: '/business-engines',
-  },
-]
+interface Item {
+  name: string
+  url: string
+}
+
+interface Props {
+  items: Item[]
+}
+
+const { items } = Astro.props as Props
 ---
 
 <nav class="py-24" id="menu">
@@ -32,7 +20,7 @@ const data = [
         <h3 class="h3 mb-20">Read more about:</h3>
         <ul>
           {
-            data.map(({ name, url }) => (
+            items.map(({ name, url }) => (
               <li class="border-b-2 border-black/40">
                 <a href={url} class="h3 flex items-center py-5 justify-between">
                   <span class="underline" set:html={name} />

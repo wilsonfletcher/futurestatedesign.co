@@ -1,5 +1,4 @@
 ---
-import Hero from '@components/Hero.astro'
 import Default from '../layouts/Default.astro'
 
 const name = 'Page not found.'
@@ -8,6 +7,12 @@ const meta = { name }
 
 <Default {...meta}>
   <article>
-    <Hero name={name} />
+    <div class="container">
+      <div class="section">
+        <div class="lg:col-start-2">
+          <h1 class="h0">{name}</h1>
+        </div>
+      </div>
+    </div>
   </article>
 </Default>

@@ -1,6 +1,7 @@
 ---
 import { SEO } from 'astro-seo'
 import { SITE } from '@config'
+import Pre from './Pre.astro'
 
 // const TYPEKIT_ID = import.meta.env.PUBLIC_TYPEKIT_ID
 // const GTM_ID = import.meta.env.PUBLIC_GTM_ID
@@ -33,11 +34,13 @@ const {
 } = Astro.props as Props
 ---
 
+<Pre data={url} />
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <SEO
-    canonical={`${SITE.url}/`}
+    canonical={`${SITE.url}${url}`}
     title={title}
     description={description}
     noindex={noindex}
@@ -90,4 +93,3 @@ const {
   />
   <slot />
 </head>
-

@@ -1,15 +1,13 @@
 ---
-import { Schema } from 'astro-seo-schema'
+// import { Schema } from 'astro-seo-schema'
+import menu from '../data/menu.yml'
+import '@styles/global.css'
 
-// import { SITE } from '@config'
 import BaseHead from '@components/BaseHead.astro'
 import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
-import NavPrimary from '@components/Nav/Primary.astro'
-
-import '@styles/global.css'
+import Menu from '@components/Menu.astro'
 import Contact from '@components/Contact.astro'
-// import Notification from '@components/Notification.astro'
 
 export interface Props {
   title?: string
@@ -40,7 +38,7 @@ const meta = { title, description, url, image, noindex }
         <slot />
       </main>
       <Contact />
-      <NavPrimary />
+      <Menu items={menu} />
       <Footer />
     </div>
   </body>

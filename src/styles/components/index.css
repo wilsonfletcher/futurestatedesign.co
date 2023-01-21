@@ -16,15 +16,19 @@
   }
 
   .h4 {
-    @apply text-[21px] leading-[28px] font-roman lg:text-[35px] lg:leading-[44px] ;
+    @apply text-[21px] leading-[28px] font-roman lg:text-[35px] lg:leading-[44px];
   }
 
   .title {
-    @apply text-[110px] leading-none tracking-[-1%];
+    @apply text-[110px] leading-none tracking-[-1%] bg-yellow;
+  }
+
+  .intro {
+    @apply text-3xl space-y-[1em] lg:text-5xl;
   }
 
   .body {
-    @apply text-[18px] leading-[24px] lg:text-[24px] lg:leading-[32px];
+    @apply text-[18px] leading-[1.33333333] space-y-[1em] lg:text-[24px] bg-[lime];
   }
 
   .button {
@@ -33,5 +37,9 @@
     &--primary {
       @apply bg-yellow text-black;
     }
+  }
+
+  .section {
+    @apply bg-[pink] grid gap-4 lg:grid-cols-[2fr,6fr] lg:gap-10;
   }
 }

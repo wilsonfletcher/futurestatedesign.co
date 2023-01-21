@@ -1,20 +1,69 @@
 ---
+import Contact from '@components/Contact.astro'
 import Default from '@layouts/Default.astro'
-const name = 'Futurestate Design'
-const description =
-  'It’s really very simple. If you don’t make your future happen, the future will be done to you. That’s unlikely to go well.'
+
+import { frontmatter, Content } from '../data/pages/futurestate-design.mdx'
+
+const { name, description, image } = frontmatter
+const meta = { title: name, description, image }
 ---
 
-<Default>
+<Default {...meta}>
   <article>
-    <div class="container">
-      <div class="section">
-        <div class="lg:col-start-2">
-          <h1 class="title">{name}</h1>
-          <p>It’s really very simple. If you don’t make your future happen, the future will be done to you.</p>
-          <p>That’s unlikely to go well.</p>
+    <div>
+      <div class="container">
+        <div class="section">
+          <div class="lg:col-start-3 lg:col-span-6">
+            <h1 class="title mb-10">{name}</h1>
+            <div class="prose prose-black prose-lg md:prose-xl mb-10">
+              <Content />
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <div>
+      <div class="container px-0">
+        <figure>
+          <img
+            src={image.url}
+            alt={image.alt}
+            class="w-full block mx-auto"
+            loading="lazy"
+          />
+          <figcaption class="sr-only">{image.alt}</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="py-16">
+      <div class="container">
+        <div class="grid gap-4 lg:grid-cols-8">
+          <div class="lg:col-start-3 lg:col-span-6">
+            <div class="prose prose-black prose-lg md:prose-xl">
+              <p class="lead">
+                We use futurestate design to help companies think beyond current
+                constraints; to leave legacy behind and invent on behalf of
+                future customers. We use it to help visualise and realise the
+                full potential of new ideas; to drive real innovation. We use it
+                to help companies make the future happen.
+              </p>
+              <p class="lead">
+                The real power of futurestate design is that we’re in an age
+                where almost anything you can think of making waves in a few
+                years’ time, you can make happen now.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <Contact
+      name="Futurestate workshops"
+      description="Whether a workshop or a project talk to us"
+    >
+      &nbsp;
+    </Contact>
   </article>
 </Default>

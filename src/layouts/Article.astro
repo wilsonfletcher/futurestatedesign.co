@@ -9,6 +9,7 @@ import SchemaOrganizationFutureStateDesignCo from '@components/Schema/Organizati
 import BaseHead from '@components/BaseHead.astro'
 import Logo from '@components/Logo.astro'
 import Footer from '@components/Footer.astro'
+import Header from '@components/Header.astro'
 
 type Props = MarkdownLayoutProps<{
   id: string
@@ -115,26 +116,26 @@ const meta = {
   </BaseHead>
   <body>
     <div class="flex flex-col w-full min-h-screen">
+      <Header />
       <main class="flex-auto">
         <article class="flex-auto" id={id}>
           <div class="container">
-            <div
-              class="grid items-start gap-6 pt-10 lg:(grid-cols-[220px_1fr] gap-90px pt-60px)"
-            >
-              <a href="/" title={`Return to the ${SITE.name} homepage`}>
-                <span class="sr-only">{SITE.name}</span>
-                <Logo />
-              </a>
+            <div class="grid lg:gap-10 lg:grid-cols-8">
+              <div class="lg:col-span-2">
+                <a
+                  href="/"
+                  class="body inline-flex items-center lg:row-start-2"
+                >
+                  <div class="i-custom:arrow -rotate-135deg mr-0.25em"></div>
+                  Back
+                </a>
+              </div>
+              <div class="lg:col-span-6">
+                <h1 class="title mb-5">{name}</h1>
 
-              <a href="/" class="body inline-flex items-center lg:row-start-2">
-                <div class="i-custom:arrow -rotate-135deg mr-0.25em"></div>
-                Back
-              </a>
-
-              <h1 class="h0">{name}</h1>
-
-              <div class="prose body">
-                <slot />
+                <div class="prose prose-black prose-lg md:prose-xl">
+                  <slot />
+                </div>
               </div>
             </div>
           </div>

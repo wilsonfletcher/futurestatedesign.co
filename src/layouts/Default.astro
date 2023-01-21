@@ -20,9 +20,17 @@ export interface Props {
     alt?: string
   }
   noindex?: boolean
+  class?: string
 }
 
-const { title, description, url, image, noindex = false } = Astro.props as Props
+const {
+  title,
+  description,
+  url,
+  image,
+  noindex = false,
+  class: className,
+} = Astro.props as Props
 const meta = { title, description, url, image, noindex }
 ---
 
@@ -31,13 +39,12 @@ const meta = { title, description, url, image, noindex }
   <BaseHead {...meta}>
     <slot name="head" />
   </BaseHead>
-  <body>
-    <div class="flex flex-col w-full min-h-screen">
+  <body class:list={[className]}>
+    <div class="flex flex-col w-full min-h-screen overflow-x-hidden">
       <Header />
       <main class="flex-auto">
         <slot />
       </main>
-      <Contact />
       <Menu items={menu} />
       <Footer />
     </div>

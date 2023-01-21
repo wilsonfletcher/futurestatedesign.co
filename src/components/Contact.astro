@@ -1,48 +1,71 @@
 ---
 import IconArrow from '@components/Icon/Arrow.astro'
+
+interface Props {
+  name?: string
+  description?: string
+  url?: {
+    name: string
+    url: string
+  }
+}
+
+const {
+  name = 'Let’s talk',
+  description = 'Tell us what you are looking for to give us a feel for where you want to be...',
+} = Astro.props as Props
 ---
 
-<div class="py-20 bg-qux text-white">
+<div class="py-20 bg-[#19333C] text-white">
   <div class="container">
     <div class="section">
-      <div class="lg:col-start-2 lg:grid lg:grid-cols-6">
-        <div class="lg:col-span-5">
-          <h2 class="title">Let’s talk</h2>
-          <p class="h2 text-white/40">
-            Tell us where you want to be.<br />
-            We’ll make sure you get there.
+      <div class="lg:col-start-3 lg:col-span-6 lg:grid lg:grid-cols-6">
+        <div class="lg:col-span-5 space-y-10">
+          <h2 class="title">{name}</h2>
+          <p class="h2 text-white/40 relative pl-5">
+            {description}
+            <span class="absolute top-0 left-0 h-[1em] w-1 bg-yellow"></span>
           </p>
-          <form>
-            <div class="grid gap-10">
-              <div>
-                <input
-                  type="text"
-                  placeholder="My name is..."
-                  class="block w-full bg-transparent border-x-0 border-t-0 border-b border-white/50 px-0"
-                />
+          <slot>
+            <form>
+              <div class="grid gap-10">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="My name is..."
+                    class="input"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="My email address is..."
+                    class="input"
+                  />
+                </div>
+                <div class="grid md:grid-cols-5 gap-10">
+                  <button
+                    type="submit"
+                    class="button button--primary md:col-span-2"
+                  >
+                    <span class="flex justify-between">
+                      Let's talk
+                      <IconArrow />
+                    </span>
+                  </button>
+                </div>
               </div>
-              <div>
-                <input
-                  type="email"
-                  placeholder="My email address is..."
-                  class="block w-full bg-transparent border-x-0 border-t-0 border-b border-white/50 px-0"
-                />
-              </div>
-              <div class="grid md:grid-cols-5 gap-10">
-                <button
-                  type="submit"
-                  class="button button--primary md:col-span-2"
-                >
-                  <span class="flex justify-between">
-                    Let's talk
-                    <IconArrow />
-                  </span>
-                </button>
-              </div>
-            </div>
-          </form>
+            </form>
+          </slot>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<style>
+  .input {
+    @apply block w-full bg-transparent border-x-0 border-t-0 border-b border-white/50 px-0 placeholder:text-white/40;
+    @apply text-[21px] md:text-[35px];
+  }
+</style>

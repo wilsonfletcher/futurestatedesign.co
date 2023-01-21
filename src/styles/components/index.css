@@ -20,7 +20,7 @@
   }
 
   .title {
-    @apply text-[110px] leading-none tracking-[-1%] bg-yellow;
+    @apply lg:text-[110px] leading-none tracking-[-1%];
   }
 
   .intro {
@@ -39,7 +39,11 @@
     }
   }
 
+  .list-link {
+    @apply text-[30px] inline-flex items-center bg-[pink] underline;
+  }
+
   .section {
-    @apply bg-[pink] grid gap-4 lg:grid-cols-[2fr,6fr] lg:gap-10;
+    @apply grid gap-4 lg:grid-cols-8 lg:gap-10;
   }
 }

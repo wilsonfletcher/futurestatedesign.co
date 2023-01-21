@@ -59,6 +59,72 @@ module.exports = {
 				black: {
 					css: {
 						'--tw-prose-body': theme('colors.black'),
+						'--tw-prose-lead': theme('colors.black'),
+						'--tw-prose-links': theme('colors.black'),
+						'--tw-prose-bold': theme('colors.black'),
+						'--tw-prose-quotes': '#757474',
+						'--tw-prose-quote-borders': theme('colors.black'),
+						'--tw-prose-bullets': theme('colors.black')
+					}
+				},
+				white: {
+					css: {
+						'--tw-prose-body': theme('colors.white'),
+						'--tw-prose-lead': theme('colors.white'),
+						'--tw-prose-links': theme('colors.white'),
+						'--tw-prose-bold': theme('colors.white'),
+						'--tw-prose-quotes': '#757474',
+						'--tw-prose-quote-borders': theme('colors.white'),
+						'--tw-prose-bullets': theme('colors.white')
+					}
+				},
+				DEFAULT: {
+          // https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
+          css: {
+						// fontSize: rem(18),
+						lineHeight: round(24 / 16),
+						h2: {
+							fontWeight: theme('fontWeight.regular'),
+						},
+						'.lead': {
+							lineHeight: 1,
+						},
+						blockquote: {
+							fontStyle: 'normal',
+							maxWidth: 580,
+							quotes: 'none !important'
+						}
+					}
+				},
+				lg: {
+					css: {
+						fontSize: rem(18),
+						lineHeight: round(24 / 18),
+						'.lead': {
+							fontSize: em(30, 18),
+							lineHeight: 1,
+						},
+						blockquote: {
+							fontSize: em(18, 18)
+						}
+					}
+				},
+				xl: {
+					css: {
+						fontSize: rem(24),
+						lineHeight: round(32 / 24),
+						h2: {
+							fontSize: em(48, 24),
+							marginTop: 0,
+							marginBottom: em(24, 48)
+						},
+						'.lead': {
+							fontSize: em(48, 24),
+							lineHeight: 1,
+						},
+						blockquote: {
+							fontSize: em(18, 24)
+						}
 					}
 				}
 			}),
@@ -86,8 +152,8 @@ module.exports = {
           paddingRight: '1rem',
           '@screen md': {
             maxWidth: 1280,
-            paddingLeft: '2.5rem',
-            paddingRight: '2.5rem'
+            paddingLeft: 40,
+            paddingRight: 40
           }
         },
       })
@@ -101,7 +167,10 @@ module.exports = {
       })
     }),
 		require('@tailwindcss/aspect-ratio'),
-		require('@tailwindcss/forms'),
+		require('@tailwindcss/forms')({
+      strategy: 'base', // only generate global styles
+      // strategy: 'class', // only generate classes
+    }),
 		require('@tailwindcss/typography'),
 	],
 }

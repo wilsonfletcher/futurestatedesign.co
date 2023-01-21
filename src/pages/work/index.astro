@@ -2,24 +2,23 @@
 import Default from '@layouts/Default.astro'
 import IconArrow from '@components/Icon/Arrow.astro'
 
+import { frontmatter } from '../../data/pages/work.mdx'
+import Subscribe from '@components/Subscribe.astro'
+const { name, description, url } = frontmatter
 const clients = await Astro.glob('../../data/clients/*.md')
 clients.sort((a, b) => a.frontmatter.order - b.frontmatter.order)
 
-const name = 'Our work'
-const description = `We've worked with clients in many industry sectors. Each presents
-              demanding challenges, whether overcoming large-scale disruption or
-              racing to harness the potential of new technologies, business
-              models and customer behaviours.`
+const meta = { title: name, description, url }
 ---
 
-<Default title={name} description={description} url="/clients">
+<Default {...meta}>
   <article>
     <div class="mb-44">
       <div class="container">
-        <div class="section">
-          <div class="lg:col-start-2">
-            <h1 class="text-[110px] leading-none mb-12">{name}</h1>
-
+        <div class="lg:grid lg:gap-10 lg:grid-cols-8">
+          <div class="col-span-2"></div>
+          <div class="col-span-6">
+            <h1 class="title mb-12">{name}</h1>
             <p class="text-5xl mb-20">{description}</p>
 
             {
@@ -45,27 +44,27 @@ const description = `We've worked with clients in many industry sectors. Each pr
     <section>
       <div class="container">
         <div class="section">
-          <div>
+          <div class="lg:col-span-2">
             <h2 class="h3">
               Recent successes
               <IconArrow class="rotate-45" />
             </h2>
           </div>
-          <div>
+          <div class="lg:col-span-6">
             <article
-              class="grid grid-cols-[4fr,2fr] gap-10 py-8 border-t border-t-black/40"
+              class="grid lg:grid-cols-[4fr,2fr] gap-10 py-8 border-t border-t-black/40"
             >
               <div>
                 <h3 class="h4 mb-3">
                   Simplified and digitized the mortgage-origination process
                 </h3>
-                <p class="body">
+                <p class="prose prose-black prose-lg md:prose-xl">
                   At a large bank, cutting approval time for new loans from 2–10
                   days to 15 minutes, and reducing origination cost by 70
                   percent
                 </p>
               </div>
-              <div class="bg-[#D9D9D9] h-[170px]"></div>
+              <div class="bg-black/50 h-[170px] hidden lg:block"></div>
             </article>
 
             <article
@@ -161,5 +160,7 @@ const description = `We've worked with clients in many industry sectors. Each pr
         </div>
       </div>
     </section>
+
+    <Subscribe />
   </article>
 </Default>

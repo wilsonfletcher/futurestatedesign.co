@@ -16,38 +16,59 @@ const manifesto = await Astro.glob<Frontmatter>('../data/manifesto/**.mdx')
 manifesto.sort((a, b) => a.frontmatter.id - b.frontmatter.id)
 ---
 
-<Default {...meta}>
+<Default {...meta} class="bg-qux text-white">
   <section>
     <div class="container">
       <div class="section mb-20">
-        <div class="col-start-2">
+        <div class="lg:col-start-3 lg:col-span-6">
           <h1 class="title mb-10">{name}</h1>
-          <p class="h1 lg:pr-2.5" set:html={description} />
+          <!-- <p class="h1 lg:pr-2.5" set:html={description} /> -->
+          <div class="prose prose-white prose-lg md:prose-xl">
+            <Content />
+          </div>
+          <div class="grid gap-10 md:grid-cols-2 py-20">
+            {
+              manifesto.map((item) => (
+                <article class="border-t-2 border-t-white/30 pt-10">
+                  <h2 class="title">{item.frontmatter.id}</h2>
+                  <div class="prose prose-white prose-lg md:prose-xl">
+                    <p>
+                      <em class="text-yellow not-italic">
+                        {item.frontmatter.name}
+                      </em>
+                      {item.frontmatter.description}
+                    </p>
+                  </div>
+                </article>
+              ))
+            }
+          </div>
         </div>
       </div>
+    </div>
+    <div class="bg-white py-10">
+      <div class="container">
+        <div class="grid gap-4 md:grid-cols-2 lg:gap-10">
+          {
+            manifesto.map((item) => (
+              <article class="bg-qux text-white p-10">
+                <div class="border-b-2 border-b-white/30 pb-12 mb-12">
+                  <h2 class="flex gap-2 items-end">
+                    <span class="h3 text-yellow">{item.frontmatter.id}</span>
+                    <span class="text-2xl text-white/50 after:content-['Futurestate_manifesto']" />
+                  </h2>
+                </div>
 
-      <div class="prose">
-        <Content />
-      </div>
-
-      <div class="grid gap-10 md:grid-cols-2 mb-20">
-        {
-          manifesto.map((item) => (
-            <article class="bg-qux text-white p-10">
-              <div class="border-b-2 border-b-white/30 pb-12 mb-12">
-                <h2 class="flex gap-2 items-end">
-                  <span class="h3 text-yellow">{item.frontmatter.id}</span>
-                  <span class="text-2xl text-white/50 after:content-['Futurestate_manifesto']" />
-                </h2>
-              </div>
-
-              <p class="h4">
-                <em class="text-yellow not-italic">{item.frontmatter.name}</em>
-                {item.frontmatter.description}
-              </p>
-            </article>
-          ))
-        }
+                <p class="h4">
+                  <em class="text-yellow not-italic">
+                    {item.frontmatter.name}
+                  </em>
+                  {item.frontmatter.description}
+                </p>
+              </article>
+            ))
+          }
+        </div>
       </div>
     </div>
   </section>

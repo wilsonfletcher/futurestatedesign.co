@@ -8,4 +8,29 @@
   body {
     @apply text-optimize;
   }
+
+  /* [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
+  select {
+    @apply text-[21px] md:text-[35px] block w-full bg-transparent border-x-0 border-t-0 border-b;
+  }
+
+  select {
+    @apply pr-10;
+  }
+
+  [multiple],
+  textarea {
+    @apply rounded-[20px] py-[7px] px-5;
+  } */
 }

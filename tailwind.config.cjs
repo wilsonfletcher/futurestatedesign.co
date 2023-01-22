@@ -59,12 +59,14 @@ module.exports = {
 				black: {
 					css: {
 						'--tw-prose-body': theme('colors.black'),
+						'--tw-prose-headings': theme('colors.black'),
 						'--tw-prose-lead': theme('colors.black'),
 						'--tw-prose-links': theme('colors.black'),
 						'--tw-prose-bold': theme('colors.black'),
 						'--tw-prose-quotes': '#757474',
 						'--tw-prose-quote-borders': theme('colors.black'),
-						'--tw-prose-bullets': theme('colors.black')
+						'--tw-prose-bullets': theme('colors.black'),
+						'--tw-prose-counters': theme('colors.black'),
 					}
 				},
 				white: {
@@ -75,37 +77,49 @@ module.exports = {
 						'--tw-prose-bold': theme('colors.white'),
 						'--tw-prose-quotes': '#757474',
 						'--tw-prose-quote-borders': theme('colors.white'),
-						'--tw-prose-bullets': theme('colors.white')
+						'--tw-prose-bullets': theme('colors.white'),
+						'--tw-prose-counters': theme('colors.white'),
 					}
 				},
 				DEFAULT: {
           // https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
           css: {
-						// fontSize: rem(18),
 						lineHeight: round(24 / 16),
-						h2: {
-							fontWeight: theme('fontWeight.regular'),
-						},
-						'.lead': {
+						'[class~="lead"]': {
 							lineHeight: 1,
 						},
 						blockquote: {
 							fontStyle: 'normal',
 							maxWidth: 580,
 							quotes: 'none !important'
-						}
+						},
+						h2: {
+							fontWeight: theme('fontWeight.regular'),
+						},
+						h3: {
+							fontWeight: theme('fontWeight.regular'),
+						},
+						h4: {
+							fontWeight: theme('fontWeight.regular'),
+						},
+
 					}
 				},
 				lg: {
 					css: {
 						fontSize: rem(18),
 						lineHeight: round(24 / 18),
+						h3: {
+							fontSize: em(30, 18),
+							lineHeight: 1,
+						},
 						'.lead': {
 							fontSize: em(30, 18),
 							lineHeight: 1,
 						},
 						blockquote: {
-							fontSize: em(18, 18)
+							fontSize: em(18, 18),
+							lineHeight: 1,
 						}
 					}
 				},
@@ -113,15 +127,36 @@ module.exports = {
 					css: {
 						fontSize: rem(24),
 						lineHeight: round(32 / 24),
+						p: {
+          		marginTop: em(32, 24),
+          		marginBottom: em(32, 24),
+        		},
+						'[class~="lead"]': {
+							fontSize: em(48, 24),
+							lineHeight: round(48 / 48),
+							marginTop: em(24, 24),
+          		marginBottom: em(24, 24),
+						},
 						h2: {
-							fontSize: em(48, 24),
-							marginTop: 0,
-							marginBottom: em(24, 48)
+							fontSize: em(60, 24),
+							lineHeight: round(60 / 60),
+							marginTop: em(60, 60),
+          		marginBottom: em(60, 60),
+
 						},
-						'.lead': {
+						h3: {
 							fontSize: em(48, 24),
-							lineHeight: 1,
+							lineHeight: round(48 / 48),
+							marginTop: em(24, 48),
+          		marginBottom: em(24, 48),
 						},
+						h4: {
+							fontSize: em(35, 24),
+							lineHeight: round(44 / 35),
+							marginTop: em(24, 35),
+          		marginBottom: em(24, 35),
+						},
+
 						blockquote: {
 							fontSize: em(18, 24)
 						}

@@ -1,0 +1,21 @@
+---
+import IconArrow from '@components/Icon/Arrow.astro'
+
+interface Props {
+  href?: string,
+  class?: string
+}
+
+const { href, class: className, ...attrs } = Astro.props as Props
+---
+
+<a href={href} class:list={['link', className]} {...attrs}>
+  <slot />
+  <IconArrow />
+</a>
+
+<style>
+  .link {
+    @apply text-[30px] inline-flex items-center bg-[pink] underline font-light;
+  }
+</style>

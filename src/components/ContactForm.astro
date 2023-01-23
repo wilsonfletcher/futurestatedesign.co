@@ -1,0 +1,27 @@
+---
+import IconArrow from '@components/Icon/Arrow.astro'
+---
+
+<form>
+  <div class="space-y-10">
+    <div>
+      <input type="text" placeholder="My name is..." class="input" />
+    </div>
+    <div>
+      <input type="email" placeholder="My email address is..." class="input" />
+    </div>
+    <button type="submit" class="button button--primary w-full md:w-[270px]">
+      <span class="flex justify-between items-center">
+        Let's talk
+        <IconArrow />
+      </span>
+    </button>
+  </div>
+</form>
+
+<style scoped>
+  .input {
+    @apply block w-full bg-transparent border-x-0 border-t-0 border-b border-white/50 px-0 placeholder:text-white/40 !important;
+    @apply text-[21px] md:text-[35px] !important;
+  }
+</style>

@@ -91,7 +91,8 @@ module.exports = {
 						blockquote: {
 							fontStyle: 'normal',
 							maxWidth: 580,
-							quotes: 'none !important'
+							quotes: 'none !important',
+
 						},
 						h2: {
 							fontWeight: theme('fontWeight.regular'),
@@ -119,7 +120,8 @@ module.exports = {
 						},
 						blockquote: {
 							fontSize: em(18, 18),
-							lineHeight: 1,
+							lineHeight: round(18 / 18),
+							paddingLeft: em(10, 18)
 						}
 					}
 				},
@@ -158,7 +160,9 @@ module.exports = {
 						},
 
 						blockquote: {
-							fontSize: em(18, 24)
+							fontSize: em(18, 24),
+							lineHeight: round(18 / 18),
+							paddingLeft: em(10, 18)
 						}
 					}
 				}

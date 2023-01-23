@@ -3,6 +3,9 @@ import { SITE } from '@config'
 import Default from '@layouts/Default.astro'
 import IconArrow from '@components/Icon/Arrow.astro'
 import Link from '@components/Link.astro'
+import Contact from '@components/Contact.astro'
+import ContactForm from '@components/ContactForm.astro'
+import Subscribe from '@components/Subscribe.astro'
 
 const services = await Astro.glob('../data/services/**/*.mdx')
 
@@ -65,7 +68,38 @@ const meta = {
     </div>
   </section>
 
-  <section class="py-10">
+  <article class="py-10">
+    <div class="container">
+      <div class="grid gap-4 lg:gap-10 lg:grid-cols-8">
+        <div class="lg:col-span-2">
+          <h2 class="h3">
+            How we work
+            <br />
+            <IconArrow class="rotate-45" />
+          </h2>
+        </div>
+        <div class="lg:col-span-6">
+          <div class="prose prose-black prose-lg md:prose-xl">
+            <p class="lead">
+              From a single board advisor to a complete team project
+            </p>
+            <p>
+              Our core team of innovation specialists can call on an extensive
+              network of expert practitioners, subject matter experts and
+              partner companies to support almost any need with top-tier people.
+            </p>
+            <p>
+              We’re offering our time, our networks, and our skills to help
+              entrepreneurs and businesses start and scale purpose-driven
+              organisations for sustainable, long-term growth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="py-10">
     <div class="container">
       <div class="grid gap-4 lg:gap-10 lg:grid-cols-8">
         <div class="lg:col-span-2">
@@ -76,7 +110,7 @@ const meta = {
           </h2>
         </div>
         <div class="lg:col-span-6">
-          <div class="prose prose-black prose-lg md:prose-xl">
+          <div class="prose prose-black prose-lg md:prose-xl mb-10">
             <h3>20 years, 350 companies etc...</h3>
             <p>
               Our core team of innovation specialists can call on an extensive
@@ -96,5 +130,11 @@ const meta = {
         </div>
       </div>
     </div>
-  </section>
+  </article>
+
+  <Contact class="bg-qux text-white">
+    <ContactForm />
+  </Contact>
+
+  <Subscribe class="bg-[#F7F7F7]" />
 </Default>

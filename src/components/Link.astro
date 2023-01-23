@@ -2,7 +2,7 @@
 import IconArrow from '@components/Icon/Arrow.astro'
 
 interface Props {
-  href?: string,
+  href?: string
   class?: string
 }
 
@@ -16,6 +16,6 @@ const { href, class: className, ...attrs } = Astro.props as Props
 
 <style>
   .link {
-    @apply text-[30px] inline-flex items-center bg-[pink] underline font-light;
+    @apply inline-flex items-center gap-2 text-[30px] leading-none underline font-regular;
   }
 </style>

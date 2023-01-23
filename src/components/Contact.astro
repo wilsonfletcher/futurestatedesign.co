@@ -1,6 +1,4 @@
 ---
-import IconArrow from '@components/Icon/Arrow.astro'
-
 interface Props {
   name?: string
   description?: string
@@ -29,44 +27,9 @@ const {
             {description}
             <span class="absolute top-0 left-0 h-[1em] w-1 bg-yellow"></span>
           </p>
-          <slot>
-            <form>
-              <div class="space-y-10">
-                <div>
-                  <input
-                    type="text"
-                    placeholder="My name is..."
-                    class="input"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    placeholder="My email address is..."
-                    class="input"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  class="button button--primary w-full md:w-[270px]"
-                >
-                  <span class="flex justify-between items-center">
-                    Let's talk
-                    <IconArrow />
-                  </span>
-                </button>
-              </div>
-            </form>
-          </slot>
+          <slot />
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<style>
-  .input {
-    @apply block w-full bg-transparent border-x-0 border-t-0 border-b border-white/50 px-0 placeholder:text-white/40;
-    @apply text-[21px] md:text-[35px];
-  }
-</style>

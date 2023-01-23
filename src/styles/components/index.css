@@ -16,7 +16,7 @@
   }
 
   .h4 {
-    @apply text-[21px] leading-[28px] font-roman lg:text-[35px] lg:leading-[44px];
+    @apply text-[21px] leading-[28px] font-roman md:text-[35px] md:leading-[44px];
   }
 
   .title {

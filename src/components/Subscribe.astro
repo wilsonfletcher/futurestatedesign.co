@@ -1,21 +1,25 @@
 ---
-import IconArrow from '@components/Icon/Arrow.astro'
+import Link from './Link.astro'
+
+interface Props {
+  class?: string
+}
+
+const { class: className, ...attrs } = Astro.props as Props
 ---
 
-<article class="py-10 lg:py-32">
+<article class:list={['py-10 lg:py-32', className]} {...attrs}>
   <div class="container">
     <div class="lg:grid lg:grid-cols-8 lg:gap-10">
-      <div class="lg:col-start-3 lg:col-span-5 lg:space-y-12">
+      <div class="lg:col-start-3 lg:col-span-5 lg:space-y-10">
         <h2 class="h2">The Futuremakers</h2>
         <div class="prose prose-black prose-lg lg:prose-xl">
           <p>
             Insights into new innovations in digital business, interesting
             trends and new ways of thinking about them.
           </p>
-          <a href="#" class="list-link">
-            Let me read it first
-            <IconArrow />
-          </a>
+
+          <Link href="#">Let me read it first</Link>
         </div>
       </div>
     </div>

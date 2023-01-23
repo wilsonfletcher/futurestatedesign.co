@@ -2,7 +2,7 @@
 import Default from '@layouts/Default.astro'
 
 export async function getStaticPaths() {
-  const pages = await Astro.glob('../data/pages/*.mdx')
+  const pages = await Astro.glob('../data/pages/foo.mdx')
 
   return pages.map(page => ({
     params: {

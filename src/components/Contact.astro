@@ -1,4 +1,6 @@
 ---
+import IconArrow from '@components/Icon/Arrow.astro'
+
 interface Props {
   name?: string
   description?: string
@@ -11,23 +13,26 @@ interface Props {
 
 const {
   name = 'Let’s talk',
-  description = 'Tell us what you are looking for to give us a feel for where you want to be...',
+  description = 'Tell us where you want to be. We’ll make sure you get there.',
   class: className,
   ...attrs
 } = Astro.props as Props
 ---
 
-<div class:list={['py-20', className]} {...attrs}>
+<div class:list={['py-20', 'bg-yellow', 'text-black']} {...attrs}>
   <div class="container">
     <div class="section">
       <div class="lg:col-start-3 lg:col-span-6 lg:grid lg:grid-cols-6">
-        <div class="lg:col-span-5 space-y-10">
-          <h2 class="h0">{name}</h2>
-          <p class="h2 text-white/40 relative pl-5">
+        <div class="lg:col-span-4 flex flex-col">
+          <h2 class="text-[60px] order-2 mt-8">
+            <a href="#" class="flex items-center">
+              <span class="border-b-[0.05em]">Let’s talk</span>
+              <IconArrow class="ml-1" />
+            </a>
+          </h2>
+          <p class="text-[35px] leading-[1.14285714] order-1 font-light">
             {description}
-            <span class="absolute top-0 left-0 h-[1em] w-1 bg-yellow"></span>
           </p>
-          <slot />
         </div>
       </div>
     </div>

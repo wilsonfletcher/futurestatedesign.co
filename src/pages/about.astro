@@ -3,6 +3,7 @@ import Default from '@layouts/Default.astro'
 import { frontmatter, Content } from '../data/pages/about.mdx'
 import IconArrow from '@components/Icon/Arrow.astro'
 import Contact from '@components/Contact.astro'
+import Subscribe from '@components/Subscribe.astro'
 
 const { name, description, url, image, seo } = frontmatter
 const meta = { title: name, description, url, image: seo.image }
@@ -11,30 +12,10 @@ const meta = { title: name, description, url, image: seo.image }
 <Default {...meta}>
   <article>
     <div class="container">
-      <div class="section mb-10">
-        <div class="lg:col-start-3 lg:col-span-6">
-          <h1 class="title mb-10">{name}</h1>
-          <p class="h1">{description}</p>
-        </div>
-      </div>
-
-      <div class="mb-10 lg:pl-20">
-        <div class="md:flex md:gap-5">
-          <div>
-            <img src="/images/about-1.jpg" alt="" />
-          </div>
-          <div class="md:flex-auto py-5">
-            <a href="#" class="text-[30px] inline-flex items-center underline">
-              Our manifesto
-              <IconArrow />
-            </a>
-          </div>
-        </div>
-      </div>
-
       <div class="lg:grid lg:grid-cols-8 mb-10">
         <div class="lg:col-start-3 lg:col-span-6">
-          <div class="prose prose-black prose-lg md:prose-xl">
+          <h1 class="title mb-10">{name}</h1>
+          <div class="prose prose-black prose-lg md:prose-xl max-w-none">
             <Content />
           </div>
         </div>
@@ -75,10 +56,7 @@ const meta = { title: name, description, url, image: seo.image }
         </div>
       </div>
     </section>
-    <Contact
-      name="Let’s talk"
-      description="Tell us what you are looking for to give us a feel for where you want to be..."
-      class="bg-qux text-white"
-    />
+    <Contact />
+    <Subscribe />s
   </article>
 </Default>

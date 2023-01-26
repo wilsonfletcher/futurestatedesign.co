@@ -13,7 +13,7 @@ interface Props {
 const { items } = Astro.props as Props
 ---
 
-<nav class="py-24 bg-white text-black" id="menu">
+<nav class="py-24 bg-qux text-white" id="menu">
   <div class="container">
     <div class="section">
       <div class="lg:col-start-3 lg:col-span-6">
@@ -21,7 +21,7 @@ const { items } = Astro.props as Props
         <ul>
           {
             items.map(({ name, url }) => (
-              <li class="border-b-2 border-black/40">
+              <li class="border-b-2 border-white/30">
                 <a href={url} class="h3 flex items-center py-5 justify-between">
                   <span class="underline" set:html={name} />
                   <IconArrow />

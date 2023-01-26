@@ -1,10 +1,10 @@
 const plugin = require('tailwindcss/plugin')
 
 const round = (num) =>
-  num
-    .toFixed(7)
-    .replace(/(\.[0-9]+?)0+$/, '$1')
-    .replace(/\.0$/, '');
+	num
+		.toFixed(7)
+		.replace(/(\.[0-9]+?)0+$/, '$1')
+		.replace(/\.0$/, '');
 const rem = (px) => `${round(px / 16)}rem`;
 const em = (px, base) => `${round(px / base)}em`;
 
@@ -14,7 +14,7 @@ module.exports = {
 	theme: {
 		colors: {
 			transparent: 'transparent',
-      current: 'currentColor',
+			current: 'currentColor',
 			yellow: '#F5FF51',
 			qux: '#001E20',
 			black: '#000',
@@ -22,8 +22,8 @@ module.exports = {
 		},
 		extend: {
 			screens: {
-      	md: '834px',
-      	lg: '1280px'
+				md: '834px',
+				lg: '1280px'
 			},
 			fontWeight: {
 				light: 400,
@@ -34,8 +34,8 @@ module.exports = {
 				black: 900
 			},
 			fontFamily: {
-      	sans: ['neue-haas-grotesk-display', 'sans-serif'],
-    	},
+				sans: ['neue-haas-grotesk-display', 'sans-serif'],
+			},
 			width: {
 				'cols-2': 310,
 				'cols-5': 735,
@@ -44,17 +44,17 @@ module.exports = {
 				'cols-2': 310,
 				'cols-5': 735,
 			},
-    	spacing: {
+			spacing: {
 				'foo': 310,
 				'cols-6': '19.375rem', // 310
-    	},
+			},
 			 gridTemplateColumns: {
-        // Simple 16 column grid
-        // '16': 'repeat(16, minmax(0, 1fr))',
+				// Simple 16 column grid
+				// '16': 'repeat(16, minmax(0, 1fr))',
 
-        // Complex site-specific column configuration
-        'default': '2fr, 6fr',
-      },
+				// Complex site-specific column configuration
+				'default': '2fr, 6fr',
+			},
 			typography: ({ theme }) => ({
 				black: {
 					css: {
@@ -64,7 +64,7 @@ module.exports = {
 						'--tw-prose-links': theme('colors.black'),
 						'--tw-prose-bold': theme('colors.black'),
 						'--tw-prose-quotes': '#757474',
-						'--tw-prose-quote-borders': theme('colors.black'),
+						'--tw-prose-quote-borders': theme('colors.yellow'),
 						'--tw-prose-bullets': theme('colors.black'),
 						'--tw-prose-counters': theme('colors.black'),
 					}
@@ -82,12 +82,12 @@ module.exports = {
 					}
 				},
 				DEFAULT: {
-          // https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
-          css: {
+					// https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
+					css: {
 						lineHeight: round(24 / 16),
-						'[class~="lead"]': {
-							lineHeight: 1,
-						},
+						// '[class~="lead"]': {
+						// 	lineHeight: 1,
+						// },
 						blockquote: {
 							fontStyle: 'normal',
 							maxWidth: 580,
@@ -110,13 +110,15 @@ module.exports = {
 					css: {
 						fontSize: rem(18),
 						lineHeight: round(24 / 18),
+						'[class~="lead"]': {
+							fontSize: em(30, 18),
+							lineHeight: round(30 / 30),
+							marginTop: em(15, 30),
+							marginBottom: em(15, 30),
+						},
 						h3: {
 							fontSize: em(30, 18),
-							lineHeight: 1,
-						},
-						'.lead': {
-							fontSize: em(30, 18),
-							lineHeight: 1,
+							lineHeight: round(30 / 30),
 						},
 						blockquote: {
 							fontSize: em(18, 18),
@@ -129,36 +131,41 @@ module.exports = {
 					css: {
 						fontSize: rem(24),
 						lineHeight: round(32 / 24),
-						p: {
-          		marginTop: em(32, 24),
-          		marginBottom: em(32, 24),
-        		},
-						'[class~="lead"]': {
+						// p: {
+						// 	marginTop: em(32, 24),
+						// 	marginBottom: em(32, 24),
+						// },
+						'[class~="intro"]': {
 							fontSize: em(48, 24),
-							lineHeight: round(48 / 48),
-							marginTop: em(24, 24),
-          		marginBottom: em(24, 24),
+							lineHeight: round(50 / 48),
+							marginTop: em(24, 48),
+							marginBottom: em(24, 48),
+						},
+						'[class~="lead"]': {
+							fontSize: em(35, 24),
+							lineHeight: round(40 / 35),
+							marginTop: em(24, 35),
+							marginBottom: em(24, 35),
 						},
 						h2: {
 							fontSize: em(60, 24),
 							lineHeight: round(60 / 60),
 							marginTop: em(60, 60),
-          		marginBottom: em(60, 60),
+							marginBottom: em(60, 60),
 
 						},
 						h3: {
 							fontSize: em(48, 24),
 							lineHeight: round(48 / 48),
 							marginTop: em(24, 48),
-          		marginBottom: em(24, 48),
+							marginBottom: em(24, 48),
 						},
 						h4: {
 							fontSize: em(35, 24),
 							lineHeight: round(44 / 35),
 							marginTop: em(24, 35),
-          		marginBottom: em(24, 35),
+							marginBottom: em(24, 35),
 						},
-
 						blockquote: {
 							fontSize: em(18, 24),
 							lineHeight: round(18 / 18),
@@ -170,11 +177,11 @@ module.exports = {
 		},
 	},
 	corePlugins: {
-    container: false
-  },
+		container: false
+	},
 	plugins: [
 		plugin(function ({ addUtilities, addComponents }) {
-      
+			
 			// const section = {
 			// 	'.section': {
 			// 		backgroundColor: 'red',
@@ -182,34 +189,34 @@ module.exports = {
 			// }
 
 			addComponents({
-        '.container': {
-          width: '100%',
-          maxWidth: '100%',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          paddingLeft: '1rem',
-          paddingRight: '1rem',
-          '@screen md': {
-            maxWidth: 1280,
-            paddingLeft: 40,
-            paddingRight: 40
-          }
-        },
-      })
+				'.container': {
+					width: '100%',
+					maxWidth: '100%',
+					marginLeft: 'auto',
+					marginRight: 'auto',
+					paddingLeft: '1rem',
+					paddingRight: '1rem',
+					'@screen md': {
+						maxWidth: 1280,
+						paddingLeft: 40,
+						paddingRight: 40
+					}
+				},
+			})
 
 			// addComponents(section)
 
-      addUtilities({
-        '.text-optimize': {
-          textRendering: 'optimizeLegibility'
-        }
-      })
-    }),
+			addUtilities({
+				'.text-optimize': {
+					textRendering: 'optimizeLegibility'
+				}
+			})
+		}),
 		require('@tailwindcss/aspect-ratio'),
 		require('@tailwindcss/forms')({
-      strategy: 'base', // only generate global styles
-      // strategy: 'class', // only generate classes
-    }),
+			strategy: 'base', // only generate global styles
+			// strategy: 'class', // only generate classes
+		}),
 		require('@tailwindcss/typography'),
 	],
 }

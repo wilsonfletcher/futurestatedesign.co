@@ -1,5 +1,7 @@
 ---
 import Default from '@layouts/Default.astro'
+import Contact from '@components/Contact.astro'
+import Subscribe from '@components/Subscribe.astro'
 
 import { frontmatter, Content } from '../data/pages/futurestate-manifesto.mdx'
 
@@ -29,15 +31,14 @@ manifesto.sort((a, b) => a.frontmatter.id - b.frontmatter.id)
           <div class="grid gap-10 md:grid-cols-2 py-20">
             {
               manifesto.map((item) => (
-                <article class="border-t-2 border-t-white/30 pt-10">
-                  <h2 class="title">{item.frontmatter.id}</h2>
-                  <div class="prose prose-white prose-lg md:prose-xl">
-                    <p>
-                      <em class="text-yellow not-italic">
-                        {item.frontmatter.name}
-                      </em>
-                      {item.frontmatter.description}
-                    </p>
+                <article>
+                  <div class="border-t-2 border-t-white/30 pt-6 lg:max-w-[22.5rem]">
+                    <h2 class="title mb-5 text-white/50">
+                      {item.frontmatter.id}
+                    </h2>
+                    <div class="prose prose-white prose-lg md:prose-xl">
+                      <p>{item.frontmatter.description}</p>
+                    </div>
                   </div>
                 </article>
               ))
@@ -46,30 +47,7 @@ manifesto.sort((a, b) => a.frontmatter.id - b.frontmatter.id)
         </div>
       </div>
     </div>
-    <div class="bg-white py-10">
-      <div class="container">
-        <div class="grid gap-4 md:grid-cols-2 lg:gap-10">
-          {
-            manifesto.map((item) => (
-              <article class="bg-qux text-white p-10">
-                <div class="border-b-2 border-b-white/30 pb-12 mb-12">
-                  <h2 class="flex gap-2 items-end">
-                    <span class="h3 text-yellow">{item.frontmatter.id}</span>
-                    <span class="text-2xl text-white/50 after:content-['Futurestate_manifesto']" />
-                  </h2>
-                </div>
-
-                <p class="h4">
-                  <em class="text-yellow not-italic">
-                    {item.frontmatter.name}
-                  </em>
-                  {item.frontmatter.description}
-                </p>
-              </article>
-            ))
-          }
-        </div>
-      </div>
-    </div>
   </section>
+  <Contact />
+  <Subscribe />
 </Default>

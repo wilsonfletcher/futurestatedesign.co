@@ -9,28 +9,29 @@ export interface Props {
 const { class: className, ...attrs } = Astro.props as Props
 ---
 
-<div role="banner" class:list={['pt-8', className]} {...attrs}>
+<div role="banner" class:list={['py-8', 'lg:py-20', className]} {...attrs}>
   <div class="container">
     <div
       class="flex items-start justify-between lg:grid lg:grid-cols-8 lg:gap-10"
     >
-      <div class="lg:col-span-2 lg:row-start-2">
+      <div class="lg:col-span-2 lg:absolute lg:top-[220px]">
         <a href="/" title={`Return to the ${SITE.name} homepage`}>
-          <Logo />
+          <Logo class="h-8 lg:h-[68px]" />
         </a>
       </div>
-      <div
-        class="lg:col-span-6 lg:col-start-3 lg:row-start-1 lg:flex lg:justify-between"
-      >
-        <a
-          href={`mailto:${SITE.email}`}
-          class="text-2xl font-bold hidden hover:underline lg:block"
-          >{SITE.email}</a
-        >
-        <a
-          href={`tel:${SITE.tel}`}
-          class="text-2xl hidden hover:underline lg:block">{SITE.telephone}</a
-        >
+
+      <div class="lg:col-span-6 lg:col-start-3 lg:flex lg:justify-between">
+        <div class="hidden lg:flex items-center gap-16">
+          <a
+            href={`mailto:${SITE.email}`}
+            class="text-2xl font-bold hover:underline"
+            >{SITE.email}</a
+          >
+          <a
+            href={`tel:${SITE.tel}`}
+            class="text-2xl hover:underline"
+            >{SITE.telephone}</a>
+        </div>
 
         <a href="#menu" class="inline-flex items-center justify-center w-8 h-8">
           <span class="sr-only">Menu</span>

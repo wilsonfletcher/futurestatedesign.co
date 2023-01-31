@@ -18,11 +18,15 @@ module.exports = {
 			yellow: '#F5FF51',
 			qux: '#001E20',
 			black: '#000',
-			white: '#fff'
+			white: '#fff',
+			red: {
+				DEFAULT: '#ff0000',
+				light: '#FF5C00',
+			},
 		},
 		extend: {
 			screens: {
-				md: '834px',
+				md: '760px',
 				lg: '1280px'
 			},
 			fontWeight: {
@@ -103,7 +107,6 @@ module.exports = {
 						h4: {
 							fontWeight: theme('fontWeight.regular'),
 						},
-
 					}
 				},
 				lg: {

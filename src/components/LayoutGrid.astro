@@ -1,0 +1,17 @@
+---
+const cols = [1, 2, 3, 4, 5, 6, 7, 8]
+---
+
+<div class="layout-grid">
+  {cols.map((col) => <div class="bg-red/10" />)}
+</div>
+
+<style>
+  .layout-grid {
+    @apply grid grid-cols-8 gap-4 absolute top-0 left-0 right-0 min-h-screen select-none;
+
+    @screen md {
+      @apply gap-10;
+    }
+  }
+</style>

@@ -1,4 +1,5 @@
 ---
+import { SITE } from '@config'
 import IconArrow from '@components/Icon/Arrow.astro'
 
 interface Props {
@@ -25,7 +26,7 @@ const {
       <div class="lg:col-start-3 lg:col-span-6 lg:grid lg:grid-cols-6">
         <div class="lg:col-span-4 flex flex-col">
           <h2 class="text-[60px] order-2 mt-8">
-            <a href="#" class="flex items-center">
+            <a href={`mailto:${SITE.email}`} class="flex items-center">
               <span class="border-b-[0.05em]">Let’s talk</span>
               <IconArrow class="ml-1" />
             </a>

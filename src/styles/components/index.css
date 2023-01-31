@@ -1,14 +1,26 @@
 @layer components {
   .h0 {
-    @apply text-[80px] tracking-[-0.01em] md:text-[100px] lg:text-[120px] lg:leading-[80px];
+    @apply text-[72px] leading-[calc(68/72)];
+
+    @screen md {
+      @apply text-[110px] leading-[calc(110/110)];
+    }
   }
 
   .h1 {
-    @apply text-[60px] lg:text-[80px];
+    @apply text-[64px] leading-[calc(62/64)];
+
+    @screen md {
+      @apply text-[90px] leading-[calc(80/90)];
+    }
   }
 
   .h2 {
-    @apply text-[40px] leading-none lg:text-[60px];
+    @apply text-[32px] leading-[calc(34/32)];
+
+    @screen md {
+      @apply text-[48px] leading-[calc(50/48)];
+    }
   }
 
   .h3 {
@@ -39,10 +51,7 @@
     }
   }
 
-
   .section {
     @apply grid gap-4 lg:grid-cols-8 lg:gap-10;
   }
 }
-
-

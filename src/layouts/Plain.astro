@@ -1,0 +1,34 @@
+---
+import '@styles/global.css'
+
+import BaseHead from '@components/BaseHead.astro'
+import { SITE } from '@config'
+
+export interface Props {
+  title?: string
+  description?: string
+  url?: string
+  image?: {
+    url?: string
+    width?: number
+    height?: number
+    alt?: string
+  }
+}
+
+const {
+  title,
+  description,
+  url,
+  image,
+} = Astro.props as Props
+const meta = { title, description, url, image }
+---
+
+<!DOCTYPE html>
+<html lang={SITE.lang}>
+  <BaseHead {...meta} />
+  <body class="bg-[#e5e5e5]">
+    <slot />
+  </body>
+</html>

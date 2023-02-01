@@ -3,8 +3,12 @@ import Default from '@layouts/Default.astro'
 import IconArrow from '@components/Icon/Arrow.astro'
 
 import { frontmatter } from '../../data/pages/work.mdx'
+import { Content as Foo } from '../../data/blocks/1.mdx'
+import * as Bar from '../../data/blocks/2.mdx'
 import Subscribe from '@components/Subscribe.astro'
+
 const { name, description, url } = frontmatter
+
 const clients = await Astro.glob('../../data/clients/*.md')
 clients.sort((a, b) => a.frontmatter.order - b.frontmatter.order)
 
@@ -13,154 +17,176 @@ const meta = { title: name, description, url }
 
 <Default {...meta}>
   <article>
-    <div class="mb-44">
+    <div class="mb-20">
       <div class="container">
-        <div class="lg:grid lg:gap-10 lg:grid-cols-8">
-          <div class="col-span-2"></div>
-          <div class="col-span-6">
-            <h1 class="title mb-12">{name}</h1>
-            <p class="text-5xl mb-20">{description}</p>
-
-            {
-              clients && (
-                <section>
-                  <h2 class="sr-only">Clients</h2>
-                  <div class="grid gap-5 grid-cols-2 md:grid-cols-6 md:gap-10">
-                    {clients.map((client) => (
-                      <article class="relative bg-black/20">
-                        <h3 class="sr-onlxy">{client.frontmatter.name}</h3>
-                        <div class="aspect-w-16 aspect-h-9" />
-                      </article>
-                    ))}
-                  </div>
-                </section>
-              )
-            }
+        <div class="lg:grid lg:grid-cols-8 lg:gap-10">
+          <div class="lg:col-start-3 lg:col-span-6">
+            <h1 class="h0 mb-12">{name}</h1>
+            <div class="prose prose-black prose-2xl">
+              <p class="intro">
+                We’ve learned our craft by working with smart, progressive
+                thinkers in a diverse family of companies worldwide.
+              </p>
+              <p class="intro">If that sounds like you, we’d love to talk.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <section>
-      <div class="container">
-        <div class="section">
-          <div class="lg:col-span-2">
-            <h2 class="h3">
-              Recent successes
-              <IconArrow class="rotate-45" />
-            </h2>
-          </div>
-          <div class="lg:col-span-6">
-            <article
-              class="grid lg:grid-cols-[4fr,2fr] gap-10 py-8 border-t border-t-black/40"
-            >
-              <div>
-                <h3 class="h4 mb-3">
-                  Simplified and digitized the mortgage-origination process
-                </h3>
-                <p class="prose prose-black prose-lg md:prose-xl">
-                  At a large bank, cutting approval time for new loans from 2–10
-                  days to 15 minutes, and reducing origination cost by 70
-                  percent
-                </p>
-              </div>
-              <div class="bg-black/50 h-[170px] hidden lg:block"></div>
-            </article>
-
-            <article
-              class="grid grid-cols-[4fr,2fr] gap-10 py-8 border-t border-t-black/40"
-            >
-              <div>
-                <h3 class="h4 mb-3">
-                  Helped a telecom company transform its service-dispatching
-                  process through automation,
-                </h3>
-                <p class="body">
-                  Yielding better management of service technicians and
-                  customer-service calls
-                </p>
-              </div>
-              <div class="bg-[#D9D9D9] h-[170px]"></div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-qux text-white py-[200px]">
-      <h2 class="sr-only">Testimonials</h2>
-      <div
-        class="relative w-full flex gap-10 snap-x snap-mandatory overflow-x-auto"
-      >
-        <div class="snap-center shrink-0">
-          <div class="shrink-0 w-4 sm:w-48"></div>
-        </div>
-        <div class="snap-center shrink-0">
-          <div class="bg-white text-black w-[730px] mx-auto p-12 shrink-0">
-            <div class="w-[100px] h-[100px] mx-auto mb-12">
-              <div class="aspect-w-1 aspect-h-1">
-                <img
-                  src="/images/photo.jpg"
-                  alt=""
-                  class="object-cover object-center"
-                />
-              </div>
-            </div>
-            <blockquote class="text-center">
-              <p class="h4">
-                ‘Its been really beneficial. It provided the whole company a
-                unified picture to get behind and helped us understand the
-                entire customer lifecycle’
-              </p>
-              <cite class="body text-black/50 not-italic">Founder, Axate</cite>
-            </blockquote>
-          </div>
-        </div>
-        <div class="snap-center shrink-0">
-          <div class="bg-white text-black max-w-[730px] mx-auto p-12 shrink-0">
-            <div class="w-[100px] h-[100px] mx-auto mb-12">
-              <div class="aspect-w-1 aspect-h-1">
-                <img
-                  src="/images/photo.jpg"
-                  alt=""
-                  class="object-cover object-center"
-                />
-              </div>
-            </div>
-            <blockquote class="text-center">
-              <p class="h4">
-                ‘Its been really beneficial. It provided the whole company a
-                unified picture to get behind and helped us understand the
-                entire customer lifecycle’
-              </p>
-              <cite class="body text-black/50 not-italic">Founder, Axate</cite>
-            </blockquote>
-          </div>
-        </div>
-        <div class="snap-center shrink-0">
-          <div class="bg-white text-black w-[730px] mx-auto p-12 shrink-0">
-            <div class="w-[100px] h-[100px] mx-auto mb-12">
-              <div class="aspect-w-1 aspect-h-1">
-                <img
-                  src="/images/photo.jpg"
-                  alt=""
-                  class="object-cover object-center"
-                />
-              </div>
-            </div>
-            <blockquote class="text-center">
-              <p class="h4">
-                ‘Its been really beneficial. It provided the whole company a
-                unified picture to get behind and helped us understand the
-                entire customer lifecycle’
-              </p>
-              <cite class="body text-black/50 not-italic">Founder, Axate</cite>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <Subscribe />
   </article>
+
+  <section class="py-10">
+    <div class="container">
+      <div class="grid gap-4 md:grid-cols-8 md:gap-10">
+        <div class="md:col-span-2">
+          <h2 class="h2">
+            Selected clients <IconArrow class="hidden md:block" />
+          </h2>
+        </div>
+        <div
+          class="md:col-span-6 grid gap-4 grid-cols-4 md:grid-cols-5 md:gap-[30px]"
+        >
+          {
+            clients.map((client) => {
+              const { frontmatter } = client
+              const { name, logo, order, image } = frontmatter
+              return (
+                <article>
+                  <h3 class="sr-only">{name}</h3>
+                  {!image && !logo && (
+                    <div class="aspect-w-15 aspect-h-9 bg-black/20" />
+                  )}
+
+                  {image && (
+                    <img
+                      src={image}
+                      alt={name}
+                      loading="lazy"
+                      class="grayscale"
+                    />
+                  )}
+
+                  {logo && (
+                    <div class="aspect-w-15 aspect-h-9" set:html={logo} />
+                  )}
+                </article>
+              )
+            })
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10">
+    <div class="container">
+      <div class="section">
+        <div class="lg:col-span-2">
+          <h2 class="h2">
+            The impact of our work
+            <IconArrow class="hidden md:block" />
+          </h2>
+        </div>
+        <div class="lg:col-span-6">
+          <div class="prose prose-black md:prose-xl">
+            <Foo />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10">
+    <div class="container">
+      <div class="section">
+        <div class="lg:col-span-2">
+          <h2 class="h2 sticky top-0">
+            We work best with
+            <IconArrow class="hidden md:block" />
+          </h2>
+        </div>
+        <div class="lg:col-span-6">
+          <div class="prose prose-black prose-lg md:prose-xl">
+            <Bar.Content />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-qux text-white pt-[200px] pb-[8rem]">
+    <h2 class="sr-only">Testimonials</h2>
+    <div
+      class="relative w-full flex gap-10 snap-x snap-mandatory overflow-x-auto"
+    >
+      <div class="snap-center shrink-0">
+        <div class="shrink-0 w-4 sm:w-48"></div>
+      </div>
+      <div class="snap-center shrink-0">
+        <div class="bg-white text-black w-[730px] mx-auto p-12 shrink-0">
+          <div class="w-[100px] h-[100px] mx-auto mb-12">
+            <div class="aspect-w-1 aspect-h-1">
+              <img
+                src="/images/photo.jpg"
+                alt=""
+                class="object-cover object-center"
+              />
+            </div>
+          </div>
+          <blockquote class="text-center">
+            <p class="h4">
+              ‘Its been really beneficial. It provided the whole company a
+              unified picture to get behind and helped us understand the entire
+              customer lifecycle’
+            </p>
+            <cite class="body text-black/50 not-italic">Founder, Axate</cite>
+          </blockquote>
+        </div>
+      </div>
+      <div class="snap-center shrink-0">
+        <div class="bg-white text-black max-w-[730px] mx-auto p-12 shrink-0">
+          <div class="w-[100px] h-[100px] mx-auto mb-12">
+            <div class="aspect-w-1 aspect-h-1">
+              <img
+                src="/images/photo.jpg"
+                alt=""
+                class="object-cover object-center"
+              />
+            </div>
+          </div>
+          <blockquote class="text-center">
+            <p class="h4">
+              ‘Its been really beneficial. It provided the whole company a
+              unified picture to get behind and helped us understand the entire
+              customer lifecycle’
+            </p>
+            <cite class="body text-black/50 not-italic">Founder, Axate</cite>
+          </blockquote>
+        </div>
+      </div>
+      <div class="snap-center shrink-0">
+        <div class="bg-white text-black w-[730px] mx-auto p-12 shrink-0">
+          <div class="w-[100px] h-[100px] mx-auto mb-12">
+            <div class="aspect-w-1 aspect-h-1">
+              <img
+                src="/images/photo.jpg"
+                alt=""
+                class="object-cover object-center"
+              />
+            </div>
+          </div>
+          <blockquote class="text-center">
+            <p class="h4">
+              ‘Its been really beneficial. It provided the whole company a
+              unified picture to get behind and helped us understand the entire
+              customer lifecycle’
+            </p>
+            <cite class="body text-black/50 not-italic">Founder, Axate</cite>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Subscribe />
 </Default>

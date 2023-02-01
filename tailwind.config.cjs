@@ -71,6 +71,12 @@ module.exports = {
 						'--tw-prose-quote-borders': theme('colors.yellow'),
 						'--tw-prose-bullets': theme('colors.black'),
 						'--tw-prose-counters': theme('colors.black'),
+						'--tw-prose-hr': '#8F8F8F',
+						p: {
+							em: {
+								color: '#8F8F8F'
+							}
+						}
 					}
 				},
 				white: {
@@ -92,6 +98,11 @@ module.exports = {
 						// '[class~="lead"]': {
 						// 	lineHeight: 1,
 						// },
+						p: {
+							em: {
+								fontStyle: 'normal',
+							}
+						},
 						blockquote: {
 							fontStyle: 'normal',
 							maxWidth: 580,

@@ -9,7 +9,7 @@ export interface Props {
 const { class: className, ...attrs } = Astro.props as Props
 ---
 
-<div role="banner" class:list={['py-8', 'lg:py-20', className]} {...attrs}>
+<div role="banner" class:list={['py-8', 'lg:py-12', className]} {...attrs}>
   <div class="container">
     <div
       class="flex items-start justify-between lg:grid lg:grid-cols-8 lg:gap-10"

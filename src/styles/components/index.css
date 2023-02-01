@@ -1,6 +1,6 @@
 @layer components {
   .h0 {
-    @apply text-[72px] leading-[calc(68/72)];
+    @apply text-[72px] leading-[calc(68/72)] tracking-tight;
 
     @screen md {
       @apply text-[110px] leading-[calc(110/110)];
@@ -31,12 +31,8 @@
     @apply text-[21px] leading-[28px] font-roman md:text-[35px] md:leading-[44px];
   }
 
-  .title {
-    @apply lg:text-[110px] leading-none tracking-[-1%];
-  }
-
   .intro {
-    @apply text-3xl space-y-[1em] lg:text-5xl;
+    @apply text-3xl space-y-[1em] lg:text-5xl bg-red-light;
   }
 
   .body {
@@ -54,4 +50,8 @@
   .section {
     @apply grid gap-4 lg:grid-cols-8 lg:gap-10;
   }
+}
+
+[class*='md:prose-xl'] {
+  @apply bg-[pink];
 }

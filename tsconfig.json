@@ -1,17 +1,15 @@
 {
-	"extends": "astro/tsconfigs/strict",
-	"compilerOptions": {
-		"baseUrl": ".",
-		"paths": {
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    // "importsNotUsedAsValues": "error",
+    "baseUrl": ".",
+    "paths": {
       "@components/*": ["src/components/*"],
-      "@config": ["src/config"],
       "@containers/*": ["src/containers/*"],
       "@data/*": ["src/data/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@plugin/*": ["src/plugins/*"],
-      "@scripts/*": ["src/scripts/*"],
       "@styles/*": ["src/styles/*"],
-      "@util/*": ["src/utilities/*"]
+      "@config": ["src/config"]
     }
-	}
+  }
 }

@@ -32,7 +32,7 @@
   }
 
   .intro {
-    @apply text-3xl space-y-[1em] lg:text-5xl bg-red-light;
+    @apply text-3xl space-y-[1em] lg:text-5xl;
   }
 
   .body {
@@ -48,10 +48,6 @@
   }
 
   .section {
-    @apply grid gap-4 lg:grid-cols-8 lg:gap-10;
+    @apply grid gap-4 md:grid-cols-8 md:gap-10;
   }
-}
-
-[class*='md:prose-xl'] {
-  @apply bg-[pink];
 }

@@ -1,0 +1,24 @@
+---
+layout: ../layouts/Page.astro
+name: Manifesto
+description: The futurestate manifesto is a set of principles that underpin how we think and work. Work with us and these will inform everything we do together.
+url: /about
+image:
+  url: /images/us.jpg
+  alt: Foo
+seo:
+  image:
+    url: /images/about-share.jpg
+    width: 1200
+    height: 628
+    alt: Foo
+theme: white
+tag: section
+---
+
+import manifesto from '@data/manifesto/index.yml'
+import Bar from '@components/Bar.astro'
+
+<p class="intro">The futurestate manifesto is a set of principles that underpin how we think and work. Work with us and these will inform everything we do together.</p>
+
+<Bar items={manifesto} />

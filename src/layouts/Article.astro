@@ -7,9 +7,9 @@ import '@styles/global.css'
 import { SITE } from '@config'
 import SchemaOrganizationFutureStateDesignCo from '@components/Schema/Organization/FutureStateDesignCo.astro'
 import BaseHead from '@components/BaseHead.astro'
-import Logo from '@components/Logo.astro'
 import Footer from '@components/Footer.astro'
 import Header from '@components/Header.astro'
+import Subscribe from '@components/Subscribe.astro'
 
 type Props = MarkdownLayoutProps<{
   id: string
@@ -38,7 +38,7 @@ const meta = {
 }
 ---
 
-<html lang="en">
+<html lang={SITE.lang}>
   <BaseHead {...meta}>
     <>
       <Schema
@@ -120,19 +120,10 @@ const meta = {
       <main class="flex-auto">
         <article class="flex-auto" id={id}>
           <div class="container">
-            <div class="grid lg:gap-10 lg:grid-cols-8">
-              <div class="lg:col-span-2">
-                <a
-                  href="/"
-                  class="body inline-flex items-center lg:row-start-2"
-                >
-                  <div class="i-custom:arrow -rotate-135deg mr-0.25em"></div>
-                  Back
-                </a>
-              </div>
-              <div class="lg:col-span-6">
-                <h1 class="title mb-5">{name}</h1>
-
+            <div class="grid md:gap-10 md:grid-cols-8">
+              <div class="md:col-start-3 md:col-span-6">
+                <h1 class="h1">{name}</h1>
+                <p class="intro">{description}</p>
                 <div class="prose prose-black prose-lg md:prose-xl">
                   <slot />
                 </div>
@@ -141,6 +132,7 @@ const meta = {
           </div>
         </article>
       </main>
+      <Subscribe />
       <Footer />
     </div>
   </body>

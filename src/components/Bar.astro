@@ -1,0 +1,25 @@
+---
+interface Item {
+  id: string
+  description: string
+}
+
+export interface Props {
+  items: Item[]
+}
+
+const { items } = Astro.props as Props
+---
+
+<div class="grid gap-10 md:grid-cols-2 py-20 not-prose">
+  {
+    items.map(({ id, description }) => (
+      <article>
+        <div class="border-t-2 border-t-white/30 pt-6 lg:max-w-[22.5rem]">
+          <h2 class="h1 mb-5 text-white/50">{id}</h2>
+          <p>{description}</p>
+        </div>
+      </article>
+    ))
+  }
+</div>

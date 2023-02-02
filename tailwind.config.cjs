@@ -17,7 +17,15 @@ module.exports = {
 			current: 'currentColor',
 			yellow: '#F5FF51',
 			qux: '#001E20',
+			grose: '#F5FF51',
+			cableGreen: '#19333C',
+			swamp: '#001E20',
 			black: '#000',
+			osloGray: '#808E8F',
+			gray: {
+				DEFAULT: '#8F8F8F',
+			},
+			alabaster: '#F7F7F7',
 			white: '#fff',
 			red: {
 				DEFAULT: '#ff0000',

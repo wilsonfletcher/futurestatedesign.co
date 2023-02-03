@@ -5,11 +5,11 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@config": ["src/config"],
       "@containers/*": ["src/containers/*"],
-      "@data/*": ["src/data/*"],
+      "@content/*": ["src/content/*"],
       "@layouts/*": ["src/layouts/*"],
       "@styles/*": ["src/styles/*"],
-      "@config": ["src/config"]
     }
   }
 }

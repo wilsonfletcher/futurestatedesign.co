@@ -1,6 +1,7 @@
 ---
 import { SITE } from '@config'
 import IconArrow from '@components/Icon/Arrow.astro'
+import Prose from './Prose.astro'
 
 interface Props {
   name?: string
@@ -22,18 +23,20 @@ const {
 
 <div class:list={['py-20', 'bg-yellow', 'text-black']} {...attrs}>
   <div class="container">
-    <div class="section">
-      <div class="lg:col-start-3 lg:col-span-6 lg:grid lg:grid-cols-6">
-        <div class="lg:col-span-4 flex flex-col">
+    <div class="grid gap-4 md:grid-cols-8 md:gap-10">
+      <div class="md:col-start-3 md:col-span-6 md:grid md:grid-cols-6">
+        <div class="md:col-span-4 flex flex-col">
           <h2 class="text-[60px] order-2 mt-8">
             <a href={`mailto:${SITE.email}`} class="flex items-center">
               <span class="border-b-[0.05em]">Let’s talk</span>
               <IconArrow class="ml-1" />
             </a>
           </h2>
-          <p class="text-[35px] leading-[1.14285714] order-1 font-light">
-            {description}
-          </p>
+          <Prose>
+            <p class="intro order-1">
+              {description}
+            </p>
+          </Prose>
         </div>
       </div>
     </div>

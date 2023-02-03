@@ -1,0 +1,62 @@
+/* 
+  .h3 {
+    @apply text-[32px] lg:text-[48px] font-roman;
+  }
+
+  .h4 {
+    @apply text-[21px] leading-[28px] font-roman md:text-[35px] md:leading-[44px];
+  }
+*/
+@layer components {
+  .h1 {
+    @apply text-[72px] leading-[calc(68/72)] tracking-tight;
+
+    @screen md {
+      @apply text-[110px] leading-[calc(110/110)];
+    }
+  }
+
+  .h2 {
+    @apply text-[64px] leading-[calc(62/64)];
+
+    @screen md {
+      @apply text-[90px] leading-[calc(80/90)];
+    }
+  }
+
+  .h3 {
+    @apply text-[32px] leading-[calc(34/32)];
+
+    @screen md {
+      @apply text-[48px] leading-[calc(50/48)];
+    }
+  }
+
+  /* .intro {
+    @apply text-[32px] leading-[34px];
+
+    @screen md {
+      @apply text-[48px] leading-[50px];
+    }
+  }
+
+  .lead {
+    @apply text-[14px] leading-[1.41666667] bg-[pink];
+
+    @screen md {
+      @apply text-[2.1875rem] leading-[1.14285714];
+    }
+  }
+
+  .body {
+    @apply text-[18px] leading-[1.33333333] bg-[lime];
+
+    @screen md {
+      @apply text-[24px];
+    }
+  }
+
+  .label {
+    @apply text-[18px] leading-[20px];
+  } */
+}

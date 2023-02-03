@@ -1,7 +1,7 @@
 ---
 import { Schema } from 'astro-seo-schema'
 import type { MarkdownLayoutProps } from 'astro'
-import menu from '../data/menu.yml'
+import menu from '../content/menu.yml'
 
 import '@styles/global.css'
 
@@ -53,11 +53,11 @@ const meta = {
           headline,
           description,
           url: `${SITE.url}${url}`,
-          image: {
-            '@type': 'ImageObject',
-            contentUrl: `${SITE.url}${image.url}`,
-            description: image.alt,
-          },
+          // image: {
+          //   '@type': 'ImageObject',
+          //   contentUrl: `${SITE.url}${image.url}`,
+          //   description: image.alt,
+          // },
           mainEntity: {
             '@type': 'Article',
             '@id': `${SITE.url}${url}#${id}`,
@@ -81,7 +81,7 @@ const meta = {
             <div class="grid md:gap-10 md:grid-cols-8 relative">
               <div class="md:col-span-2"></div>
               <div class="md:col-span-6">
-                <h1 class="h1">{name}</h1>
+                <h1 class="h1 mb-10">{name}</h1>
                 <Prose class={theme == 'white' ? 'prose-white' : 'prose-black'}>
                   <slot />
                 </Prose>

@@ -2,14 +2,14 @@
 import Default from '@layouts/Default.astro'
 import IconArrow from '@components/Icon/Arrow.astro'
 
-import { frontmatter } from '../../data/pages/work.mdx'
-import { Content as Foo } from '../../data/blocks/1.mdx'
-import * as Bar from '../../data/blocks/2.mdx'
+import { frontmatter } from '../../content/pages/work.mdx'
+import { Content as Foo } from '../../content/blocks/1.mdx'
+import * as Bar from '../../content/blocks/2.mdx'
 import Subscribe from '@components/Subscribe.astro'
 
 const { name, description, url } = frontmatter
 
-const clients = await Astro.glob('../../data/clients/*.md')
+const clients = await Astro.glob('../../content/clients/*.md')
 clients.sort((a, b) => a.frontmatter.order - b.frontmatter.order)
 
 const meta = { title: name, description, url }

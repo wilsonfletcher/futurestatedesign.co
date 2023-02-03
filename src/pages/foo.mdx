@@ -1,0 +1,47 @@
+---
+layout: ../layouts/Page.astro
+---
+
+import Title from '../components/Title.astro'
+import Accordion from '@components/Accordion.svelte'
+
+export const components = { h1: Title }
+
+export const authors = [
+  { name: 'Jane', email: 'hi@jane.com' },
+  { name: 'John', twitter: '@john2002' },
+]
+
+export const published = new Date('2022-02-01')
+
+# Hello world!
+
+Written by: {new Intl.ListFormat('en').format(authors.map(d => d.name))}.
+
+Published on: {new Intl.DateTimeFormat('en', {dateStyle: 'long'}).format(published)}.
+
+## Syntax highlighting
+
+We also support syntax highlighting in MDX out-of-the-box! This example uses our default [Shiki theme](https://github.com/shikijs/shiki). See the [MDX integration docs](https://docs.astro.build/en/guides/integrations-guide/mdx/#syntax-highlighting) for configuration options.
+
+```astro
+---
+const weSupportAstro = true;
+---
+
+<h1>Hey, what theme is that? Looks nice!</h1>
+```
+
+## Any questions?
+
+<Accordion client:visible title="Who should enrol on the programme?">
+  <div class="prose prose-black prose-lg md:prose-xl">
+    <blockquote>
+      <p>
+        The programme is suitable for individuals, teams and entire businesses.
+        You paye per business and have as many people tap into the support
+        during the 12 months. We do ask that there is a lead...
+      </p>
+    </blockquote>
+  </div>
+</Accordion>

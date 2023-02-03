@@ -84,6 +84,9 @@ module.exports = {
 							em: {
 								color: '#8F8F8F'
 							}
+						},
+						figcaption: {
+							borderLeftColor: theme('colors.yellow'),
 						}
 					}
 				},
@@ -117,6 +120,9 @@ module.exports = {
 							quotes: 'none !important',
 
 						},
+						h1: {
+							fontWeight: theme('fontWeight.regular'),
+						},
 						h2: {
 							fontWeight: theme('fontWeight.regular'),
 						},
@@ -126,6 +132,13 @@ module.exports = {
 						h4: {
 							fontWeight: theme('fontWeight.regular'),
 						},
+						figcaption: {
+							borderLeftWidth: '0.3125rem',
+							paddingLeft: '0.5em',
+							maxWidth: 580,
+							fontSize: 18,
+							lineHeight: round(20 / 18)
+						}
 					}
 				},
 				lg: {
@@ -169,12 +182,17 @@ module.exports = {
 							marginTop: em(24, 35),
 							marginBottom: em(24, 35),
 						},
+						'h1, .h1': {
+							fontSize: em(110, 24),
+							lineHeight: round(110 / 110),
+							marginTop: em(16, 110),
+							marginBottom: em(16, 110),
+						},
 						h2: {
 							fontSize: em(60, 24),
 							lineHeight: round(60 / 60),
 							marginTop: em(60, 60),
 							marginBottom: em(60, 60),
-
 						},
 						h3: {
 							fontSize: em(48, 24),
@@ -191,6 +209,11 @@ module.exports = {
 						blockquote: {
 							fontSize: em(18, 24),
 							lineHeight: round(18 / 18),
+							paddingLeft: em(10, 18)
+						},
+						figcaption: {
+							fontSize: em(18, 24),
+							lineHeight: round(20 / 18),
 							paddingLeft: em(10, 18)
 						}
 					}

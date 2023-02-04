@@ -1,0 +1,19 @@
+---
+export interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props as Props
+---
+
+<div class:list={['callout', className]}>
+  <slot />
+</div>
+
+<style>
+  .callout {
+    @screen md {
+      @apply relative -ml-[310px] pl-[310px];
+    }
+  }
+</style>

@@ -4,25 +4,49 @@ import htmlBeautifier from "astro-html-beautifier";
 import svelte from '@astrojs/svelte';
 import yaml from '@rollup/plugin-yaml';
 import tailwind from "@astrojs/tailwind";
-import remarkToc from 'remark-toc';
-import rehypeFigure from 'rehype-figure';
+
 import rehypeExternalLinks from 'rehype-external-links';
+import rehypeFigure from 'rehype-figure';
+import rehypeStringify from 'rehype-stringify';
+import rehypeComponents from 'rehype-components';
+import remarkDirective from 'remark-directive'
+import remarkDirectiveRehype from 'remark-directive-rehype'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import remarkToc from 'remark-toc';
+import astroLayouts from "astro-layouts";
+
+import { myRemarkPlugin, myRemarkPlugin2 } from './src/plugins';
+
+const layoutOptions = {
+  "pages/**/*.mdx": "/src/layouts/Page.astro",
+};
 
 // https://astro.build/config
 export default defineConfig({
   markdown: {
-    remarkPlugins: [remarkToc],
-    rehypePlugins: [rehypeFigure, rehypeExternalLinks],
   },
   vite: {
     plugins: [yaml()]
   },
   integrations: [
     mdx({
-      // extendMarkdownConfig: true,
+      remarkPlugins: [
+        [astroLayouts, layoutOptions],
+        [remarkToc, {
+          heading: 'contents'
+        }],
+        remarkDirective,
+        myRemarkPlugin,
+        myRemarkPlugin2
+      ],
+      rehypePlugins: [
+        rehypeFigure,
+        rehypeExternalLinks
+      ]
     }),
     htmlBeautifier(),
     tailwind({ config: { applyBaseStyles: false } }),
-    svelte(),
+    svelte()
   ]
 });

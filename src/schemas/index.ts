@@ -26,3 +26,10 @@ export const pageSchema = z.object({
   draft: z.boolean().optional(),
   theme: z.string().optional()
 })
+
+export const serviceSchema = z.object({
+  name: z.string(),
+  url: z.string().optional(),
+  sortOrder: z.number().optional(),
+  draft: z.boolean().optional(),
+})

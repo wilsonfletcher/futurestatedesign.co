@@ -35,10 +35,11 @@ export function myRemarkPlugin() {
   }
 }
 
-// This plugin is an example to turn `::note` into divs, passing arbitrary
-// attributes.
+// This plugin is an example to let users write HTML with directives.
+// It’s informative but rather useless.
+// See below for others examples.
 /** @type {import('unified').Plugin<[], import('mdast').Root>} */
-export function myRemarkPlugin2() {
+export function myRemarkPlugin3() {
   return (tree) => {
     visit(tree, (node) => {
       if (
@@ -46,13 +47,11 @@ export function myRemarkPlugin2() {
         node.type === 'leafDirective' ||
         node.type === 'containerDirective'
       ) {
-        if (node.name !== 'note') return
-
         const data = node.data || (node.data = {})
-        const tagName = node.type === 'textDirective' ? 'span' : 'div'
+        const hast = h(node.name, node.attributes)
 
-        data.hName = tagName
-        data.hProperties = h(tagName, node.attributes).properties
+        data.hName = hast.tagName
+        data.hProperties = hast.properties
       }
     })
   }

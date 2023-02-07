@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content'
+
+const clients = await getCollection('clients', ({ data }) => {
+  return data.draft !== true
+})
+
+clients.sort((a, b) => a.data.sortOrder - b.data.sortOrder)
+---
+
+<section aria-labelledby="selected-clients not-prose" class="border">
+  <h2 id="selected-clients" class="h2">Selected clients</h2>
+  <div
+    class="not-prose md:col-span-6 grid gap-4 grid-cols-4 md:grid-cols-5 md:gap-[30px]"
+  >
+    {
+      clients.map((client) => {
+        const { data } = client
+        const { name, logo, image } = data
+        return (
+          <article>
+            <h3 class="sr-only">{name}</h3>
+            {image && (
+              <div class="aspect-w-16 aspect-h-9">
+                <img
+                  src={image}
+                  alt={name}
+                  loading="lazy"
+                  class="grayscale"
+                />
+              </div>
+            )}
+
+            {logo && <div class="aspect-w-15 aspect-h-9" set:html={logo} />}
+          </article>
+        )
+      })
+    }
+  </div>
+</section>

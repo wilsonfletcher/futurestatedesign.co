@@ -6,16 +6,6 @@ interface Props {
 const { class: className = 'prose-black', ...attrs } = Astro.props as Props
 ---
 
-<div class:list={['prose', 'prose-lg', 'md:prose-xl', className]} {...attrs}>
+<div class:list={['prose', 'prose-lg', 'lg:prose-xl', className]} {...attrs}>
   <slot />
 </div>
-<!-- 
-<style is:global>
-  .prose {
-    > h2 {
-      @screen lg {
-        @apply border-8 absolute left-0;
-      }
-    }
-  }
-</style> -->

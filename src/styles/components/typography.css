@@ -43,7 +43,7 @@
   .intro {
     @apply text-[32px] leading-[34px];
 
-    @screen md {
+    @screen lg {
       @apply text-[48px] leading-[50px];
     }
   }
@@ -51,7 +51,7 @@
   .body {
     @apply text-[18px] leading-[1.33333333];
 
-    @screen md {
+    @screen lg {
       @apply text-[24px];
     }
   }

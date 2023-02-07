@@ -14,11 +14,20 @@ export const authors = [
 
 export const published = new Date('2022-02-01')
 
-## contents
-
 Written by: {new Intl.ListFormat('en').format(authors.map(d => d.name))}.
 
 Published on: {new Intl.DateTimeFormat('en', {dateStyle: 'long'}).format(published)}.
+
+:::main{#readme}
+
+Lorem:br
+ipsum.
+
+::hr{.red}
+
+A :i[lovely] language know as :abbr[HTML]{title="HyperText Markup Language"}.
+
+:::
 
 ## Syntax highlighting
 
@@ -103,11 +112,11 @@ b. List item b.
 
 ::youtube[Video of a cat in a box]{#kthguiZRzuA}
 
-:::note{.bg-yellow.p-4.lg:p-20}
+:::div{.bg-yellow.p-4.lg:p-20}
 if you chose xxx, you should also use yyy somewhere…
 :::
 
-:::note{.bg-yellow}
+:::div{.bg-yellow}
 
 ## Test
 

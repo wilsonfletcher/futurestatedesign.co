@@ -1,0 +1,17 @@
+---
+import IconArrow from '@/components/Icon/Arrow.astro'
+---
+
+<h2>
+  <slot />
+  <IconArrow class="hidden lg:block" />
+</h2>
+
+<style>
+  h2 {
+    @screen lg {
+      @apply absolute w-[270px] left-0;
+      @apply m-0 !important;
+    }
+  }
+</style>

@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content'
+
+const services = await getCollection('services', ({ data }) => {
+  return data.draft !== true
+})
+
+services.sort((a, b) => a.data.sortOrder - b.data.sortOrder)
+
+export interface Props {
+  name: string
+}
+
+const { name, ...attrs } = Astro.props as Props
+---
+
+<div class="list not-prose" {...attrs}>
+  <h3>{name}</h3>
+  <ul>
+    {
+      services.map(({ data: { name, url } }) => (
+        <li>
+          {url ? (
+            <a href={url} class="underline">
+              {name}
+            </a>
+          ) : (
+            name
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .list {
+    ul {
+      @apply list-none flex flex-wrap pl-0 text-gray;
+    }
+
+    li {
+      &:after {
+        @apply content-['/'] text-black mx-2;
+      }
+
+      &:last-of-type {
+        &:after {
+          @apply content-['...'] mx-0 text-gray;
+        }
+      }
+    }
+  }
+</style>

@@ -15,6 +15,7 @@ import Contact from '@/components/Contact.astro'
 import Prose from '@/components/Prose.astro'
 import ModalMenu from '@/components/Modal/Menu/index.svelte'
 import ModalMenuMenu from '@/components/Modal/Menu/Menu.astro'
+import LayoutGrid from '@/components/LayoutGrid.astro'
 
 type Props = MarkdownLayoutProps<{
   id: string
@@ -108,5 +109,6 @@ const meta = {
     <ModalMenu client:load>
       <ModalMenuMenu />
     </ModalMenu>
+    <LayoutGrid />
   </body>
 </html>

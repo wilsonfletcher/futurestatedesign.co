@@ -7,16 +7,16 @@ import tailwind from '@astrojs/tailwind'
 
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypeFigure from 'rehype-figure'
-import rehypeStringify from 'rehype-stringify'
-import rehypeComponents from 'rehype-components'
+// import rehypeStringify from 'rehype-stringify'
+// import rehypeComponents from 'rehype-components'
 import remarkDirective from 'remark-directive'
-import remarkDirectiveRehype from 'remark-directive-rehype'
-import remarkParse from 'remark-parse'
-import remarkRehype from 'remark-rehype'
+// import remarkDirectiveRehype from 'remark-directive-rehype'
+// import remarkParse from 'remark-parse'
+// import remarkRehype from 'remark-rehype'
 import remarkToc from 'remark-toc'
 import astroLayouts from 'astro-layouts'
 
-import { myRemarkPlugin, myRemarkPlugin2 } from './src/plugins'
+import { myRemarkPlugin, myRemarkPlugin3 } from './src/plugins'
 
 const layoutOptions = {
   'pages/**/*.mdx': '/src/layouts/Page.astro',
@@ -40,7 +40,7 @@ export default defineConfig({
         ],
         remarkDirective,
         myRemarkPlugin,
-        myRemarkPlugin2,
+        myRemarkPlugin3,
       ],
       rehypePlugins: [rehypeFigure, rehypeExternalLinks],
     }),

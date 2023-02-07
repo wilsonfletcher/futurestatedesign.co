@@ -21,7 +21,6 @@ module.exports = {
       cableGreen: '#19333C',
       swamp: '#001E20',
       black: '#000',
-      osloGray: '#808E8F',
       gray: {
         DEFAULT: '#8F8F8F',
       },
@@ -70,23 +69,18 @@ module.exports = {
       typography: ({ theme }) => ({
         black: {
           css: {
-            '--tw-prose-body': theme('colors.black'),
-            '--tw-prose-headings': theme('colors.black'),
-            '--tw-prose-lead': theme('colors.black'),
-            '--tw-prose-links': theme('colors.black'),
-            '--tw-prose-bold': theme('colors.black'),
-            '--tw-prose-quotes': '#757474',
+            '--tw-prose-body': theme('colors.current'),
+            '--tw-prose-headings': theme('colors.current'),
+            '--tw-prose-lead': theme('colors.current'),
+            '--tw-prose-links': theme('colors.current'),
+            '--tw-prose-bold': theme('colors.current'),
+            '--tw-prose-quotes': theme('colors.gray.DEFAULT'),
             '--tw-prose-quote-borders': theme('colors.yellow'),
-            '--tw-prose-bullets': theme('colors.black'),
-            '--tw-prose-counters': theme('colors.black'),
-            '--tw-prose-hr': '#8F8F8F',
-            p: {
-              em: {
-                color: '#8F8F8F',
-              },
-            },
+            '--tw-prose-bullets': theme('colors.current'),
+            '--tw-prose-counters': theme('colors.current'),
+            '--tw-prose-hr': theme('colors.gray.DEFAULT'),
             figcaption: {
-              borderLeftColor: theme('colors.yellow'),
+              borderLeftColor: theme('colors.black'),
             },
           },
         },
@@ -109,11 +103,11 @@ module.exports = {
             // '[class~="lead"]': {
             // 	lineHeight: 1,
             // },
-            p: {
-              em: {
-                fontStyle: 'normal',
-              },
-            },
+            // p: {
+            //   em: {
+            //     fontStyle: 'normal',
+            //   },
+            // },
             blockquote: {
               fontStyle: 'normal',
               maxWidth: 580,
@@ -141,83 +135,118 @@ module.exports = {
           },
         },
         lg: {
-          css: {
-            fontSize: rem(18),
-            lineHeight: round(24 / 18),
-            '[class~="lead"]': {
-              fontSize: em(30, 18),
-              lineHeight: round(30 / 30),
-              marginTop: em(15, 30),
-              marginBottom: em(15, 30),
+          css: [
+            {
+              fontSize: rem(18),
+              lineHeight: round(24 / 18),
+              p: {
+                marginTop: em(24, 18),
+                marginBottom: em(24, 18),
+              },
+              '[class~="intro"]': {
+                fontSize: em(32, 18),
+                lineHeight: round(34 / 32),
+                marginTop: em(24, 32),
+                marginBottom: em(24, 32),
+              },
+              '[class~="lead"]': {
+                fontSize: em(24, 18),
+                lineHeight: round(34 / 24),
+                marginTop: em(24, 24),
+                marginBottom: em(24, 24),
+              },
+              h3: {
+                fontSize: em(30, 18),
+                lineHeight: round(30 / 30),
+              },
+              blockquote: {
+                fontSize: em(18, 18),
+                lineHeight: round(18 / 18),
+                paddingLeft: em(10, 18),
+              },
+              hr: {
+                marginTop: em(24, 18),
+                marginBottom: em(24, 18),
+              }
             },
-            h3: {
-              fontSize: em(30, 18),
-              lineHeight: round(30 / 30),
-            },
-            blockquote: {
-              fontSize: em(18, 18),
-              lineHeight: round(18 / 18),
-              paddingLeft: em(10, 18),
-            },
-          },
+          ]
         },
         xl: {
-          css: {
-            fontSize: rem(24),
-            lineHeight: round(32 / 24),
-            // p: {
-            // 	marginTop: em(32, 24),
-            // 	marginBottom: em(32, 24),
-            // },
-            '[class~="intro"]': {
-              fontSize: em(48, 24),
-              lineHeight: round(50 / 48),
-              marginTop: em(24, 48),
-              marginBottom: em(24, 48),
+          css: [
+            {
+              fontSize: rem(24),
+              lineHeight: round(32 / 24),
+              p: {
+                marginTop: em(32, 24),
+                marginBottom: em(32, 24),
+              },
+              '[class~="intro"]': {
+                fontSize: em(48, 24),
+                lineHeight: round(50 / 48),
+                marginTop: em(32, 48),
+                marginBottom: em(32, 48),
+              },
+              '[class~="lead"]': {
+                fontSize: em(35, 24),
+                lineHeight: round(40 / 35),
+                marginTop: em(32, 35),
+                marginBottom: em(32, 35),
+              },
+              h1: {
+                fontSize: em(110, 24),
+                lineHeight: round(110 / 110),
+                marginTop: em(16, 110),
+                marginBottom: em(16, 110),
+              },
+              h2: {
+                fontSize: em(48, 24),
+                lineHeight: round(50 / 48),
+                marginTop: em(32, 48),
+                marginBottom: em(32, 48),
+              },
+              h3: {
+                fontSize: em(35, 24),
+                lineHeight: round(40 / 35),
+                marginTop: em(32, 35),
+                marginBottom: em(32, 35),
+              },
+              h4: {
+                fontSize: em(35, 24),
+                lineHeight: round(40 / 35),
+                marginTop: em(32, 35),
+                marginBottom: em(32, 35),
+              },
+              blockquote: {
+                fontSize: em(18, 24),
+                lineHeight: round(18 / 18),
+                paddingLeft: em(10, 18),
+              },
+              figure: {
+                marginTop: em(32, 24),
+                marginBottom: em(32, 24),
+              },
+              figcaption: {
+                fontSize: em(18, 24),
+                lineHeight: round(20 / 18),
+                paddingLeft: em(10, 18),
+              },
+              ul: {
+                marginTop: em(32, 24),
+                marginBottom: em(32, 24),
+                paddingLeft: em(32, 24),
+              },
+              li: {
+                marginTop: em(16, 24),
+                marginBottom: em(16, 24),
+              },
+              hr: {
+                marginTop: em(32, 24),
+                marginBottom: em(32, 24),
+              }
             },
-            '[class~="lead"]': {
-              fontSize: em(35, 24),
-              lineHeight: round(40 / 35),
-              marginTop: em(24, 35),
-              marginBottom: em(24, 35),
-            },
-            'h1, .h1': {
-              fontSize: em(110, 24),
-              lineHeight: round(110 / 110),
-              marginTop: em(16, 110),
-              marginBottom: em(16, 110),
-            },
-            h2: {
-              fontSize: em(60, 24),
-              lineHeight: round(60 / 60),
-              marginTop: em(60, 60),
-              marginBottom: em(60, 60),
-            },
-            h3: {
-              fontSize: em(48, 24),
-              lineHeight: round(48 / 48),
-              marginTop: em(24, 48),
-              marginBottom: em(24, 48),
-            },
-            h4: {
-              fontSize: em(35, 24),
-              lineHeight: round(44 / 35),
-              marginTop: em(24, 35),
-              marginBottom: em(24, 35),
-            },
-            blockquote: {
-              fontSize: em(18, 24),
-              lineHeight: round(18 / 18),
-              paddingLeft: em(10, 18),
-            },
-            figcaption: {
-              fontSize: em(18, 24),
-              lineHeight: round(20 / 18),
-              paddingLeft: em(10, 18),
-            },
-          },
-        },
-      }),
+          ]
+        }
+      })
     },
   },
   corePlugins: {

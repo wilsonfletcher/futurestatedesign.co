@@ -13,6 +13,7 @@ import Contact from '@/components/Contact.astro'
 import Prose from '@/components/Prose.astro'
 import ModalMenu from '@/components/Modal/Menu/index.svelte'
 import ModalMenuMenu from '@/components/Modal/Menu/Menu.astro'
+import LayoutGrid from '@/components/LayoutGrid.astro'
 
 export async function getStaticPaths() {
   const pageEntries = await getCollection('pages')
@@ -27,20 +28,21 @@ const { Content } = await entry.render()
 ---
 
 <html lang={SITE.lang}>
-  <BaseHead />
-  <body class:list={[entry.theme == 'white' && 'bg-qux text-white']}>
+  <BaseHead {...entry.data} title={`${entry.data.name} - ${SITE.name}`} />
+  <body class:list={[entry.data.theme == 'white' && 'bg-qux text-white']}>
     <div class="flex flex-col w-full min-h-screen">
       <Header />
       <main class="flex-auto">
-        <pre>{JSON.stringify(entry, null, 20)}</pre>
-        <article class="flex-auto pb-10" id={entry.slug}>
+        <article class="flex-auto overflow-x-hidden" id={entry.data.slug}>
           <div class="container">
-            <div class="grid md:gap-10 md:grid-cols-8 relative">
-              <div class="md:col-span-2"></div>
-              <div class="md:col-span-6">
-                <h1 class="h1 mb-10">{entry.name}</h1>
+            <div class="relative grid lg:gap-10 lg:grid-cols-8">
+              <div class="lg:col-span-2"></div>
+              <div class="lg:col-span-6">
+                <h1 class="h1 mb-10">{entry.data.name}</h1>
                 <Prose
-                  class={entry.theme == 'white' ? 'prose-white' : 'prose-black'}
+                  class={entry.data.theme == 'white'
+                    ? 'prose-white'
+                    : 'prose-black'}
                 >
                   <Content />
                 </Prose>
@@ -57,5 +59,6 @@ const { Content } = await entry.render()
     <ModalMenu client:load>
       <ModalMenuMenu />
     </ModalMenu>
+    <LayoutGrid />
   </body>
 </html>

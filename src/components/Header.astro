@@ -10,19 +10,19 @@ export interface Props {
 const { class: className, ...attrs } = Astro.props as Props
 ---
 
-<div role="banner" class:list={['py-8', 'lg:py-12', className]} {...attrs}>
+<div role="banner" class:list={['py-8', className]} {...attrs}>
   <div class="container">
-    <div
-      class="flex items-start justify-between lg:grid lg:grid-cols-8 lg:gap-10"
-    >
-      <div class="lg:col-span-2">
+    <div class="grid gap-4 md:gap-x-10 md:gap-y-20 md:grid-cols-8">
+      <div class="row-start-2 md:col-span-2">
         <a href="/" title={`Return to the ${SITE.name} homepage`}>
-          <Logo class="h-8 lg:h-[68px]" />
+          <Logo />
         </a>
       </div>
 
-      <div class="lg:col-span-6 lg:col-start-3 lg:flex lg:justify-between">
-        <div class="hidden lg:flex items-center gap-16">
+      <div
+        class="flex justify-end md:col-span-6 md:col-start-3 md:justify-between"
+      >
+        <div class="hidden md:flex items-center gap-16">
           <a
             href={`mailto:${SITE.email}`}
             class="text-2xl font-bold hover:underline">{SITE.email}</a
@@ -32,6 +32,10 @@ const { class: className, ...attrs } = Astro.props as Props
           >
         </div>
         <Overlay client:load />
+      </div>
+
+      <div class="flex items-end md:col-span-6">
+        <slot />
       </div>
     </div>
   </div>

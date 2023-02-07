@@ -1,5 +1,5 @@
 ---
 name: SNTV
 image: /images/clients/sntv.png
-order: 29
+sortOrder: 29
 ---

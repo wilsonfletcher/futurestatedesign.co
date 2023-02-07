@@ -1,5 +1,5 @@
 ---
 name: Consumer
 image: /images/clients/consumer.png
-order: 11
+sortOrder: 11
 ---

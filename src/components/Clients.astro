@@ -1,27 +1,18 @@
 ---
-// interface Client {
-//   frontmatter: {
-//     name: string
-//     logo?: string
-//     image?: string
-//   }
-// }
+import { getCollection } from 'astro:content'
 
-// export interface Props {
-//   clients: Client[]
-// }
+const clients = await getCollection('clients', ({ data }) => {
+  return data.draft !== true
+})
 
-// const { clients } = Astro.props as Props
-
-const clients = await Astro.glob('../content/clients/*.md')
-clients.sort((a, b) => a.frontmatter.order - b.frontmatter.order)
+clients.sort((a, b) => a.data.sortOrder - b.data.sortOrder)
 ---
 
 <div class="md:col-span-6 grid gap-4 grid-cols-4 md:grid-cols-5 md:gap-[30px]">
   {
     clients.map((client) => {
-      const { frontmatter } = client
-      const { name, logo, image } = frontmatter
+      const { data } = client
+      const { name, logo, image } = data
       return (
         <article>
           <h3 class="sr-only">{name}</h3>

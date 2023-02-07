@@ -1,0 +1,12 @@
+- name: About us
+  url: /about
+- name: Clients
+  url: /work
+- name: Insights
+  url: https://substack.com/
+- name: Futurestate Design™
+  url: /futurestate-design
+- name: The Futurestate Manifesto
+  url: /manifesto
+- name: Business Engines
+  url: /business-engines

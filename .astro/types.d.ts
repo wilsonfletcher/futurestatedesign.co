@@ -82,323 +82,332 @@ declare module 'astro:content' {
   data: any
 },
 },
+"callouts": {
+"1.mdx": {
+  id: "1.mdx",
+  slug: "1",
+  body: string,
+  collection: "callouts",
+  data: any
+},
+},
 "clients": {
 "aa-cars.md": {
   id: "aa-cars.md",
   slug: "aa-cars",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "abc.md": {
   id: "abc.md",
   slug: "abc",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "ap.md": {
   id: "ap.md",
   slug: "ap",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "axa-health.md": {
   id: "axa-health.md",
   slug: "axa-health",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "bauer-media.md": {
   id: "bauer-media.md",
   slug: "bauer-media",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "bbc.md": {
   id: "bbc.md",
   slug: "bbc",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "bfi.md": {
   id: "bfi.md",
   slug: "bfi",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "bt-sport.md": {
   id: "bt-sport.md",
   slug: "bt-sport",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "collinson.md": {
   id: "collinson.md",
   slug: "collinson",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "consumer.md": {
   id: "consumer.md",
   slug: "consumer",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "dk.md": {
   id: "dk.md",
   slug: "dk",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "experian.md": {
   id: "experian.md",
   slug: "experian",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "fscs.md": {
   id: "fscs.md",
   slug: "fscs",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "good-food-guide.md": {
   id: "good-food-guide.md",
   slug: "good-food-guide",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "hearst.md": {
   id: "hearst.md",
   slug: "hearst",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "homes-communities-agency.md": {
   id: "homes-communities-agency.md",
   slug: "homes-communities-agency",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "jato.md": {
   id: "jato.md",
   slug: "jato",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "lexis-nexis.md": {
   id: "lexis-nexis.md",
   slug: "lexis-nexis",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "lloyds.md": {
   id: "lloyds.md",
   slug: "lloyds",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "met-service.md": {
   id: "met-service.md",
   slug: "met-service",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "news-corp.md": {
   id: "news-corp.md",
   slug: "news-corp",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "nhs.md": {
   id: "nhs.md",
   slug: "nhs",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "nzz.md": {
   id: "nzz.md",
   slug: "nzz",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "penguin-random-house.md": {
   id: "penguin-random-house.md",
   slug: "penguin-random-house",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "publica.md": {
   id: "publica.md",
   slug: "publica",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "rothamsted-research.md": {
   id: "rothamsted-research.md",
   slug: "rothamsted-research",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "sky-news.md": {
   id: "sky-news.md",
   slug: "sky-news",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "sntv.md": {
   id: "sntv.md",
   slug: "sntv",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "sp-global-platts.md": {
   id: "sp-global-platts.md",
   slug: "sp-global-platts",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "spotlight.md": {
   id: "spotlight.md",
   slug: "spotlight",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "telstra.md": {
   id: "telstra.md",
   slug: "telstra",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "the-new-zealand-herald.md": {
   id: "the-new-zealand-herald.md",
   slug: "the-new-zealand-herald",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "the-telegraph.md": {
   id: "the-telegraph.md",
   slug: "the-telegraph",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "times-sunday-times.md": {
   id: "times-sunday-times.md",
   slug: "times-sunday-times",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 "travel-republic.md": {
   id: "travel-republic.md",
   slug: "travel-republic",
   body: string,
   collection: "clients",
-  data: any
+  data: InferEntrySchema<"clients">
 },
 },
 "manifesto": {
-"01.mdx": {
-  id: "01.mdx",
+"01.md": {
+  id: "01.md",
   slug: "01",
   body: string,
   collection: "manifesto",
-  data: any
+  data: InferEntrySchema<"manifesto">
 },
-"02.mdx": {
-  id: "02.mdx",
+"02.md": {
+  id: "02.md",
   slug: "02",
   body: string,
   collection: "manifesto",
-  data: any
+  data: InferEntrySchema<"manifesto">
 },
-"03.mdx": {
-  id: "03.mdx",
+"03.md": {
+  id: "03.md",
   slug: "03",
   body: string,
   collection: "manifesto",
-  data: any
+  data: InferEntrySchema<"manifesto">
 },
-"04.mdx": {
-  id: "04.mdx",
+"04.md": {
+  id: "04.md",
   slug: "04",
   body: string,
   collection: "manifesto",
-  data: any
+  data: InferEntrySchema<"manifesto">
 },
-"05.mdx": {
-  id: "05.mdx",
+"05.md": {
+  id: "05.md",
   slug: "05",
   body: string,
   collection: "manifesto",
-  data: any
+  data: InferEntrySchema<"manifesto">
 },
-"06.mdx": {
-  id: "06.mdx",
+"06.md": {
+  id: "06.md",
   slug: "06",
   body: string,
   collection: "manifesto",
-  data: any
+  data: InferEntrySchema<"manifesto">
 },
-"07.mdx": {
-  id: "07.mdx",
+"07.md": {
+  id: "07.md",
   slug: "07",
   body: string,
   collection: "manifesto",
-  data: any
+  data: InferEntrySchema<"manifesto">
 },
-"08.mdx": {
-  id: "08.mdx",
+"08.md": {
+  id: "08.md",
   slug: "08",
   body: string,
   collection: "manifesto",
-  data: any
+  data: InferEntrySchema<"manifesto">
 },
-"09.mdx": {
-  id: "09.mdx",
+"09.md": {
+  id: "09.md",
   slug: "09",
   body: string,
   collection: "manifesto",
-  data: any
+  data: InferEntrySchema<"manifesto">
 },
-"10.mdx": {
-  id: "10.mdx",
+"10.md": {
+  id: "10.md",
   slug: "10",
   body: string,
   collection: "manifesto",
-  data: any
+  data: InferEntrySchema<"manifesto">
 },
 },
 "pages": {
@@ -407,49 +416,84 @@ declare module 'astro:content' {
   slug: "404",
   body: string,
   collection: "pages",
-  data: any
+  data: InferEntrySchema<"pages">
 },
 "about.mdx": {
   id: "about.mdx",
   slug: "about",
   body: string,
   collection: "pages",
-  data: any
+  data: InferEntrySchema<"pages">
 },
 "business-engines.mdx": {
   id: "business-engines.mdx",
   slug: "business-engines",
   body: string,
   collection: "pages",
-  data: any
+  data: InferEntrySchema<"pages">
+},
+"experience-mapping.mdx": {
+  id: "experience-mapping.mdx",
+  slug: "experience-mapping",
+  body: string,
+  collection: "pages",
+  data: InferEntrySchema<"pages">
 },
 "foo.mdx": {
   id: "foo.mdx",
   slug: "foo",
   body: string,
   collection: "pages",
-  data: any
+  data: InferEntrySchema<"pages">
 },
 "futurestate-design.mdx": {
   id: "futurestate-design.mdx",
   slug: "futurestate-design",
   body: string,
   collection: "pages",
-  data: any
+  data: InferEntrySchema<"pages">
 },
 "futurestate-manifesto.mdx": {
   id: "futurestate-manifesto.mdx",
   slug: "futurestate-manifesto",
   body: string,
   collection: "pages",
-  data: any
+  data: InferEntrySchema<"pages">
+},
+"manifesto.mdx": {
+  id: "manifesto.mdx",
+  slug: "manifesto",
+  body: string,
+  collection: "pages",
+  data: InferEntrySchema<"pages">
+},
+"start-up.mdx": {
+  id: "start-up.mdx",
+  slug: "start-up",
+  body: string,
+  collection: "pages",
+  data: InferEntrySchema<"pages">
+},
+"styles.mdx": {
+  id: "styles.mdx",
+  slug: "styles",
+  body: string,
+  collection: "pages",
+  data: InferEntrySchema<"pages">
+},
+"the-next-twenty.mdx": {
+  id: "the-next-twenty.mdx",
+  slug: "the-next-twenty",
+  body: string,
+  collection: "pages",
+  data: InferEntrySchema<"pages">
 },
 "work.mdx": {
   id: "work.mdx",
   slug: "work",
   body: string,
   collection: "pages",
-  data: any
+  data: InferEntrySchema<"pages">
 },
 },
 "podcasts": {
@@ -480,5 +524,5 @@ declare module 'astro:content' {
 
 	};
 
-	type ContentConfig = never;
+	type ContentConfig = typeof import("../src/content/config");
 }

@@ -1,7 +1,5 @@
 export default {
-  "packageOptions": {
-    "external": [
-      "@prismicio/client"
-    ]
-  }
+  packageOptions: {
+    external: ['@prismicio/client'],
+  },
 }

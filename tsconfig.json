@@ -2,6 +2,7 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     // "importsNotUsedAsValues": "error",
+    "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["src/components/*"],

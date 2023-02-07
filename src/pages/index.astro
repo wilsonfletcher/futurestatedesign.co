@@ -10,6 +10,11 @@ const meta = {
   description: 'Design the future. Create it now. Repeat.',
   url: '/',
 }
+
+const callout = {
+  name: 'Is it the right approach for you?',
+  url: { name: 'Get in touch', url: 'mailto:info@futurestatedesign.com' },
+}
 ---
 
 <Default {...meta}>
@@ -102,7 +107,7 @@ const meta = {
                     </div>
                   </li>
                 </ul>
-                <Callout />
+                <Callout {...callout} />
               </article>
 
               <article class="border-b border-gray pb-8 md:pb-16 mb-8 md:mb-16">
@@ -160,7 +165,7 @@ const meta = {
                     </div>
                   </li>
                 </ul>
-                <Callout />
+                <Callout {...callout} />
               </article>
 
               <article class="border-b border-gray pb-8 md:pb-16 mb-8 md:mb-16">
@@ -207,7 +212,7 @@ const meta = {
                     </div>
                   </li>
                 </ul>
-                <Callout />
+                <Callout {...callout} />
               </article>
             </div>
           </div>

@@ -1,137 +1,118 @@
 ---
-name: Foo
-slug: 'foo'
+name: Hello word!
 ---
 
-<p class="lead">All successful businesses need momentum. Companies will only build that momentum if they keep adding new engines to power growth. In the modern economy, most new business engines will be digital.</p>
+import Title from '@/components/Title.astro'
+import Accordion from '@/components/Accordion.svelte'
 
-### All successful businesses need momentum. Companies will only build that momentum if they keep adding new engines to power growth. In the modern economy, most new business engines will be digital.
+export const components = { h1: Title }
 
-## h2 desktop 60/60
+export const authors = [
+  { name: 'Jane', email: 'hi@jane.com' },
+  { name: 'John', twitter: '@john2002' },
+]
 
-### h3 desktop 48/48
+export const published = new Date('2022-02-01')
 
-#### h4 desktop 35/44
+## contents
 
-##### h5 Heading
+Written by: {new Intl.ListFormat('en').format(authors.map(d => d.name))}.
 
-###### h6 Heading
+Published on: {new Intl.DateTimeFormat('en', {dateStyle: 'long'}).format(published)}.
 
-## Horizontal Rules
+## Syntax highlighting
 
+We also support syntax highlighting in MDX out-of-the-box! This example uses our default [Shiki theme](https://github.com/shikijs/shiki). See the [MDX integration docs](https://docs.astro.build/en/guides/integrations-guide/mdx/#syntax-highlighting) for configuration options.
+
+```astro
+---
+const weSupportAstro = true;
 ---
 
----
-
----
-
-## Typographic replacements
-
-Enable typographer option to see result.
-
-(c) (C) (r) (R) (tm) (TM) (p) (P) +-
-
-test.. test... test..... test?..... test!....
-
-!!!!!! ???? ,, -- ---
-
-"Smartypants, double quotes" and 'single quotes'
-
-## Emphasis
-
-**This is bold text**
-
-**This is bold text**
-
-_This is italic text_
-
-_This is italic text_
-
-~~Strikethrough~~
-
-## Blockquotes
-
-> Blockquotes can also be nested...
->
-> > ...by using additional greater-than signs right next to each other...
-> >
-> > > ...or with spaces between arrows.
-
-## Lists
-
-### Unordered
-
-- Create a list by starting a line with `+`, `-`, or `*`
-- Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
-    - Ac tristique libero volutpat at
-    * Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit
-- Very easy!
-
-### Ordered
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-
-4. You can use sequential numbers...
-5. ...or keep all the numbers as `1.`
-
-Start numbering with offset:
-
-57. foo
-1. bar
-
-## Code
-
-### Inline `code`
-
-### Indented code
-
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
-
-Block code "fences"
-
-```
-Sample text here...
+<h1>Hey, what theme is that? Looks nice!</h1>
 ```
 
-Syntax highlighting
+## Any questions?
 
-```js
-var foo = function (bar) {
-  return bar++
-}
+<Accordion client:visible title="Who should enrol on the programme?">
+  <div class="prose prose-black prose-lg md:prose-xl">
+    <blockquote>
+      <p>
+        The programme is suitable for individuals, teams and entire businesses.
+        You paye per business and have as many people tap into the support
+        during the 12 months. We do ask that there is a lead...
+      </p>
+    </blockquote>
+  </div>
+</Accordion>
 
-console.log(foo(5))
-```
+## GFM
 
-## Tables
+### Autolink literals
 
-| Option | Description                                                               |
-| ------ | ------------------------------------------------------------------------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default.    |
-| ext    | extension to be used for dest files.                                      |
+www.example.com, https://example.com, and contact@example.com.
 
-Right aligned columns
+### Footnote
 
-| Option |                                                               Description |
-| -----: | ------------------------------------------------------------------------: |
-|   data | path to data files to supply the data that will be passed into templates. |
-| engine |    engine to be used for processing templates. Handlebars is the default. |
-|    ext |                                      extension to be used for dest files. |
+A note[^1]
 
-## Links
+[^1]: Big note.
 
-[link text](http://dev.nodeca.com)
+### Strikethrough
 
-[link with title](http://nodeca.github.io/pica/demo/ 'title text!')
+~one~ or ~~two~~ tildes.
 
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
+### Table
 
+| a   | b   |   c |  d  |
+| --- | :-- | --: | :-: |
 
+## Tasklist
+
+- [ ] to do
+- [x] done
+
+The point can be illustrated by comparing a sample of AsciiDoc with an equivalent sample of Markdown. Here is a sample of AsciiDoc from the AsciiDoc manual:
+
+1. List item one.
+
+- List item one continued with a second paragraph followed by an
+  Indented block.
+- .................
+  $ ls _.sh
+  $ mv _.sh ~/tmp
+  .................
+- List item continued with a third paragraph.
+
+2. List item two continued with an open block.
+
+---
+
+This paragraph is part of the preceding list item.
+
+a. This list is nested and does not require explicit item
+continuation.
+
+- This paragraph is part of the preceding list item.
+
+b. List item b.
+
+## This paragraph belongs to item two of the outer list.
+
+## Cat videos
+
+::youtube[Video of a cat in a box]{#kthguiZRzuA}
+
+:::note{.bg-yellow.p-4.lg:p-20}
+if you chose xxx, you should also use yyy somewhere…
+:::
+
+:::note{.bg-yellow}
+
+## Test
+
+if you chose xxx, you should also use yyy somewhere…
+
+- one
+- two
+  :::

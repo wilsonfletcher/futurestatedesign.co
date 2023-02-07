@@ -7,6 +7,6 @@ module.exports = {
     //   preserve: false,
     //   features: { 'nesting-rules': false }
     // },
-    autoprefixer: {}
-  }
+    autoprefixer: {},
+  },
 }

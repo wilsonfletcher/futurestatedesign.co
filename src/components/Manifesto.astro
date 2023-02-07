@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content'
+
+const manifesto = await getCollection('manifesto', ({ data }) => {
+  return data.draft !== true
+})
+---
+
+<div class="grid gap-4 md:grid-cols-2 md:gap-10 not-prose">
+  {
+    manifesto.map(({ slug, data: { description } }) => (
+      <article class="border-t border-white/30 pt-8 md:pt-12">
+        <h2 class="h0 mb-6 text-white/50">{slug}</h2>
+        <p>{description}</p>
+        </article>
+    ))
+  }
+</div>

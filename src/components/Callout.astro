@@ -1,24 +1,43 @@
 ---
-import { SITE } from '@/config'
 import IconArrow from '@/components/Icon/Arrow.astro'
 
 export interface Props {
+  name: string
+  url: {
+    name: string
+    url: string
+  }
+  image?: {
+    url: string
+    width: string
+    height: string
+    alt?: string
+  }
   class?: string
 }
 
-const { class: className } = Astro.props as Props
+const { name, url, image, class: className } = Astro.props as Props
 ---
 
 <article class:list={['callout', className]}>
-  <h3 class="body-lg">Is it the right approach for you?</h3>
-  <a href={`mailto:${SITE.email}`} class="flex text-[32px] md:text-[48px]">
-    <span>Get in touch</span>
-    <IconArrow class="ml-2" />
-  </a>
+  <div class="flex flex-col md:flex-row">
+    {
+      image && image.url && (
+        <img src={image.url} loading="lazy" alt={image.alt} />
+      )
+    }
+    <div>
+      <h3 class="body-lg">{name}</h3>
+      <a href={url.url} class="flex text-[32px] md:text-[48px]">
+        <span>{url.name}</span>
+        <IconArrow class="ml-2" />
+      </a>
+    </div>
+  </div>
 </article>
 
 <style>
   .callout {
-    @apply border-l-8 border-yellow pl-2;
+    @apply border-l-8 border-yellow pl-2 max-w-[735px];
   }
 </style>

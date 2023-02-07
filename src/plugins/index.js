@@ -1,4 +1,3 @@
-
 import { visit } from 'unist-util-visit'
 import { h } from 'hastscript'
 
@@ -18,7 +17,8 @@ export function myRemarkPlugin() {
         const attributes = node.attributes || {}
         const id = attributes.id
 
-        if (node.type === 'textDirective') file.fail('Text directives for `youtube` not supported', node)
+        if (node.type === 'textDirective')
+          file.fail('Text directives for `youtube` not supported', node)
         if (!id) file.fail('Missing video id', node)
 
         data.hName = 'iframe'
@@ -28,7 +28,7 @@ export function myRemarkPlugin() {
           height: 200,
           frameBorder: 0,
           allow: 'picture-in-picture',
-          allowFullScreen: true
+          allowFullScreen: true,
         }
       }
     })

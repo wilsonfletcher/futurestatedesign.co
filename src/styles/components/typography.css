@@ -49,7 +49,7 @@
   }
 
   .body {
-    @apply text-[18px] leading-[1.33333333] bg-[lime];
+    @apply text-[18px] leading-[1.33333333];
 
     @screen md {
       @apply text-[24px];
@@ -57,7 +57,7 @@
   }
 
   .body-lg {
-    @apply text-[24px] leading-[34px] bg-[pink];
+    @apply text-[24px] leading-[34px];
 
     @screen md {
       @apply text-[35px] leading-[40px];
@@ -65,7 +65,7 @@
   }
 
   .lead {
-    @apply text-[14px] leading-[1.41666667] bg-[pink];
+    @apply text-[14px] leading-[1.41666667];
 
     @screen md {
       @apply text-[2.1875rem] leading-[1.14285714];

@@ -3,10 +3,6 @@ import { Schema } from 'astro-seo-schema'
 import type { MarkdownLayoutProps } from 'astro'
 
 import '@/styles/global.css'
-import LayoutGrid from '@/components/LayoutGrid.astro'
-
-// @ts-ignore  
-import menu from '../content/menu.yml'
 
 import { SITE } from '@/config'
 import SchemaOrganizationFutureStateDesignCo from '@/components/Schema/Organization/FutureStateDesignCo.astro'
@@ -106,12 +102,11 @@ const meta = {
       </main>
       <Contact />
       <Subscribe />
-      <Menu items={menu} />
+      <Menu />
       <Footer />
     </div>
     <ModalMenu client:load>
       <ModalMenuMenu />
     </ModalMenu>
-    <LayoutGrid />
   </body>
 </html>

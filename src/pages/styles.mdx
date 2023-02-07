@@ -2,6 +2,8 @@
 name: Styles
 ---
 import LayoutGrid from '@/components/LayoutGrid.astro'
+import Callout from '@/components/Callout.astro'
+import TextLinkLarge from '@/components/TextLink/Large.astro'
 
 # Landing pages titles 110/110 (-1% Kerning)
 
@@ -13,11 +15,18 @@ import LayoutGrid from '@/components/LayoutGrid.astro'
 
 <p class="h1">01 (110/110)</p>
 
+<h2 class="intro text-red-light">Intro</h2>
+
+
 <p class="intro">We design the future of companies, services and products.</p>
 
 <p class="lead">Over the last 20 years, our work has touched hundreds of millions of people, generated billions in revenue.</p>
 
+<p class="body-lg text-red-light">Large body</p>
+
 <p class="body-lg">Some of the key techniques we use in our work:Futurestate visioning / Commercial strategy</p> 
+
+<p class="text-red-light">Body</p>
 
 Shaping the futurestate vision for an established organisation and the strategy to realise it
 
@@ -25,8 +34,14 @@ Shaping the futurestate vision for an established organisation and the strategy 
 
 <p class="label">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ac magna tristique auctor. Duis a semper tortor, sit amet laoreet mi. Morbi a lectus id metus faucibus porttitor non id dolor. Duis volutpat, elit quis condimentum gravida, nunc nulla lacinia erat, quis ullamcorper tellus justo quis nulla.</p>
 
-![Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ac magna tristique auctor. Duis a semper tortor, sit amet laoreet mi. Morbi a lectus id metus faucibus porttitor non id dolor. Duis volutpat, elit quis condimentum gravida, nunc nulla lacinia erat, quis ullamcorper tellus justo quis nulla.](/images/graph.png)
+![Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ac magna tristique auctor. Duis a semper tortor, sit amet laoreet mi. Morbi a lectus id metus faucibus porttitor non id dolor. Duis volutpat, elit quis condimentum gravida, nunc nulla lacinia erat, quis ullamcorper tellus justo quis nulla.](/images/business-engine.png)
 
 ---
+
+## Callout link
+
+<Callout class="not-prose" />
+
+<TextLinkLarge name="Let’s talk" url="mailto:info@futurestatedesign.co" />
 
 <LayoutGrid />

@@ -45,16 +45,14 @@ const meta = { title, description, url, image, noindex }
     <slot name="head" />
   </BaseHead>
   <body class:list={[className]}>
-    <div class="page">
+    <div class="flex flex-col w-full min-h-screen">
       <Header />
-      <div>
-        <main class="flex-auto">
-          <slot />
-        </main>
-        <Contact />
-        <Subscribe />
-        <Menu items={menu} />
-      </div>
+      <main class="flex-auto">
+        <slot />
+      </main>
+      <Contact />
+      <Subscribe />
+      <Menu />
       <Footer />
     </div>
     <ModalMenu client:load>
@@ -62,12 +60,3 @@ const meta = { title, description, url, image, noindex }
     </ModalMenu>
   </body>
 </html>
-
-<style>
-.page {
-  display: grid;
-  grid-auto-rows: auto 1fr auto;
-  min-height: 100vh;
-  min-height: 100dvh;
-}
-</style>

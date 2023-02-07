@@ -2,14 +2,14 @@
 import { Schema } from 'astro-seo-schema'
 import type { MarkdownLayoutProps } from 'astro'
 
-import '@styles/global.css'
+import '@/styles/global.css'
 
-import { SITE } from '@config'
-import SchemaOrganizationFutureStateDesignCo from '@components/Schema/Organization/FutureStateDesignCo.astro'
-import BaseHead from '@components/BaseHead.astro'
-import Footer from '@components/Footer.astro'
-import Header from '@components/Header.astro'
-import Subscribe from '@components/Subscribe.astro'
+import { SITE } from '@/config'
+import SchemaOrganizationFutureStateDesignCo from '@/components/Schema/Organization/FutureStateDesignCo.astro'
+import BaseHead from '@/components/BaseHead.astro'
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+import Subscribe from '@/components/Subscribe.astro'
 
 type Props = MarkdownLayoutProps<{
   id: string

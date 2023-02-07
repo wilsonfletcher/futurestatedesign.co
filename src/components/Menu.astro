@@ -1,5 +1,5 @@
 ---
-import IconArrow from '@components/Icon/Arrow.astro'
+import IconArrow from '@/components/Icon/Arrow.astro'
 
 interface Item {
   name: string
@@ -13,7 +13,7 @@ interface Props {
 const { items } = Astro.props as Props
 ---
 
-<nav class="py-24 bg-qux text-white" id="menu">
+<nav class="py-24 bg-qux text-white">
   <div class="container">
     <div class="grid gap-4 md:grid-cols-8 md:gap-10">
       <div class="md:col-start-3 md:col-span-6">
@@ -22,9 +22,9 @@ const { items } = Astro.props as Props
           {
             items.map(({ name, url }) => (
               <li class="border-b-2 border-white/30">
-                <a href={url} class="h3 flex items-center py-5 justify-between">
+                <a href={url} class="text-[32px] md:text-5xl flex items-center py-5 justify-between">
                   <span class="underline" set:html={name} />
-                  <IconArrow />
+                  <IconArrow class="-rotate-45" />
                 </a>
               </li>
             ))

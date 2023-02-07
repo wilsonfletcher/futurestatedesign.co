@@ -12,12 +12,24 @@ seo:
     height: 628
     alt: Foo
 theme: white
-tag: section
 ---
 
-import manifesto from '@content/manifesto/index.yml'
-import Bar from '@components/Bar.astro'
+import Quux from '@/components/Quux.astro'
+export const components = { ol: Quux }
+
+:::note{.intro}
+The futurestate manifesto is a set of principles that underpin how we think and work. Work with us and these will inform everything we do together.
+:::
 
 <p class="intro">The futurestate manifesto is a set of principles that underpin how we think and work. Work with us and these will inform everything we do together.</p>
 
-<Bar items={manifesto} />
+1. Making old things digital is the business equivalent of lipstick on a pig. Real business transformation is built on future-focused innovation. Create what the future needs and we don’t need to re-build the past.
+2. If we only focus on today’s customer, tomorrow's customer won't need us. Real people aren't static personas of themselves – they change every day. If we don't invent on behalf of who they'll become, someone else will.
+3. The most important innovations don’t solve current needs - they create future needs. Great innovators create what happens next and make existing things irrelevant. If we wait and see, the future will be done to us.
+4. Anyone who thinks they can just ‘do some innovation’ and succeed is in for a shock. A company with a deep-rooted culture of innovation will wipe the floor with one that tries to just add it on. Being innovative is something we are, not something we do.
+5. A textbook framework does not make anyone an expert. We wouldn’t put our life in the hands of a carpenter armed with a copy of ‘The Surgery Playbook’. Brilliant people achieve brilliant outcomes.
+6. If we only focus on taking small steps forward, someone will jump ahead of us. Evolution, reinvention and invention: successful innovators need all of them. Investing only in one is playing a very risky game.
+7. It’s easy to do a lot and get absolutely nowhere. Thinking is the most valuable tool at our disposal and it’s vital we take the time to do it properly. Running in the right direction is always more important than running as fast as possible
+8. Customers don't buy algorithms, they buy what we turn them into. Technology is an ingredient: it can inspire the creation of a ground-breaking new dish or be a subtle background flavour. When it comes to tech, always think like a chef.
+9. Logic and trends lead everyone to the same place. The most important innovations are built on illogical, imaginative ideas that are found in unexpected places. We can’t expect to build a differentiated position if we’re thinking like everyone else is.
+10. We won’t find the future in a spreadsheet, but it needs to look good in one. “Make it big then we’ll make it pay” is a delusion born of the worst innovation theatre. A clever idea will be a clever failure without an even cleverer business model.

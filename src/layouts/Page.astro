@@ -2,19 +2,23 @@
 import { Schema } from 'astro-seo-schema'
 import type { MarkdownLayoutProps } from 'astro'
 
-import '@styles/global.css'
+import '@/styles/global.css'
+import LayoutGrid from '@/components/LayoutGrid.astro'
 
+// @ts-ignore  
 import menu from '../content/menu.yml'
-import { SITE } from '@config'
-import SchemaOrganizationFutureStateDesignCo from '@components/Schema/Organization/FutureStateDesignCo.astro'
-import BaseHead from '@components/BaseHead.astro'
-import Footer from '@components/Footer.astro'
-import Header from '@components/Header.astro'
-import Subscribe from '@components/Subscribe.astro'
-import Menu from '@components/Menu.astro'
-import Contact from '@components/Contact.astro'
-import Prose from '@components/Prose.astro'
-import Modal from '@/components/Modal.svelte'
+
+import { SITE } from '@/config'
+import SchemaOrganizationFutureStateDesignCo from '@/components/Schema/Organization/FutureStateDesignCo.astro'
+import BaseHead from '@/components/BaseHead.astro'
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+import Subscribe from '@/components/Subscribe.astro'
+import Menu from '@/components/Menu.astro'
+import Contact from '@/components/Contact.astro'
+import Prose from '@/components/Prose.astro'
+import ModalMenu from '@/components/Modal/Menu/index.svelte'
+import ModalMenuMenu from '@/components/Modal/Menu/Menu.astro'
 
 type Props = MarkdownLayoutProps<{
   id: string
@@ -32,7 +36,7 @@ type Props = MarkdownLayoutProps<{
   tag?: string
 }>
 
-const { frontmatter } = Astro.props as Props
+const { frontmatter, file } = Astro.props as Props
 const {
   id,
   name,
@@ -105,8 +109,9 @@ const meta = {
       <Menu items={menu} />
       <Footer />
     </div>
-    <Modal client:load>
-      <p>sdlsdkslksldks</p>
-    </Modal>
+    <ModalMenu client:load>
+      <ModalMenuMenu />
+    </ModalMenu>
+    <LayoutGrid />
   </body>
 </html>

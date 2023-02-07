@@ -1,6 +1,6 @@
 ---
-import { SITE } from '@config'
-import IconArrow from '@components/Icon/Arrow.astro'
+import { SITE } from '@/config'
+import IconArrow from '@/components/Icon/Arrow.astro'
 import Prose from './Prose.astro'
 
 interface Props {
@@ -21,7 +21,7 @@ const {
 } = Astro.props as Props
 ---
 
-<div class:list={['py-20', 'bg-yellow', 'text-black']} {...attrs}>
+<div class="py-24 md:py-[136px] bg-yellow text-black" {...attrs}>
   <div class="container">
     <div class="grid gap-4 md:grid-cols-8 md:gap-10">
       <div class="md:col-start-3 md:col-span-6 md:grid md:grid-cols-6">
@@ -32,11 +32,9 @@ const {
               <IconArrow class="ml-1" />
             </a>
           </h2>
-          <Prose>
-            <p class="intro order-1">
-              {description}
-            </p>
-          </Prose>
+          <p class="body-lg order-1">
+            {description}
+          </p>
         </div>
       </div>
     </div>

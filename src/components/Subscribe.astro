@@ -8,10 +8,10 @@ interface Props {
 const { class: className, ...attrs } = Astro.props as Props
 ---
 
-<article class:list={['py-10 lg:py-32', 'bg-white', 'text-black', className]} {...attrs}>
+<article class:list={['py-10 md:py-32', 'bg-white', 'text-black', className]} {...attrs}>
   <div class="container">
-    <div class="lg:grid lg:grid-cols-8 lg:gap-10">
-      <div class="lg:col-start-3 lg:col-span-5 lg:space-y-12">
+    <div class="md:grid md:grid-cols-8 md:gap-10">
+      <div class="md:col-start-3 md:col-span-5 md:space-y-12">
         <h2 class="h2">Futurestate Insights</h2>
         <div class="prose prose-black prose-lg md:prose-xl">
           <p>

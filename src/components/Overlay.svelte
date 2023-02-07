@@ -1,11 +1,11 @@
 <script>
-  import { isOverlayOpen } from '@/stores/overlay-store'
+  import { isModalMenuOpen } from '@/stores/modal-menu-store'
 </script>
 
 <button
   class="inline-flex items-center justify-center w-8 h-8"
   on:click={() => {
-    isOverlayOpen.set(true)
+    isModalMenuOpen.set(true)
   }}
 >
   <span class="sr-only">Open menu</span>

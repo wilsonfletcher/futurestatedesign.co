@@ -1,11 +1,11 @@
 ---
-import Default from '@layouts/Default.astro'
-import IconArrow from '@components/Icon/Arrow.astro'
+import Default from '@/layouts/Default.astro'
+import IconArrow from '@/components/Icon/Arrow.astro'
 
-import { frontmatter } from '../../content/pages/work.mdx'
-import { Content as Foo } from '../../content/blocks/1.mdx'
-import * as Bar from '../../content/blocks/2.mdx'
-import Subscribe from '@components/Subscribe.astro'
+import { frontmatter } from '@/content/pages/work.mdx'
+import { Content as Foo } from '@/content/blocks/1.mdx'
+import * as Bar from '@/content/blocks/2.mdx'
+import Subscribe from '@/components/Subscribe.astro'
 
 const { name, description, url } = frontmatter
 

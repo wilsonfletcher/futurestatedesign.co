@@ -1,19 +1,19 @@
-<script lang="ts">
+<script>
   import { fade } from 'svelte/transition'
-  import { isOverlayOpen } from '@/stores/overlay-store'
+
+  import { isModalMenuOpen } from '@/stores/modal-menu-store'
 </script>
 
-{#if $isOverlayOpen}
+{#if $isModalMenuOpen}
   <div
     transition:fade={{ duration: 300 }}
     class="modal"
     role="alertdialog"
     aria-modal="true"
-    aria-labelledby="dialog_label"
-    aria-describedby="dialog_desc"
+    aria-labelledby="modal_label"
   >
-    <div>
-      <button type="button" on:click={() => isOverlayOpen.set(false)}>
+    <div class="modal__header">
+      <button type="button" on:click={() => isModalMenuOpen.set(false)}>
         Close menu
         <svg
           width="29"
@@ -22,14 +22,17 @@
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            stroke="#fff"
+            stroke="currentColor"
             stroke-width="3"
             d="M1.061 1.939l26 26M27.061 2.061l-26 26"
           />
         </svg>
       </button>
     </div>
-    <slot />
+
+    <div class="modal__body">
+      <slot />
+    </div>
   </div>
 {/if}
 

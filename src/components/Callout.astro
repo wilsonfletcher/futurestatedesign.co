@@ -1,4 +1,7 @@
 ---
+import { SITE } from '@/config'
+import IconArrow from '@/components/Icon/Arrow.astro'
+
 export interface Props {
   class?: string
 }
@@ -6,14 +9,16 @@ export interface Props {
 const { class: className } = Astro.props as Props
 ---
 
-<div class:list={['callout', className]}>
-  <slot />
-</div>
+<article class:list={['callout', className]}>
+  <h3 class="body-lg">Is it the right approach for you?</h3>
+  <a href={`mailto:${SITE.email}`} class="flex text-[32px] md:text-[48px]">
+    <span>Get in touch</span>
+    <IconArrow class="ml-2" />
+  </a>
+</article>
 
 <style>
   .callout {
-    @screen md {
-      @apply relative -ml-[310px] pl-[310px];
-    }
+    @apply border-l-8 border-yellow pl-2;
   }
 </style>

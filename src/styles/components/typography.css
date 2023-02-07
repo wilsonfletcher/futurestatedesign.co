@@ -8,15 +8,15 @@
   }
 */
 @layer components {
-  .h1 {
-    @apply text-[72px] leading-[calc(68/72)] tracking-tight;
+  .h0 {
+    @apply text-[72px] leading-[68px] tracking-tight;
 
     @screen md {
-      @apply text-[110px] leading-[calc(110/110)];
+      @apply text-[110px] leading-[110px];
     }
   }
 
-  .h2 {
+  .h1 {
     @apply text-[64px] leading-[calc(62/64)];
 
     @screen md {
@@ -24,7 +24,7 @@
     }
   }
 
-  .h3 {
+  .h2 {
     @apply text-[32px] leading-[calc(34/32)];
 
     @screen md {
@@ -32,19 +32,19 @@
     }
   }
 
-  /* .intro {
+  .h4 {
+    @apply text-[21px] leading-[28px];
+
+    @screen md {
+      @apply text-[35px] md:leading-[40px];
+    }
+  }
+
+  .intro {
     @apply text-[32px] leading-[34px];
 
     @screen md {
       @apply text-[48px] leading-[50px];
-    }
-  }
-
-  .lead {
-    @apply text-[14px] leading-[1.41666667] bg-[pink];
-
-    @screen md {
-      @apply text-[2.1875rem] leading-[1.14285714];
     }
   }
 
@@ -56,7 +56,23 @@
     }
   }
 
+  .body-lg {
+    @apply text-[24px] leading-[34px] bg-[pink];
+
+    @screen md {
+      @apply text-[35px] leading-[40px];
+    }
+  }
+
+  .lead {
+    @apply text-[14px] leading-[1.41666667] bg-[pink];
+
+    @screen md {
+      @apply text-[2.1875rem] leading-[1.14285714];
+    }
+  }
+
   .label {
     @apply text-[18px] leading-[20px];
-  } */
+  }
 }

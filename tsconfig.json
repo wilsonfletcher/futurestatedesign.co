@@ -4,15 +4,14 @@
     // "importsNotUsedAsValues": "error",
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
       "@/components/*": ["src/components/*"],
-      "@config": ["src/config"],
-      "@containers/*": ["src/containers/*"],
-      "@content/*": ["src/content/*"],
-      "@layouts/*": ["src/layouts/*"],
+      "@/config": ["src/config"],
+      "@/containers/*": ["src/containers/*"],
+      "@/content/*": ["src/content/*"],
+      "@/layouts/*": ["src/layouts/*"],
       "@/plugins/*": ["src/plugins/*"],
       "@/stores/*": ["src/stores/*"],
-      "@styles/*": ["src/styles/*"]
+      "@/styles/*": ["src/styles/*"]
     }
   }
 }

@@ -3,9 +3,12 @@ interface Props {
   class?: string
 }
 
-const { class: className = 'prose-black', ...attrs } = Astro.props as Props
+const { class: className, ...attrs } = Astro.props as Props
 ---
 
-<div class:list={['prose', 'prose-lg', 'lg:prose-xl', className]} {...attrs}>
+<div
+  class:list={['prose', 'prose-default', 'prose-lg', 'lg:prose-xl', className]}
+  {...attrs}
+>
   <slot />
 </div>

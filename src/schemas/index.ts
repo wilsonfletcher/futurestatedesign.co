@@ -24,6 +24,7 @@ export const pageSchema = z.object({
     alt: z.string().optional(),
   }).optional(),
   draft: z.boolean().optional(),
+  type: z.string().optional(),
   theme: z.string().optional()
 })
 

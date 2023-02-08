@@ -44,6 +44,9 @@ module.exports = {
         bold: 700,
         black: 900,
       },
+      fontSize: {
+        lg: [rem(18), rem(24)],
+      },
       fontFamily: {
         sans: ['neue-haas-grotesk-display', 'sans-serif'],
       },
@@ -56,6 +59,7 @@ module.exports = {
         'cols-5': 735,
       },
       spacing: {
+        '1px': '1px',
         foo: 310,
         'cols-6': '19.375rem', // 310
       },
@@ -67,7 +71,7 @@ module.exports = {
         default: '2fr, 6fr',
       },
       typography: ({ theme }) => ({
-        black: {
+        default: {
           css: {
             '--tw-prose-body': theme('colors.current'),
             '--tw-prose-headings': theme('colors.current'),
@@ -82,18 +86,6 @@ module.exports = {
             figcaption: {
               borderLeftColor: theme('colors.black'),
             },
-          },
-        },
-        white: {
-          css: {
-            '--tw-prose-body': theme('colors.white'),
-            '--tw-prose-lead': theme('colors.white'),
-            '--tw-prose-links': theme('colors.white'),
-            '--tw-prose-bold': theme('colors.white'),
-            '--tw-prose-quotes': '#757474',
-            '--tw-prose-quote-borders': theme('colors.white'),
-            '--tw-prose-bullets': theme('colors.white'),
-            '--tw-prose-counters': theme('colors.white'),
           },
         },
         DEFAULT: {
@@ -125,6 +117,10 @@ module.exports = {
             h4: {
               fontWeight: theme('fontWeight.regular'),
             },
+            img: {
+              marginTop: 0,
+              marginBottom: 0
+            },
             figcaption: {
               borderLeftWidth: '0.3125rem',
               paddingLeft: '0.5em',
@@ -143,13 +139,13 @@ module.exports = {
                 marginTop: em(24, 18),
                 marginBottom: em(24, 18),
               },
-              '[class~="intro"]': {
+              '[class~="lead"]': {
                 fontSize: em(32, 18),
                 lineHeight: round(34 / 32),
                 marginTop: em(24, 32),
                 marginBottom: em(24, 32),
               },
-              '[class~="lead"]': {
+              '[class~="h3"]': {
                 fontSize: em(24, 18),
                 lineHeight: round(34 / 24),
                 marginTop: em(24, 24),
@@ -158,6 +154,10 @@ module.exports = {
               h3: {
                 fontSize: em(30, 18),
                 lineHeight: round(30 / 30),
+              },
+              img: {
+                marginTop: 0,
+                marginBottom: 0
               },
               blockquote: {
                 fontSize: em(18, 18),
@@ -180,13 +180,13 @@ module.exports = {
                 marginTop: em(32, 24),
                 marginBottom: em(32, 24),
               },
-              '[class~="intro"]': {
+              '[class~="lead"]': {
                 fontSize: em(48, 24),
                 lineHeight: round(50 / 48),
                 marginTop: em(32, 48),
                 marginBottom: em(32, 48),
               },
-              '[class~="lead"]': {
+              '[class~="h3"]': {
                 fontSize: em(35, 24),
                 lineHeight: round(40 / 35),
                 marginTop: em(32, 35),
@@ -215,6 +215,10 @@ module.exports = {
                 lineHeight: round(40 / 35),
                 marginTop: em(32, 35),
                 marginBottom: em(32, 35),
+              },
+              img: {
+                marginTop: 0,
+                marginBottom: 0
               },
               blockquote: {
                 fontSize: em(18, 24),

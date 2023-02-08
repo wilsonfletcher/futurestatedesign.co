@@ -2,11 +2,43 @@
 
 @layer base {
   html {
-    @apply font-sans leading-none font-regular scroll-smooth;
+    @apply scroll-smooth;
   }
 
   body {
-    @apply text-optimize;
+    @apply font-sans leading-none font-regular text-optimize;
+  }
+
+  h1 {
+    @apply text-[64px] leading-[62px];
+
+    @screen lg {
+      @apply text-[90px] leading-[80px];
+    }
+  }
+
+  h2 {
+    @apply text-[32px] leading-[34px] mb-6;
+
+    @screen lg {
+      @apply text-[48px] leading-[50px] mb-8;
+    }
+  }
+
+  h3 {
+    @apply text-[21px] leading-[28px] mb-6;
+
+    @screen lg {
+      @apply text-[35px] leading-[40px] mb-8;
+    }
+  }
+
+  h4 {
+    @apply text-[14px] leading-[1.41666667] mb-6;
+
+    @screen lg {
+      @apply text-[2.1875rem] leading-[1.14285714] mb-8;
+    }
   }
 
   /* [type='text'],

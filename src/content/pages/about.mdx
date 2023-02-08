@@ -12,28 +12,27 @@ seo:
     height: 628
     alt: Foo
 ---
+import { Article, Prose, Section } from '@/components/index.astro'
 import Teaser from '@/components/Teaser.astro'
 import Services from '@/containers/Services.astro'
 
-<p class="intro">We’ve been making new ideas work for 20 years. In that time, we’ve worked with
-  over 150 organisations, in 10 countries, delivering over 350 successful
-  programmes.</p>
+<Article class="bg-yellow">
+  <p class="lead">We’ve been making new ideas work for 20 years. In that time, we’ve worked with over 150 organisations, in 10 countries, delivering over 350 successful programmes.</p>
+  <p class="h3">Founded as Wilson Fletcher by Mark Wilson and Stephanie Fletcher, we [became Futurestate Design Co.] to mark our 20th anniversary.</p>
 
-<p class="lead">Founded as Wilson Fletcher by Mark Wilson and Stephanie Fletcher, we [became Futurestate Design Co.] to mark our 20th anniversary.</p>
+  ![Photo of Mark and Steph](/images/us.jpg)
 
-![Photo of Mark and Steph](/images/us.jpg)
+  Since day one, our work has been focused on helping companies drive innovation-led growth.
 
-Since day one, our work has been focused on helping companies drive innovation-led growth.
+  We design new and next generation digital products and services, shape new business propositions, develop future vision and design strategies to help organisations become something new.
 
-We design new and next generation digital products and services, shape new business propositions, develop future vision and design strategies to help organisations become something new.
+  Innovation-led companies will power the economy for decades to come. They’ll drive big improvements in how we live and work. They’ll change the societies we live in and make the planet(s) we live on better.
 
-Innovation-led companies will power the economy for decades to come. They’ll drive big improvements in how we live and work. They’ll change the societies we live in and make the planet(s) we live on better.
+  Our mission is to help every company we can become one of them.
+</Article>
 
-Our mission is to help every company we can become one of them.
-
-## Where we focus
-
-<p class="h2">Well, the clue’s in the name.</p>
+<Section name="Where we focus">
+<p class="lead">Well, the clue’s in the name.</p>
 
 There are three grades of innovation that every business needs to invest in. We specialise in the two that can really help a company maximise its future potential: the big leaps forward that open up growth opportunities that your current roadmap won’t get close to.
 
@@ -64,16 +63,13 @@ Work with us when you need to see what your future could look like and how to st
 />
 
 ---
-import H2 from '@/components/H2.astro'
-
-export const components = { h2: H2 }
 
 ## Read the book
 
 ## <Teaser>Futurestate Design</Teaser>
+</Section>
 
-## How we work
-
+<Section name="How we work">
 ### A modern, flexible, expert practice.
 
 Businesses are increasingly borderless, operating more flexibly, and subject to more volatility in market and operational conditions than at any time in history.
@@ -95,18 +91,19 @@ We’ve built an incredible network of people we trust over the last 20 years, a
 The calibre of people who work with us means that those teams are usually much smaller and more effective than you would expect if that team was built from a fixed ‘bench’.
 
 We can introduce additional partners you can trust, help you hire into key internal roles, and connect you with peers in client organisations who have faced similar challenges. We run frequent round-table dinners within our client network under strict privacy rules where everyone can exchange experiences with other senior leaders.
+</Section>
 
-## Tools of our trade
-
+<Section name="Tools of our trade">
 <p class="lead">Core competencies</p>
-
 <Services name="Some of the key techniques we use in our work:" />
+</Section>
 
+<div class="max-w-[1280px] mx-auto">
 ![3-GRADES OF INNOVATION  diagram](/images/about.jpg)
+</div>
 
-## Afterword
-
-<p class="h2">And finally...</p>
+<Section name="Afterword">
+<p class="lead">And finally...</p>
 
 Wherever and however you work with us, we’ll make the experience an enjoyable and rewarding one. Great work emerges from great thinking, so we always foster an environment where that can happen.
 
@@ -115,3 +112,4 @@ Our London studio is a creative workshop where we and our clients get the time a
 The coffee is lethal, the wine is plentiful, the biscuits are outstanding and the dog (Millie) is a highly skilled treat negotiator.
 
 Our place, your place or virtual. We hope to see you there.
+</Section>

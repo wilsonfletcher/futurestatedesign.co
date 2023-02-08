@@ -1,0 +1,35 @@
+---
+import { slugify } from 'src/utils'
+import { H2, Prose } from '@/components/index.astro'
+
+interface Props {
+  name?: string
+  class?: string
+}
+
+const {
+  name,
+  class: className = 'py-6 lg:py-12',
+  ...attrs
+} = Astro.props as Props
+const id = name ? slugify(name) : null
+const label = id ? `${id}-label` : null
+---
+
+<section
+  class:list={['outline outline-red', className]}
+  id={id}
+  aria-labelledby={label}
+  {...attrs}
+>
+  <div class="container">
+    <div class="lg:grid lg:gap-10 lg:grid-cols-8">
+      <div class="lg:col-span-2">
+        {name && <H2 id={label}>{name}</H2>}
+      </div>
+      <Prose class="lg:col-span-6">
+        <slot />
+      </Prose>
+    </div>
+  </div>
+</section>

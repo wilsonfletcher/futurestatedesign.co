@@ -31,18 +31,18 @@ export default defineConfig({
   integrations: [
     mdx({
       remarkPlugins: [
-        [astroLayouts, layoutOptions],
-        [
-          remarkToc,
-          {
-            heading: 'contents',
-          },
-        ],
+        // [astroLayouts, layoutOptions],
+        // [
+        //   remarkToc,
+        //   {
+        //     heading: 'contents',
+        //   },
+        // ],
         remarkDirective,
         myRemarkPlugin,
         myRemarkPlugin3,
       ],
-      rehypePlugins: [rehypeFigure, rehypeExternalLinks],
+      rehypePlugins: [rehypeExternalLinks],
     }),
     htmlBeautifier(),
     tailwind({ config: { applyBaseStyles: false } }),

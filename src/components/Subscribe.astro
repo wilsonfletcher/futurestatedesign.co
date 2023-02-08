@@ -1,4 +1,5 @@
 ---
+import { Section } from './index.astro'
 import Link from './Link.astro'
 
 interface Props {
@@ -8,20 +9,12 @@ interface Props {
 const { class: className, ...attrs } = Astro.props as Props
 ---
 
-<article class:list={['py-10 md:py-32', 'bg-white', 'text-black', className]} {...attrs}>
-  <div class="container">
-    <div class="md:grid md:grid-cols-8 md:gap-10">
-      <div class="md:col-start-3 md:col-span-5 md:space-y-12">
-        <h2 class="h2">Futurestate Insights</h2>
-        <div class="prose prose-black prose-lg md:prose-xl">
-          <p>
-            Insights into new innovations in digital business, interesting
-            trends and new ways of thinking about them.
-          </p>
+<Section class="py-24 md:py-32">
+  <h2>Futurestate Insights</h2>
+  <p>
+    Insights into new innovations in digital business, interesting trends and
+    new ways of thinking about them.
+  </p>
 
-          <Link href="#">Let me read it first</Link>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
+  <Link href="#">Let me read it first</Link>
+</Section>

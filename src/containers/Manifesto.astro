@@ -6,7 +6,7 @@ const manifesto = await getCollection('manifesto', ({ data }) => {
 })
 ---
 
-<div class="grid gap-4 md:grid-cols-2 md:gap-10 not-prose">
+<div class="grid gap-4 md:grid-cols-2 md:gap-10 not-prose mb-20">
   {
     manifesto.map(({ slug, data: { description } }) => (
       <article class="border-t border-white/30 pt-8 md:pt-12">

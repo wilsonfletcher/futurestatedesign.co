@@ -1,0 +1,13 @@
+@layer components {
+  .foo {
+    @screen lg {
+      @apply grid gap-10 grid-cols-8 bg-[lime];
+    }
+  }
+
+  .bar {
+    @screen lg {
+      @apply grid gap-10 grid-cols-8 outline-red;
+    }
+  }
+}

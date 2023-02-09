@@ -9,13 +9,7 @@ interface Props {
 const { href, class: className, ...attrs } = Astro.props as Props
 ---
 
-<a href={href} class:list={['link', className]} {...attrs}>
+<a href={href} class:list={['inline-flex items-center gap-2 text-[30px] leading-none underline font-regular', className]} {...attrs}>
   <slot />
   <IconArrow />
 </a>
-
-<style>
-  .link {
-    @apply inline-flex items-center gap-2 text-[30px] leading-none underline font-regular;
-  }
-</style>

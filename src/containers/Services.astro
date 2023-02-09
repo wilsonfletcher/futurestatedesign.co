@@ -33,7 +33,7 @@ const { name, ...attrs } = Astro.props as Props
   </ul>
 </div>
 
-<style>
+<style is:global>
   .list {
     ul {
       @apply list-none flex flex-wrap pl-0 text-gray;

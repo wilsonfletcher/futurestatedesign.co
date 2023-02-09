@@ -32,7 +32,6 @@ const contact = {
 ---
 
 <html lang={SITE.lang}>
-  <pre>{JSON.stringify(entry.data.image)}</pre>
   <BaseHead {...entry.data} title={`${entry.data.name} - ${SITE.name}`} />
   <body class:list={[entry.data.theme == 'white' && 'bg-qux text-white']}>
     <div class="flex flex-col w-full min-h-screen">

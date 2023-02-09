@@ -9,18 +9,37 @@ image:
   alt: Start up image description
 type: landing
 ---
+
 import { Icon } from 'astro-icon'
 import { Section, Prose, Article } from '@/components/index.astro'
 
 <Article>
   <Prose>
-    <p class="lead">A specialist advisory and coaching programme for leaders of growth-stage digital startups.</p>
-    <p class="h3">You’ve started something great. <br /> Now you need to become something big.</p>
-    <p class="h3">We’ve helped some of the world’s leading companies innovate for 20 years.</p>
-    <p class="h3">We now offer all of that experience to startups in a unique advisory and coaching programme.</p>
-    <p class="h3">If you lead an early stage company, we’ll give you the support you need to realise your full potential and compete with the world’s best – for a fixed, low monthly fee.</p>
+    <p class="lead">
+      A specialist advisory and coaching programme for leaders of growth-stage
+      digital startups.
+    </p>
+    <p class="h3">
+      You’ve started something great. <br /> Now you need to become something
+      big.
+    </p>
+    <p class="h3">
+      We’ve helped some of the world’s leading companies innovate for 20 years.
+    </p>
+    <p class="h3">
+      We now offer all of that experience to startups in a unique advisory and
+      coaching programme.
+    </p>
+    <p class="h3">
+      If you lead an early stage company, we’ll give you the support you need to
+      realise your full potential and compete with the world’s best – for a
+      fixed, low monthly fee.
+    </p>
     <p class="h3">In the words of one of our pilot members:</p>
-    <p class="h3">“Honestly, this programme paid for itself a hundred times over with the decisions we made in the first workshop.”</p>
+    <p class="h3">
+      “Honestly, this programme paid for itself a hundred times over with the
+      decisions we made in the first workshop.”
+    </p>
   </Prose>
 </Article>
 
@@ -30,6 +49,7 @@ import { Section, Prose, Article } from '@/components/index.astro'
     <p class="h3">Before you sign up, we do a free 30 minute call so we can make sure it’s right for you, and you can do the same.</p>
 
     [Book a free call](mailto:info@futurestatedesign.co)
+
   </Prose>
 </Section>
 
@@ -44,6 +64,7 @@ import { Section, Prose, Article } from '@/components/index.astro'
     We’ll help you make good decisions, get past obstacles fast, avoid costly mistakes and take valuable shortcuts.
 
     You’ll get objective inputs, straightforward, practical advice, immediately applicable micro-coaching, and proven methods you can use.
+
   </Prose>
 </Section>
 
@@ -89,6 +110,7 @@ import { Section, Prose, Article } from '@/components/index.astro'
     - Partner introductions
     - Peer connections
     - Specialist programme teams
+
   </Prose>
 </Section>
 
@@ -115,19 +137,40 @@ import { Section, Prose, Article } from '@/components/index.astro'
     ### Every 3 months
 
     The quarterly review is a 2-3 hour session to review and adjust areas of focus for the next 3 months. These can planned in as full-day ‘next step’ workshops at key stages of the business’s development.
+
   </Prose>
 </Section>
 
 export const support = [
-  { name: 'Ad-hoc interventions', description: 'You can then contact us with anything important you need support with when you need it (within reason, obviously). We get you set up on the best messaging platforms for you (Slack is our default) and make sure you have all the email and contact details you need.', icon: 'ad-hoc' },
-  { name: 'Network and insights', description: 'A key part of this programme is our network. We connect you with people who can help your business and your own personal development. We share relevant content and research that we uncover or create – and help you understand what it means for your business.', icon: 'network-insights' },
-  { name: 'Micro-coaching', description: 'We provide specific targeted coaching and introduce techniques to help you overcome roadblocks, make key decisions on direction or strategy, or solve key product problems. We can even help you make the right decision on  that key hire you’re planning.', icon: 'micro-coaching' },
-  { name: 'Project support', description: 'If you need more intensive support to get something done, we can step in to help by spinning up a project team, or introducing a partner. Planned and budgeted separately, we can generally get going quickly: we’ll already know you well, so there’s no onboarding time', icon: 'project-support' },
+  {
+    name: 'Ad-hoc interventions',
+    description:
+      'You can then contact us with anything important you need support with when you need it (within reason, obviously). We get you set up on the best messaging platforms for you (Slack is our default) and make sure you have all the email and contact details you need.',
+    icon: 'ad-hoc',
+  },
+  {
+    name: 'Network and insights',
+    description:
+      'A key part of this programme is our network. We connect you with people who can help your business and your own personal development. We share relevant content and research that we uncover or create – and help you understand what it means for your business.',
+    icon: 'network-insights',
+  },
+  {
+    name: 'Micro-coaching',
+    description:
+      'We provide specific targeted coaching and introduce techniques to help you overcome roadblocks, make key decisions on direction or strategy, or solve key product problems. We can even help you make the right decision on  that key hire you’re planning.',
+    icon: 'micro-coaching',
+  },
+  {
+    name: 'Project support',
+    description:
+      'If you need more intensive support to get something done, we can step in to help by spinning up a project team, or introducing a partner. Planned and budgeted separately, we can generally get going quickly: we’ll already know you well, so there’s no onboarding time',
+    icon: 'project-support',
+  },
 ]
 
 <Section name="Support when you need it" class="bg-qux text-white">
   <div class="grid gap-10 md:grid-cols-2">
-    {support.map(({ name, description, icon })=> (
+    {support.map(({ name, description, icon }) => (
       <article>
         {icon && <Icon name={icon} class="text-[100px] mb-3" />}
         <Prose class="prose-p:text-white/50">
@@ -149,6 +192,7 @@ export const support = [
     - Support key decisions with behind-the-scenes insights and lessons learned from leading organisations
     - Ensure you avoid common mistakes, hidden pitfalls and costly missteps
     - Support you with objective advice when you need it and connect you with people and partners you can trust
+
   </Prose>
 </Section>
 
@@ -158,6 +202,7 @@ export const support = [
     <p class="h3">If we can help, we can help a lot. If we’re not right for you, we’ll tell you. Book a free 30 minute call.</p>
 
     Book a free call
+
   </Prose>
 </Section>
 
@@ -186,6 +231,7 @@ export const support = [
     ### Can we claim back R&D tax credits?
 
     > The programme is suitable for individuals, teams and entire businesses. You paye per business and have as many people tap into the support during the 12 months. We do ask that there is a lead...
+
   </Prose>
 </Section>
 
@@ -204,13 +250,15 @@ export const support = [
     Innovation-led companies will power the economy for decades to come. They’ll drive big improvements in how we live and work. They’ll change the societies we live in and make the planet(s) we live on better.
 
     This programme is central to our mission to help as many companies as possible do just that.
+
   </Prose>
 
-  ## Read
+## Read
 
-  #### This is the title of the article
+#### This is the title of the article
 
-  A short summary here to outline the content of the article
+A short summary here to outline the content of the article
 
-  Read now
+Read now
+
 </Section>

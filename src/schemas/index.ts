@@ -17,15 +17,17 @@ export const pageSchema = z.object({
   name: z.string(),
   description: z.string().optional(),
   url: z.string().optional(),
-  image: z.object({
-    url: z.string().optional(),
-    width: z.number().optional(),
-    height: z.number().optional(),
-    alt: z.string().optional(),
-  }).optional(),
+  image: z
+    .object({
+      url: z.string().optional(),
+      width: z.number().optional(),
+      height: z.number().optional(),
+      alt: z.string().optional(),
+    })
+    .optional(),
   draft: z.boolean().optional(),
   type: z.string().optional(),
-  theme: z.string().optional()
+  theme: z.string().optional(),
 })
 
 export const serviceSchema = z.object({

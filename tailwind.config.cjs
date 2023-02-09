@@ -113,7 +113,7 @@ module.exports = {
             },
             img: {
               marginTop: 0,
-              marginBottom: 0
+              marginBottom: 0,
             },
             figcaption: {
               borderLeftWidth: '0.3125rem',
@@ -151,7 +151,7 @@ module.exports = {
               },
               img: {
                 marginTop: 0,
-                marginBottom: 0
+                marginBottom: 0,
               },
               blockquote: {
                 fontSize: em(18, 18),
@@ -161,9 +161,9 @@ module.exports = {
               hr: {
                 marginTop: em(24, 18),
                 marginBottom: em(24, 18),
-              }
+              },
             },
-          ]
+          ],
         },
         xl: {
           css: [
@@ -212,7 +212,7 @@ module.exports = {
               },
               img: {
                 marginTop: 0,
-                marginBottom: 0
+                marginBottom: 0,
               },
               blockquote: {
                 fontSize: rem(24),
@@ -241,11 +241,11 @@ module.exports = {
               hr: {
                 marginTop: em(32, 24),
                 marginBottom: em(32, 24),
-              }
+              },
             },
-          ]
-        }
-      })
+          ],
+        },
+      }),
     },
   },
   corePlugins: {

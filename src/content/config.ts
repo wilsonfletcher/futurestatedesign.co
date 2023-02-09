@@ -1,5 +1,10 @@
 import { defineCollection } from 'astro:content'
-import { clientSchema, manifestoSchema, pageSchema, serviceSchema } from '../schemas'
+import {
+  clientSchema,
+  manifestoSchema,
+  pageSchema,
+  serviceSchema,
+} from '../schemas'
 
 const clientCollection = defineCollection({ schema: clientSchema })
 const manifestoCollection = defineCollection({ schema: manifestoSchema })
@@ -10,5 +15,5 @@ export const collections = {
   clients: clientCollection,
   manifesto: manifestoCollection,
   pages: pageCollection,
-  services: serviceCollection
+  services: serviceCollection,
 }

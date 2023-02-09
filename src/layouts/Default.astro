@@ -3,6 +3,7 @@
 
 import '@/styles/global.css'
 
+import { SITE } from '@/config'
 import BaseHead from '@/components/BaseHead.astro'
 import Header from '@/components/Header.astro'
 import Footer from '@/components/Footer.astro'
@@ -34,7 +35,14 @@ const {
   noindex = false,
   class: className,
 } = Astro.props as Props
+
 const meta = { title, description, url, image, noindex }
+
+const contact = {
+  name: 'Let’s talk',
+  description: 'Tell us where you want to be. We’ll make sure you get there.',
+  url: `mailto:${SITE.email}`
+}
 ---
 
 <!DOCTYPE html>
@@ -50,7 +58,7 @@ const meta = { title, description, url, image, noindex }
       <main class="flex-auto">
         <slot />
       </main>
-      <Contact />
+      <Contact {...contact} />
       <Subscribe />
       <Menu />
       <Footer />

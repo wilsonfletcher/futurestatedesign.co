@@ -1,5 +1,5 @@
 ---
-import IconArrow from '@/components/Icon/Arrow.astro'
+import { Icon } from 'astro-icon'
 
 export interface Props {
   name: string
@@ -30,7 +30,7 @@ const { name, url, image, class: className } = Astro.props as Props
       <h3 class="h3">{name}</h3>
       <a href={url.url} class="flex text-[32px] md:text-[48px]">
         <span>{url.name}</span>
-        <IconArrow class="ml-2" />
+        <Icon name="arrow" class="ml-2" />
       </a>
     </div>
   </div>

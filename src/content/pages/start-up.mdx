@@ -9,6 +9,7 @@ image:
   alt: Start up image description
 type: landing
 ---
+import { Icon } from 'astro-icon'
 import { Section, Prose, Article } from '@/components/index.astro'
 
 <Article>
@@ -117,31 +118,24 @@ import { Section, Prose, Article } from '@/components/index.astro'
   </Prose>
 </Section>
 
+export const support = [
+  { name: 'Ad-hoc interventions', description: 'You can then contact us with anything important you need support with when you need it (within reason, obviously). We get you set up on the best messaging platforms for you (Slack is our default) and make sure you have all the email and contact details you need.', icon: 'ad-hoc' },
+  { name: 'Network and insights', description: 'A key part of this programme is our network. We connect you with people who can help your business and your own personal development. We share relevant content and research that we uncover or create – and help you understand what it means for your business.', icon: 'network-insights' },
+  { name: 'Micro-coaching', description: 'We provide specific targeted coaching and introduce techniques to help you overcome roadblocks, make key decisions on direction or strategy, or solve key product problems. We can even help you make the right decision on  that key hire you’re planning.', icon: 'micro-coaching' },
+  { name: 'Project support', description: 'If you need more intensive support to get something done, we can step in to help by spinning up a project team, or introducing a partner. Planned and budgeted separately, we can generally get going quickly: we’ll already know you well, so there’s no onboarding time', icon: 'project-support' },
+]
+
 <Section name="Support when you need it" class="bg-qux text-white">
-  <div class="grid gap-4 md:grid-cols-2 md:gap-10">
-    <Prose class="prose-p:text-white/50" tag="article">
-      ![](/images/ad-hoc.svg)
-      ### Ad-hoc interventions
-      You can then contact us with anything important you need support with when you need it (within reason, obviously). We get you set up on the best messaging platforms for you (Slack is our default) and make sure you have all the email and contact details you need.
-    </Prose>
-
-    <Prose class="prose-p:text-white/50" tag="article">
-    ![](/images/ad-hoc.svg)
-      ### Network and insights
-      A key part of this programme is our network. We connect you with people who can help your business and your own personal development. We share relevant content and research that we uncover or create – and help you understand what it means for your business.
-    </Prose>
-
-    <Prose class="prose-p:text-white/50" tag="article">
-      ![](/images/ad-hoc.svg)
-      ### Micro-coaching
-      We provide specific targeted coaching and introduce techniques to help you overcome roadblocks, make key decisions on direction or strategy, or solve key product problems. We can even help you make the right decision on that key hire you’re planning.
-    </Prose>
-
-    <Prose class="prose-p:text-white/50" tag="article">
-      ![](/images/ad-hoc.svg)
-      ### Project support
-      If you need more intensive support to get something done, we can step in to help by spinning up a project team, or introducing a partner. Planned and budgeted separately, we can generally get going quickly: we’ll already know you well, so there’s no onboarding time
-    </Prose>
+  <div class="grid gap-10 md:grid-cols-2">
+    {support.map(({ name, description, icon })=> (
+      <article>
+        {icon && <Icon name={icon} class="text-[100px] mb-3" />}
+        <Prose class="prose-p:text-white/50">
+          <h3>{name}</h3>
+          <p>{description}</p>
+        </Prose>
+      </article>
+    ))}
   </div>
 </Section>
 

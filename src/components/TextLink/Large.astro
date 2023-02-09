@@ -1,6 +1,4 @@
 ---
-import IconArrow from '@/components/Icon/Arrow.astro'
-
 export interface Props {
   name: string
   url: string
@@ -10,5 +8,4 @@ const { name, url, ...attrs } = Astro.props as Props
 ---
 <a class="text-[60px] flex items-center" href={url} {...attrs}>
   <span>{name}</span>
-  <IconArrow class="text-[32px] md:text-[1em] -rotate-45" />
 </a>

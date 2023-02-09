@@ -1,6 +1,7 @@
 ---
 import { slugify } from 'src/utils'
-import { IconArrow, Prose } from '@/components/index.astro'
+import { Prose } from '@/components/index.astro'
+import { Icon } from 'astro-icon'
 
 interface Props {
   name?: string
@@ -29,7 +30,7 @@ const heading = id ? `${id}-heading` : null
           <Prose class="lg:col-span-2">
             <h2 id={heading}>
               {name}
-              <IconArrow class="hidden lg:block" />
+              <Icon name="arrow" class="hidden lg:block" />
             </h2>
           </Prose>
         )

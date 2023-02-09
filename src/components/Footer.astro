@@ -1,14 +1,30 @@
 ---
+import { Icon } from 'astro-icon'
 import { SITE } from '@/config'
-
-import IconLinkedIn from '@/components/Icon/LinkedIn.astro'
 
 const social = [
   {
-    icon: 'i-custom:linkedin',
     name: 'Linkedin',
     url: SITE.linkedin,
+    icon: {
+      name: 'linkedin',
+    },
   },
+  {
+    name: 'Twitter',
+    url: SITE.twitter,
+    icon: { name: 'twitter' },
+  },
+  {
+    name: 'Medium',
+    url: SITE.medium,
+    icon: { name: 'medium' },
+  },
+  // {
+  //   name: 'Instagram',
+  //   url: SITE.medium,
+  //   icon: { name: 'instagram' },
+  // },
 ]
 ---
 
@@ -16,44 +32,15 @@ const social = [
   <div class="container">
     <div class="py-5">
       <nav>
-        <ul class="flex flex-wrap gap-4">
+        <ul
+          class="flex gap-4 flex-col sm:flex-row sm:items-start"
+        >
           {
-            social.map((social) => (
+            social.map(({ icon, name, url }) => (
               <li>
-                <a
-                  href={social.url}
-                  class="text-xl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M3.36445 16.085V4.9397H0.0869948V16.085H3.36445Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M1.72547 0.0849609C0.668921 0.0849609 -0.0210709 0.837098 0.000491333 1.83995C-0.0210709 2.79721 0.66892 3.57214 1.70391 3.57214C2.78202 3.57214 3.47201 2.79721 3.47201 1.83995C3.45045 0.837098 2.78202 0.0849609 1.72547 0.0849609Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M5.99513 16.085H9.27258V9.65763C9.27258 9.33854 9.31571 8.99666 9.40196 8.79153C9.61758 8.15335 10.1566 7.49239 11.0623 7.49239C12.2482 7.49239 12.7225 8.47244 12.7225 9.90834V16.085H16V9.47529C16 6.19324 14.3828 4.68896 12.2266 4.68896C10.4801 4.68896 9.40196 5.76019 8.97071 6.46674H8.90603L8.75509 4.93968H5.90888C5.952 5.91973 5.99513 7.10492 5.99513 8.49524V16.085Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-
-                  <span class="sr-only">{social.name}</span>
+                <a href={url} target="_blank" rel="noopener noreferrer" class="text-[32px]">
+                  <span class="sr-only">{name}</span>
+                  <Icon {...icon} />
                 </a>
               </li>
             ))

@@ -1,5 +1,5 @@
 ---
-import IconArrow from '@/components/Icon/Arrow.astro'
+import Icon from 'astro-icon'
 
 const data = [
   {
@@ -29,14 +29,14 @@ const data = [
   <div class="container">
     <div class="section">
       <div class="lg:col-start-2">
-        <h3 class="h3 mb-20">Read more about:?</h3>
+        <h3 class="h3 mb-20">Read more about:</h3>
         <ul>
           {
             data.map(({ name, url }) => (
               <li class="border-b-2 border-black/40">
                 <a href={url} class="h3 flex items-center py-5 justify-between">
                   <span class="underline" set:html={name} />
-                  <IconArrow />
+                  <Icon name="arrow-45" />
                 </a>
               </li>
             ))

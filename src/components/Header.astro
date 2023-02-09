@@ -1,6 +1,7 @@
 ---
 import { SITE } from '@/config'
 import Logo from '@/components/Logo.astro'
+import { Icon } from 'astro-icon';
 // import Overlay from '@/components/Overlay.svelte'
 
 export interface Props {
@@ -31,6 +32,12 @@ const { class: className, ...attrs } = Astro.props as Props
             >{SITE.telephone}</a
           >
         </div>
+
+        <a href="#read-more-about" class="inline-flex items-center justify-center text-[32px]">
+          <span class="sr-only">Open menu</span>
+          <Icon name="menu" />
+        </a>
+
         <!-- <Overlay client:load /> -->
       </div>
 

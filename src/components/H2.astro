@@ -1,6 +1,4 @@
 ---
-import IconArrow from '@/components/Icon/Arrow.astro'
-
 interface Props {
   class?: string
 }
@@ -10,5 +8,4 @@ const { class: className, ...attrs } = Astro.props as Props
 
 <h2 class:list={['h2', className]} {...attrs}>
   <slot />
-  <IconArrow class="hidden lg:block" />
 </h2>

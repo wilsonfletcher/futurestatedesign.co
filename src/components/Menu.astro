@@ -1,7 +1,8 @@
 ---
+import { Icon } from 'astro-icon'
 // @ts-ignore
 import menu from '../content/_menu.yml'
-import { Prose, IconArrow } from '@/components/index.astro'
+import { Prose } from '@/components/index.astro'
 
 interface Item {
   name: string
@@ -9,11 +10,15 @@ interface Item {
 }
 ---
 
-<nav class="pt-16 pb-12 lg:py-24 bg-qux text-white" id="read-more-about" aria-labelledby="read-more-about-heading">
+<nav
+  class="pt-8 pb-12 lg:py-24 bg-qux text-white"
+  id="read-more-about"
+  aria-labelledby="read-more-about-heading"
+>
   <div class="container">
     <div class="grid gap-4 md:grid-cols-8 md:gap-10">
       <div class="md:col-start-3 md:col-span-6">
-        <Prose>
+        <Prose class="mb-16">
           <h2 id="read-more-about-heading">Read more about:</h2>
         </Prose>
         <ul>
@@ -25,7 +30,7 @@ interface Item {
                   class="text-[32px] md:text-5xl flex items-center py-5 justify-between"
                 >
                   <span class="underline" set:html={name} />
-                  <IconArrow class="-rotate-45" />
+                  <Icon name="arrow-45" class="text-[32px]" />
                 </a>
               </li>
             ))

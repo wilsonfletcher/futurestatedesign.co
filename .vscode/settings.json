@@ -1,3 +1,12 @@
-"files.associations": {
-    "*.mdx": "markdown"
+{
+    "files.associations": {
+        "*.mdx": "markdown"
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "astro", // Enable .astro
+        "typescript", // Enable .ts
+        "typescriptreact" // Enable .tsx
+    ]
 }

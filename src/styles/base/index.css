@@ -9,7 +9,7 @@
     @apply font-sans leading-none font-regular text-optimize;
   }
 
-  h1 {
+  /* h1 {
     @apply text-[64px] leading-[62px];
 
     @screen lg {
@@ -39,7 +39,7 @@
     @screen lg {
       @apply text-[2.1875rem] leading-[1.14285714] mb-8;
     }
-  }
+  } */
 
   /* [type='text'],
   [type='email'],

@@ -46,6 +46,8 @@ module.exports = {
       },
       fontSize: {
         lg: [rem(18), rem(24)],
+        '3xl': [rem(32)],
+        '4xl': [rem(35), rem(40)]
       },
       fontFamily: {
         sans: ['neue-haas-grotesk-display', 'sans-serif'],

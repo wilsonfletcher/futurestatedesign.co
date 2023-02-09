@@ -5,12 +5,13 @@ export interface Props {
   name: string
   url: {
     name: string
-    url: string
+    href: string
+    target?: string
   }
   image?: {
-    url: string
-    width: string
-    height: string
+    src?: string
+    width?: string
+    height?: string
     alt?: string
   }
   class?: string
@@ -19,25 +20,21 @@ export interface Props {
 const { name, url, image, class: className } = Astro.props as Props
 ---
 
-<article class:list={['callout', className]}>
-  <div class="flex flex-col md:flex-row">
+<article class:list={className}>
+  <div class="flex flex-col gap-4 md:flex-row md:items-center">
     {
-      image && image.url && (
-        <img src={image.url} loading="lazy" alt={image.alt} />
+      image && image.src && (
+        <div class="flex-none md:order-2">
+          <img src={image.src} loading="lazy" {...image} />
+        </div>
       )
     }
-    <div>
-      <h3 class="h3">{name}</h3>
-      <a href={url.url} class="flex text-[32px] md:text-[48px]">
-        <span>{url.name}</span>
-        <Icon name="arrow" class="ml-2" />
+    <div class="border-l-8 border-yellow pl-3 md:flex-auto">
+      <h3 class="text-2xl mb-4 md:text-4xl">{name}</h3>
+      <a {...url} class="inline-flex items-center gap-4 text-3xl md:text-5xl">
+        <span class="underline">{url.name}</span>
+        <Icon name="arrow-45" class="text-3xl" />
       </a>
     </div>
   </div>
 </article>
-
-<style>
-  .callout {
-    @apply border-l-8 border-yellow pl-2 max-w-[735px];
-  }
-</style>

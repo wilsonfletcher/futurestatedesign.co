@@ -7,7 +7,13 @@ image:
   alt: Foo
 ---
 
-import { Article, Prose, Section } from '@/components/index.astro'
+import { Article, Prose, Section, Callout } from '@/components/index.astro'
+
+export const book = {
+  name: 'Do you want to get a taste what Futurestate Design is all about? Read Mark’s book',
+  url: { name: 'Buy on Amazon', href: 'https://www.amazon.co.uk/dp/1399922106', target: '_blank' },
+  image: { src: '/images/book.png', alt: 'Photo of the Futurestate Design book', width: 274, height: 241 }
+}
 
 <Article>
   <Prose>
@@ -51,9 +57,7 @@ import { Article, Prose, Section } from '@/components/index.astro'
 
     Futurestate thinking days for leaders to help them de-program their brain from operationally-focused thinking and start to develop a future-making mindset
 
-    ---
-
-    ---
+    <Callout {...book} class="not-prose" />
 
     We use futurestate design to help companies think beyond current constraints; to leave legacy behind and invent on behalf of future customers. We use it to help visualise and realise the full potential of new ideas; to drive real innovation. We use it to help companies make the future happen.
 

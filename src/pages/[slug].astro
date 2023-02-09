@@ -27,7 +27,7 @@ const { Content } = await entry.render()
 const contact = {
   name: 'Let’s talk',
   description: 'Tell us where you want to be. We’ll make sure you get there.',
-  url: `mailto:${SITE.email}`
+  url: `mailto:${SITE.email}`,
 }
 ---
 
@@ -41,9 +41,13 @@ const contact = {
           <div class="container">
             <div class="lg:grid lg:grid-cols-8 lg:grid-gap-10">
               <div class="lg:col-start-3 lg:col-span-6">
-                <h1 class="h0">
-                  {entry.data.name}
-                </h1>
+                {
+                  entry.data.type === 'landing' ? (
+                    <h1 class="h1">{entry.data.name}</h1>
+                  ) : (
+                    <h1 class="h0">{entry.data.name}</h1>
+                  )
+                }
               </div>
             </div>
           </div>

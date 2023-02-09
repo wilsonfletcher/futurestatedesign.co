@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content'
+
+import { Section, Prose } from '@/components/index.astro'
+import Callout from '@/components/Callout.astro'
+
+const work = await getCollection('work', ({ data }) => {
+  return data.draft !== true
+})
+
+work.sort((a, b) => a.data.number - b.data.number)
+---
+
+<Section name="What we do">
+  <Prose>
+    <p class="lead">
+      Our work spans three areas: invention, reinvention and intervention.
+    </p>
+  </Prose>
+  <div class="grid gap-16">
+    {
+      work.map((area) => {
+        const { data } = area
+        return (
+          <article class="pb-16 border-b border-gray">
+            <Prose>
+              <h3 class="h2">
+                <span class="h0 block">{data.number}</span>
+                {data.name}
+              </h3>
+              <div set:html={area.body} />
+              <Callout
+                class="not-prose"
+                name="Is it the right approach for you?"
+                url={{ href: '#', name: 'Get in touch' }}
+              />
+            </Prose>
+          </article>
+        )
+      })
+    }
+  </div>
+</Section>

@@ -1,6 +1,7 @@
 ---
 import { Section } from './index.astro'
 import Link from './Link.astro'
+import Prose from './Prose.astro'
 
 interface Props {
   class?: string
@@ -9,12 +10,13 @@ interface Props {
 const { class: className, ...attrs } = Astro.props as Props
 ---
 
-<Section class="py-24 md:py-32">
-  <h2>Futurestate Insights</h2>
-  <p>
-    Insights into new innovations in digital business, interesting trends and
-    new ways of thinking about them.
-  </p>
-
-  <Link href="#">Let me read it first</Link>
+<Section class="py-24 md:py-32 bg-white text-black">
+  <Prose>
+    <h2>Futurestate Insights</h2>
+    <p>
+      Insights into new innovations in digital business, interesting trends and
+      new ways of thinking about them.
+    </p>
+    <Link href="#">Let me read it first</Link>
+  </Prose>
 </Section>

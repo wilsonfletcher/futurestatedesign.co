@@ -36,3 +36,9 @@ export const serviceSchema = z.object({
   sortOrder: z.number().optional(),
   draft: z.boolean().optional(),
 })
+
+export const workSchema = z.object({
+  number: z.string(),
+  name: z.string(),
+  draft: z.boolean().optional(),
+})

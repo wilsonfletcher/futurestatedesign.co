@@ -20,11 +20,6 @@ const social = [
     url: SITE.medium,
     icon: { name: 'medium' },
   },
-  // {
-  //   name: 'Instagram',
-  //   url: SITE.medium,
-  //   icon: { name: 'instagram' },
-  // },
 ]
 ---
 
@@ -32,13 +27,16 @@ const social = [
   <div class="container">
     <div class="py-5">
       <nav>
-        <ul
-          class="flex gap-4 flex-col sm:flex-row sm:items-start"
-        >
+        <ul class="flex gap-4 flex-col sm:flex-row sm:items-start">
           {
             social.map(({ icon, name, url }) => (
               <li>
-                <a href={url} target="_blank" rel="noopener noreferrer" class="text-[32px]">
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-[32px]"
+                >
                   <span class="sr-only">{name}</span>
                   <Icon {...icon} />
                 </a>

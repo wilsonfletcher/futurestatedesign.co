@@ -4,6 +4,7 @@ import { SITE } from '@/config'
 import Default from '@/layouts/Default.astro'
 import Callout from '@/components/Callout.astro'
 import { Section, Prose } from '@/components/index.astro'
+import Work from '@/containers/Work.astro'
 
 const meta = {
   title: `${SITE.name} ___A business innovation company.`,
@@ -13,7 +14,7 @@ const meta = {
 
 const callout = {
   name: 'Is it the right approach for you?',
-  url: { name: 'Get in touch', url: 'mailto:info@futurestatedesign.com' },
+  url: { name: 'Get in touch', href: 'mailto:info@futurestatedesign.com' },
 }
 ---
 
@@ -45,7 +46,9 @@ const callout = {
       </div>
     </div>
 
-    <Section name="What we do">
+    <Work />
+
+    <Section name="What we do" hidden>
       <Prose>
         <p class="intro mb-10">
           Our work spans three areas: invention, reinvention and intervention.

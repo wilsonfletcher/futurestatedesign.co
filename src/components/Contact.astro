@@ -1,6 +1,4 @@
 ---
-import { SITE } from '@/config'
-import IconArrow from '@/components/Icon/Arrow.astro'
 import Prose from './Prose.astro'
 
 interface Props {
@@ -11,31 +9,28 @@ interface Props {
 }
 
 const {
-  name = 'Let’s talk',
-  description = 'Tell us where you want to be. We’ll make sure you get there.',
+  name,
+  description,
   url,
-  class: className = 'py-24 lg:py-32 bg-yellow text-black',
+  class: className = 'py-24 bg-yellow text-black',
   ...attrs
 } = Astro.props as Props
 ---
 
 <section class:list={[className]} {...attrs}>
   <div class="container">
-    <div class="grid gap-4 md:grid-cols-8 md:gap-10">
-      <div class="md:col-start-3 md:col-span-6 md:grid md:grid-cols-6">
-        <div class="md:col-span-4 flex flex-col">
-          <Prose>
-            <h2>
-              <a href={`mailto:${SITE.email}`} class="flex items-center">
-                <span class="underline">Let’s talk</span>
-                <IconArrow class="ml-1" />
-              </a>
-            </h2>
-            <p class="lead">
-              {description}
-            </p>
-          </Prose>
-        </div>
+    <div class="lg:grid lg:grid-cols-8 lg:gap-10">
+      <div
+        class="lg:col-start-3 lg:col-span-6 lg:grid lg:grid-cols-6 lg:gap-10"
+      >
+        <Prose class="lg:col-span-4">
+          <h2>
+            <a href={url}>{name}</a>
+          </h2>
+          <p class="h3">
+            {description}
+          </p>
+        </Prose>
       </div>
     </div>
   </div>

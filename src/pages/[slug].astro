@@ -12,7 +12,6 @@ import Menu from '@/components/Menu.astro'
 import Contact from '@/components/Contact.astro'
 import ModalMenu from '@/components/Modal/Menu/index.svelte'
 import ModalMenuMenu from '@/components/Modal/Menu/Menu.astro'
-import LayoutGrid from '@/components/LayoutGrid.astro'
 
 export async function getStaticPaths() {
   const pageEntries = await getCollection('pages')
@@ -27,7 +26,7 @@ const { Content } = await entry.render()
 
 const contact = {
   name: 'Let’s talk',
-  description: 'Once you see what the future looks like, you’ll want to get there, fast. We can help.',
+  description: 'Tell us where you want to be. We’ll make sure you get there.',
   url: `mailto:${SITE.email}`
 }
 ---
@@ -62,6 +61,5 @@ const contact = {
     <ModalMenu client:load>
       <ModalMenuMenu />
     </ModalMenu>
-    <LayoutGrid />
   </body>
 </html>

@@ -13,16 +13,12 @@ seo:
     alt: Foo
 theme: white
 ---
-import { Prose } from '@/components/index.astro'
+import { Article, Prose } from '@/components/index.astro'
 import Manifesto from '@/containers/Manifesto.astro'
 
-<div class="container">
-  <div class="lg:grid lg:gap-10 lg:grid-cols-8">
-    <div class="lg:col-start-3 lg:col-span-6">
-      <Prose class="lg:col-span-6 lg:col-start-3 mb-10">
-        <p class="lead">The futurestate manifesto is a set of principles that underpin how we think and work. Work with us and these will inform everything we do together.</p>
-      </Prose>
-      <Manifesto />
-    </div>
-  </div>
-</div>
+<Article>
+  <Prose>
+    <p class="lead">The futurestate manifesto is a set of principles that underpin how we think and work. Work with us and these will inform everything we do together.</p>
+    <Manifesto />
+  </Prose>
+</Article>

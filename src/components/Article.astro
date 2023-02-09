@@ -1,6 +1,4 @@
 ---
-import { Prose } from '@/components/index.astro'
-
 interface Props {
   class?: string
 }
@@ -12,9 +10,7 @@ const { class: className = 'py-6 lg:py-12', ...attrs } = Astro.props as Props
   <div class="container">
     <div class="lg:grid lg:gap-10 lg:grid-cols-8">
       <div class="lg:col-start-3 lg:col-span-6">
-        <Prose>
-          <slot />
-        </Prose>
+        <slot />
       </div>
     </div>
   </div>

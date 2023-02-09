@@ -1,7 +1,7 @@
 ---
 // @ts-ignore
 import menu from '../content/_menu.yml'
-import IconArrow from '@/components/Icon/Arrow.astro'
+import { Prose, IconArrow } from '@/components/index.astro'
 
 interface Item {
   name: string
@@ -9,11 +9,13 @@ interface Item {
 }
 ---
 
-<nav class="py-24 bg-qux text-white">
+<nav class="pt-16 pb-12 lg:py-24 bg-qux text-white" id="read-more-about" aria-labelledby="read-more-about-heading">
   <div class="container">
     <div class="grid gap-4 md:grid-cols-8 md:gap-10">
       <div class="md:col-start-3 md:col-span-6">
-        <h3 class="h2 mb-20">Read more about:</h3>
+        <Prose>
+          <h2 id="read-more-about-heading">Read more about:</h2>
+        </Prose>
         <ul>
           {
             menu.map(({ name, url }: Item) => (

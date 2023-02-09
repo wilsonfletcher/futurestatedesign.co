@@ -78,7 +78,7 @@ module.exports = {
             '--tw-prose-lead': theme('colors.current'),
             '--tw-prose-links': theme('colors.current'),
             '--tw-prose-bold': theme('colors.current'),
-            '--tw-prose-quotes': theme('colors.gray.DEFAULT'),
+            '--tw-prose-quotes': theme('colors.current'),
             '--tw-prose-quote-borders': theme('colors.yellow'),
             '--tw-prose-bullets': theme('colors.current'),
             '--tw-prose-counters': theme('colors.current'),
@@ -105,16 +105,10 @@ module.exports = {
               maxWidth: 580,
               quotes: 'none !important',
             },
-            h1: {
-              fontWeight: theme('fontWeight.regular'),
-            },
             h2: {
               fontWeight: theme('fontWeight.regular'),
             },
             h3: {
-              fontWeight: theme('fontWeight.regular'),
-            },
-            h4: {
               fontWeight: theme('fontWeight.regular'),
             },
             img: {
@@ -221,9 +215,10 @@ module.exports = {
                 marginBottom: 0
               },
               blockquote: {
-                fontSize: em(18, 24),
-                lineHeight: round(18 / 18),
-                paddingLeft: em(10, 18),
+                fontSize: rem(24),
+                lineHeight: round(32 / 24),
+                paddingLeft: em(16, 24),
+                borderLeftWidth: em(8, 24),
               },
               figure: {
                 marginTop: em(32, 24),

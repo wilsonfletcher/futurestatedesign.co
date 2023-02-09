@@ -5,38 +5,38 @@ import { IconArrow, Prose } from '@/components/index.astro'
 interface Props {
   name?: string
   class?: string
+  tag?: string
+  padding?: string
 }
 
 const {
   name,
-  class: className = 'py-6 lg:py-12',
+  class: className,
+  tag: Tag = 'section',
+  padding = 'py-6 lg:py-12',
   ...attrs
 } = Astro.props as Props
+
 const id = name ? slugify(name) : null
-const label = id ? `${id}-label` : null
+const heading = id ? `${id}-heading` : null
 ---
 
-<section
-  class:list={[className]}
-  id={id}
-  aria-labelledby={label}
-  {...attrs}
->
+<Tag id={id} aria-labelledby={heading} class:list={[padding, className]} {...attrs}>
   <div class="container">
     <div class="grid gap-6 lg:gap-10 lg:grid-cols-8">
-      <Prose class="lg:col-span-2">
-        {
-          name && (
-            <h2>
+      {
+        name && (
+          <Prose class="lg:col-span-2">
+            <h2 id={heading}>
               {name}
               <IconArrow class="hidden lg:block" />
             </h2>
-          )
-        }
-      </Prose>
-      <div class="lg:col-span-6">
+          </Prose>
+        )
+      }
+      <div class:list={['lg:col-span-6', !name && 'lg:col-start-3']}>
         <slot />
       </div>
     </div>
   </div>
-</section>
+</Tag>

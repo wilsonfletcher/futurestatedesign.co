@@ -2,37 +2,39 @@
 name: Expert support for digital startups
 description: A specialist advisory and coaching programme for leaders of growth-stage digital startups.
 url: /start-up
+image:
+  src: /images/start-up.jpg
 type: landing
 ---
 import { Section, Prose, Article } from '@/components/index.astro'
 import Accordion from '@/components/Accordion.svelte'
 
 <Article>
-  <p class="lead">A specialist advisory and coaching programme for leaders of growth-stage digital startups.</p>
-  <p class="h3">You’ve started something great. <br /> Now you need to become something big.</p>
-  <p class="h3">We’ve helped some of the world’s leading companies innovate for 20 years.</p>
-  <p class="h3">We now offer all of that experience to startups in a unique advisory and coaching programme.</p>
-  <p class="h3">If you lead an early stage company, we’ll give you the support you need to realise your full potential and compete with the world’s best – for a fixed, low monthly fee.</p>
-  <p class="h3">In the words of one of our pilot members:</p>
-  <p class="h3">“Honestly, this programme paid for itself a hundred times over with the decisions we made in the first workshop.”</p>
+  <Prose>
+    <p class="lead">A specialist advisory and coaching programme for leaders of growth-stage digital startups.</p>
+    <p class="h3">You’ve started something great. <br /> Now you need to become something big.</p>
+    <p class="h3">We’ve helped some of the world’s leading companies innovate for 20 years.</p>
+    <p class="h3">We now offer all of that experience to startups in a unique advisory and coaching programme.</p>
+    <p class="h3">If you lead an early stage company, we’ll give you the support you need to realise your full potential and compete with the world’s best – for a fixed, low monthly fee.</p>
+    <p class="h3">In the words of one of our pilot members:</p>
+    <p class="h3">“Honestly, this programme paid for itself a hundred times over with the decisions we made in the first workshop.”</p>
+  </Prose>
 </Article>
 
-<Section class="bg-yellow py-10">
+<Section id="be-the-next-big-thing" aria-labelledby="be-the-next-big-thing-heading" class="bg-yellow">
   <Prose>
-    ## Be the next big thing
-
+    <h2 id="be-the-next-big-thing-heading">Be the next big thing</h2>
     <p class="h3">Before you sign up, we do a free 30 minute call so we can make sure it’s right for you, and you can do the same.</p>
 
     [Book a free call](mailto:info@futurestatedesign.co)
   </Prose>
 </Section>
 
-<Section>
+<Section id="how-we-support-you" aria-labelledby="how-we-support-you-heading">
   <Prose>
     ![](/images/start-up.jpg)
 
-    ## How we support you
-
+    <h2 id="how-we-support-you-heading">How we support you</h2>
     Advisory support can be fluffy. This is the opposite. This is a ‘here’s what you need to do and how to do it’ programme.
 
     We’ll help you make good decisions, get past obstacles fast, avoid costly mistakes and take valuable shortcuts.
@@ -41,10 +43,9 @@ import Accordion from '@/components/Accordion.svelte'
   </Prose>
 </Section>
 
-<Section>
+<Section id="where-we-support-you" aria-labelledby="where-we-support-you-heading">
   <Prose>
-    ## Where we support you
-
+    <h2 id="where-we-support-you-heading">Where we support you</h2>
     This programme focuses on the critical areas that will make or break your success as a digital business.
 
     ### Strategy
@@ -86,7 +87,7 @@ import Accordion from '@/components/Accordion.svelte'
   </Prose>
 </Section>
 
-<Section name="Programme structure" class="bg-qux text-white py-8 lg:py-16">
+<Section name="Programme structure" class="bg-qux text-white">
   <Prose>
     ![](/images/overview.svg)
 
@@ -112,7 +113,7 @@ import Accordion from '@/components/Accordion.svelte'
   </Prose>
 </Section>
 
-<Section name="Support when you need it" class="bg-qux text-white py-8 lg:py-16">
+<Section name="Support when you need it" class="bg-qux text-white">
   <div class="grid gap-4 md:grid-cols-2 md:gap-10">
     <Prose class="prose-p:text-white/50" tag="article">
       ![](/images/ad-hoc.svg)
@@ -153,10 +154,9 @@ import Accordion from '@/components/Accordion.svelte'
   </Prose>
 </Section>
 
-<Section class="bg-yellow py-20">
+<Section id="get-experts-on-your-side" aria-labelledby="get-experts-on-your-side-heading" class="bg-yellow">
   <Prose>
-    ## Get experts on your side.
-
+    <h2 id="get-experts-on-your-side-heading">Get experts on your side.</h2>
     <p class="h3">If we can help, we can help a lot. If we’re not right for you, we’ll tell you. Book a free 30 minute call.</p>
 
     Book a free call
@@ -190,10 +190,12 @@ import Accordion from '@/components/Accordion.svelte'
     ### Can the programme be customised?
 
     ### Can we claim back R&D tax credits?
-
-    ![](/images/start-up.jpg)
   </Prose>
-</Section>  
+</Section>
+
+<Section tag="div" padding="py-0">
+  ![](/images/start-up.jpg)
+</Section>
 
 <Section name="Who we are">
   <Prose>

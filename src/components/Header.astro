@@ -1,7 +1,7 @@
 ---
 import { SITE } from '@/config'
 import Logo from '@/components/Logo.astro'
-import Overlay from '@/components/Overlay.svelte'
+// import Overlay from '@/components/Overlay.svelte'
 
 export interface Props {
   class?: string
@@ -31,7 +31,7 @@ const { class: className, ...attrs } = Astro.props as Props
             >{SITE.telephone}</a
           >
         </div>
-        <Overlay client:load />
+        <!-- <Overlay client:load /> -->
       </div>
 
       <div class="flex items-end md:col-span-6">

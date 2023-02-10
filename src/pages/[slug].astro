@@ -1,16 +1,8 @@
 ---
 import { getCollection } from 'astro:content'
 
-import '@/styles/global.css'
-
+import Default from '@/layouts/Default.astro'
 import { SITE } from '@/config'
-import BaseHead from '@/components/BaseHead.astro'
-import Footer from '@/components/Footer.astro'
-import Header from '@/components/Header.astro'
-import Subscribe from '@/components/Subscribe.astro'
-import Menu from '@/components/Menu.astro'
-import Contact from '@/components/Contact.astro'
-import ModalMenu from '@/components/Modal/Menu.astro'
 
 export async function getStaticPaths() {
   const pageEntries = await getCollection('pages')
@@ -22,47 +14,27 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props
 const { Content } = await entry.render()
-
-const contact = {
-  name: 'Let’s talk',
-  description: 'Tell us where you want to be. We’ll make sure you get there.',
-  url: `mailto:${SITE.email}`,
-}
 ---
 
-<html lang={SITE.lang}>
-  <BaseHead {...entry.data} title={`${entry.data.name} - ${SITE.name}`} />
-  <body class:list={[entry.data.theme == 'white' && 'bg-qux text-white']}>
-    <div class="flex flex-col w-full min-h-screen">
-      <Header />
-      <main class="flex-auto">
-        <article id={entry.data.slug}>
-          <div class="container">
-            <div class="lg:grid lg:grid-cols-8 lg:grid-gap-10">
-              <div class="lg:col-start-3 lg:col-span-6">
-                {
-                  entry.data.type === 'landing' ? (
-                    <h1 class="h1">{entry.data.name}</h1>
-                  ) : (
-                    <h1 class="h0">{entry.data.name}</h1>
-                  )
-                }
-              </div>
-            </div>
-          </div>
-          <Content />
-        </article>
-      </main>
-      {entry.data.type !== 'landing' && <Contact {...contact} />}
-
-      <Subscribe />
-      <Menu />
-      <Footer />
+<Default
+  {...entry.data}
+  title={`${entry.data.name} - ${SITE.name}`}
+  class={entry.data.theme == 'white' && 'bg-qux text-white'}
+>
+  <article id={entry.data.slug}>
+    <div class="container">
+      <div class="lg:grid lg:grid-cols-8 lg:grid-gap-10">
+        <div class="lg:col-start-3 lg:col-span-6">
+          {
+            entry.data.type === 'landing' ? (
+              <h1 class="h1">{entry.data.name}</h1>
+            ) : (
+              <h1 class="h0">{entry.data.name}</h1>
+            )
+          }
+        </div>
+      </div>
     </div>
-    <ModalMenu />
-    <script
-      is:inline
-      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"
-    ></script>
-  </body>
-</html>
+    <Content />
+  </article>
+</Default>

@@ -5,6 +5,7 @@ import rehypeExternalLinks from 'rehype-external-links'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 import yaml from '@rollup/plugin-yaml'
+import prefetch from '@astrojs/prefetch';
 // import rehypeFigure from 'rehype-figure'
 // import rehypeStringify from 'rehype-stringify'
 // import rehypeComponents from 'rehype-components'
@@ -22,6 +23,7 @@ import { myRemarkPlugin, myRemarkPlugin3 } from './src/plugins'
 // }
 
 export default defineConfig({
+  site: 'https://website--futurestatedesignco.netlify.app',
   markdown: {},
   vite: {
     plugins: [yaml()],
@@ -50,6 +52,7 @@ export default defineConfig({
         applyBaseStyles: false,
       },
     }),
+    prefetch(),
     sitemap(),
     compress(),
   ],

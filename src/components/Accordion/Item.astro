@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon'
+
+interface Props {
+  id: string
+  targetEl: string
+  triggerEl: string
+}
+
+const { triggerEl, targetEl } = Astro.props as Props
+---
+
+<h3 id={triggerEl}>
+  <button
+    type="button"
+    class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+    data-accordion-target={`#${targetEl}`}
+    aria-expanded="false"
+    aria-controls={targetEl}
+  >
+    Name
+    <Icon name="arrow" />
+  </button>
+</h3>
+
+<div id={targetEl} class="hidden" aria-labelledby={triggerEl}>
+  <div
+    class="p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
+  >
+    <slot />
+  </div>
+</div>

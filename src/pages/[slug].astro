@@ -10,8 +10,7 @@ import Header from '@/components/Header.astro'
 import Subscribe from '@/components/Subscribe.astro'
 import Menu from '@/components/Menu.astro'
 import Contact from '@/components/Contact.astro'
-// import ModalMenu from '@/components/Modal/Menu/index.svelte'
-// import ModalMenuMenu from '@/components/Modal/Menu/Menu.astro'
+import ModalMenu from '@/components/Modal/Menu.astro'
 
 export async function getStaticPaths() {
   const pageEntries = await getCollection('pages')
@@ -54,16 +53,16 @@ const contact = {
           <Content />
         </article>
       </main>
+      {entry.data.type !== 'landing' && <Contact {...contact} />}
+
+      <Subscribe />
+      <Menu />
+      <Footer />
     </div>
-
-    {entry.data.type !== 'landing' && <Contact {...contact} />}
-
-    <Subscribe />
-    <Menu />
-    <Footer />
-
-    <!-- <ModalMenu client:load>
-      <ModalMenuMenu />
-    </ModalMenu> -->
+    <ModalMenu />
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"
+    ></script>
   </body>
 </html>

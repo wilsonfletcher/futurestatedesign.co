@@ -10,31 +10,34 @@ const em = (px, base) => `${round(px / base)}em`
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  content: [
+    './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+    './node_modules/flowbite/**/*.js',
+  ],
   theme: {
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      yellow: '#F5FF51',
-      qux: '#001E20',
-      grose: '#F5FF51',
-      cableGreen: '#19333C',
-      swamp: '#001E20',
-      black: '#000',
-      gray: {
-        DEFAULT: '#8F8F8F',
-      },
-      alabaster: '#F7F7F7',
-      white: '#fff',
-      red: {
-        DEFAULT: '#ff0000',
-        light: '#FF5C00',
-      },
-    },
     extend: {
-      screens: {
-        md: '760px',
-        lg: '1280px',
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        yellow: '#F5FF51',
+        qux: '#001E20',
+        grose: '#F5FF51',
+        cableGreen: '#19333C',
+        swamp: '#001E20',
+        black: '#000',
+        gray: {
+          DEFAULT: '#8F8F8F',
+        },
+        alabaster: '#F7F7F7',
+        white: '#fff',
+        red: {
+          DEFAULT: '#ff0000',
+          light: '#FF5C00',
+        },
+        screens: {
+          md: '760px',
+          lg: '1280px',
+        },
       },
       fontWeight: {
         light: 400,
@@ -47,7 +50,7 @@ module.exports = {
       fontSize: {
         lg: [rem(18), rem(24)],
         '3xl': [rem(32)],
-        '4xl': [rem(35), rem(40)]
+        '4xl': [rem(35), rem(40)],
       },
       fontFamily: {
         sans: ['neue-haas-grotesk-display', 'sans-serif'],
@@ -291,6 +294,7 @@ module.exports = {
       // strategy: 'class', // only generate classes
     }),
     require('@tailwindcss/typography'),
+    require('flowbite/plugin'),
   ],
 }
 

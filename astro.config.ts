@@ -1,10 +1,8 @@
 import { defineConfig } from 'astro/config'
 import compress from 'astro-compress'
-// import htmlBeautifier from 'astro-html-beautifier'
 import mdx from '@astrojs/mdx'
 import rehypeExternalLinks from 'rehype-external-links'
 import sitemap from '@astrojs/sitemap'
-import svelte from '@astrojs/svelte'
 import tailwind from '@astrojs/tailwind'
 import yaml from '@rollup/plugin-yaml'
 // import rehypeFigure from 'rehype-figure'
@@ -52,7 +50,6 @@ export default defineConfig({
         applyBaseStyles: false,
       },
     }),
-    svelte(),
     sitemap(),
     compress(),
   ],

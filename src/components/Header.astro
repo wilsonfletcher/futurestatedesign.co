@@ -1,7 +1,7 @@
 ---
 import { SITE } from '@/config'
 import Logo from '@/components/Logo.astro'
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon'
 // import Overlay from '@/components/Overlay.svelte'
 
 export interface Props {
@@ -33,10 +33,15 @@ const { class: className, ...attrs } = Astro.props as Props
           >
         </div>
 
-        <a href="#read-more-about" class="inline-flex items-center justify-center text-[32px]">
+        <button
+          type="button"
+          data-modal-target="modal-menu"
+          data-modal-toggle="modal-menu"
+          class="inline-flex items-center justify-center text-[32px]"
+        >
           <span class="sr-only">Open menu</span>
           <Icon name="menu" />
-        </a>
+        </button>
 
         <!-- <Overlay client:load /> -->
       </div>

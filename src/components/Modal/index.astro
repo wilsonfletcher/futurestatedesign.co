@@ -1,0 +1,24 @@
+---
+import { Icon } from 'astro-icon'
+---
+
+<div
+  id="modal-menu"
+  tabindex="-1"
+  aria-hidden="true"
+  role="alertdialog"
+  class="fixed top-0 bg-qux text-white left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"
+  aria-modal="true"
+  aria-labelledby="modal_label"
+>
+  <div class="modal__header">
+    <button type="button" data-modal-hide="modal-menu">
+      Close menu
+      <Icon name="close" />
+    </button>
+  </div>
+
+  <div class="modal__body">
+    <slot />
+  </div>
+</div>

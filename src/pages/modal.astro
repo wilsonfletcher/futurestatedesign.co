@@ -1,0 +1,38 @@
+---
+import '@/styles/global.css'
+---
+
+<html>
+  <head>
+    <title>Modal</title>
+  </head>
+  <body>
+    <div class="container">
+      <div x-data="{ expanded: false }">
+        <button x-on:click="expanded = ! expanded">Collapse</button>
+
+        <div x-show="expanded" x-collapse>
+          <p>
+            Ex anim aute ipsum aute officia pariatur anim. Anim sint nulla aute
+            anim nulla aute id laboris mollit pariatur. Exercitation occaecat
+            nisi Lorem culpa ea velit anim aliqua occaecat sit. Officia
+            consectetur nisi dolore nostrud. Eiusmod commodo duis culpa aute
+            Lorem consectetur duis in deserunt proident. Laborum sint labore
+            magna cillum adipisicing sit consectetur ea nulla Lorem. Deserunt
+            laborum sunt laboris laborum. Quis duis culpa cupidatat quis elit.
+            Magna quis occaecat cupidatat Lorem voluptate pariatur est
+            consectetur laborum laboris. Mollit labore ea dolore dolore ullamco
+            ut laborum nulla aute culpa eiusmod veniam occaecat adipisicing.
+            Officia excepteur ipsum velit laboris magna mollit fugiat aliqua
+            esse sunt. Voluptate dolor occaecat pariatur exercitation cillum
+            cillum.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  import '../scripts/bundle.js'
+</script>

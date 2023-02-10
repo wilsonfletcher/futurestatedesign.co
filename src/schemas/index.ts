@@ -42,3 +42,20 @@ export const workSchema = z.object({
   name: z.string(),
   draft: z.boolean().optional(),
 })
+
+export const testimonialSchema = z.object({
+  reviewBody: z.string(),
+  author: z.object({
+    name: z.string(),
+    worksFor: z.string(),
+    image: z
+      .object({
+        url: z.string().optional(),
+        width: z.number().optional(),
+        height: z.number().optional(),
+        alt: z.string().optional(),
+      })
+      .optional(),
+  }),
+  draft: z.boolean().optional(),
+})

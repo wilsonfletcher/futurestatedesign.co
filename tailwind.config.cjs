@@ -122,7 +122,7 @@ module.exports = {
             figcaption: {
               borderLeftWidth: '0.3125rem',
               paddingLeft: '0.5em',
-              maxWidth: 580,
+              maxWidth: rem(730),
               fontSize: 18,
               lineHeight: round(20 / 18),
             },

@@ -12,16 +12,19 @@ type: landing
 
 import { Icon } from 'astro-icon'
 import {
-  Section,
-  Prose,
-  Article,
   Accordion,
   AccordionItem,
+  Article,
+  Callout,
+  Prose,
+  Section,
 } from '@/components/index.astro'
 
 export const ul = (props) => (
   <div class="not-prose">
-    <ul class="flex flex-wrap">{props.children}</ul>
+    <ul class="flex flex-wrap">
+      {props.children}
+    </ul>
   </div>
 )
 
@@ -131,8 +134,15 @@ export const components = { ul, li }
     - Peer connections
     - Specialist programme teams
 
+    <Callout name="Is it the right approach for you?" url={{ name: 'Get in touch', href: 'mailto:info@futurestatedesign.co' } } />
+
   </Prose>
 </Section>
+
+export const callout = {
+  name: 'No obligation',
+  url: { name: 'Book a call', href: 'mailto:info@futurestatedesign.co' },
+}
 
 <Section name="Programme structure" class="bg-qux text-white">
   <Prose>
@@ -141,6 +151,8 @@ export const components = { ul, li }
     ### 30 minute chemistry call
 
     First thing’s first – before you sign up, we do a short call to learn about you and to explain the programme. If everything lines up, we’ll get you signed up and we’ll book in the full prep call.
+
+    <Callout {...callout} class="not-prose" />
 
     ### Day 1: 1 hr prep call
 

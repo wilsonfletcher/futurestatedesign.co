@@ -5,12 +5,14 @@ import {
   pageSchema,
   serviceSchema,
   workSchema,
+  testimonialSchema,
 } from '../schemas'
 
 const clientCollection = defineCollection({ schema: clientSchema })
 const manifestoCollection = defineCollection({ schema: manifestoSchema })
 const pageCollection = defineCollection({ schema: pageSchema })
 const serviceCollection = defineCollection({ schema: serviceSchema })
+const testimonialCollection = defineCollection({ schema: testimonialSchema })
 const workCollection = defineCollection({ schema: workSchema })
 
 export const collections = {
@@ -18,5 +20,6 @@ export const collections = {
   manifesto: manifestoCollection,
   pages: pageCollection,
   services: serviceCollection,
-  work: workCollection
+  work: workCollection,
+  testimonials: testimonialCollection
 }

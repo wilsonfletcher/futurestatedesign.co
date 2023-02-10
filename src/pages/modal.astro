@@ -2,12 +2,14 @@
 import '@/styles/global.css'
 ---
 
-<html>
+<html lang="en">
   <head>
     <title>Modal</title>
   </head>
-  <body>
+  <body x-data="{'isModalOpen': false}" x-on:keydown.escape="isModalOpen=false">
     <div class="container">
+      <button x-on:click="isModalOpen = true">Open Modal</button>
+
       <div x-data="{ expanded: false }">
         <button x-on:click="expanded = ! expanded">Collapse</button>
 
@@ -28,6 +30,27 @@ import '@/styles/global.css'
             cillum.
           </p>
         </div>
+      </div>
+    </div>
+    <div
+      class="fixed inset-[200px] bg-qux text-white"
+      role="dialog"
+      tabindex="-1"
+      x-show="isModalOpen"
+      x-on:click.away="isModalOpen = false"
+      x-cloak
+    >
+      <div class="model-inner">
+        <div class="modal-header">
+          <h3>Hello World</h3>
+          <button aria-label="Close" x-on:click="isModalOpen=false">✖</button>
+        </div>
+        <p>
+          Natus earum velit ab nobis eos. Sed et exercitationem voluptatum omnis
+          dolor voluptates. Velit ut ipsam sunt ipsam nostrum. Maiores officia
+          accusamus qui sapiente. Dolor qui vel placeat dolor nesciunt quo dolor
+          dolores. Quo accusamus hic atque nisi minima.
+        </p>
       </div>
     </div>
   </body>

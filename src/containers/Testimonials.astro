@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content'
+
+const testimonials = await getCollection('testimonials', ({ data }) => {
+  return data.draft !== true
+})
+---
+
+<section class="bg-qux text-white pt-48 pb-24">
+  <h2 class="sr-only">Testimonials</h2>
+  <div class="relative w-full flex gap-14 snap-x overflow-x-auto">
+    <!-- <div class="snap-center shrink-0">
+      <div class="shrink-0 w-4 sm:w-48"></div>
+    </div> -->
+    {
+      testimonials.map(({ data: { reviewBody, author } }) => (
+        <div class="snap-center shrink-0 first:pl-24 last:pr-24">
+          <div></div>
+          <figure class="w-80 lg:w-[730px] bg-white p-10 text-black flex flex-col items-center gap-6">
+            {author.image && (
+              <img
+                src={author.image.url}
+                alt={author.image.alt}
+                class="object-center object-cover"
+              />
+            )}
+            <blockquote>
+              <p class="text-4xl text-center">{reviewBody}</p>
+            </blockquote>
+            <figcaption class="text-black/50 text-2xl">
+              {author.name}, {author.worksFor}
+            </figcaption>
+          </figure>
+        </div>
+      ))
+    }
+    <!-- <div class="snap-center shrink-0">
+      <div class="shrink-0 w-4 sm:w-48"></div>
+    </div> -->
+  </div>
+</section>

@@ -5,7 +5,7 @@ import rehypeExternalLinks from 'rehype-external-links'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 import yaml from '@rollup/plugin-yaml'
-import prefetch from '@astrojs/prefetch';
+// import prefetch from '@astrojs/prefetch';
 // import rehypeFigure from 'rehype-figure'
 // import rehypeStringify from 'rehype-stringify'
 // import rehypeComponents from 'rehype-components'
@@ -52,7 +52,7 @@ export default defineConfig({
         applyBaseStyles: false,
       },
     }),
-    prefetch(),
+    // prefetch(),
     sitemap(),
     compress(),
   ],

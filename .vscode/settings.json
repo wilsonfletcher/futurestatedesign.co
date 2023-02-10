@@ -1,7 +1,4 @@
 {
-    "files.associations": {
-        "*.mdx": "mdx"
-    },
     "eslint.validate": [
         "javascript",
         "javascriptreact",

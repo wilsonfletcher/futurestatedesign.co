@@ -11,6 +11,10 @@ type: landing
 ---
 import { Article, Prose, Section, Callout } from '@/components/index.astro'
 
+export const em = props => <em class="text-gray not-italic" {...props} />
+
+export const components = { em}
+
 export const callout = { name: 'Is it the right approach for you?', url: { href: '#', name: 'Get in touch' }}
 
 <Article>
@@ -60,15 +64,15 @@ export const callout = { name: 'Is it the right approach for you?', url: { href:
   <Prose>
     <p class="lead">What it has achieved for others...</p>
 
-    Reimagined the entire customer acquisition and servicing flow for a major insurer, eradicating numerous costly historic processes and reducing servicing effort by more than 75%
+    Reimagined the entire customer acquisition and servicing flow for a major insurer, *eradicating numerous costly historic processes and reducing servicing effort by more than 75%*
     
     ---
 
-    Underpinned the launch of a new product for a global telecoms company, ensuring a smooth rollout to 350,000+ customers and 92% satisfaction rates after 6 months
+    Underpinned the launch of a new product for a global telecoms company, *ensuring a smooth rollout to 350,000+ customers and 92% satisfaction rates after 6 months*
 
     ---
 
-    Visualised the end-to-end travel experience to support the introduction of new airport services, identifying and eradicating more than 20 potential customer pain-points
+    Visualised the end-to-end travel experience to support the introduction of new airport services, *identifying and eradicating more than 20 potential customer pain-points*
 
     ---
 
@@ -83,10 +87,16 @@ export const callout = { name: 'Is it the right approach for you?', url: { href:
   </Prose>
 </Section>
 
-<Section name="Questions">
-  <Prose>
-    Mollit reprehenderit ex eu ex est tempor voluptate ipsum cillum voluptate proident voluptate exercitation. Veniam pariatur minim et ullamco exercitation Lorem quis commodo adipisicing dolor adipisicing. Do fugiat excepteur do voluptate aliquip laboris consectetur ad eu. Irure anim non exercitation exercitation deserunt laboris laboris quis esse consequat exercitation do veniam voluptate.
+import Clients from '@/containers/Clients.astro'
 
-    Dolore officia officia dolore labore nulla sint dolor ullamco elit laboris exercitation sunt laborum proident. Do enim occaecat labore reprehenderit velit fugiat nostrud laborum sint incididunt incididunt. Labore in duis in nulla Lorem enim deserunt magna tempor. Do elit qui consectetur consequat dolor sint duis pariatur consectetur.
-  </Prose>
+<Clients />
+
+<Section name="Questions">
+  <details>
+    <summary>What will it cost?</summary>
+    <Prose>
+    > We’ve run these programmes for as little as £15k and as much as £150k. We’ll give you a series of options that enable you to choose an approach that gives you the best balance of cost and outcome.
+    </Prose>
+  </details>
+
 </Section>

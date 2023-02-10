@@ -11,7 +11,7 @@
       "@/content/*": ["src/content/*"],
       "@/layouts/*": ["src/layouts/*"],
       "@/plugins/*": ["src/plugins/*"],
-      "@/stores/*": ["src/stores/*"],
+      "@/scripts/*": ["src/scripts/*"],
       "@/styles/*": ["src/styles/*"]
     }
   }

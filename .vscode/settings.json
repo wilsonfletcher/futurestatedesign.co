@@ -1,6 +1,6 @@
 {
     "files.associations": {
-        "*.mdx": "markdown"
+        "*.mdx": "mdx"
     },
     "eslint.validate": [
         "javascript",

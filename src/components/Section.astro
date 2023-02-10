@@ -22,17 +22,20 @@ const id = name ? slugify(name) : null
 const heading = id ? `${id}-heading` : null
 ---
 
-<Tag id={id} aria-labelledby={heading} class:list={['relative', padding, className]} {...attrs}>
+<Tag
+  id={id}
+  aria-labelledby={heading}
+  class:list={['relative', padding, className]}
+  {...attrs}
+>
   <div class="container">
     <div class="grid gap-6 lg:gap-10 lg:grid-cols-8">
       {
         name && (
-          <Prose class="lg:col-span-2">
-            <h2 id={heading}>
-              {name}
-              <Icon name="arrow" class="hidden lg:block" />
-            </h2>
-          </Prose>
+          <h2 id={heading} class="text-3xl md:text-5xl lg:col-span-2">
+            {name}
+            <Icon name="arrow" class="hidden lg:block" />
+          </h2>
         )
       }
       <div class:list={['lg:col-span-6', !name && 'lg:col-start-3']}>

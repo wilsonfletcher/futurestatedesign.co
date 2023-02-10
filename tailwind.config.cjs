@@ -10,6 +10,7 @@ const em = (px, base) => `${round(px / base)}em`
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
     './node_modules/flowbite/**/*.js',
@@ -21,9 +22,7 @@ module.exports = {
         current: 'currentColor',
         yellow: '#F5FF51',
         qux: '#001E20',
-        grose: '#F5FF51',
         cableGreen: '#19333C',
-        swamp: '#001E20',
         black: '#000',
         gray: {
           DEFAULT: '#8F8F8F',

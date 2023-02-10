@@ -49,7 +49,7 @@ const contact = {
   <BaseHead {...meta}>
     <slot name="head" />
   </BaseHead>
-  <body class:list={[className]}>
+  <body class:list={[className, 'dark:bg-gray-800 dark:text-white']}>
     <div class="flex flex-col w-full min-h-screen">
       <Header>
         <div class="h2">___A business innovation company.</div>
@@ -63,9 +63,9 @@ const contact = {
       <Footer />
     </div>
     <ModalMenu />
+    <script>
+      import { Modal } from 'flowbite'
+    </script>
+    <script src="../scripts/app.js"></script>
   </body>
 </html>
-
-<script>
-import { Modal } from 'flowbite'
-</script>

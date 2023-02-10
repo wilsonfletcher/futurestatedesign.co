@@ -10,8 +10,29 @@ image:
 type: landing
 ---
 
+import Details from '@/components/Details.astro'
 import { Icon } from 'astro-icon'
-import { Section, Prose, Article } from '@/components/index.astro'
+import {
+  Section,
+  Prose,
+  Article,
+  Accordion,
+  AccordionItem,
+} from '@/components/index.astro'
+
+export const ul = (props) => (
+  <div class="not-prose">
+    <ul class="flex flex-wrap">{props.children}</ul>
+  </div>
+)
+
+export const li = (props) => (
+  <li class="after:content-['/'] after:mx-1 last-of-type:after:hidden">
+    {props.children}
+  </li>
+)
+
+export const components = { ul, li }
 
 <Article>
   <Prose>
@@ -208,31 +229,33 @@ export const support = [
 
 <Section name="Any questions?">
   <Prose>
-    ### Who should enrol on the programme?
-
-    > The programme is suitable for individuals, teams and entire businesses. You paye per business and have as many people tap into the support during the 12 months. We do ask that there is a lead...
-
-    ### How many people can enrol?
-
-    > The programme is suitable for individuals, teams and entire businesses. You paye per business and have as many people tap into the support during the 12 months. We do ask that there is a lead...
-
-    ### What are the programme dates?
-
-    > The programme is suitable for individuals, teams and entire businesses. You paye per business and have as many people tap into the support during the 12 months. We do ask that there is a lead...
-
-    ### How do you track success?
-
-    > The programme is suitable for individuals, teams and entire businesses. You paye per business and have as many people tap into the support during the 12 months. We do ask that there is a lead...
-
-    ### Can the programme be customised?
-
-    > The programme is suitable for individuals, teams and entire businesses. You paye per business and have as many people tap into the support during the 12 months. We do ask that there is a lead...
-
-    ### Can we claim back R&D tax credits?
-
-    > The programme is suitable for individuals, teams and entire businesses. You paye per business and have as many people tap into the support during the 12 months. We do ask that there is a lead...
-
+    <details>
+      <summary>Who should enrol on the programme?</summary>
+      > The programme is suitable for individuals, teams and entire businesses. You paye per business and have as many people tap into the support during the 12 months. We do ask that there is a lead...
+    </details>
   </Prose>
+
+  <Accordion data-accordion="collapse">
+    <AccordionItem name="Who should enrol on the programme?" id="item-1">
+      > The programme is suitable for individuals, teams and entire businesses. You paye per business and have as many people tap into the support during the 12 months. We do ask that there is a lead...
+    </AccordionItem>
+    <AccordionItem name="How many people can enrol?" id="item-2">
+      > The programme is suitable for individuals, teams and entire businesses. You paye per business and have as many people tap into the support during the 12 months. We do ask that there is a lead...
+    </AccordionItem>
+    <AccordionItem name="What are the programme dates??" id="item-3">
+      > The programme is suitable for individuals, teams and entire businesses. You paye per business and have as many people tap into the support during the 12 months. We do ask that there is a lead...
+    </AccordionItem>
+    <AccordionItem name="How do you track success" id="item-4">
+      > The programme is suitable for individuals, teams and entire businesses. You paye per business and have as many people tap into the support during the 12 months. We do ask that there is a lead...
+    </AccordionItem>
+    <AccordionItem name="Can the programme be customised?" id="item-5">
+      > The programme is suitable for individuals, teams and entire businesses. You paye per business and have as many people tap into the support during the 12 months. We do ask that there is a lead...
+    </AccordionItem>
+    <AccordionItem name="Can we claim back R&D tax credits?" id="item-6">
+      > The programme is suitable for individuals, teams and entire businesses. You paye per business and have as many people tap into the support during the 12 months. We do ask that there is a lead...
+    </AccordionItem>
+
+  </Accordion>
 </Section>
 
 <Section tag="div" padding="py-0">

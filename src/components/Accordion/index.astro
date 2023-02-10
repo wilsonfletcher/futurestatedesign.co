@@ -1,0 +1,6 @@
+---
+const { ...attrs } = Astro.props
+---
+<div data-active-classes="bg-white" data-inactive-classes="bg-white" {...attrs}>
+  <slot />
+</div>

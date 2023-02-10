@@ -32,24 +32,38 @@ const { class: className, ...attrs } = Astro.props as Props
             >{SITE.telephone}</a
           >
         </div>
+        <div clas="flex items-center">
+          <button
+            id="theme-toggle"
+            type="button"
+            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+          >
+            <Icon
+              name="dark"
+              id="theme-toggle-dark-icon"
+              class="hidden w-5 h-5"
+            />
+            <Icon
+              id="theme-toggle-light-icon"
+              class="hidden w-5 h-5"
+              name="light"
+            />
+          </button>
 
-        <button
-          type="button"
-          data-modal-target="modal-menu"
-          data-modal-toggle="modal-menu"
-          id="button-modal-menu"
-          class="inline-flex items-center justify-center text-[32px]"
-        >
-          <span class="sr-only">Open menu</span>
-          <Icon name="menu" />
-        </button>
-
-        <!-- <Overlay client:load /> -->
+          <button
+            type="button"
+            data-modal-target="modal-menu"
+            data-modal-toggle="modal-menu"
+            id="button-modal-menu"
+            class="inline-flex items-center justify-center text-[32px]"
+          >
+            <span class="sr-only">Open menu</span>
+            <Icon name="menu" />
+          </button>
+        </div>
       </div>
 
-      <div class="flex items-end md:col-span-6">
-        <slot />
-      </div>
+      <div class="flex items-end md:col-span-6"></div>
     </div>
   </div>
 </div>

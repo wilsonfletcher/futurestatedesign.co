@@ -6,6 +6,6 @@ interface Props {
 const { class: className, ...attrs } = Astro.props as Props
 ---
 
-<h2 class:list={['h2', className]} {...attrs}>
+<h2 class:list={['border-8', className]} {...attrs}>
   <slot />
 </h2>

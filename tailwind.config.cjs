@@ -22,13 +22,9 @@ module.exports = {
         current: 'currentColor',
         yellow: '#F5FF51',
         qux: '#001E20',
-        cableGreen: '#19333C',
-        black: '#000',
         gray: {
           DEFAULT: '#8F8F8F',
         },
-        alabaster: '#F7F7F7',
-        white: '#fff',
         red: {
           DEFAULT: '#ff0000',
           light: '#FF5C00',
@@ -48,8 +44,12 @@ module.exports = {
       },
       fontSize: {
         lg: [rem(18), rem(24)],
-        '3xl': [rem(32)],
+        '3xl': [rem(32), rem(34)],
         '4xl': [rem(35), rem(40)],
+        '6xl': [rem(64), rem(62)],	
+        '7xl': [rem(72), rem(68)],
+        '8xl': [rem(90), rem(80)],
+        '9xl': [rem(110), 1],
       },
       fontFamily: {
         sans: ['neue-haas-grotesk-display', 'sans-serif'],
@@ -293,7 +293,6 @@ module.exports = {
       // strategy: 'class', // only generate classes
     }),
     require('@tailwindcss/typography'),
-    require('flowbite/plugin'),
   ],
 }
 

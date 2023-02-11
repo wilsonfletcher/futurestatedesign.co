@@ -23,16 +23,26 @@ work.sort((a, b) => a.data.number - b.data.number)
         const { data } = area
         return (
           <article class="pb-16 border-b border-gray">
+            <h3 class="h2">
+              <span class="h0 block">{data.number}</span>
+              {data.name}
+            </h3>
+
             <Prose>
-              <h3 class="h2">
-                <span class="h0 block">{data.number}</span>
-                {data.name}
-              </h3>
               <div set:html={area.body} />
+
+              <button type="button" x-on:click="modalContact = true">
+                Get in touch!
+              </button>
+
               <Callout
                 class="not-prose"
                 name="Is it the right approach for you?"
-                url={{ href: '#', name: 'Get in touch' }}
+                url={{
+                  name: 'Get in touch',
+                  'x-on:click': 'modalContact=true',
+                  type: 'button',
+                }}
               />
             </Prose>
           </article>

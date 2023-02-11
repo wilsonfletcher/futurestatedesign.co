@@ -1,0 +1,49 @@
+---
+import { Icon } from 'astro-icon'
+import { Prose } from '@/components/index.astro'
+import FormContact from '@/components/Form/Contact.astro'
+
+const id = 'modal_contact'
+const label = `${id}_label`
+const desc = `${id}_desc`
+---
+
+<div
+  role="alertdialog"
+  aria-modal="true"
+  aria-hidden="true"
+  aria-labelledby={label}
+  aria-describedby={desc}
+  x-show="modalContact"
+  x-on:click.away="modalContact = false"
+  x-cloak
+  class="fixed inset-0 bg-qux text-white z-50 w-full py-8 h-full"
+>
+  <div class="container flex flex-col">
+    <button
+      type="button"
+      class="flex items-center self-end p-2"
+      x-on:click="modalContact = false"
+    >
+      Close
+      <Icon name="close" class="ml-4" />
+    </button>
+
+    <div class="lg:grid lg:grid-cols-8 lg:gap-10">
+      <div class="lg:col-span-5">
+        <h2 class="h0 mb-8" id={label}>Let’s talk</h2>
+        <Prose>
+          <p id={desc}>
+            If you still have questions about what you need, what’s right for
+            you and you’re not quite ready to schedule your call, no problem.
+            Use the form to drop us a line and we’ll respond within 24hours.
+          </p>
+          <blockquote>
+            <p>I’m looking for help with...</p>
+          </blockquote>
+        </Prose>
+        <FormContact />
+      </div>
+    </div>
+  </div>
+</div>

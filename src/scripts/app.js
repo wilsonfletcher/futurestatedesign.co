@@ -1,7 +1,12 @@
-var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon')
-var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon')
+import Alpine from 'alpinejs'
 
-// Change the icons inside the button based on previous settings
+window.Alpine = Alpine
+
+Alpine.start()
+
+const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon')
+const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon')
+
 if (
   localStorage.getItem('color-theme') === 'dark' ||
   (!('color-theme' in localStorage) &&
@@ -12,7 +17,7 @@ if (
   themeToggleDarkIcon.classList.remove('hidden')
 }
 
-var themeToggleBtn = document.getElementById('theme-toggle')
+const themeToggleBtn = document.getElementById('theme-toggle')
 
 themeToggleBtn.addEventListener('click', function () {
   // toggle icons inside button

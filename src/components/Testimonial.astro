@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+interface Props {
+  foo: CollectionEntry<'testimonials'>
+  class?: string
+}
+
+const { foo, class: className } = Astro.props as Props
+---
+
+<figure
+  class:list={[
+    'bg-white p-10 text-black flex flex-col items-center gap-6',
+    className,
+  ]}
+>
+  {
+    foo.data.author.image && (
+      <img
+        src={foo.data.author.image.url}
+        alt={foo.data.author.image.alt}
+        class="object-center object-cover"
+      />
+    )
+  }
+  <blockquote>
+    <p class="text-4xl text-center">{foo.data.reviewBody}</p>
+  </blockquote>
+  <figcaption class="text-black/50 text-2xl">
+    {foo.data.author.name}, {foo.data.author.worksFor}
+  </figcaption>
+</figure>

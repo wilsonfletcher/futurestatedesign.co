@@ -25,7 +25,9 @@ const {
       >
         <Prose class="lg:col-span-4">
           <h2>
-            <a href={url}>{name}</a>
+            <button x-on:click="modalContact = true" type="button"
+              >{name}</button
+            >
           </h2>
           <p class="h3">
             {description}

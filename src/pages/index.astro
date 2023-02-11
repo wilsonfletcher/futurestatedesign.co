@@ -14,7 +14,7 @@ const meta = {
 
 const callout = {
   name: 'Is it the right approach for you?',
-  url: { name: 'Get in touch', href: 'mailto:info@futurestatedesign.com' },
+  url: { name: 'Get in touch', href: null, 'x-on:click': 'modalContact=true' },
 }
 ---
 
@@ -108,17 +108,15 @@ const callout = {
         <h3 class="h2 mb-10">
           <span class="h0 block">02</span> Reinvention
         </h3>
-        <ul
-          class="grid gap-4 md:gap-10 md:grid-cols-2 body mb-7 md:mb-14"
-        >
+        <ul class="grid gap-4 md:gap-10 md:grid-cols-2 body mb-7 md:mb-14">
           <li class="flex">
             <Icon
               name="arrow-45"
               class="text-[32px] flex-none mr-4 md:text-5xl"
             />
             <div class="flex-auto">
-              Shaping the futurestate vision for an established
-              organisation and the strategy to realise it
+              Shaping the futurestate vision for an established organisation and
+              the strategy to realise it
             </div>
           </li>
           <li class="flex">
@@ -148,8 +146,7 @@ const callout = {
             />
             <div class="flex-auto">
               <a href="/experience-mapping" class="underline"
-                >Mapping next-generation customer journeys and service
-                flows</a
+                >Mapping next-generation customer journeys and service flows</a
               >
             </div>
           </li>
@@ -159,8 +156,7 @@ const callout = {
               class="text-[32px] md:text-[48px] flex-none mr-4"
             />
             <div class="flex-auto">
-              Re-imagining legacy business processes and operational
-              systems
+              Re-imagining legacy business processes and operational systems
             </div>
           </li>
         </ul>
@@ -171,18 +167,15 @@ const callout = {
         <h3 class="h2 mb-10">
           <span class="h0 block">03</span> Intervention
         </h3>
-        <ul
-          class="grid gap-4 md:gap-10 md:grid-cols-2 body mb-7 md:mb-14"
-        >
+        <ul class="grid gap-4 md:gap-10 md:grid-cols-2 body mb-7 md:mb-14">
           <li class="flex">
             <Icon
               name="arrow-45"
               class="text-[32px] flex-none mr-4 md:text-5xl"
             />
             <div class="flex-auto">
-              Articulating a clear, distinctive direction and strategy
-              stack: purpose, vision, values, value proposition,
-              principles
+              Articulating a clear, distinctive direction and strategy stack:
+              purpose, vision, values, value proposition, principles
             </div>
           </li>
           <li class="flex">
@@ -200,8 +193,8 @@ const callout = {
               class="text-[32px] flex-none mr-4 md:text-5xl"
             />
             <div class="flex-auto">
-              Overcoming stalled growth, downward performance and
-              disruptive competitive pressures
+              Overcoming stalled growth, downward performance and disruptive
+              competitive pressures
             </div>
           </li>
           <li class="flex">
@@ -218,10 +211,12 @@ const callout = {
         <Callout {...callout} />
       </article>
     </Section>
-  
+
     <Section name="How we work">
       <Prose>
-        <p class="lead">From a single board advisor to a complete team project</p>
+        <p class="lead">
+          From a single board advisor to a complete team project
+        </p>
         <p>
           Our core team of innovation specialists can call on an extensive
           network of expert practitioners, subject matter experts and partner

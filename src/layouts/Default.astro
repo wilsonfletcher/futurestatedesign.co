@@ -11,6 +11,7 @@ import Menu from '@/components/Menu.astro'
 import Contact from '@/components/Contact.astro'
 import Subscribe from '@/components/Subscribe.astro'
 import ModalMenu from '@/components/Modal/Menu.astro'
+import ModalContact from '@/components/Modal/Contact.astro'
 
 export interface Props {
   title?: string
@@ -40,7 +41,6 @@ const meta = { title, description, url, image, noindex }
 const contact = {
   name: 'Let’s talk',
   description: 'Tell us where you want to be. We’ll make sure you get there.',
-  url: `mailto:${SITE.email}`,
 }
 ---
 
@@ -49,7 +49,11 @@ const contact = {
   <BaseHead {...meta}>
     <slot name="head" />
   </BaseHead>
-  <body class:list={[className, 'dark:bg-qux dark:text-white']}>
+  <body
+    class:list={[className, 'dark:bg-qux dark:text-white']}
+    x-data="{modalMenu: false, modalContact: false}"
+    x-on:keydown.escape="modalMenu=false"
+  >
     <div class="flex flex-col w-full min-h-screen">
       <Header>
         <div class="h2">___A business innovation company.</div>
@@ -63,9 +67,10 @@ const contact = {
       <Footer />
     </div>
     <ModalMenu />
-    <script>
-      import { Modal } from 'flowbite'
-    </script>
-    <script src="../scripts/app.js"></script>
+    <ModalContact />
   </body>
 </html>
+
+<script>
+  import '@/scripts/app.js'
+</script>

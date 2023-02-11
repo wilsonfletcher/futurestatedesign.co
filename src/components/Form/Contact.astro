@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon'
 ---
 
 <form>
@@ -9,17 +10,19 @@
     <div>
       <input type="email" placeholder="My email address is..." class="input" />
     </div>
-    <button type="submit" class="button button--primary w-full md:w-[270px]">
-      <span class="flex justify-between items-center">
-        Let's talk
-      </span>
+    <button
+      type="submit"
+      class="text-[30px] flex items-center text-yellow hover:text-white"
+    >
+      <span class="underline">Submit</span>
+      <Icon name="arrow-45" class="ml-2" />
     </button>
   </div>
 </form>
 
-<style scoped>
+<style>
   .input {
     @apply block w-full bg-transparent border-x-0 border-t-0 border-b border-white/50 px-0 placeholder:text-white/40 !important;
-    @apply text-[21px] md:text-[35px] !important;
+    @apply text-[30px] leading-[40px] !important;
   }
 </style>

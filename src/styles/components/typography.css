@@ -9,19 +9,11 @@
 */
 @layer components {
   .h0 {
-    @apply text-[72px] leading-[68px] tracking-tight;
-
-    @screen md {
-      @apply text-[110px] leading-[110px];
-    }
+    @apply text-7xl tracking-tight md:text-9xl;
   }
 
   .h1 {
-    @apply text-[64px] leading-[calc(62/64)];
-
-    @screen md {
-      @apply text-[90px] leading-[calc(80/90)];
-    }
+    @apply text-6xl md:text-8xl;
   }
 
   /* .h2 {

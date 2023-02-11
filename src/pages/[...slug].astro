@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content'
+
+import Default from '@/layouts/Default.astro'
+import { SITE } from '@/config'
+
+export async function getStaticPaths() {
+  const pageEntries = await getCollection('page')
+  return pageEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }))
+}
+
+const { entry } = Astro.props
+const { data, slug } = entry
+const { name, description, image, theme, type } = data
+
+const { Content } = await entry.render()
+---
+
+<Default
+  {...data}
+  title={`${name} - ${SITE.name}`}
+  description={description}
+  url={slug}
+  image={image}
+  class={theme == 'white' && 'bg-qux text-white'}
+>
+  <article id={slug}>
+    <div class="container">
+      <div class="lg:grid lg:grid-cols-8 lg:grid-gap-10">
+        <div class="lg:col-start-3 lg:col-span-6">
+          {
+            type === 'landing' ? (
+              <h1 class="h1">{name}</h1>
+            ) : (
+              <h1 class="h0">{name}</h1>
+            )
+          }
+        </div>
+      </div>
+    </div>
+    <Content />
+  </article>
+</Default>

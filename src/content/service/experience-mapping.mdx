@@ -1,0 +1,101 @@
+---
+name: Experience mapping
+description: Mapping next-generation customer journeys and service flows
+image:
+  url: /images/service-mapping.jpg
+  width: 1200
+  height: 695
+  alt: Experience Mapping
+type: landing
+---
+import { Article, Prose, Section, Callout } from '@/components/index.astro'
+
+export const em = props => <em class="text-gray not-italic" {...props} />
+
+export const components = { em}
+
+export const callout = { name: 'Is it the right approach for you?', url: { href: '#', name: 'Get in touch' }}
+
+<Article>
+  <Prose>
+    <p class="lead">Design and visualise your optimal future customer journey – and understand what you need to make it happen.</p>
+  </Prose>
+</Article>
+
+<Section name="How it works">
+  <Prose>
+    ### What’s involved?
+
+    Mapping customer journeys and service flows successfully requires a combination of futurestate design, team workshops, customer, stakeholder and desk research, business analysis, information design and journey visualisation.
+
+    ### How long does it take?
+
+    They can run over anything from a couple of weeks to a few months, depending on the scope and scale of the challenge and what internal resources you have available. Most take 6-8 weeks with a blended team.
+
+    ### The end result
+
+    You’ll be able to see how a customer should move through all of the key touch-points of your service, across the full customer lifecycle, and how to align each point with commercial objectives, support interventions, business processes, product experiences, technology integrations and more.
+
+    ### The business outcomes
+
+    The outputs are detailed visualisations of the entire service experience, often as large-format posters and/or interactive working tools – incredibly valuable business tools that enable you to optimise initiatives and investments and unite efforts behind achieving the best possible experience for customers and the business alike.
+
+    <Callout class="not-prose" {...callout} />
+
+    ![Service mapping](/images/service-mapping.jpg)
+  </Prose>
+</Section>
+
+<Section name="The futurestate approach">
+  <Prose>
+    <p class="lead">We always start with your futurestate – what you should do, not what you do now – to envision what the ideal target journey should be. We then map today’s experience against it to identify gaps – or more often – between now and the futurestate, and what is needed to bridge them.</p>
+    <p class="h3">Some of the key benefits of our approach:</p>
+
+    - Overcomes constraints of designing solely from current data and customer feedback ‘echo chambers’
+    - Uncovers opportunities for big leaps forward in performance and, frequently, radical new approaches to legacy processes
+    - Makes the ideal target visible to everyone, in a format that your organisation can get the most long-term value from
+    - Ties all key business drivers, external services and customer goals into one coherent picture
+    - Ensures all activities are future-focused, eliminating unnecessary spend on things that don’t contribute to the ideal target
+  </Prose>
+</Section>
+
+<Section name="Is mapping effective?">
+  <Prose>
+    <p class="lead">What it has achieved for others...</p>
+
+    Reimagined the entire customer acquisition and servicing flow for a major insurer, *eradicating numerous costly historic processes and reducing servicing effort by more than 75%*
+    
+    ---
+
+    Underpinned the launch of a new product for a global telecoms company, *ensuring a smooth rollout to 350,000+ customers and 92% satisfaction rates after 6 months*
+
+    ---
+
+    Visualised the end-to-end travel experience to support the introduction of new airport services, *identifying and eradicating more than 20 potential customer pain-points*
+
+    ---
+
+  </Prose>
+</Section>
+
+<Section name="Why work with us?">
+  <Prose>
+    <p class="lead">Take valuable shortcuts. Avoid costly pitfalls. Tap into expertise built with companies like these.</p>
+
+    <p class="h3">Warren Buffett once said, “risk comes from not knowing what you're doing.” After 350+ programmes for more than 150 major companies over 20 years, we know what we’re doing.</p>
+  </Prose>
+</Section>
+
+import Clients from '@/containers/Clients.astro'
+
+<Clients />
+
+<Section name="Questions">
+  <details>
+    <summary>What will it cost?</summary>
+    <Prose>
+    > We’ve run these programmes for as little as £15k and as much as £150k. We’ll give you a series of options that enable you to choose an approach that gives you the best balance of cost and outcome.
+    </Prose>
+  </details>
+
+</Section>

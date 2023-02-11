@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content'
+
+import '@/styles/global.css'
+
+const articles = await getCollection('article')
+---
+
+<nav>
+  <ul>
+    {
+      articles.map(({ slug, data: { name } }) => (
+        <li>
+          <a href={`/articles/${slug}`}>{name}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

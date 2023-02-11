@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 
-const services = await getCollection('services', ({ data }) => {
+const services = await getCollection('service', ({ data }) => {
   return data.draft !== true
 })
 
@@ -18,14 +18,14 @@ const { name, ...attrs } = Astro.props as Props
   <h3>{name}</h3>
   <ul>
     {
-      services.map(({ data: { name, url } }) => (
+      services.map((service) => (
         <li>
-          {url ? (
-            <a href={url} class="underline">
-              {name}
+          {service.slug ? (
+            <a href={service.slug} class="underline">
+              {service.data.name}
             </a>
           ) : (
-            name
+            service.data.name
           )}
         </li>
       ))

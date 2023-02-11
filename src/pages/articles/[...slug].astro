@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content'
+
+import Default from '@/layouts/Default.astro'
+import { SITE } from '@/config'
+import { Prose } from '@/components/index.astro'
+
+export async function getStaticPaths() {
+  const articles = await getCollection('article')
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }))
+}
+
+const { article } = Astro.props
+const { slug, data } = article
+const { name, description, image } = data
+const { Content } = await article.render()
+---
+
+<Default
+  title={`${name} - ${SITE.name}`}
+  description={name}
+  url={slug}
+  image={image}
+>
+  <article>
+    <div class="container">
+      <div class="lg:grid lg:grid-cols-8 lg:grid-gap-10">
+        <div class="lg:col-start-3 lg:col-span-6">
+          <h1 class="h1 mb-6">{name}</h1>
+          <Prose>
+            <p class="lead">{description}</p>
+            {image && <img src={image.url} alt="" />}
+            <Content />
+          </Prose>
+        </div>
+      </div>
+    </div>
+  </article>
+</Default>

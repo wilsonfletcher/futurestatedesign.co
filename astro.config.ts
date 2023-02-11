@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config'
-import compress from 'astro-compress'
+// import compress from 'astro-compress'
 import mdx from '@astrojs/mdx'
 import rehypeExternalLinks from 'rehype-external-links'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
-import yaml from '@rollup/plugin-yaml'
+// import yaml from '@rollup/plugin-yaml'
 // import prefetch from '@astrojs/prefetch';
 // import rehypeFigure from 'rehype-figure'
 // import rehypeStringify from 'rehype-stringify'
@@ -26,7 +26,7 @@ export default defineConfig({
   site: 'https://website--futurestatedesignco.netlify.app',
   markdown: {},
   vite: {
-    plugins: [yaml()],
+    // plugins: [yaml()],
   },
   integrations: [
     mdx({
@@ -53,7 +53,7 @@ export default defineConfig({
       },
     }),
     // prefetch(),
-    sitemap(),
-    compress(),
+    // sitemap(),
+    // compress(),
   ],
 })

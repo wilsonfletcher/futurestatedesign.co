@@ -1,0 +1,32 @@
+---
+import { getCollection, getEntryBySlug } from 'astro:content'
+
+import '@/styles/global.css'
+import { Prose } from '@/components/index.astro'
+
+const services = await getCollection('service')
+const article = await getEntryBySlug(
+  'article',
+  'building-strong-digital-foundations-articulating-your-purpose'
+)
+
+const { Content } = await article.render()
+---
+
+<div class="container">
+  <nav>
+    <ul>
+      {
+        services.map((service) => (
+          <li>
+            <a href={`/services/${service.slug}`}>{service.data.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <pre>{JSON.stringify(article, null, 2)}</pre>
+  <Prose>
+    <Content />
+  </Prose>
+</div>

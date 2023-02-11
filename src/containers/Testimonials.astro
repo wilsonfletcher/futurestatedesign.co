@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 
-const testimonials = await getCollection('testimonials', ({ data }) => {
+const testimonials = await getCollection('testimonial', ({ data }) => {
   return data.draft !== true
 })
 ---

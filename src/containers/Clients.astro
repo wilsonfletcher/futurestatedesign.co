@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content'
 
 import { Section } from '@/components/index.astro'
 
-const clients = await getCollection('clients', ({ data }) => {
+const clients = await getCollection('client', ({ data }) => {
   return data.draft !== true
 })
 
@@ -13,9 +13,7 @@ clients.sort((a, b) => a.data.sortOrder - b.data.sortOrder)
 <Section name="Selected clients">
   <div class="grid gap-4 grid-cols-4 md:grid-cols-5 md:gap-[30px]">
     {
-      clients.map((client) => {
-        const { data } = client
-        const { name, logo, image } = data
+      clients.map(({ data: { name, image, logo } }) => {
         return (
           <article>
             <h3 class="sr-only">{name}</h3>

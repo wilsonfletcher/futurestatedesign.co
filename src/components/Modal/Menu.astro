@@ -1,8 +1,12 @@
 ---
+import { getCollection } from 'astro:content'
 import { Icon } from 'astro-icon'
+
 import { SITE } from '@/config'
-// @ts-ignore
-import foo from '@/content/_foo.yml'
+
+const menu = await getCollection('menu', ({ data }) => {
+  return data.draft !== true
+})
 
 const id = 'modal_contact'
 const label = `${id}_label`
@@ -88,10 +92,10 @@ const desc = `${id}_desc`
           <h3 class="text-white/50">About us</h3>
           <ul>
             {
-              foo.map(({ name, url }) => (
+              menu.map((item) => (
                 <li>
-                  <a href={url} class="h2">
-                    {name}
+                  <a href={item.data.url} class="text-4xl leading-[44px]">
+                    {item.data.name}
                   </a>
                 </li>
               ))

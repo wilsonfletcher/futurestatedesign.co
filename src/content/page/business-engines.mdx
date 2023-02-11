@@ -1,17 +1,19 @@
 ---
 name: Business Engines
 description: All successful businesses need momentum. Companies will only build that momentum if they keep adding new engines to power growth. In the modern economy, most new business engines will be digital.
-seo:
-  image:
-    url: /images/business-engines.svg
-    width: 1200
-    height: 628
-    alt: Foo
+image:
+  url: /images/business-engines.svg
+  width: 1200
+  height: 628
+  alt: Foo
 ---
 
-import { Article, Prose } from '@/components/index.astro'
+import { Article, Prose, Listen } from '@/components/index.astro'
 import Qux from '@/components/Qux.astro'
 import Figure from '@/components/Figure.astro'
+
+import * as article from '../article/building-strong-digital-foundations-articulating-your-purpose.mdx'
+import * as podcast from '../podcast/6.mdx'
 
 <Article>
   <Prose>
@@ -30,13 +32,23 @@ import Figure from '@/components/Figure.astro'
 
     > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ac magna tristique auctor. Duis a semper tortor, sit amet laoreet mi. Morbi a lectus id metus faucibus porttitor non id dolor. Duis volutpat, elit quis condimentum gravida, nunc nulla lacinia erat, quis ullamcorper tellus justo quis nulla.
 
-    ## Listen
-
-    <Qux name="Foo" />
+    <Listen>
+      <article>
+        ### {podcast.frontmatter.name}
+        {podcast.frontmatter.description}
+        [Listen now](https://www.bbc.co.uk/sounds/podcasts)
+      </article>
+    </Listen>
 
     ## Watch
 
-    ## Read
+    <Listen>
+      <article>
+        ### {article.frontmatter.name}
+        {podcast.frontmatter.description}
+        [Listen now](https://www.bbc.co.uk/sounds/podcasts)
+      </article>
+    </Listen>
 
     Within each of these building blocks are many smaller elements that need work. Too many good ideas fail to become successful innovations because they don’t get all the moving parts to work together. They fail because of a lack of holistic thinking.
 

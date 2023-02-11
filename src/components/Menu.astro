@@ -1,7 +1,5 @@
 ---
 import { Icon } from 'astro-icon'
-// @ts-ignore
-import menu from '../content/_menu.yml'
 import { Prose } from '@/components/index.astro'
 
 interface Item {
@@ -21,7 +19,7 @@ interface Item {
         <Prose class="mb-16">
           <h2 id="read-more-about-heading">Read more about:</h2>
         </Prose>
-        <ul>
+        <!-- <ul>
           {
             menu.map(({ name, url }: Item) => (
               <li class="border-b-2 border-white/30">
@@ -35,7 +33,7 @@ interface Item {
               </li>
             ))
           }
-        </ul>
+        </ul> -->
       </div>
     </div>
   </div>

@@ -1,39 +1,46 @@
 ---
-import { Icon } from 'astro-icon'
-import { Prose } from '@/components/index.astro'
+import type { CollectionEntry } from 'astro:content'
 
-interface Item {
-  name: string
-  url: string
+import { Icon } from 'astro-icon'
+
+interface Props {
+  nav: CollectionEntry<'menu'>
+  class?: string
 }
+
+const { nav, class: className, ...props } = Astro.props as Props
+const { slug: id, data } = nav
+const { name, items } = data
+
+const heading = `${id}-heading`
 ---
 
 <nav
   class="pt-8 pb-12 lg:py-24 bg-qux text-white"
-  id="read-more-about"
-  aria-labelledby="read-more-about-heading"
+  id={id}
+  class:list={[className]}
+  aria-labelledby={heading}
+  {...props}
 >
   <div class="container">
     <div class="grid gap-4 md:grid-cols-8 md:gap-10">
       <div class="md:col-start-3 md:col-span-6">
-        <Prose class="mb-16">
-          <h2 id="read-more-about-heading">Read more about:</h2>
-        </Prose>
-        <!-- <ul>
+        <h2 id={heading} class="h2">{name}</h2>
+        <ul>
           {
-            menu.map(({ name, url }: Item) => (
+            items.map((item) => (
               <li class="border-b-2 border-white/30">
                 <a
-                  href={url}
+                  href={item.url}
                   class="text-[32px] md:text-5xl flex items-center py-5 justify-between"
                 >
-                  <span class="underline" set:html={name} />
+                  <span class="underline" set:html={item.name} />
                   <Icon name="arrow-45" class="text-[32px]" />
                 </a>
               </li>
             ))
           }
-        </ul> -->
+        </ul>
       </div>
     </div>
   </div>

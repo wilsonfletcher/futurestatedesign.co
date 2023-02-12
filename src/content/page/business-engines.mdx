@@ -8,9 +8,7 @@ image:
   alt: Foo
 ---
 
-import { Article, Prose, Listen } from '@/components/index.astro'
-import Qux from '@/components/Qux.astro'
-import Figure from '@/components/Figure.astro'
+import { Article, Prose, Watch, Listen } from '@/components/index.astro'
 
 import * as article from '../article/building-strong-digital-foundations-articulating-your-purpose.mdx'
 import * as podcast from '../podcast/6.mdx'
@@ -34,13 +32,23 @@ import * as podcast from '../podcast/6.mdx'
 
     <Listen>
       <article>
-        ### {podcast.frontmatter.name}
-        {podcast.frontmatter.description}
+        <h3 class="text-lg font-bold md:text-2xl">
+          Episode #6: {podcast.frontmatter.name}!
+        </h3>
+        <p class="text-lg font-light mb-4 md:text-2xl">
+          {podcast.frontmatter.description}
+        </p>
         [Listen now](https://www.bbc.co.uk/sounds/podcasts)
       </article>
     </Listen>
 
-    ## Watch
+    <Watch>
+      <article>
+        ### {article.frontmatter.name}
+        {podcast.frontmatter.description}
+        [Listen now](https://www.bbc.co.uk/sounds/podcasts)
+      </article>
+    </Watch>
 
     <Listen>
       <article>

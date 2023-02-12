@@ -28,6 +28,15 @@ export const manifestoSchema = z.object({
   draft: z.boolean().optional(),
 })
 
+export const menuSchema = z.object({
+  name: z.string(),
+  items: z.array(z.object({
+    name: z.string(),
+    url: z.string(),
+    external: z.boolean().optional(),
+  })),
+})
+
 export const pageSchema = z.object({
   name: z.string(),
   description: z.string().optional(),
@@ -40,6 +49,16 @@ export const pageSchema = z.object({
       alt: z.string().optional(),
     })
     .optional(),
+  menu: z.object({
+    primary: z.object({
+      name: z.string(),
+      weight: z.number(),
+    }).optional(),
+    secondary: z.object({
+      name: z.string(),
+      weight: z.number(),
+    }).optional(),
+  }).optional(),
   draft: z.boolean().optional(),
   type: z.string().optional(),
   theme: z.string().optional(),
@@ -80,12 +99,5 @@ export const testimonialSchema = z.object({
       })
       .optional(),
   }),
-  draft: z.boolean().optional(),
-})
-
-export const menuSchema = z.object({
-  name: z.string(),
-  url: z.string().optional(),
-  sortOrder: z.number().optional(),
   draft: z.boolean().optional(),
 })

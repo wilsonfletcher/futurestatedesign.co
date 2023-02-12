@@ -16,21 +16,13 @@
     @apply text-6xl md:text-8xl;
   }
 
-  /* .h2 {
-    @apply text-[32px] leading-[34px] mb-6 bg-[orange];
-
-    @screen lg {
-      @apply text-[48px] leading-[50px] mb-8;
-    }
-  }
+  .h2 {
+    @apply text-4xl md:text-5xl bg-slate-400;
+   }
 
   .h3 {
-    @apply text-[21px] leading-[28px] bg-[tomato] mb-6;
-
-    @screen md {
-      @apply text-[35px] md:leading-[40px] mb-8;
-    }
-  } */
+    @apply text-5xl md:text-6xl bg-[tomato];
+  }
 
   .label {
     @apply text-[18px] leading-[20px];

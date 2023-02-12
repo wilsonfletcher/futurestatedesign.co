@@ -1,9 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 
-const services = await getCollection('service', ({ data }) => {
-  return data.draft !== true
-})
+const services = await getCollection('service')
 
 services.sort((a, b) => a.data.sortOrder - b.data.sortOrder)
 
@@ -18,14 +16,14 @@ const { name, ...attrs } = Astro.props as Props
   <h3>{name}</h3>
   <ul>
     {
-      services.map((service) => (
+      services.map(({ data: { name, draft }, slug: url }) => (
         <li>
-          {service.slug ? (
-            <a href={service.slug} class="underline">
-              {service.data.name}
+          {!draft ? (
+            <a href={url} class="underline">
+              {name}
             </a>
           ) : (
-            service.data.name
+            name
           )}
         </li>
       ))

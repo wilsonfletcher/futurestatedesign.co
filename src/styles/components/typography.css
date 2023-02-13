@@ -1,58 +1,29 @@
-/* 
-  .h3 {
-    @apply text-[32px] lg:text-[48px] font-roman;
-  }
-
-  .h4 {
-    @apply text-[21px] leading-[28px] font-roman md:text-[35px] md:leading-[44px];
-  }
-*/
 @layer components {
   .h0 {
-    @apply text-7xl tracking-tight md:text-9xl;
+    @apply text-7xl tracking-tight md:text-9xl; /* 72px/68px / 110px/110px */
   }
 
   .h1 {
-    @apply text-6xl md:text-8xl;
+    @apply text-6xl md:text-8xl; /* 64px/62px / 90px/80px */
   }
 
   .h2 {
-    @apply text-4xl md:text-5xl bg-slate-400;
-   }
+    @apply text-4xl md:text-5xl; /* 35px/40px / 48px/50px */
+  }
 
   .h3 {
-    @apply text-5xl md:text-6xl bg-[tomato];
+    @apply text-[30px] md:text-5xl; /* 30px/30px / 48px/50px */
   }
 
-  .label {
+  .h4 {
+    @apply text-[21px] leading-[28px] md:text-[35px] md:leading-[40px]; 
+  }
+
+  .h5 {
+    @apply text-lg md:text-2xl; /* 18px/24px / 24px/32px */
+  }
+
+  .h6 {
     @apply text-[18px] leading-[20px];
-  }
-
-  .body {
-    @apply text-[18px] leading-[1.33333333];
-
-    > p {
-      @apply mb-6;
-    }
-
-    > ul {
-      @apply list-inside list-disc mb-6;
-    }
-
-    hr {
-      @apply border-none h-1px;
-    }
-
-    @screen lg {
-      @apply text-[24px];
-
-      > p {
-        @apply mb-8;
-      }
-
-      > ul {
-        @apply list-inside list-disc mb-8;
-      }
-    }
   }
 }

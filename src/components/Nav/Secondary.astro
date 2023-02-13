@@ -25,14 +25,14 @@ const heading = `${id}-heading`
   <div class="container">
     <div class="grid gap-4 md:grid-cols-8 md:gap-10">
       <div class="md:col-start-3 md:col-span-6">
-        <h2 id={heading} class="h2">{name}</h2>
+        <h2 id={heading} class="h3 mb-12 lg:mb-24">{name}</h2>
         <ul>
           {
             items.map((item) => (
               <li class="border-b-2 border-white/30">
                 <a
                   href={item.url}
-                  class="text-[32px] md:text-5xl flex items-center py-5 justify-between"
+                  class="h3 leading-none flex items-center py-5 justify-between"
                 >
                   <span class="underline" set:html={item.name} />
                   <Icon name="arrow-45" class="text-[32px]" />

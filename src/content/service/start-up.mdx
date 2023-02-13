@@ -15,25 +15,12 @@ import {
   AccordionItem,
   Article,
   Callout,
+  List,
   Prose,
   Section,
 } from '@/components/index.astro'
 
-export const ul = (props) => (
-  <div class="not-prose">
-    <ul class="flex flex-wrap">
-      {props.children}
-    </ul>
-  </div>
-)
-
-export const li = (props) => (
-  <li class="after:content-['/'] after:mx-1 last-of-type:after:hidden">
-    {props.children}
-  </li>
-)
-
-export const components = { ul, li }
+export const components = { ul: List }
 
 <Article>
   <Prose>

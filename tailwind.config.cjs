@@ -46,10 +46,11 @@ module.exports = {
         lg: [rem(18), rem(24)],
         '3xl': [rem(32), rem(34)],
         '4xl': [rem(35), rem(40)],
-        '6xl': [rem(64), rem(62)],	
+        '5xl': [rem(48), rem(50)],
+        '6xl': [rem(64), rem(62)],
         '7xl': [rem(72), rem(68)],
         '8xl': [rem(90), rem(80)],
-        '9xl': [rem(110), 1],
+        '9xl': [rem(110), rem(110)],
       },
       fontFamily: {
         sans: ['neue-haas-grotesk-display', 'sans-serif'],
@@ -96,9 +97,10 @@ module.exports = {
           // https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
           css: {
             lineHeight: round(24 / 16),
-            // '[class~="lead"]': {
-            // 	lineHeight: 1,
-            // },
+            fontWeight: theme('fontWeight.light'),
+            '[class~="lead"]': {
+              fontWeight: theme('fontWeight.regular'),
+            },
             // p: {
             //   em: {
             //     fontStyle: 'normal',
@@ -113,6 +115,9 @@ module.exports = {
               fontWeight: theme('fontWeight.regular'),
             },
             h3: {
+              fontWeight: theme('fontWeight.regular'),
+            },
+            h4: {
               fontWeight: theme('fontWeight.regular'),
             },
             img: {

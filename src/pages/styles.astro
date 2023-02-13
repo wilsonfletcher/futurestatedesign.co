@@ -1,0 +1,59 @@
+---
+import { getEntryBySlug } from 'astro:content'
+
+import Default from '@/layouts/Default.astro'
+import { Prose } from '@/components/index.astro'
+
+const page = await getEntryBySlug('page', 'styles')
+const { Content } = await page.render()
+---
+
+<Default title="Styles">
+  <article>
+    <div class="container">
+      <h1 class="sr-only">Styles</h1>
+      <Prose>
+        <Content />
+      </Prose>
+      <div class="grid gap-8">
+        <div>
+          <h2 class="h0 text-red-light">H0</h2>
+          <p class="h0">Landing pages titles</p>
+        </div>
+
+        <div>
+          <h2 class="h1 text-red-light">H1</h2>
+          <p class="h1">Landing pages titles</p>
+        </div>
+
+        <div>
+          <h2 class="h2 text-red-light">H2</h2>
+          <p class="h2">
+            Section headings and body titles We design the future of companies,
+            services and products.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="h3 text-red-light">H3</h2>
+          <p class="h3">Section headings and body titles</p>
+        </div>
+
+        <div>
+          <h2 class="h4 text-red-light">H4</h2>
+          <p class="h4">Section headings and body titles</p>
+        </div>
+
+        <div>
+          <h2 class="h5 text-red-light">H5</h2>
+          <p class="h5">Section headings and body titles</p>
+        </div>
+
+        <div>
+          <h2 class="h6 text-red-light">H6</h2>
+          <p class="h6">Section headings and body titles</p>
+        </div>
+      </div>
+    </div>
+  </article>
+</Default>

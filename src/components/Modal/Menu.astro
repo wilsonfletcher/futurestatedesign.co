@@ -10,7 +10,20 @@ import Logo from '../Logo.astro'
 const navPrimary = await getEntryBySlug('menu', 'primary')
 const navTertiary = await getEntryBySlug('menu', 'tertiary')
 
-const social = [SITE.linkedin];  
+const social = [
+  {
+    name: 'Linkedin',
+    url: SITE.linkedin,
+    icon: {
+      name: 'linkedin',
+    },
+  },
+  {
+    name: 'Substack',
+    url: SITE.substack,
+    icon: { name: 'substack' },
+  },
+]
 
 const id = 'modal_contact'
 const label = `${id}_label`
@@ -66,7 +79,7 @@ const desc = `${id}_desc`
           <nav>
             <ul class="flex gap-4 flex-col sm:flex-row sm:items-start">
               {
-                social.map(({ name, url }) => (
+                social.map(({ icon, name, url }) => (
                   <li>
                     <a
                       href={url}
@@ -75,7 +88,7 @@ const desc = `${id}_desc`
                       class="text-[32px]"
                     >
                       <span class="sr-only">{name}</span>
-                      <Icon name="linkedin" />
+                      <Icon {...icon} />
                     </a>
                   </li>
                 ))

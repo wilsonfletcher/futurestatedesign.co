@@ -32,34 +32,7 @@
     @apply text-current w-[1em] h-[1em];
   }
 
-  details {
-    @apply relative overflow-hidden;
-    --detailContentHeight: auto;
-  }
 
-  summary {
-    @apply relative text-4xl md:text-5xl cursor-pointer flex items-center justify-between;
-
-    &::-webkit-details-marker {
-      xdisplay: none; /* turn off open indicator in crApple's "new IE" */
-    }
-
-    &:after {
-      @apply content-[\'\'] block w-[1em] h-[1em];
-       content: '';
-      display: inline-block;
-      width: 1em;
-      height: 1em;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath fill='%23FFF' d='M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z'/%3E%3C/svg%3E")
-        center right no-repeat;
-      background-size: contain;
-      transition: transform 0.5s;
-    }
-  }
-
-  details[open]:not(.closed) > summary:after {
-    transform: rotate(180deg);
-  }
 }
 
 [x-cloak] {

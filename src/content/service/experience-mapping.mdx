@@ -8,17 +8,24 @@ image:
   alt: Experience Mapping
 type: landing
 ---
+
 import { Article, Prose, Section, Callout } from '@/components/index.astro'
 
-export const em = props => <em class="text-gray not-italic" {...props} />
+export const em = (props) => <em class="text-gray not-italic" {...props} />
 
-export const components = { em}
+export const components = { em }
 
-export const callout = { name: 'Is it the right approach for you?', url: { href: '#', name: 'Get in touch' }}
+export const callout = {
+  name: 'Is it the right approach for you?',
+  url: { href: '#', name: 'Get in touch' },
+}
 
 <Article>
   <Prose>
-    <p class="lead">Design and visualise your optimal future customer journey – and understand what you need to make it happen.</p>
+    <p class="lead">
+      Design and visualise your optimal future customer journey – and understand
+      what you need to make it happen.
+    </p>
   </Prose>
 </Article>
 
@@ -43,6 +50,7 @@ export const callout = { name: 'Is it the right approach for you?', url: { href:
     <Callout class="not-prose" {...callout} />
 
     ![Service mapping](/images/service-mapping.jpg)
+
   </Prose>
 </Section>
 
@@ -56,6 +64,7 @@ export const callout = { name: 'Is it the right approach for you?', url: { href:
     - Makes the ideal target visible to everyone, in a format that your organisation can get the most long-term value from
     - Ties all key business drivers, external services and customer goals into one coherent picture
     - Ensures all activities are future-focused, eliminating unnecessary spend on things that don’t contribute to the ideal target
+
   </Prose>
 </Section>
 
@@ -64,7 +73,7 @@ export const callout = { name: 'Is it the right approach for you?', url: { href:
     <p class="lead">What it has achieved for others...</p>
 
     Reimagined the entire customer acquisition and servicing flow for a major insurer, *eradicating numerous costly historic processes and reducing servicing effort by more than 75%*
-    
+
     ---
 
     Underpinned the launch of a new product for a global telecoms company, *ensuring a smooth rollout to 350,000+ customers and 92% satisfaction rates after 6 months*
@@ -83,6 +92,7 @@ export const callout = { name: 'Is it the right approach for you?', url: { href:
     <p class="lead">Take valuable shortcuts. Avoid costly pitfalls. Tap into expertise built with companies like these.</p>
 
     <p class="h3">Warren Buffett once said, “risk comes from not knowing what you're doing.” After 350+ programmes for more than 150 major companies over 20 years, we know what we’re doing.</p>
+
   </Prose>
 </Section>
 
@@ -91,11 +101,31 @@ import Clients from '@/containers/Clients.astro'
 <Clients />
 
 <Section name="Questions">
-  <details>
-    <summary>What will it cost?</summary>
-    <Prose>
-    > We’ve run these programmes for as little as £15k and as much as £150k. We’ll give you a series of options that enable you to choose an approach that gives you the best balance of cost and outcome.
-    </Prose>
-  </details>
+  <Prose>
+    <details>
+      <summary>What do you need from us?</summary>
+      > We’ve run these programmes for as little
+      as £15k and as much as £150k. We’ll give you a series of options that enable
+      you to choose an approach that gives you the best balance of cost and outcome.
+    </details>
+    <details>
+      <summary>What will it cost?</summary>
+      > We’ve run these programmes for as little
+      as £15k and as much as £150k. We’ll give you a series of options that enable
+      you to choose an approach that gives you the best balance of cost and outcome.
+    </details>
+    <details>
+      <summary>How will you work with us?</summary>
+      > We’ve run these programmes for as little
+      as £15k and as much as £150k. We’ll give you a series of options that enable
+      you to choose an approach that gives you the best balance of cost and outcome.
+    </details>
 
+    <details>
+      <summary>Can you support us long-term?</summary>
+      > We’ve run these programmes for as little
+      as £15k and as much as £150k. We’ll give you a series of options that enable
+      you to choose an approach that gives you the best balance of cost and outcome.
+    </details>
+  </Prose>
 </Section>

@@ -17,6 +17,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        minus: 'url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjQnIGhlaWdodD0nMjQnIGZpbGw9J25vbmUnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nIzAwMCcgZD0nTTAgMTMuNVYxMGgyNHYzLjV6Jy8+PC9zdmc+)',
+        plus: 'url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjQnIGhlaWdodD0nMjQnIHZpZXdCb3g9JzAgMCAyNCAyNCcgZmlsbD0nbm9uZScgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBkPSdNMTAgMEgxMy41VjI0SDEwVjBaJyBmaWxsPSdibGFjaycgLz48cGF0aCBkPSdNMCAxMy41TDQuMTczNzFlLTA4IDEwSDI0VjEzLjVIMFonIGZpbGw9J2JsYWNrJyAvPjwvc3ZnPg==)',
+      },
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
@@ -107,8 +111,9 @@ module.exports = {
             //   },
             // },
             blockquote: {
+              fontWeight: theme('fontWeight.light'),
               fontStyle: 'normal',
-              maxWidth: 580,
+              maxWidth: 735,
               quotes: 'none !important',
             },
             h2: {

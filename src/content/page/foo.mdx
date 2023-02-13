@@ -3,7 +3,7 @@ name: Hello word!
 draft: true
 ---
 
-import { Prose, Article, AccordionItem } from '@/components/index.astro'
+import { Prose, Article } from '@/components/index.astro'
 
 export const authors = [
   { name: 'Jane', email: 'hi@jane.com' },
@@ -16,140 +16,103 @@ export const published = new Date('2022-02-01')
   <Prose>
   Written by: {new Intl.ListFormat('en').format(authors.map(d => d.name))}.
 
-  Published on: {new Intl.DateTimeFormat('en', {dateStyle: 'long'}).format(published)}.
+Published on: {new Intl.DateTimeFormat('en', {dateStyle: 'long'}).format(published)}.
 
-  :::main{#readme}
+:::main{#readme}
 
-  Lorem:br
-  ipsum.
+Lorem:br
+ipsum.
 
-  ::hr{.red}
+::hr{.red}
 
-  A :i[lovely] language know as :abbr[HTML]{title="HyperText Markup Language"}.
+A :i[lovely] language know as :abbr[HTML]{title="HyperText Markup Language"}.
 
+:::
+
+## Syntax highlighting
+
+We also support syntax highlighting in MDX out-of-the-box! This example uses our default [Shiki theme](https://github.com/shikijs/shiki). See the [MDX integration docs](https://docs.astro.build/en/guides/integrations-guide/mdx/#syntax-highlighting) for configuration options.
+
+```astro
+---
+const weSupportAstro = true;
+---
+
+<h1>Hey, what theme is that? Looks nice!</h1>
+```
+
+## Any questions?
+
+## GFM
+
+### Autolink literals
+
+www.example.com, https://example.com, and contact@example.com.
+
+### Footnote
+
+A note[^1]
+
+[^1]: Big note.
+
+### Strikethrough
+
+~one~ or ~~two~~ tildes.
+
+### Table
+
+| a   | b   |   c |  d  |
+| --- | :-- | --: | :-: |
+
+## Tasklist
+
+- [ ] to do
+- [x] done
+
+The point can be illustrated by comparing a sample of AsciiDoc with an equivalent sample of Markdown. Here is a sample of AsciiDoc from the AsciiDoc manual:
+
+1. List item one.
+
+- List item one continued with a second paragraph followed by an
+  Indented block.
+- .................
+  $ ls _.sh
+  $ mv _.sh ~/tmp
+  .................
+- List item continued with a third paragraph.
+
+2. List item two continued with an open block.
+
+---
+
+This paragraph is part of the preceding list item.
+
+a. This list is nested and does not require explicit item
+continuation.
+
+- This paragraph is part of the preceding list item.
+
+b. List item b.
+
+## This paragraph belongs to item two of the outer list.
+
+## Cat videos
+
+::youtube[Video of a cat in a box]{#kthguiZRzuA}
+
+:::div{.bg-yellow.p-4.lg:p-20}
+if you chose xxx, you should also use yyy somewhere…
+:::
+
+:::div{.bg-yellow}
+
+## Test
+
+if you chose xxx, you should also use yyy somewhere…
+
+- one
+- two
   :::
 
-  ## Syntax highlighting
-
-  We also support syntax highlighting in MDX out-of-the-box! This example uses our default [Shiki theme](https://github.com/shikijs/shiki). See the [MDX integration docs](https://docs.astro.build/en/guides/integrations-guide/mdx/#syntax-highlighting) for configuration options.
-
-  ```astro
-  ---
-  const weSupportAstro = true;
-  ---
-
-  <h1>Hey, what theme is that? Looks nice!</h1>
-  ```
-
-  ## Any questions?
-
-  ## GFM
-
-  ### Autolink literals
-
-  www.example.com, https://example.com, and contact@example.com.
-
-  ### Footnote
-
-  A note[^1]
-
-  [^1]: Big note.
-
-  ### Strikethrough
-
-  ~one~ or ~~two~~ tildes.
-
-  ### Table
-
-  | a   | b   |   c |  d  |
-  | --- | :-- | --: | :-: |
-
-  ## Tasklist
-
-  - [ ] to do
-  - [x] done
-
-  The point can be illustrated by comparing a sample of AsciiDoc with an equivalent sample of Markdown. Here is a sample of AsciiDoc from the AsciiDoc manual:
-
-  1. List item one.
-
-  - List item one continued with a second paragraph followed by an
-    Indented block.
-  - .................
-    $ ls _.sh
-    $ mv _.sh ~/tmp
-    .................
-  - List item continued with a third paragraph.
-
-  2. List item two continued with an open block.
-
-  ---
-
-  This paragraph is part of the preceding list item.
-
-  a. This list is nested and does not require explicit item
-  continuation.
-
-  - This paragraph is part of the preceding list item.
-
-  b. List item b.
-
-  ## This paragraph belongs to item two of the outer list.
-
-  ## Cat videos
-
-  ::youtube[Video of a cat in a box]{#kthguiZRzuA}
-
-  :::div{.bg-yellow.p-4.lg:p-20}
-  if you chose xxx, you should also use yyy somewhere…
-  :::
-
-  :::div{.bg-yellow}
-
-  ## Test
-
-  if you chose xxx, you should also use yyy somewhere…
-
-  - one
-  - two
-  :::
-
-  </Prose>
-
-
-
-  <div id="accordion-collapse" data-accordion="collapse">
-    <AccordionItem triggerEl="accordion-collapse-heading-1" targetEl="accordion-collapse-body-1">
-      <p>sdsdsdsdsdsds</p>
-    </AccordionItem>
-    <h2 id="accordion-collapse-heading-2">
-      <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
-        <span>Is there a Figma file available?</span>
-        <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-      </button>
-    </h2>
-    <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
-      <div class="p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700">
-        <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
-        <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
-      </div>
-    </div>
-    <h2 id="accordion-collapse-heading-3">
-      <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" data-accordion-target="#accordion-collapse-body-3" aria-expanded="false" aria-controls="accordion-collapse-body-3">
-        <span>What are the differences between Flowbite and Tailwind UI?</span>
-        <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-      </button>
-    </h2>
-    <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
-      <div class="p-5 font-light border border-t-0 border-gray-200 dark:border-gray-700">
-        <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.</p>
-        <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.</p>
-        <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-        <ul class="pl-5 text-gray-500 list-disc dark:text-gray-400">
-          <li><a href="https://flowbite.com/pro/" class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-          <li><a href="https://tailwindui.com/" rel="nofollow" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+    </Prose>
 </Article>

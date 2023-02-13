@@ -6,63 +6,27 @@
   }
 
   body {
-    @apply font-sans leading-none font-regular text-optimize;
+    @apply font-sans leading-none font-light text-optimize;
   }
 
-  /* h1 {
-    @apply text-[64px] leading-[62px];
+  details {
+    @apply relative overflow-hidden border-b border-b-gray;
+    --detailContentHeight: auto;
+  }
 
-    @screen lg {
-      @apply text-[90px] leading-[80px];
+  summary {
+    @apply relative text-4xl cursor-pointer flex items-center justify-between py-4 md:text-5xl;
+
+    &::-webkit-details-marker {
+      @apply hidden;
+    }
+
+    &:after {
+      @apply content-[""] block text-center w-6 h-6 bg-plus bg-cover bg-center;
     }
   }
 
-  h2 {
-    @apply text-[32px] leading-[34px] mb-6;
-
-    @screen lg {
-      @apply text-[48px] leading-[50px] mb-8;
-    }
+  details[open]:not(.closed) > summary:after {
+    @apply bg-minus bg-gray-50;
   }
-
-  h3 {
-    @apply text-[21px] leading-[28px] mb-6;
-
-    @screen lg {
-      @apply text-[35px] leading-[40px] mb-8;
-    }
-  }
-
-  h4 {
-    @apply text-[14px] leading-[1.41666667] mb-6;
-
-    @screen lg {
-      @apply text-[2.1875rem] leading-[1.14285714] mb-8;
-    }
-  } */
-
-  /* [type='text'],
-  [type='email'],
-  [type='url'],
-  [type='password'],
-  [type='number'],
-  [type='date'],
-  [type='datetime-local'],
-  [type='month'],
-  [type='search'],
-  [type='tel'],
-  [type='time'],
-  [type='week'],
-  select {
-    @apply text-[21px] md:text-[35px] block w-full bg-transparent border-x-0 border-t-0 border-b;
-  }
-
-  select {
-    @apply pr-10;
-  }
-
-  [multiple],
-  textarea {
-    @apply rounded-[20px] py-[7px] px-5;
-  } */
 }

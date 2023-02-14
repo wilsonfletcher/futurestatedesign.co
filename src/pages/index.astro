@@ -14,23 +14,24 @@ const meta = {
 
 const callout = {
   name: 'Is it the right approach for you?',
-  url: { name: 'Get in touch', href: null, 'x-on:click': 'modalContact=true' },
+  url: { name: 'Get in touch', href: null, 'x-bind': 'toggleContactModal' },
 }
 ---
 
 <Default {...meta}>
+  <button type="button" x-bind="toggleContactModal">Contact</button>
   <article>
-    <div class="pt-20">
+    <div class="py-20">
       <div class="container">
         <div class="grid gap-4 md:gap-10 md:grid-cols-8">
           <div class="md:col-span-2"></div>
-          <div class="md:col-span-6 border-b border-gray">
+          <div class="md:col-span-6 border-b border-gray pb-12">
             <p class="h0">
               <span class="font-black block">Design the future.</span>
               <span class="font-bold block">Create it now.</span>
               <span>Repeat.</span>
             </p>
-            <div class="prose prose-black prose-lg md:prose-xl">
+            <Prose>
               <p class="h2">
                 We design the future of companies, services and products.
               </p>
@@ -40,7 +41,7 @@ const callout = {
                 We’ll help you see past the short-term roadmap to do to your
                 market what a disruptor would do to you.
               </p>
-            </div>
+            </Prose>
           </div>
         </div>
       </div>

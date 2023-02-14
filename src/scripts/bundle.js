@@ -1,12 +1,27 @@
 import Alpine from 'alpinejs'
-import collapse from '@alpinejs/collapse'
 
-// import modal from './modal'
+const modals = () => ({
+  menuModal: false,
+  contactModal: false,
 
-// Alpine.data('modal', modal)
+  init() {
+    console.log('XD')
+  },
 
-Alpine.plugin(collapse)
+  toggleMenuModal: {
+    ['@click']() {
+      this.menuModal = !this.menuModal
+    },
+  },
+  toggleContactModal: {
+    ['@click']() {
+      this.contactModal = !this.contactModal
+    },
+  },
+})
 
 window.Alpine = Alpine
+
+Alpine.data('modals', modals)
 
 Alpine.start()

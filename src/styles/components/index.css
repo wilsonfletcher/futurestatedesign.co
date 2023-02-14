@@ -38,6 +38,25 @@
     }
   }
 
+  .arrows {
+    > li {
+      @apply relative pl-16;
+
+      &:before {
+        @apply content-[""] bg-arrow bg-center bg-contain block w-12 h-12 bg-gray absolute top-0 left-0;
+      }
+
+      a {
+        @apply underline font-regular;
+      }
+    }
+    
+
+    @screen sm {
+      @apply grid grid-cols-2 gap-10;
+    }
+  }
+
   .figure {
     img {
       @apply mb-4 block w-full;

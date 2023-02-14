@@ -36,8 +36,8 @@ const desc = `${id}_desc`
   aria-hidden="true"
   aria-labelledby={label}
   aria-describedby={desc}
-  x-show="modalMenu"
-  x-on:click.away="modalMenu = false"
+  x-show="menuModal"
+  tab-index="0"
   x-cloak
   class="fixed inset-0 bg-qux text-white z-50 w-full py-8 h-full"
 >
@@ -46,7 +46,7 @@ const desc = `${id}_desc`
       <button
         type="button"
         class="flex items-center self-end"
-        x-on:click="modalMenu = false"
+        x-bind="toggleMenuModal"
       >
         Close
         <Icon name="close" class="ml-4" />

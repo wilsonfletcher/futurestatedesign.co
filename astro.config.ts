@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config'
 // import compress from 'astro-compress'
 import mdx from '@astrojs/mdx'
 import rehypeExternalLinks from 'rehype-external-links'
-import sitemap from '@astrojs/sitemap'
+// import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 // import yaml from '@rollup/plugin-yaml'
 // import prefetch from '@astrojs/prefetch';

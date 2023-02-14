@@ -52,7 +52,7 @@ const { class: className, ...attrs } = Astro.props as Props
 
           <button
             type="button"
-            x-on:click="modalMenu = true"
+            x-bind="toggleMenuModal"
             class="inline-flex items-center justify-center text-[32px]"
           >
             <span class="sr-only">Open menu</span>

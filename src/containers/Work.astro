@@ -1,53 +1,72 @@
 ---
 import { getCollection } from 'astro:content'
 
-import { Section, Prose } from '@/components/index.astro'
-import Callout from '@/components/Callout.astro'
+import { Section, Callout } from '@/components/index.astro'
+import Arrows from '@/components/Arrows.astro'
 
-const work = await getCollection('work', ({ data }) => {
-  return data.draft !== true
-})
-
-work.sort((a, b) => a.data.number - b.data.number)
+import * as invention from '@/content/work/invention.mdx'
+import * as reinvention from '@/content/work/reinvention.mdx'
+import * as intervention from '@/content/work/intervention.mdx'
 ---
 
 <Section name="What we do">
-  <Prose>
-    <p class="lead">
-      Our work spans three areas: invention, reinvention and intervention.
-    </p>
-  </Prose>
-  <div class="grid gap-16">
-    {
-      work.map((area) => {
-        const { data } = area
-        return (
-          <article class="pb-16 border-b border-gray">
-            <h3 class="h2">
-              <span class="h0 block">{data.number}</span>
-              {data.name}
-            </h3>
+  <p class="lead">
+    Our work spans three areas: invention, reinvention and intervention.
+  </p>
+  <div class="divide-y divide-gray space-y-6 border-b border-gray not-prose">
+    <article class="space-y-10 pb-10">
+      <h3 class="h2">
+        <span class="h0 block">{invention.frontmatter.number}</span>
+        {invention.frontmatter.name}
+      </h3>
 
-            <Prose>
-              <div set:html={area.body} />
+      <invention.Content components={{ ul: Arrows }} />
 
-              <button type="button" x-on:click="modalContact = true">
-                Get in touch!
-              </button>
+      <Callout
+        name="Is it the right approach for you?"
+        url={{
+          name: 'Get in touch',
+          'x-bind': 'toggleContactModal',
+          class: 'cursor-pointer',
+          type: 'button',
+        }}
+      />
+    </article>
+    <article class="space-y-10 pb-10">
+      <h3 class="h2">
+        <span class="h0 block">{reinvention.frontmatter.number}</span>
+        {reinvention.frontmatter.name}
+      </h3>
 
-              <Callout
-                class="not-prose"
-                name="Is it the right approach for you?"
-                url={{
-                  name: 'Get in touch',
-                  'x-on:click': 'modalContact=true',
-                  type: 'button',
-                }}
-              />
-            </Prose>
-          </article>
-        )
-      })
-    }
+      <reinvention.Content components={{ ul: Arrows }} />
+
+      <Callout
+        name="Is it the right approach for you?"
+        url={{
+          name: 'Get in touch',
+          'x-bind': 'toggleContactModal',
+          class: 'cursor-pointer',
+          type: 'button',
+        }}
+      />
+    </article>
+    <article class="space-y-10 pb-10">
+      <h3 class="h2">
+        <span class="h0 block">{intervention.frontmatter.number}</span>
+        {intervention.frontmatter.name}
+      </h3>
+
+      <intervention.Content components={{ ul: Arrows }} />
+
+      <Callout
+        name="Is it the right approach for you?"
+        url={{
+          name: 'Get in touch',
+          'x-bind': 'toggleContactModal',
+          class: 'cursor-pointer',
+          type: 'button',
+        }}
+      />
+    </article>
   </div>
 </Section>

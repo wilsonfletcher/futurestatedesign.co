@@ -19,14 +19,13 @@ const callout = {
 ---
 
 <Default {...meta}>
-  <button type="button" x-bind="toggleContactModal">Contact</button>
   <article>
     <div class="py-20">
       <div class="container">
         <div class="grid gap-4 md:gap-10 md:grid-cols-8">
           <div class="md:col-span-2"></div>
           <div class="md:col-span-6 border-b border-gray pb-12">
-            <p class="h0">
+            <p class="h0 mb-10">
               <span class="font-black block">Design the future.</span>
               <span class="font-bold block">Create it now.</span>
               <span>Repeat.</span>
@@ -49,203 +48,33 @@ const callout = {
 
     <Work />
 
-    <Section name="What we do" hidden>
-      <Prose>
-        <p class="intro mb-10">
-          Our work spans three areas: invention, reinvention and intervention.
-        </p>
-      </Prose>
-      <article class="border-b border-gray pb-8 md:pb-16 mb-8 md:mb-16">
-        <h3 class="h2 mb-10">
-          <span class="h0 block">01</span> Invention
-        </h3>
-        <ul class="grid gap-4 md:gap-10 md:grid-cols-2 body mb-7 md:mb-14">
-          <li class="flex">
-            <Icon
-              name="arrow-45"
-              class="text-[32px] flex-none mr-4 md:text-5xl"
-            />
-            <div class="flex-auto">
-              Identifying new opportunities for growth and developing <a
-                href="/start-up"
-                class="underline">new business propositions</a
-              > to capitalise on them
-            </div>
-          </li>
-          <li class="flex">
-            <Icon
-              name="arrow-45"
-              class="text-[32px] flex-none mr-4 md:text-5xl"
-            />
-            <div class="flex-auto">
-              Modelling future customers and designing new strategies and
-              services to reach them
-            </div>
-          </li>
-          <li class="flex">
-            <Icon
-              name="arrow-45"
-              class="text-[32px] flex-none mr-4 md:text-5xl"
-            />
-            <div class="flex-auto">
-              Designing new digital products that harness emerging technologies
-              and business models
-            </div>
-          </li>
-          <li class="flex">
-            <Icon
-              name="arrow-45"
-              class="text-[32px] flex-none mr-4 md:text-5xl"
-            />
-            <div class="flex-auto">
-              Transforming funded ideas into market-ready services and ventures
-            </div>
-          </li>
-        </ul>
-        <Callout {...callout} />
-      </article>
-
-      <article class="border-b border-gray pb-8 md:pb-16 mb-8 md:mb-16">
-        <h3 class="h2 mb-10">
-          <span class="h0 block">02</span> Reinvention
-        </h3>
-        <ul class="grid gap-4 md:gap-10 md:grid-cols-2 body mb-7 md:mb-14">
-          <li class="flex">
-            <Icon
-              name="arrow-45"
-              class="text-[32px] flex-none mr-4 md:text-5xl"
-            />
-            <div class="flex-auto">
-              Shaping the futurestate vision for an established organisation and
-              the strategy to realise it
-            </div>
-          </li>
-          <li class="flex">
-            <Icon
-              name="arrow-45"
-              class="text-[32px] flex-none mr-4 md:text-5xl"
-            />
-            <div class="flex-auto">
-              Designing next-generation products and services to replace
-              analogue or legacy services
-            </div>
-          </li>
-          <li class="flex">
-            <Icon
-              name="arrow-45"
-              class="text-[32px] flex-none mr-4 md:text-5xl"
-            />
-            <div class="flex-auto">
-              Designing new business models and redesigning products and
-              services to capitalise on them
-            </div>
-          </li>
-          <li class="flex">
-            <Icon
-              name="arrow-45"
-              class="text-[32px] flex-none mr-4 md:text-5xl"
-            />
-            <div class="flex-auto">
-              <a href="/experience-mapping" class="underline"
-                >Mapping next-generation customer journeys and service flows</a
-              >
-            </div>
-          </li>
-          <li class="flex">
-            <Icon
-              name="arrow-45"
-              class="text-[32px] md:text-[48px] flex-none mr-4"
-            />
-            <div class="flex-auto">
-              Re-imagining legacy business processes and operational systems
-            </div>
-          </li>
-        </ul>
-        <Callout {...callout} />
-      </article>
-
-      <article class="border-b border-gray pb-8 md:pb-16 mb-8 md:mb-16">
-        <h3 class="h2 mb-10">
-          <span class="h0 block">03</span> Intervention
-        </h3>
-        <ul class="grid gap-4 md:gap-10 md:grid-cols-2 body mb-7 md:mb-14">
-          <li class="flex">
-            <Icon
-              name="arrow-45"
-              class="text-[32px] flex-none mr-4 md:text-5xl"
-            />
-            <div class="flex-auto">
-              Articulating a clear, distinctive direction and strategy stack:
-              purpose, vision, values, value proposition, principles
-            </div>
-          </li>
-          <li class="flex">
-            <Icon
-              name="arrow-45"
-              class="text-[32px] flex-none mr-4 md:text-5xl"
-            />
-            <div class="flex-auto">
-              Resetting and re-energising strategies and roadmaps
-            </div>
-          </li>
-          <li class="flex">
-            <Icon
-              name="arrow-45"
-              class="text-[32px] flex-none mr-4 md:text-5xl"
-            />
-            <div class="flex-auto">
-              Overcoming stalled growth, downward performance and disruptive
-              competitive pressures
-            </div>
-          </li>
-          <li class="flex">
-            <Icon
-              name="arrow-45"
-              class="text-[32px] flex-none mr-4 md:text-5xl"
-            />
-            <div class="flex-auto">
-              Turning disparate initiatives into a clear, future-focused
-              strategy
-            </div>
-          </li>
-        </ul>
-        <Callout {...callout} />
-      </article>
-    </Section>
-
     <Section name="How we work">
-      <Prose>
-        <p class="lead">
-          From a single board advisor to a complete team project
-        </p>
-        <p>
-          Our core team of innovation specialists can call on an extensive
-          network of expert practitioners, subject matter experts and partner
-          companies to support almost any need with top-tier people.
-        </p>
-        <img src="/images/how-we-work.svg" alt="" loading="lazy" />
-        <p>
-          We’re offering our time, our networks, and our skills to help
-          entrepreneurs and businesses start and scale purpose-driven
-          organisations for sustainable, long-term growth.
-        </p>
-      </Prose>
+      <p class="lead">From a single board advisor to a complete team project</p>
+      <p>
+        Our core team of innovation specialists can call on an extensive network
+        of expert practitioners, subject matter experts and partner companies to
+        support almost any need with top-tier people.
+      </p>
+      <img src="/images/how-we-work.svg" alt="" loading="lazy" />
+      <p>
+        We’re offering our time, our networks, and our skills to help
+        entrepreneurs and businesses start and scale purpose-driven
+        organisations for sustainable, long-term growth.
+      </p>
     </Section>
 
     <Section name="About us">
-      <Prose>
-        <p class="lead">20 years, 350 companies etc...copy to follow here</p>
-        <p>
-          Our core team of innovation specialists can call on an extensive
-          network of expert practitioners, subject matter experts and partner
-          companies to support almost any need with top-tier people.
-        </p>
-        <p>
-          We’ve worked with a lot of great people over the years (and plenty who
-          were not so great) and we only want our clients to work with
-          specialists and partners who we trust to do an exceptional job.
-        </p>
-      </Prose>
+      <p class="lead">20 years, 350 companies etc...copy to follow here</p>
+      <p>
+        Our core team of innovation specialists can call on an extensive network
+        of expert practitioners, subject matter experts and partner companies to
+        support almost any need with top-tier people.
+      </p>
+      <p>
+        We’ve worked with a lot of great people over the years (and plenty who
+        were not so great) and we only want our clients to work with specialists
+        and partners who we trust to do an exceptional job.
+      </p>
     </Section>
   </article>
 </Default>

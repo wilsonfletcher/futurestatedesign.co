@@ -1,72 +1,41 @@
 ---
-import { getCollection } from 'astro:content'
-
 import { Section, Callout } from '@/components/index.astro'
 import Arrows from '@/components/Arrows.astro'
 
 import * as invention from '@/content/work/invention.mdx'
 import * as reinvention from '@/content/work/reinvention.mdx'
 import * as intervention from '@/content/work/intervention.mdx'
+
+const areas = [invention, reinvention, intervention]
 ---
 
 <Section name="What we do">
   <p class="lead">
     Our work spans three areas: invention, reinvention and intervention.
   </p>
+
   <div class="divide-y divide-gray space-y-6 border-b border-gray not-prose">
-    <article class="space-y-10 pb-10">
-      <h3 class="h2">
-        <span class="h0 block">{invention.frontmatter.number}</span>
-        {invention.frontmatter.name}
-      </h3>
+    {
+      areas.map((area) => (
+        <article class="space-y-10 pb-10">
+          <h3 class="h2">
+            <span class="h0 block">{area.frontmatter.number}</span>
+            {area.frontmatter.name}
+          </h3>
 
-      <invention.Content components={{ ul: Arrows }} />
+          <area.Content components={{ ul: Arrows }} />
 
-      <Callout
-        name="Is it the right approach for you?"
-        url={{
-          name: 'Get in touch',
-          'x-bind': 'toggleContactModal',
-          class: 'cursor-pointer',
-          type: 'button',
-        }}
-      />
-    </article>
-    <article class="space-y-10 pb-10">
-      <h3 class="h2">
-        <span class="h0 block">{reinvention.frontmatter.number}</span>
-        {reinvention.frontmatter.name}
-      </h3>
-
-      <reinvention.Content components={{ ul: Arrows }} />
-
-      <Callout
-        name="Is it the right approach for you?"
-        url={{
-          name: 'Get in touch',
-          'x-bind': 'toggleContactModal',
-          class: 'cursor-pointer',
-          type: 'button',
-        }}
-      />
-    </article>
-    <article class="space-y-10 pb-10">
-      <h3 class="h2">
-        <span class="h0 block">{intervention.frontmatter.number}</span>
-        {intervention.frontmatter.name}
-      </h3>
-
-      <intervention.Content components={{ ul: Arrows }} />
-
-      <Callout
-        name="Is it the right approach for you?"
-        url={{
-          name: 'Get in touch',
-          'x-bind': 'toggleContactModal',
-          class: 'cursor-pointer',
-          type: 'button',
-        }}
-      />
-    </article>
+          <Callout
+            name="Is it the right approach for you?"
+            url={{
+              name: 'Get in touch',
+              'x-bind': 'toggleContactModal',
+              class: 'cursor-pointer',
+              type: 'button',
+            }}
+          />
+        </article>
+      ))
+    }
   </div>
 </Section>

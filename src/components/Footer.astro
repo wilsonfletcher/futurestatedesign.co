@@ -22,7 +22,7 @@ const social = [
   <div class="container">
     <div class="py-5">
       <nav>
-        <ul class="flex gap-4 flex-col sm:flex-row sm:items-start">
+        <ul class="flex flex-col sm:flex-row sm:items-start -ml-2">
           {
             social.map(({ icon, name, url }) => (
               <li>
@@ -30,7 +30,8 @@ const social = [
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-[32px]"
+                  class="text-[32px] p-2 block md:text-[24px]"
+                  title={name}
                 >
                   <span class="sr-only">{name}</span>
                   <Icon {...icon} />
@@ -48,23 +49,26 @@ const social = [
       <div
         class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"
       >
-        <a href={`mailto:${SITE.email}`} class="body hover:underline">
+        <a
+          href={`mailto:${SITE.email}`}
+          class="text-[21px] font-medium hover:underline"
+        >
           {SITE.email}
         </a>
 
         <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-10">
-          <a href={SITE.tel} class="body hover:underline">
+          <a href={SITE.tel} class="text-[21px] hover:underline">
             {SITE.telephone}
           </a>
           <a
             href="https://www.iubenda.com/privacy-policy/60598168"
             target="_blank"
             rel="noopener noreferrer"
-            class="body hover:underline"
+            class="text-[21px] hover:underline"
           >
             Privacy Policy
           </a>
-          <p class="body">
+          <p class="text-[21px]">
             &copy; {SITE.copyrightYear}
             <span class="sr-only" id={SITE.id}>{SITE.name}</span> All rights reserved
           </p>

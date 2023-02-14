@@ -10,6 +10,16 @@
     }
   }
 
+  /* .list {
+    li {
+      @apply after:content-['/'] after:mx-1 last-of-type:after:hidden;
+
+      a {
+        @apply text-gray underline;
+      }
+    }
+  } */
+
   .list {
     ul {
       @apply list-none flex flex-wrap pl-0 text-gray;
@@ -28,13 +38,20 @@
     }
   }
 
+  .figure {
+    img {
+      @apply mb-4 block w-full;
+    }
+
+    figcaption {
+      @apply text-[18px] leading-[20px] border-l-4 border-yellow pl-3;
+
+      a {
+        @apply underline;
+      }
+    }
+  }
   [astro-icon] {
     @apply text-current w-[1em] h-[1em];
   }
-
-
-}
-
-[x-cloak] {
-  display: none !important;
 }

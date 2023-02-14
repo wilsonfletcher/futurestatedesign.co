@@ -15,10 +15,12 @@ module.exports = {
     './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
     './node_modules/flowbite/**/*.js',
   ],
+  // safelist: [{ pattern: /text-gray/ }],
   theme: {
     extend: {
       backgroundImage: {
-        minus: 'url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjQnIGhlaWdodD0nMjQnIGZpbGw9J25vbmUnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nIzAwMCcgZD0nTTAgMTMuNVYxMGgyNHYzLjV6Jy8+PC9zdmc+)',
+        minus:
+          'url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjQnIGhlaWdodD0nMjQnIGZpbGw9J25vbmUnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nIzAwMCcgZD0nTTAgMTMuNVYxMGgyNHYzLjV6Jy8+PC9zdmc+)',
         plus: 'url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjQnIGhlaWdodD0nMjQnIHZpZXdCb3g9JzAgMCAyNCAyNCcgZmlsbD0nbm9uZScgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBkPSdNMTAgMEgxMy41VjI0SDEwVjBaJyBmaWxsPSdibGFjaycgLz48cGF0aCBkPSdNMCAxMy41TDQuMTczNzFlLTA4IDEwSDI0VjEzLjVIMFonIGZpbGw9J2JsYWNrJyAvPjwvc3ZnPg==)',
       },
       colors: {
@@ -66,6 +68,7 @@ module.exports = {
       maxWidth: {
         'cols-2': 310,
         'cols-5': 735,
+        container: rem(1280)
       },
       spacing: {
         '1px': '1px',
@@ -85,7 +88,7 @@ module.exports = {
             '--tw-prose-body': theme('colors.current'),
             '--tw-prose-headings': theme('colors.current'),
             '--tw-prose-lead': theme('colors.current'),
-            '--tw-prose-links': theme('colors.current'),
+            '--tw-prose-links': theme('colors.gray'),
             '--tw-prose-bold': theme('colors.current'),
             '--tw-prose-quotes': theme('colors.current'),
             '--tw-prose-quote-borders': theme('colors.yellow'),

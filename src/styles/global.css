@@ -9,3 +9,11 @@
 :root {
   --color-yellow: 245, 255, 81;
 }
+
+[x-cloak] {
+  display: none !important;
+}
+
+[astro-icon] {
+  @apply text-current w-[1em] h-[1em];
+}

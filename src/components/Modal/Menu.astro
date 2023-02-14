@@ -77,7 +77,7 @@ const desc = `${id}_desc`
             >
           </div>
           <nav>
-            <ul class="flex gap-4 flex-col sm:flex-row sm:items-start">
+            <ul class="flex flex-col sm:flex-row sm:items-start -ml-2">
               {
                 social.map(({ icon, name, url }) => (
                   <li>
@@ -85,7 +85,8 @@ const desc = `${id}_desc`
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="text-[32px]"
+                      class="text-[32px] p-2 block md:text-[24px]"
+                      title={name}
                     >
                       <span class="sr-only">{name}</span>
                       <Icon {...icon} />

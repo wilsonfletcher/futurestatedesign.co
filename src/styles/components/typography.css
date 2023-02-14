@@ -1,22 +1,22 @@
 @layer components {
   .h0 {
-    @apply text-7xl tracking-tight md:text-9xl; /* 72px/68px / 110px/110px */
+    @apply text-7xl font-regular tracking-tight md:text-9xl; /* 72px/68px / 110px/110px */
   }
 
   .h1 {
-    @apply text-6xl md:text-8xl; /* 64px/62px / 90px/80px */
+    @apply text-6xl font-regular md:text-8xl; /* 64px/62px / 90px/80px */
   }
 
   .h2 {
-    @apply text-4xl md:text-5xl; /* 35px/40px / 48px/50px */
+    @apply text-4xl font-regular md:text-5xl; /* 35px/40px / 48px/50px */
   }
 
   .h3 {
-    @apply text-[30px] md:text-5xl; /* 30px/30px / 48px/50px */
+    @apply text-[30px] font-regular md:text-5xl; /* 30px/30px / 48px/50px */
   }
 
   .h4 {
-    @apply text-[21px] leading-[28px] md:text-[35px] md:leading-[40px]; 
+    @apply text-[21px] leading-[28px] md:text-[35px] md:leading-[40px];
   }
 
   .h5 {

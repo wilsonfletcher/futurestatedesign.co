@@ -1,7 +1,6 @@
 import { defineCollection } from 'astro:content'
 
 import {
-  articleSchema,
   clientSchema,
   manifestoSchema,
   menuSchema,
@@ -11,7 +10,6 @@ import {
   workSchema,
 } from '../schemas'
 
-const articleCollection = defineCollection({ schema: articleSchema })
 const clientCollection = defineCollection({ schema: clientSchema })
 const manifestoCollection = defineCollection({ schema: manifestoSchema })
 const menuCollection = defineCollection({ schema: menuSchema })
@@ -21,7 +19,6 @@ const testimonialCollection = defineCollection({ schema: testimonialSchema })
 const workCollection = defineCollection({ schema: workSchema })
 
 export const collections = {
-  article: articleCollection,
   client: clientCollection,
   manifesto: manifestoCollection,
   menu: menuCollection,

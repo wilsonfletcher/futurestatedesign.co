@@ -1,0 +1,31 @@
+---
+import { getEntryBySlug } from 'astro:content'
+
+import Default from '@/layouts/Default.astro'
+import { SITE } from '@/config'
+
+const entry = await getEntryBySlug('service', 'start-up')
+
+const { data, slug: url } = entry
+const { name, description, image } = data
+
+const { Content } = await entry.render()
+---
+
+<Default
+  title={`${name} - ${SITE.name}`}
+  description={description}
+  url={url}
+  image={image}
+>
+  <article>
+    <div class="container">
+      <div class="lg:grid lg:grid-cols-8 lg:grid-gap-10">
+        <div class="lg:col-start-3 lg:col-span-6">
+          <h1 class="h1">{name}</h1>
+        </div>
+      </div>
+    </div>
+    <Content />
+  </article>
+</Default>

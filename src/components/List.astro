@@ -1,15 +1,3 @@
 <div class="not-prose">
   <ul class="list flex flex-wrap"><slot /></ul>
 </div>
-
-<style lang="postcss" is:global>
-  .list {
-    li {
-      @apply after:content-['/'] after:mx-1 last-of-type:after:hidden;
-    
-      a {
-        @apply text-gray underline;
-      }
-    }
-  }
-</style>

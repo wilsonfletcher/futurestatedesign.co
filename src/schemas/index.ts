@@ -1,20 +1,5 @@
 import { z } from 'astro:content'
 
-export const articleSchema = z.object({
-  name: z.string(),
-  description: z.string(),
-  image: z
-    .object({
-      url: z.string().optional(),
-      width: z.number().optional(),
-      height: z.number().optional(),
-      alt: z.string().optional(),
-    })
-    .optional(),
-  datePublished: z.string(),
-  draft: z.boolean().optional(),
-})
-
 export const clientSchema = z.object({
   name: z.string(),
   logo: z.string().optional(),

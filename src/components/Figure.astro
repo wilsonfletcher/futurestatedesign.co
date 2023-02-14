@@ -1,0 +1,27 @@
+---
+interface Props {
+  src: string
+  width?: number
+  height?: number
+  alt: string
+  loading?: string
+  class?: string
+}
+
+const {
+  src,
+  width,
+  height,
+  alt,
+  loading = 'lazy',
+  class: className,
+  ...props
+} = Astro.props as Props
+---
+
+<figure class:list={['figure', 'not-prose', className]} {...props}>
+  <img src={src} width={width} height={height} alt={alt} loading="lazy" />
+  <figcaption>
+    <slot />
+  </figcaption>
+</figure>

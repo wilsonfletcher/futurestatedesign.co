@@ -6,63 +6,88 @@ image:
   alt: Foo
 ---
 
-import { Article, Prose, Section, Callout } from '@/components/index.astro'
+import {
+  Article,
+  Prose,
+  Section,
+  Callout,
+  Figure,
+} from '@/components/index.astro'
 
 export const book = {
   name: 'Do you want to get a taste what Futurestate Design is all about? Read Mark’s book',
-  url: { name: 'Buy on Amazon', href: 'https://www.amazon.co.uk/dp/1399922106', target: '_blank' },
-  image: { src: '/images/book.png', alt: 'Photo of the Futurestate Design book', width: 274, height: 241 }
+  url: {
+    name: 'Buy on Amazon',
+    href: 'https://www.amazon.co.uk/dp/1399922106',
+    target: '_blank',
+  },
+  image: {
+    src: '/images/book.png',
+    alt: 'Photo of the Futurestate Design book',
+    width: 274,
+    height: 241,
+  },
 }
 
 <Article>
-  <Prose>
-    <p class="lead">It’s really very simple. If you don’t make your future happen, the future will be done to you.</p>
-    <p class="lead">That’s unlikely to go well.</p>
+  <p class="lead">It’s really very simple. If you don’t make your future happen, the future will be done to you.</p>
+  <p class="lead">That’s unlikely to go well.</p>
 
-    ![](/images/futurestate-design.svg)
+<Figure src="/images/futurestate-design.svg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ac magna tristique auctor. Duis a semper tortor, sit amet laoreet mi. Morbi a lectus id metus faucibus porttitor non id dolor. Duis volutpat, elit quis condimentum gravida, nunc nulla lacinia erat, quis ullamcorper tellus justo quis nulla.</Figure>
 
-    <p class="h3">Customer-led, data-informed design should be your go-to method for everything you’re currently doing. Futurestate design is for everything you need to do as well as, or instead of, the things you do today.</p>
+<p class="h3">Customer-led, data-informed design should be your go-to method for everything
+  you’re currently doing. Futurestate design is for everything you need to do as
+  well as, or instead of, the things you do today.</p>
 
-    <p class="h3">To achieve the big leaps forward that unlock real growth, you must activate new behaviours in future customers. If you design for what customers say they want today, you’ll never invent the thing they didn’t know they needed until they have it.</p>
+<p class="h3">To achieve the big leaps forward that unlock real growth, you must activate
+  new behaviours in future customers. If you design for what customers say they
+  want today, you’ll never invent the thing they didn’t know they needed until
+  they have it.</p>
 
-    Futurestate design is at the heart of how we think and work, and it’s crucial to the future-making mindset we instil in our clients. It’s both a thinking discipline and a set of practical methods. It’s not speculative, theoretical, future-fantasy: it’s all about using near-future thinking to shape what you do next.
+Futurestate design is at the heart of how we think and work, and it’s crucial to the future-making mindset we instil in our clients. It’s both a thinking discipline and a set of practical methods. It’s not speculative, theoretical, future-fantasy: it’s all about using near-future thinking to shape what you do next.
 
-  </Prose>
 </Article>
 
 <Section name="Some of the ways we use it">
-  <Prose>
-    ### Team workshops
+  ### Team workshops
 
-    Team workshops that help everyone to think differently by building a futurestate service or company and looking back at what it has achieved
+Team workshops that help everyone to think differently by building a futurestate service or company and looking back at what it has achieved
 
-    ### Future customer modelling
+### Future customer modelling
 
-    Future customer modelling using broad influences research to fuel a behavioural model for the services customers will be receptive to in a few years’ time.
+Future customer modelling using broad influences research to fuel a behavioural model for the services customers will be receptive to in a few years’ time.
 
-    ### Futurestate ecosystem and experience visualisation
+### Futurestate ecosystem and experience visualisation
 
-    Futurestate ecosystem and experience visualisation: developing and visualising how your future services will impact your customers’ lives and your company’s operations
+Futurestate ecosystem and experience visualisation: developing and visualising how your future services will impact your customers’ lives and your company’s operations
 
-    ### Next-gen propositions
+### Next-gen propositions
 
-    Next-gen propositions: imagining and articulating the value of a new proposition that will open up a new market
+Next-gen propositions: imagining and articulating the value of a new proposition that will open up a new market
 
-    ### Next-gen product concepting
+### Next-gen product concepting
 
-    Next-gen product concepting: developing next-generation product models and experience concepts based on emerging technologies and future customer models
+Next-gen product concepting: developing next-generation product models and experience concepts based on emerging technologies and future customer models
 
-    ### Futurestate thinking days
+### Futurestate thinking days
 
-    Futurestate thinking days for leaders to help them de-program their brain from operationally-focused thinking and start to develop a future-making mindset
+Futurestate thinking days for leaders to help them de-program their brain from operationally-focused thinking and start to develop a future-making mindset
 
-    <Callout {...book} class="not-prose" />
+<Callout {...book} class="not-prose" />
 
-    We use futurestate design to help companies think beyond current constraints; to leave legacy behind and invent on behalf of future customers. We use it to help visualise and realise the full potential of new ideas; to drive real innovation. We use it to help companies make the future happen.
+We use futurestate design to help companies think beyond current constraints; to leave legacy behind and invent on behalf of future customers. We use it to help visualise and realise the full potential of new ideas; to drive real innovation. We use it to help companies make the future happen.
 
-    The real power of futurestate design is that we’re in an age where almost anything you can think of making waves in a few years’ time, you can make happen now.
+The real power of futurestate design is that we’re in an age where almost anything you can think of making waves in a few years’ time, you can make happen now.
 
-  </Prose>
+<Figure src="/images/daria-nepriakhina-zoCDWPuiRuA-unsplash.jpg">Photo by <a href="https://unsplash.com/@epicantus?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Daria Nepriakhina</a> 🇺🇦 on <a href="https://unsplash.com/s/photos/design-workshop?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Unsplash</a></Figure>
 </Section>
 
-<div class="max-w-[80rem] mx-auto">![](/images/futurestate-design.jpg)</div>
+{/* <figure class="figure max-w-container mx-auto mb-4">
+  <img
+    src="/images/daria-nepriakhina-zoCDWPuiRuA-unsplash.jpg"
+    alt="Photo by Daria Nepriakhina 🇺🇦 on Unsplash"
+  />
+  <div class="grid gap-6 lg:gap-10 lg:grid-cols-8">
+    <figcaption class:list="lg:col-span-6 lg:col-start-3">Photo by <a href="https://unsplash.com/@epicantus?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Daria Nepriakhina</a> 🇺🇦 on <a href="https://unsplash.com/">Unsplash</a></figcaption>
+  </div>
+</figure> */}

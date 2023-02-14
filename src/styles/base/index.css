@@ -12,10 +12,14 @@
   details {
     @apply relative overflow-hidden border-b border-b-gray;
     --detailContentHeight: auto;
+
+    blockquote:first-of-type {
+      @apply mt-0 !important;
+    }
   }
 
   summary {
-    @apply relative text-4xl cursor-pointer flex items-center justify-between py-4 md:text-5xl;
+    @apply relative text-4xl cursor-pointer font-regular flex items-center justify-between py-4 md:text-5xl;
 
     &::-webkit-details-marker {
       @apply hidden;
@@ -27,6 +31,6 @@
   }
 
   details[open]:not(.closed) > summary:after {
-    @apply bg-minus bg-gray-50;
+    @apply bg-minus;
   }
 }

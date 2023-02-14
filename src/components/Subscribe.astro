@@ -10,13 +10,14 @@ interface Props {
 const { class: className, ...attrs } = Astro.props as Props
 ---
 
-<Section class="bg-white text-black py-24 md:py-32">
-  <Prose>
-    <h2>Futurestate Insights</h2>
-    <p>
-      Insights into new innovations in digital business, interesting trends and
-      new ways of thinking about them.
-    </p>
-    <Link href="#">Let me read it first</Link>
-  </Prose>
+<Section
+  name="Futurestate Insights"
+  inline
+  class="bg-[#F7F7F7] text-black"
+>
+  <p>
+    Insights into new innovations in digital business, interesting trends and
+    new ways of thinking about them.
+  </p>
+  <Link href="#">Let me read it first</Link>
 </Section>

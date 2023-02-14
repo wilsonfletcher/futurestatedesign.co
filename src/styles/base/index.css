@@ -19,14 +19,14 @@
   }
 
   summary {
-    @apply relative text-4xl cursor-pointer font-regular flex items-center justify-between py-4 md:text-5xl;
+    @apply relative text-4xl cursor-pointer font-regular flex items-start justify-between py-4 md:text-5xl;
 
     &::-webkit-details-marker {
       @apply hidden;
     }
 
     &:after {
-      @apply content-[""] block text-center w-6 h-6 bg-plus bg-cover bg-center;
+      @apply content-[""] block text-center w-6 h-6 mt-2 bg-plus bg-cover bg-center;
     }
   }
 

@@ -2,11 +2,8 @@
 import { Section, Callout } from '@/components/index.astro'
 import Arrows from '@/components/Arrows.astro'
 
-import * as invention from '@/content/work/invention.mdx'
-import * as reinvention from '@/content/work/reinvention.mdx'
-import * as intervention from '@/content/work/intervention.mdx'
-
-const areas = [invention, reinvention, intervention]
+const areas = await Astro.glob('../content/work/*.{mdx,md}')
+areas.sort((a, b) => a.frontmatter.number - b.frontmatter.number)
 ---
 
 <Section name="What we do">
@@ -29,8 +26,6 @@ const areas = [invention, reinvention, intervention]
             name="Is it the right approach for you?"
             url={{
               name: 'Get in touch',
-              'x-bind': 'toggleContactModal',
-              class: 'cursor-pointer',
               type: 'button',
             }}
           />

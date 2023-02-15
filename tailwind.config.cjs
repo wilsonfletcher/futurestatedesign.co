@@ -23,7 +23,7 @@ module.exports = {
           'url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjQnIGhlaWdodD0nMjQnIGZpbGw9J25vbmUnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nIzAwMCcgZD0nTTAgMTMuNVYxMGgyNHYzLjV6Jy8+PC9zdmc+)',
         plus: 'url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjQnIGhlaWdodD0nMjQnIHZpZXdCb3g9JzAgMCAyNCAyNCcgZmlsbD0nbm9uZScgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBkPSdNMTAgMEgxMy41VjI0SDEwVjBaJyBmaWxsPSdibGFjaycgLz48cGF0aCBkPSdNMCAxMy41TDQuMTczNzFlLTA4IDEwSDI0VjEzLjVIMFonIGZpbGw9J2JsYWNrJyAvPjwvc3ZnPg==)',
         arrow:
-          'url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgNDggNDgnPjxwYXRoIGQ9J00zLjg0OCAyMy41NjFoMzguMTgzTTQzLjc5OSAyMi41ODZMMjQuNzA3IDQxLjY3OE0yNCA0LjkwOEw0My4wOTIgMjQnIHN0cm9rZT0nY3VycmVudENvbG9yJyBzdHJva2Utd2lkdGg9JzMnPjwvcGF0aD48L3N2Zz4=)',
+          'url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nNDgnIGhlaWdodD0nNDgnIHZpZXdCb3g9JzAgMCA0OCA0OCcgZmlsbD0nbm9uZScgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBkPSdNMTAgMjRIMzgnIHN0cm9rZT0nIzM0M0EzRicgc3Ryb2tlLXdpZHRoPScyJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnLz48cGF0aCBkPSdNMjQgMTBMMzggMjRMMjQgMzgnIHN0cm9rZT0nIzM0M0EzRicgc3Ryb2tlLXdpZHRoPScyJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnLz48L3N2Zz4K)',
       },
       colors: {
         transparent: 'transparent',

@@ -1,16 +1,11 @@
 ---
 import { Section, Callout } from '@/components/index.astro'
-import Arrows from '@/components/Arrows.astro'
 
 const areas = await Astro.glob('../content/work/*.{mdx,md}')
 areas.sort((a, b) => a.frontmatter.number - b.frontmatter.number)
 ---
 
 <Section name="What we do">
-  <p class="lead">
-    Our work spans three areas: invention, reinvention and intervention.
-  </p>
-
   <div class="divide-y divide-gray space-y-6 border-b border-gray not-prose">
     {
       areas.map((area) => (
@@ -20,7 +15,7 @@ areas.sort((a, b) => a.frontmatter.number - b.frontmatter.number)
             {area.frontmatter.name}
           </h3>
 
-          <area.Content components={{ ul: Arrows }} />
+          <area.Content />
 
           <Callout
             name="Is it the right approach for you?"

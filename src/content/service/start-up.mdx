@@ -7,7 +7,6 @@ image:
   height: 801
   alt: Photo by Ian Schneider on Unsplash
 ---
-import Why from '@/content/block/3.mdx'
 import { Icon } from 'astro-icon'
 import {
   Article,
@@ -17,8 +16,6 @@ import {
   Prose,
   Section,
 } from '@/components/index.astro'
-
-export const components = { ul: List }
 
 <Article>
   <p class="lead">A specialist advisory and coaching programme for leaders of growth-stage
@@ -53,6 +50,7 @@ export const components = { ul: List }
 
   ### Strategy
 
+  :::div{.not-prose.list-1}
   - Purpose, vision and values
   - Monetisation strategy
   - Product strategy
@@ -63,9 +61,11 @@ export const components = { ul: List }
   - Platform strategy
   - Go-to-market strategy
   - Growth strategy
+  :::
 
   ### Execution
 
+  :::div{.not-prose.list-1}
   - Organisation design
   - Innovation-led culture
   - Brand and messaging
@@ -77,9 +77,11 @@ export const components = { ul: List }
   - Roadmap design and management
   - Reviews and resets
   - Stalled progress interventions
+  :::
 
   ### Operational support
 
+  :::div{.not-prose.list-1}
   - Key hires
   - Key decisions
   - Investor presentations
@@ -87,6 +89,7 @@ export const components = { ul: List }
   - Partner introductions
   - Peer connections
   - Specialist programme teams
+  :::
 
   <Callout class="not-prose mt-8" name="Is it the right approach for you?" url={{ name: 'Get in touch', href: 'mailto:info@futurestatedesign.co' } } />
 </Section>
@@ -166,7 +169,16 @@ export const support = [
 </Section>
 
 <Section name="Why sign up?">
-  <Why components={{ ul: 'ul' }} />
+<p class="lead">Too many great ideas fail. Even more fail to reach their potential. Don’t be one of them.</p>
+
+:::div{.not-prose.list-2}
+- Embed the digital business practices used by world-leading companies
+- Rapidly accelerate your product maturity and align it with real-world commercial strategies
+- Teach you vital techniques and shortcuts you won’t find in text books
+- Support key decisions with behind-the-scenes insights and lessons learned from leading organisations
+- Ensure you avoid common mistakes, hidden pitfalls and costly missteps
+- Support you with objective advice when you need it and connect you with people and partners you can trust
+:::
 </Section>
 
 <Section name="Get experts on your side." inline class="bg-yellow">

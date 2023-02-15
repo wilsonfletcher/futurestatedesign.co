@@ -7,7 +7,7 @@ image:
   height: 801
   alt: Photo by Ian Schneider on Unsplash
 ---
-
+import Why from '@/content/block/3.mdx'
 import { Icon } from 'astro-icon'
 import {
   Article,
@@ -120,6 +120,8 @@ export const callout = {
   ### Every 3 months
 
   The quarterly review is a 2-3 hour session to review and adjust areas of focus for the next 3 months. These can planned in as full-day ‘next step’ workshops at key stages of the business’s development.
+
+  ---
 </Section>
 
 export const support = [
@@ -164,14 +166,7 @@ export const support = [
 </Section>
 
 <Section name="Why sign up?">
-  <p class="lead">Too many great ideas fail. Even more fail to reach their potential. Don’t be one of them.</p>
-
-  - Embed the digital business practices used by world-leading companies
-  - Rapidly accelerate your product maturity and align it with real-world commercial strategies
-  - Teach you vital techniques and shortcuts you won’t find in text books
-  - Support key decisions with behind-the-scenes insights and lessons learned from leading organisations
-  - Ensure you avoid common mistakes, hidden pitfalls and costly missteps
-  - Support you with objective advice when you need it and connect you with people and partners you can trust
+  <Why components={{ ul: 'ul' }} />
 </Section>
 
 <Section name="Get experts on your side." inline class="bg-yellow">

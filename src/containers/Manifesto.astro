@@ -6,13 +6,13 @@ const manifesto = await getCollection('manifesto', ({ data }) => {
 })
 ---
 
-<div class="grid gap-4 md:grid-cols-2 md:gap-10 not-prose mb-20">
+<div class="grid md:grid-cols-2 md:gap-10 lg:gap-24 not-prose mb-20">
   {
     manifesto.map(({ slug, data: { description } }) => (
-      <article class="border-t border-white/30 pt-8 md:pt-12">
+      <article class="border-t-2 border-white/30 py-8">
         <h2 class="h0 mb-6 text-white/50">{slug}</h2>
         <p>{description}</p>
-        </article>
+      </article>
     ))
   }
 </div>

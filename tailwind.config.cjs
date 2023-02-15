@@ -51,6 +51,7 @@ module.exports = {
         black: 900,
       },
       fontSize: {
+        base: [rem(16), rem(24)],
         lg: [rem(18), rem(24)],
         '3xl': [rem(32), rem(34)],
         '4xl': [rem(35), rem(40)],

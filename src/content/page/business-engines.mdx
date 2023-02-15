@@ -2,13 +2,13 @@
 name: Business Engines
 description: All successful businesses need momentum. Companies will only build that momentum if they keep adding new engines to power growth. In the modern economy, most new business engines will be digital.
 image:
-  url: /images/business-engines.svg
+  url: /images/business-engine.svg
   width: 1200
   height: 628
   alt: Foo
 ---
 
-import { Article, Prose, Watch, Listen } from '@/components/index.astro'
+import { Article, Prose, Promo, PromoGroup } from '@/components/index.astro'
 
 import * as podcast from '../podcast/6.mdx'
 
@@ -24,49 +24,11 @@ It needs to be designed cleverly to meet future customer needs (innovative produ
 
 It needs to be built with the simplest and best possible components (proven platforms + new technologies) and run on the right fuel (content, data and business services). Finally, it needs to start first time (launch strategy), accelerate smoothly (growth strategy) and generate plenty of energy returns (a smart business model).
 
-![Alt](/images/business-engines.svg 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ac magna tristique auctor. Duis a semper tortor, sit amet laoreet mi. Morbi a lectus id metus faucibus porttitor non id dolor. Duis volutpat, elit quis condimentum gravida, nunc nulla lacinia erat, quis ullamcorper tellus justo quis nulla.')
+![Alt](/images/business-engine.svg 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ac magna tristique auctor. Duis a semper tortor, sit amet laoreet mi. Morbi a lectus id metus faucibus porttitor non id dolor. Duis volutpat, elit quis condimentum gravida, nunc nulla lacinia erat, quis ullamcorper tellus justo quis nulla.')
 
-<div class="divide-y border-y not-prose">
-  <Listen>
-    <article>
-      <h3 class="text-lg font-bold md:text-2xl">
-        Episode #6: {podcast.frontmatter.name}!
-      </h3>
-      <p class="text-lg font-light mb-4 md:text-2xl">
-        {podcast.frontmatter.description}
-      </p>
-      [Listen now](https://www.bbc.co.uk/sounds/podcasts)
-    </article>
-
-        <article>
-      <h3 class="text-lg font-bold md:text-2xl">
-        Episode #6: {podcast.frontmatter.name}
-      </h3>
-      <p class="text-lg font-light mb-4 md:text-2xl">
-        {podcast.frontmatter.description}
-      </p>
-      [Listen now](https://www.bbc.co.uk/sounds/podcasts)
-    </article>
-
-  </Listen>
-
-    <Watch>
-    <article>
-      ### sdsds
-      {podcast.frontmatter.description}
-      [Listen now](https://www.bbc.co.uk/sounds/podcasts)
-    </article>
-
-  </Watch>
-
-  <Listen>
-    <article>
-      ### sddsd
-      {podcast.frontmatter.description}
-      [Listen now](https://www.bbc.co.uk/sounds/podcasts)
-    </article>
-  </Listen>
-  </div>
+<PromoGroup name="Listen" icon="listen">
+  <Promo name={`Episode #6: ${podcast.frontmatter.name}`} description={podcast.frontmatter.description} url={{ name: 'Listen now', url: 'https://www.bbc.co.uk/sounds/podcasts', external: true }} />
+</PromoGroup>
 
 Within each of these building blocks are many smaller elements that need work. Too many good ideas fail to become successful innovations because they don’t get all the moving parts to work together. They fail because of a lack of holistic thinking.
 

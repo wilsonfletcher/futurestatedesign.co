@@ -5,108 +5,109 @@ image:
   url: /images/steph-mark.jpg
   width: 1280
   height: 523
-  alt: Foo
+  alt: PromoGroup
 ---
 
-import { Article, Prose, Section, List, Read, Book } from '@/components/index.astro'
-import Teaser from '@/components/Teaser.astro'
 import Tools from '../blocks/tools-of-our-trade.mdx'
+import {
+  Article,
+  Figure,
+  List,
+  Promo,
+  PromoGroup,
+  Prose,
+  Section,
+} from '@/components/index.astro'
 
 <Article>
   <p class="lead">We’ve been making new ideas work for 20 years. In that time, we’ve worked with over 150 organisations, in 10 countries, delivering over 350 successful programmes.</p>
   <p class="h3">Founded as Wilson Fletcher by Mark Wilson and Stephanie Fletcher, we [became Futurestate Design Co.] to mark our 20th anniversary.</p>
 
-  ![Photo of Steph and Mark](/images/steph-mark.jpg)
+![Photo of Steph and Mark](/images/steph-mark.jpg)
 
-  Since day one, our work has been focused on helping companies drive innovation-led growth.
+Since day one, our work has been focused on helping companies drive innovation-led growth.
 
-  We design new and next generation digital products and services, shape new business propositions, develop future vision and design strategies to help organisations become something new.
+We design new and next generation digital products and services, shape new business propositions, develop future vision and design strategies to help organisations become something new.
 
-  Innovation-led companies will power the economy for decades to come. They’ll drive big improvements in how we live and work. They’ll change the societies we live in and make the planet(s) we live on better.
+Innovation-led companies will power the economy for decades to come. They’ll drive big improvements in how we live and work. They’ll change the societies we live in and make the planet(s) we live on better.
 
-  Our mission is to help every company we can become one of them.
+Our mission is to help every company we can become one of them.
+
 </Article>
 
 <Section name="Where we focus">
   <p class="lead">Well, the clue’s in the name.</p>
 
-  There are three grades of innovation that every business needs to invest in. We specialise in the two that can really help a company maximise its future potential: the big leaps forward that open up growth opportunities that your current roadmap won’t get close to.
+There are three grades of innovation that every business needs to invest in. We specialise in the two that can really help a company maximise its future potential: the big leaps forward that open up growth opportunities that your current roadmap won’t get close to.
 
-  Work with us when you need to see what your future could look like and how to start making it happen now, whether that’s reinventing what you are, or do, today or inventing something completely new.
+Work with us when you need to see what your future could look like and how to start making it happen now, whether that’s reinventing what you are, or do, today or inventing something completely new.
 
-  ![](/images/grades-of-innovation.svg)
-
-  <div class="divide-y border-y border-gray divide-gray not-prose space-y-6 py-6">
-    <Read>
-      <Teaser
-        name="The Futurestate Manifesto"
-        description="10 guiding principles behind our work"
-        url="/futurestate-manifesto"
-      />
-
-      <Teaser
-        name="Futurestate Design™"
-        description="What it is and why we use it"
-        url="/futurestate-design"
-      />
-
-      <Teaser
-        name="Business Engines"
-        description="How digital services power growth"
-        url="/business-engines"
-      />
-  </Read>
-
-    <Book>
-      <Teaser
-        name="Futurestate Design"
-        author="Mark Wilson"
-        description="Our own methodology developed over 20 years and hundreds of successful digital innovation programmes."
-      >
-        <a href="https://www.amazon.co.uk/dp/1399922106" target="_blank" rel="noopener">Buy on Amazon</a>
-      </Teaser>
-    </Book>
-  </div>
+<Figure src="/images/grades-of-innovation.svg">The grades of innovation</Figure>
+<PromoGroup name="Read articles" icon="article" class="mb-16">
+  <Promo
+    name="The Futurestate Manifesto"
+    description="10 guiding principles behind our work"
+    url={{ name: 'Read now', url: '/manifesto' }}
+  />
+  <Promo
+    name="Futurestate Design™"
+    description="What it is and why we use it"
+    url={{ name: 'Read now', url: '/futurestate-design' }}
+  />
+  <Promo
+    name="Business Engines"
+    description="How digital services power growth"
+    url={{ name: 'Read now', url: 'business-engines' }}
+  />
+</PromoGroup>
+<PromoGroup name="Read the book" icon="book">
+  <Promo
+    name="Futurestate Design"
+    author="Mark Wilson"
+    description="Our own methodology developed over 20 years and hundreds of successful digital innovation programmes."
+    url={{ name: 'Buy on Amazon', url: 'https://www.amazon.co.uk/dp/1399922106', external: true  }}
+  />
+</PromoGroup>
 </Section>
 
 <Section name="How we work">
   ### A modern, flexible, expert practice.
 
-  Businesses are increasingly borderless, operating more flexibly, and subject to more volatility in market and operational conditions than at any time in history.
-  We’ve built Futurestate to support the diverse, individual needs that these conditions create.
+Businesses are increasingly borderless, operating more flexibly, and subject to more volatility in market and operational conditions than at any time in history.
+We’ve built Futurestate to support the diverse, individual needs that these conditions create.
 
-  - If you need a board advisor to add specialist expertise to your leadership team, [we do that](/foo).
-  - If you need a team of specialists to work intensively on one critical programme for a few weeks or months, [we do that](/foo).
-  - If you need help to design and deliver a multi-year strategy, with spikes in support at critical points, [we do that](/foo).
-  - If you need a short, sharp intervention to overcome an urgent issue or de-risk a major initiative, [we do that](/foo).
+- If you need a board advisor to add specialist expertise to your leadership team, [we do that](/PromoGroup).
+- If you need a team of specialists to work intensively on one critical programme for a few weeks or months, [we do that](/PromoGroup).
+- If you need help to design and deliver a multi-year strategy, with spikes in support at critical points, [we do that](/PromoGroup).
+- If you need a short, sharp intervention to overcome an urgent issue or de-risk a major initiative, [we do that](/PromoGroup).
 
-  We’ll always help you shape your future, but in the way you, specifically, need support.
+We’ll always help you shape your future, but in the way you, specifically, need support.
 
-  Unlike traditional consultancies where ‘land and expand’ is their only objective, we want to make as much of a difference to as many companies as we can. So if we can get you further by doing less, we will.
+Unlike traditional consultancies where ‘land and expand’ is their only objective, we want to make as much of a difference to as many companies as we can. So if we can get you further by doing less, we will.
 
-  #### We’re a company and a network.
+#### We’re a company and a network.
 
-  We’ve built an incredible network of people we trust over the last 20 years, and many of those people now choose to work independently. So we combine a small, core team with a network of specialists to build the right team for each specific engagement – from business leaders and subject matter experts to technologists and design practitioners.
+We’ve built an incredible network of people we trust over the last 20 years, and many of those people now choose to work independently. So we combine a small, core team with a network of specialists to build the right team for each specific engagement – from business leaders and subject matter experts to technologists and design practitioners.
 
-  The calibre of people who work with us means that those teams are usually much smaller and more effective than you would expect if that team was built from a fixed ‘bench’.
+The calibre of people who work with us means that those teams are usually much smaller and more effective than you would expect if that team was built from a fixed ‘bench’.
 
-  We can introduce additional partners you can trust, help you hire into key internal roles, and connect you with peers in client organisations who have faced similar challenges. We run frequent round-table dinners within our client network under strict privacy rules where everyone can exchange experiences with other senior leaders.
+We can introduce additional partners you can trust, help you hire into key internal roles, and connect you with peers in client organisations who have faced similar challenges. We run frequent round-table dinners within our client network under strict privacy rules where everyone can exchange experiences with other senior leaders.
+
 </Section>
 
 <Tools components={{ ul: List }} />
 
-<div class="max-w-container mx-auto">
-  ![3-GRADES OF INNOVATION diagram](/images/about.jpg "Title")
-</div>
+<img src="/images/about.jpg" class="max-w-container mx-auto" loading="lazy" />
 
 <Section name="Afterword">
   <p class="lead">And finally...</p>
 
-  Wherever and however you work with us, we’ll make the experience an enjoyable and rewarding one. Great work emerges from great thinking, so we always foster an environment where that can happen.
+Wherever and however you work with us, we’ll make the experience an enjoyable and rewarding one. Great work emerges from great thinking, so we always foster an environment where that can happen.
 
-  Our London studio is a creative workshop where we and our clients get the time and space to think bigger and work together intensively when we need to.
+Our London studio is a creative workshop where we and our clients get the time and space to think bigger and work together intensively when we need to.
 
-  The coffee is lethal, the wine is plentiful, the biscuits are outstanding and the dog (Millie) is a highly skilled treat negotiator.
+The coffee is lethal, the wine is plentiful, the biscuits are outstanding and the dog (Millie) is a highly skilled treat negotiator.
 
-  Our place, your place or virtual. We hope to see you there.
+Our place, your place or virtual. We hope to see you there.
+
 </Section>

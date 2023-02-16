@@ -16,7 +16,7 @@
     }
 
     figcaption {
-      @apply text-[18px] leading-[20px] border-l-4 border-yellow pl-3;
+      @apply text-base leading-[22px] border-l-4 border-lime pl-3 text-gray max-w-xl;
 
       a {
         @apply underline;

@@ -2,9 +2,10 @@
 import { SEO } from 'astro-seo'
 import { SITE } from '@/config'
 import GoogleTagManager from './Head/GoogleTagManager.astro'
+import TypeKit from './Head/TypeKit.astro'
 // import Pre from './Pre.astro'
 
-// const TYPEKIT_ID = import.meta.env.PUBLIC_TYPEKIT_ID
+const TYPEKIT_ID = import.meta.env.PUBLIC_TYPEKIT_ID
 const GTM_ID = import.meta.env.PUBLIC_GTM_ID
 // console.log(import.meta.env)
 
@@ -88,7 +89,6 @@ const {
     }}
   />
   <slot />
-  {import.meta.env.production && <GoogleTagManager gtmId={GTM_ID} />}
   <script is:inline>
     if (
       localStorage.getItem('color-theme') === 'dark' ||
@@ -100,4 +100,6 @@ const {
       document.documentElement.classList.remove('dark')
     }
   </script>
+  {import.meta.env.production && <GoogleTagManager gtmId={GTM_ID} />}
+  <TypeKit kitId={TYPEKIT_ID} />
 </head>

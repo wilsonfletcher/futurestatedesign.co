@@ -20,7 +20,7 @@ const { name, items } = data
           <a
             href={url}
             class="text-4xl leading-[44px]"
-            target={external && '_blank'}
+            target={external ? '_blank' : null}
           >
             {name}
           </a>

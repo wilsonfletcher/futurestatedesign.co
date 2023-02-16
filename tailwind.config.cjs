@@ -37,6 +37,9 @@ module.exports = {
           DEFAULT: '#ff0000',
           light: '#FF5C00',
         },
+        lime: {
+          DEFAULT: '#11c338'
+        },
         screens: {
           md: '760px',
           lg: '1280px',
@@ -99,7 +102,7 @@ module.exports = {
             '--tw-prose-counters': theme('colors.current'),
             '--tw-prose-hr': theme('colors.gray.DEFAULT'),
             figcaption: {
-              borderLeftColor: theme('colors.black'),
+              borderLeftColor: theme('colors.lime.DEFAULT'),
             },
           },
         },
@@ -121,6 +124,9 @@ module.exports = {
               fontStyle: 'normal',
               maxWidth: 735,
               quotes: 'none !important',
+            },
+            h1: {
+              fontWeight: theme('fontWeight.regular'),
             },
             h2: {
               fontWeight: theme('fontWeight.regular'),

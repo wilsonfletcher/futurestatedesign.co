@@ -11,19 +11,19 @@ export interface Props {
 const { class: className, ...attrs } = Astro.props as Props
 ---
 
-<div role="banner" class:list={['py-8', className]} {...attrs}>
+<div role="banner" class:list={['py-8 relatie', className]} {...attrs}>
   <div class="container">
-    <div class="grid gap-4 md:gap-x-10 md:gap-y-20 md:grid-cols-8">
-      <div class="row-start-2 md:col-span-2">
+    <div class="flex justify-between lg:grid md:gap-x-10 md:gap-y-20 md:grid-cols-8">
+      <div class="lg:col-span-2">
         <a href="/" title={`Return to the ${SITE.name} homepage`}>
-          <Logo />
+          <Logo class="max-w-[180px] lg:absolute lg:top-[152px]" />
         </a>
       </div>
 
       <div
-        class="flex justify-end md:col-span-6 md:col-start-3 md:justify-between"
+        class="flex items-start justify-end md:col-span-6 md:justify-between"
       >
-        <div class="hidden md:flex items-center gap-16">
+        <div class="hidden lg:flex items-start gap-16">
           <a
             href={`mailto:${SITE.email}`}
             class="text-2xl font-bold hover:underline">{SITE.email}</a
@@ -32,7 +32,7 @@ const { class: className, ...attrs } = Astro.props as Props
             >{SITE.telephone}</a
           >
         </div>
-        <div class="flex items-center">
+        <div class="flex items-start">
           <button
             id="theme-toggle"
             type="button"
@@ -60,8 +60,6 @@ const { class: className, ...attrs } = Astro.props as Props
           </button>
         </div>
       </div>
-
-      <div class="flex items-end md:col-span-6"></div>
     </div>
   </div>
 </div>

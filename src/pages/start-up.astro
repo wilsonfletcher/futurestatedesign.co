@@ -17,15 +17,17 @@ const { Content } = await entry.render()
   description={description}
   url={url}
   image={image}
+  class="bg-yellow text-black"
 >
   <article>
-    <div class="container">
+    <div class="container py-12">
       <div class="lg:grid lg:grid-cols-8 lg:grid-gap-10">
         <div class="lg:col-start-3 lg:col-span-6">
-          <h1 class="h1">{name}</h1>
+          <h1 class="h3">{name}</h1>
         </div>
       </div>
     </div>
     <Content />
   </article>
 </Default>
+

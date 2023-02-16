@@ -13,9 +13,9 @@ interface Props {
 
 const {
   name,
-  class: className,
+  class: className = 'bg-white text-black',
   tag: Tag = 'section',
-  padding = 'py-6 lg:py-12',
+  padding = 'py-6 lg:py-20',
   inline = false,
   ...props
 } = Astro.props as Props

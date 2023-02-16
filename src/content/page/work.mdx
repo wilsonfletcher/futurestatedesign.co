@@ -8,34 +8,31 @@ import Clients from '@/containers/Clients.astro'
 import Testimonials from '@/containers/Testimonials.astro'
 
 <Article>
-  <p class="lead">We’ve learned our craft by working with smart, progressive thinkers in a diverse family of companies worldwide.</p>
-  <p class="lead">If that sounds like you, we’d love to talk.</p>
+<p class="lead"><span class="text-lime hidden lg:inline">You.</span> We’ve learned our craft by working with smart, progressive thinkers in a diverse family of companies worldwide.</p>
+<p class="lead">If that sounds like you, we’d love to talk.</p>
 </Article>
 
 <Clients />
 
-<Section name="The impact of our work">
-  <p class="lead">Our clients trust us with helping to shape their future. We consider that a privilege.</p>
-  <p class="h3">Over the last 20 years, our work has touched hundreds of millions of people, generated billions in revenue, helped major companies become something new and new companies become something major.</p>
-  <p class="h3">Yeah, we love what we do.</p>
+export const work = [
+  'We’ve designed futurestate services for more than 100 companies, <em class="not-italic text-gray">arming them with new ways to serve customers, operate their companies, make money and make a difference to society</em>',
+  'We’ve helped to launch more than a dozen major media ventures, <em class="not-italic text-gray">changing the way news and entertainment are distributed and consumed around the world.</em>',
+  'We’ve developed innovation-led business strategies for more than 20 years, <em class="not-italic text-gray">future-proofing dozens of the world’s best-known companies</em>',
+  'We’ve helped hundreds of leaders to learn and adopt new ways to think, <em class="not-italic text-gray">enabling companies all over the world to grow and adapt to business in the innovation economy</em>'
+]
 
-  ---
+<Section name="The impact of our work" class="bg-qux text-white">
+Our clients trust us with helping to shape their future. We consider that a privilege.
+  
+Over the last 20 years, our work has touched hundreds of millions of people, generated billions in revenue, helped major companies become something new and new companies become something major.
+  
+Yeah, we love what we do.
 
-  <p class="h3">We’ve designed futurestate services for more than 100 companies, <em class="not-italic text-gray">arming them with new ways to serve customers, operate their companies, make money and make a difference to society</em></p>
-
-  ---
-
-  <p class="h3">We’ve helped to launch more than a dozen major media ventures, <em class="not-italic text-gray">changing the way news and entertainment are distributed and consumed around the world.</em></p>
-
-  ---
-
-  <p class="h3">We’ve developed innovation-led business strategies for more than 20 years, <em class="not-italic text-gray">future-proofing dozens of the world’s best-known companies</em></p>
-
-  ---
-
-  <p class="h3">We’ve helped hundreds of leaders to learn and adopt new ways to think, <em class="not-italic text-gray">enabling companies all over the world to grow and adapt to business in the innovation economy</em></p>
-
-  ---
+<div class="not-prose">
+<ul class="grid md:gap-10 md:grid-cols-2">
+{work.map(work => <li class="h4 border-t border-gray pt-6 mb-6 md:mb-12" set:html={work} />)}
+</ul>
+</div>
 </Section>
 
 <Section name="We work best with">

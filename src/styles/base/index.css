@@ -1,4 +1,4 @@
-@import url('fonts');
+/* @import url('fonts'); */
 
 @layer base {
   html {
@@ -6,7 +6,20 @@
   }
 
   body {
-    @apply font-sans leading-none font-light text-optimize;
+    @apply font-sans text-base leading-none font-light text-optimize;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-regular;
+  }
+
+  abbr {
+    @apply cursor-help;
   }
 
   details {

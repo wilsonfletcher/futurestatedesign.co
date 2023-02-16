@@ -24,7 +24,7 @@ const { Content } = await entry.render()
   description={description}
   url={url}
   image={image}
-  class={theme == 'white' && 'bg-qux text-white'}
+  class={theme == 'white' ? 'bg-qux text-white' : ''}
 >
   <article>
     <div class="container">
@@ -32,9 +32,9 @@ const { Content } = await entry.render()
         <div class="lg:col-start-3 lg:col-span-6">
           {
             type === 'landing' ? (
-              <h1 class="h1">{name}</h1>
+              <h1 class="h3">{name}</h1>
             ) : (
-              <h1 class="h0">{name}</h1>
+              <h1 class="h0 lg:sr-only">{name}</h1>
             )
           }
         </div>

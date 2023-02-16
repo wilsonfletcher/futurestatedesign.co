@@ -2,13 +2,28 @@
 import { Icon } from 'astro-icon'
 ---
 
-<form>
+<form name="contact" method="POST" data-netlify="true">
   <div class="space-y-10">
+    <textarea name="message" class="textarea" required
+      >I'm looking for help with...</textarea
+    >
     <div>
-      <input type="text" placeholder="My name is..." class="input" />
+      <input
+        type="text"
+        placeholder="My name is..."
+        name="name"
+        class="input"
+        required
+      />
     </div>
     <div>
-      <input type="email" placeholder="My email address is..." class="input" />
+      <input
+        type="email"
+        placeholder="My email address is..."
+        name="email"
+        class="input"
+        required
+      />
     </div>
     <button
       type="submit"
@@ -19,3 +34,17 @@ import { Icon } from 'astro-icon'
     </button>
   </div>
 </form>
+
+<style scoped>
+  .input {
+    @apply border-t-0 border-r-0 border-l-0 bg-transparent border-gray px-0 w-full text-white text-[30px] leading-[40px];
+
+    &::placeholder {
+      @apply text-gray;
+    }
+  }
+
+  .textarea {
+    @apply bg-transparent border-l-8 py-0 pr-0 pl-4 border-t-0 min-h-[50px] border-r-0 border-b-0 border-yellow text-3xl md:text-5xl w-full;
+  }
+</style>

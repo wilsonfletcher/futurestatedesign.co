@@ -24,22 +24,19 @@ const desc = `${id}_desc`
       class="flex items-center self-end p-2"
       x-bind="toggleContactModal"
     >
-      Close!
+      Close
       <Icon name="close" class="ml-4" />
     </button>
 
-    <div class="lg:grid lg:grid-cols-8 lg:gap-10">
-      <div class="lg:col-span-5">
+    <div class="lg:grid lg:grid-cols-10 lg:gap-10">
+      <div class="lg:col-span-6">
         <h2 class="h0 mb-8" id={label}>Let’s talk</h2>
-        <Prose>
+        <Prose class="mb-8">
           <p id={desc}>
             If you still have questions about what you need, what’s right for
             you and you’re not quite ready to schedule your call, no problem.
             Use the form to drop us a line and we’ll respond within 24hours.
           </p>
-          <blockquote>
-            <p>I’m looking for help with...</p>
-          </blockquote>
         </Prose>
         <FormContact />
       </div>

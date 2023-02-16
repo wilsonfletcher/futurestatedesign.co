@@ -19,15 +19,11 @@ const {
 
 <section class:list={[className]} {...attrs}>
   <div class="container">
-    <div class="lg:grid lg:grid-cols-8 lg:gap-10">
-      <div
-        class="lg:col-start-3 lg:col-span-6 lg:grid lg:grid-cols-6 lg:gap-10"
-      >
-        <Prose class="lg:col-span-4">
+    <div class="lg:grid lg:grid-cols-10 lg:gap-10">
+      <div class="lg:col-start-4 lg:col-span-5">
+        <Prose>
           <h2>
-            <button x-bind="toggleContactModal" type="button"
-              >{name}</button
-            >
+            <button x-bind="toggleContactModal" type="button">{name}</button>
           </h2>
           <p class="h3">
             {description}

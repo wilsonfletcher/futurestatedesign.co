@@ -31,16 +31,16 @@ const heading = `${id}-heading`
   {...props}
 >
   <div class="container">
-    <div class="grid gap-6 lg:gap-10 lg:grid-cols-8">
+    <div class="grid gap-6 lg:gap-10 lg:grid-cols-10">
       {
         inline == false && (
-          <h2 id={heading} class="h4 lg:col-span-2">
+          <h2 id={heading} class="h4 lg:col-span-3">
             {name}
             <Icon name="arrow" class="hidden lg:block" />
           </h2>
         )
       }
-      <div class:list={['lg:col-span-6 lg:col-start-3']}>
+      <div class:list={['lg:col-span-7 lg:col-start-4']}>
         <Prose>
           {inline &&<h2 id={heading}>{name}</h2>}
           <slot />

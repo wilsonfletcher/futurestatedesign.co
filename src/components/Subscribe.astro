@@ -1,5 +1,5 @@
 ---
-import { Section } from './index.astro'
+import { Prose } from '@/components/index.astro'
 import LargeLink from './LargeLink.astro'
 
 interface Props {
@@ -9,23 +9,27 @@ interface Props {
 const { class: className, ...props } = Astro.props as Props
 ---
 
-<Section
-  name="Futurestate Insights"
-  inline
-  class="bg-[#19333c] text-white"
-  {...props}
->
-  <p>
-    Insights into new innovations in digital business, interesting trends and
-    new ways of thinking about them.
-  </p>
-  <LargeLink
-    href="https://insights.futurestatedesign.co/s/the-wrap"
-    target="_blank"
-    class="not-prose"
-  >
-    Let me read it first
-  </LargeLink>
+<section class="bg-[#19333c] text-white py-6 lg:py-20">
+  <div class="container">
+    <div class="lg:grid lg:grid-cols-10 lg:gap-10">
+      <div class="lg:col-start-4 lg:col-span-5">
+        <h2 class="h2">The Futuremakers</h2>
+        <Prose>
+          <p>
+            Insights into new innovations in digital business, interesting
+            trends and new ways of thinking about them.
+          </p>
+          <LargeLink
+            href="https://insights.futurestatedesign.co/s/the-wrap"
+            target="_blank"
+            class="not-prose"
+          >
+            Let me read it first
+          </LargeLink>
+        </Prose>
 
-  <iframe src="https://insights.futurestatedesign.co/embed"></iframe>
-</Section>
+        <iframe src="https://insights.futurestatedesign.co/embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>

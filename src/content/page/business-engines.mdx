@@ -8,14 +8,12 @@ image:
   alt: Foo
 ---
 
-import { Article, Prose, Promo, PromoGroup } from '@/components/index.astro'
+import { Article, Prose, Promo, Figure, PromoGroup } from '@/components/index.astro'
 
 import * as podcast from '../podcast/6.mdx'
 
-
 <Article>
 <p class="lead"><span class="text-lime">Business Engines</span> All successful businesses need momentum. Companies will only build that momentum if they keep adding new engines to power growth. In the modern economy, most new business engines will be digital.</p>
-
 
 The ultimate outcome of most of our work centres on business engines. Every new proposition, every new product and every new venture should be thought of as a business engine. Anything else is just a vanity project.
 
@@ -27,15 +25,21 @@ It needs to be designed cleverly to meet future customer needs (innovative produ
 
 It needs to be built with the simplest and best possible components (proven platforms + new technologies) and run on the right fuel (content, data and business services). Finally, it needs to start first time (launch strategy), accelerate smoothly (growth strategy) and generate plenty of energy returns (a smart business model).
 
-![Alt](/images/business-engine.svg 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ac magna tristique auctor. Duis a semper tortor, sit amet laoreet mi. Morbi a lectus id metus faucibus porttitor non id dolor. Duis volutpat, elit quis condimentum gravida, nunc nulla lacinia erat, quis ullamcorper tellus justo quis nulla.')
+<Figure src="/images/business-engine.svg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ac magna tristique auctor. Duis a semper tortor, sit amet laoreet mi. Morbi a lectus id metus faucibus porttitor non id dolor. Duis volutpat, elit quis condimentum gravida, nunc nulla lacinia erat, quis ullamcorper tellus justo quis nulla.</Figure>
+
+<PromoGroup name="Read" icon="article">
+</PromoGroup>
 
 <PromoGroup name="Listen" icon="listen">
-<Promo name={`Episode #6: ${podcast.frontmatter.name}`} description={podcast.frontmatter.description} url={{ name: 'Listen now', url: 'https://www.bbc.co.uk/sounds/podcasts', external: true }} />
+</PromoGroup>
+
+<PromoGroup name="Watch" icon="watch">
 </PromoGroup>
 
 Within each of these building blocks are many smaller elements that need work. Too many good ideas fail to become successful innovations because they don’t get all the moving parts to work together. They fail because of a lack of holistic thinking.
 
 Our business engine model isn’t a rigid set of rules: it’s a way to think about all of the moving parts and what we need them to turn into.
 
-  <p class="h3">Remember, anything new worth taking to market only has to do one job: build new momentum to move your business forward.</p>
+> Remember, anything new worth taking to market only has to do one job: build new momentum to move your business forward.
+
 </Article>

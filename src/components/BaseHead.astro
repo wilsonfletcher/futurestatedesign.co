@@ -40,7 +40,7 @@ const {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <SEO
-    canonical={`${SITE.url}${url}`}
+    canonical={`${SITE.url}/${url}`}
     title={title}
     description={description}
     noindex={noindex}
@@ -49,7 +49,7 @@ const {
         title: description,
         type: 'webpage',
         image: `${SITE.url}${image.url}`,
-        url: `${SITE.url}${url}`,
+        url: `${SITE.url}/${url}`,
       },
 
       optional: {

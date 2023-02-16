@@ -10,8 +10,8 @@ const { class: className = 'py-6 lg:py-12', ...attrs } = Astro.props as Props
 
 <div class:list={[className]} {...attrs}>
   <div class="container">
-    <div class="lg:grid lg:gap-10 lg:grid-cols-8">
-      <div class="lg:col-start-3 lg:col-span-6">
+    <div class="lg:grid lg:gap-10 lg:grid-cols-10">
+      <div class="lg:col-start-4 lg:col-span-7">
         <Prose>
           <slot />
         </Prose>

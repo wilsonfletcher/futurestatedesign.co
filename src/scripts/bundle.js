@@ -2,7 +2,7 @@ import Alpine from 'alpinejs'
 
 const modals = () => ({
   menuModal: false,
-  contactModal: true,
+  contactModal: false,
 
   init() {
     console.log('XD')

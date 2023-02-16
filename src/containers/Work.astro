@@ -1,11 +1,11 @@
 ---
-import { Section, Callout } from '@/components/index.astro'
+import { Section } from '@/components/index.astro'
 
 const areas = await Astro.glob('../content/work/*.{mdx,md}')
 areas.sort((a, b) => a.frontmatter.number - b.frontmatter.number)
 ---
 
-<Section name="What we do">
+<Section name="How we help">
   <div class="divide-y divide-gray space-y-6 border-b border-gray not-prose">
     {
       areas.map((area) => (
@@ -14,18 +14,19 @@ areas.sort((a, b) => a.frontmatter.number - b.frontmatter.number)
             <span class="h0 block">{area.frontmatter.number}</span>
             {area.frontmatter.name}
           </h3>
-
-          <area.Content />
-
-          <Callout
-            name="Is it the right approach for you?"
-            url={{
-              name: 'Get in touch',
-              type: 'button',
-            }}
-          />
+          <div class="wtf">
+            <area.Content />
+          </div>
         </article>
       ))
     }
   </div>
 </Section>
+
+<style is:global>
+  .wtf .list-2 ul {
+    @screen sm {
+      @apply bg-red grid grid-cols-2;
+    }
+  }
+</style>

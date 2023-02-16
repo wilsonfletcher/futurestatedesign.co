@@ -6,6 +6,7 @@ draft: true
 import { Icon } from 'astro-icon'
 import { Article, Section, Prose } from '@/components/index.astro'
 import Callout from '@/components/Callout.astro'
+import Work from '@/containers/Work.astro'
 
 export const callout = {
   name: 'Is it the right approach for you?',
@@ -13,174 +14,26 @@ export const callout = {
 }
 
 <Article>
-<p class="h0">
-  <span class="font-black block">Design the future.</span>{' '}
-  <span class="font-bold block">Create it now.</span> <span>Repeat.</span>
-</p>
-<p class="lead">
-  We design the future of companies, services and products.
-</p>
-<p class="lead">
-  Our work is exclusively focused on enabling companies to take big leaps
-  forward; to invent their future and make it happen. We’ll help you see
-  past the short-term roadmap to do to your market what a disruptor would do
-  to you.
-</p>
+---
+Tomorrow’s leaders need bold strategies, next-generation services and new product concepts, today. Established companies need to unlock their future potential to be young again – and young companies need to realise their potential to become tomorrow’s established names.
+
+If that sounds like you, we should talk.
+
+---
 </Article>
 
-<Section name="What we do">
-<p class="lead">Our work spans three areas: invention, reinvention and intervention.</p>
-
-<article class="border-b border-gray pb-8 md:pb-16 mb-8 md:mb-16">
-  <h3 class="h2 mb-10">
-    <span class="h0 block">01</span> Invention
-  </h3>
-  <ul class="grid gap-4 md:gap-10 md:grid-cols-2 mb-7 md:mb-14">
-    <li class="flex">
-      <Icon name="arrow-45" class="text-[32px] md:text-[48px] flex-none mr-4" />
-      <Prose class="flex-auto">
-        <p>
-          Identifying new opportunities for growth and developing{' '}
-          <a href="/start-up">new business propositions</a> to capitalise on
-          them
-        </p>
-      </Prose>
-    </li>
-    <li class="flex">
-      <Icon name="arrow-45" class="text-[32px] md:text-[48px] flex-none mr-4" />
-      <div class="flex-auto">
-        Modelling future customers and designing new strategies and services to
-        reach them
-      </div>
-    </li>
-    <li class="flex">
-      <Icon name="arrow-45" class="text-[32px] md:text-[48px] flex-none mr-4" />
-      <div class="flex-auto">
-        Designing new digital products that harness emerging technologies and
-        business models
-      </div>
-    </li>
-    <li class="flex">
-      <Icon name="arrow-45" class="text-[32px] md:text-[48px] flex-none mr-4" />
-      <div class="flex-auto">
-        Transforming funded ideas into market-ready services and ventures
-      </div>
-    </li>
-  </ul>
-  <Callout {...callout} />
-</article>
-
-{' '}
-<article class="border-b border-gray pb-8 md:pb-16 mb-8 md:mb-16">
-  <h3 class="h2 mb-10">
-    <span class="h0 block">02</span> Reinvention
-  </h3>
-  <ul class="grid gap-4 md:gap-10 md:grid-cols-2 body mb-7 md:mb-14">
-    <li class="flex">
-      <Icon name="arrow-45" class="text-[32px] md:text-[48px] flex-none mr-4" />
-      <div class="flex-auto">
-        Shaping the futurestate vision for an established organisation and the
-        strategy to realise it
-      </div>
-    </li>
-    <li class="flex">
-      <Icon name="arrow-45" class="text-[32px] md:text-[48px] flex-none mr-4" />
-      <div class="flex-auto">
-        Designing next-generation products and services to replace analogue or
-        legacy services
-      </div>
-    </li>
-    <li class="flex">
-      <Icon name="arrow-45" class="text-[32px] md:text-[48px] flex-none mr-4" />
-      <div class="flex-auto">
-        Designing new business models and redesigning products and services to
-        capitalise on them
-      </div>
-    </li>
-    <li class="flex">
-      <Icon name="arrow-45" class="text-[32px] md:text-[48px] flex-none mr-4" />
-      <div class="flex-auto">
-        <a href="/experience-mapping" class="underline">
-          Mapping next-generation customer journeys and service flows
-        </a>
-      </div>
-    </li>
-    <li class="flex">
-      <Icon name="arrow-45" class="text-[32px] md:text-[48px] flex-none mr-4" />
-      <div class="flex-auto">
-        Re-imagining legacy business processes and operational systems
-      </div>
-    </li>
-  </ul>
-  <Callout {...callout} />
-</article>
-
-  <article class="border-b border-gray pb-8 md:pb-16 mb-8 md:mb-16">
-    <h3 class="h2 mb-10">
-      <span class="h0 block">03</span> Intervention
-    </h3>
-    <ul class="grid gap-4 md:gap-10 md:grid-cols-2 body mb-7 md:mb-14">
-      <li class="flex">
-        <Icon name="arrow-45" class="text-[32px] md:text-[48px] flex-none mr-4" />
-        <div class="flex-auto">
-          Articulating a clear, distinctive direction and strategy stack:
-          purpose, vision, values, value proposition, principles
-        </div>
-      </li>
-      <li class="flex">
-        <Icon name="arrow-45" class="text-[32px] md:text-[48px] flex-none mr-4" />
-        <div class="flex-auto">
-          Resetting and re-energising strategies and roadmaps
-        </div>
-      </li>
-      <li class="flex">
-        <Icon name="arrow-45" class="text-[32px] md:text-[48px] flex-none mr-4" />
-        <div class="flex-auto">
-          Overcoming stalled growth, downward performance and disruptive
-          competitive pressures
-        </div>
-      </li>
-      <li class="flex">
-        <Icon name="arrow-45" class="text-[32px] md:text-[48px] flex-none mr-4" />
-        <div class="flex-auto">
-          Turning disparate initiatives into a clear, future-focused
-          strategy
-        </div>
-      </li>
-    </ul>
-    <Callout {...callout} />
-  </article>
-</Section>
+<Work />
 
 <Section name="How we work">
-  <Prose>
-    <p class="lead">From a single board advisor to a complete team project</p>
-    <p>
-      Our core team of innovation specialists can call on an extensive network
-      of expert practitioners, subject matter experts and partner companies to
-      support almost any need with top-tier people.
-    </p>
-    <img src="/images/how-we-work.svg" alt="" loading="lazy" />
-    <p>
-      We’re offering our time, our networks, and our skills to help
-      entrepreneurs and businesses start and scale purpose-driven organisations
-      for sustainable, long-term growth.
-    </p>
-  </Prose>
-</Section>
+Our clients’ needs are diverse and vary over time, so we’re set up to provide incisive, expert support when, and how, you need it; from a single board advisor providing strategic leadership support to a full team to deliver a critical initiative.
 
-<Section name="About us">
-  <Prose>
-    <p class="lead">20 years, 350 companies etc...copy to follow here</p>
-    <p>
-      Our core team of innovation specialists can call on an extensive network
-      of expert practitioners, subject matter experts and partner companies to
-      support almost any need with top-tier people.
-    </p>
-    <p>
-      We’ve worked with a lot of great people over the years (and plenty who
-      were not so great) and we only want our clients to work with specialists
-      and partners who we trust to do an exceptional job.
-    </p>
-  </Prose>
+![asd](/images/how-we-work.svg)
+
+Why work with us? Well, we’ve been an independent, specialist practice for more than two decades, working with leading companies the world over. We’ve built a huge body of experience and use our own methods that we know work.
+
+We’re the least *consultanty* consultants you’ll ever meet: no rigid frameworks, no rookies, no minimum engagements, no land-and-expand. We’re a small team of ultra-experienced practitioners who love what we do and care that it’s done right.
+
+If we’re *not* right for you, we’ll be the first to say it.
+
+If we are, we’ll get you where you need to be.
 </Section>

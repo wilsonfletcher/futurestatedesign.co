@@ -5,7 +5,7 @@ const cols = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 <div class="fixed inset-0 z-50 flex flex-col pointer-events-none">
   <div class="container flex flex-auto">
     <div class="grid grid-cols-10 gap-4 flex-auto md:gap-10">
-      {cols.map((col) => <div class="bg-red/10" />)}
+      {cols.map((col) => <div class="bg-red/10" data-col={col} />)}
     </div>
   </div>
 </div>

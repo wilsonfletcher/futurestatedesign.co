@@ -1,5 +1,7 @@
 import Alpine from 'alpinejs'
 
+import './dark-mode'
+
 const modals = () => ({
   menuModal: false,
   contactModal: false,

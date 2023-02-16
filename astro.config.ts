@@ -2,9 +2,9 @@ import { defineConfig } from 'astro/config'
 // import compress from 'astro-compress'
 import mdx from '@astrojs/mdx'
 import rehypeExternalLinks from 'rehype-external-links'
-// import sitemap from '@astrojs/sitemap'
+import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
-// import yaml from '@rollup/plugin-yaml'
+import htmlBeautifier from 'astro-html-beautifier'
 // import prefetch from '@astrojs/prefetch';
 // import rehypeFigure from 'rehype-figure'
 // import rehypeStringify from 'rehype-stringify'
@@ -24,7 +24,9 @@ import { myRemarkPlugin, myRemarkPlugin3 } from './src/plugins'
 
 export default defineConfig({
   site: 'https://website--futurestatedesignco.netlify.app',
-  markdown: {},
+  markdown: {
+    drafts: false,
+  },
   vite: {
     // plugins: [yaml()],
   },
@@ -46,14 +48,14 @@ export default defineConfig({
       ],
       rehypePlugins: [rehypeExternalLinks],
     }),
-    // htmlBeautifier(),
+    htmlBeautifier(),
     tailwind({
       config: {
         applyBaseStyles: false,
       },
     }),
     // prefetch(),
-    // sitemap(),
+    sitemap(),
     // compress(),
   ],
 })

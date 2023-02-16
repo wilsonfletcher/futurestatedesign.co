@@ -3,9 +3,9 @@ import { Icon } from 'astro-icon'
 
 export interface Props {
   name: string
-  url: {
-    name: string
-    href: string
+  url?: {
+    name?: string
+    href?: string
     target?: string
   }
   image?: {
@@ -17,7 +17,7 @@ export interface Props {
   class?: string
 }
 
-const { name, url, image,  class: className } = Astro.props as Props
+const { name, url, image, class: className } = Astro.props as Props
 ---
 
 <article class:list={className}>
@@ -31,10 +31,16 @@ const { name, url, image,  class: className } = Astro.props as Props
     }
     <div class="border-l-8 border-yellow pl-3 md:flex-auto">
       <h3 class="h4">{name}</h3>
-      <a {...url} class="inline-flex items-center text-3xl md:text-5xl">
-        <span class="underline">{url.name}</span>
-        <Icon name="arrow-45" class="text-3xl ml-4" />
-      </a>
+      <slot>
+        {
+          url && (
+            <a {...url} class="inline-flex items-center text-3xl md:text-5xl">
+              <span class="underline">{url.name}</span>
+              <Icon name="arrow-45" class="text-3xl" />
+            </a>
+          )
+        }
+      </slot>
     </div>
   </div>
 </article>

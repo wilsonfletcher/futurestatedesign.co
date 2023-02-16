@@ -37,7 +37,7 @@ const desc = `${id}_desc`
   aria-labelledby={label}
   aria-describedby={desc}
   x-show="menuModal"
-  tab-index="0"
+  tab-index="-1"
   x-cloak
   class="fixed inset-0 bg-qux text-white z-50 w-full py-8 h-full"
 >
@@ -53,50 +53,52 @@ const desc = `${id}_desc`
       </button>
 
       <div class="flex flex-col">
-      <div class="grid md:grid-cols-2 md:gap-10 pb-10">
-        <div class="flex flex-col md:justify-between">
-          <a href="/">
-            <Logo />
-          </a>
-          <h2 class="h1 md:col-start-1" id="modal_label">Menu</h2>
-        </div>
-
-        <div class="flex flex-col md:justify-between space-y-6">
-          <p class="text-lg text-white/50">
-            {SITE.address.streetAddress}
-            <br />
-            {SITE.address.addressLocality}
-            <br />
-            {SITE.address.addressRegion}
-            <br />
-            {SITE.address.postalCode}
-          </p>
-          <div class="h4">
-            <a href={SITE.tel} class="text-yellow lead">{SITE.telephone}</a>
-            <br />
-            <a href={`mailto:${SITE.email}`} class="text-yellow">{SITE.email}</a
-            >
+        <div class="grid md:grid-cols-2 md:gap-10 pb-10">
+          <div class="flex flex-col md:justify-between">
+            <a href="/">
+              <Logo />
+            </a>
+            <h2 class="h1 md:col-start-1" id="modal_label">Menu</h2>
           </div>
-          <nav>
-            <ul class="flex flex-col sm:flex-row sm:items-start -ml-2">
-              {
-                social.map(({ icon, name, url }) => (
-                  <li>
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-[32px] p-2 block md:text-[24px]"
-                      title={name}
-                    >
-                      <span class="sr-only">{name}</span>
-                      <Icon {...icon} />
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-          </nav>
+
+          <div class="flex flex-col md:justify-between space-y-6">
+            <p class="text-lg text-white/50">
+              {SITE.address.streetAddress}
+              <br />
+              {SITE.address.addressLocality}
+              <br />
+              {SITE.address.addressRegion}
+              <br />
+              {SITE.address.postalCode}
+            </p>
+            <div class="h4">
+              <a href={SITE.tel} class="text-yellow lead">{SITE.telephone}</a>
+              <br />
+              <a href={`mailto:${SITE.email}`} class="text-yellow"
+                >{SITE.email}</a
+              >
+            </div>
+            <nav>
+              <ul class="flex flex-col sm:flex-row sm:items-start -ml-2">
+                {
+                  social.map(({ icon, name, url }) => (
+                    <li>
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-[32px] p-2 block md:text-[24px]"
+                        title={name}
+                      >
+                        <span class="sr-only">{name}</span>
+                        <Icon {...icon} />
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
 

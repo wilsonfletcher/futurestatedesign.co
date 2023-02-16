@@ -3,9 +3,19 @@ number: '03'
 name: Intervention
 ---
 
+import { Icon } from 'astro-icon'
+import { Callout } from '@/components/index.astro'
+
 :::div{.list-2.not-prose}
 - Articulating a clear, distinctive direction and strategy stack: purpose, vision, values, value proposition, principles
 - Resetting and re-energising strategies and roadmaps
 - Overcoming stalled growth, downward performance and disruptive competitive pressures
 - Turning disparate initiatives into a clear, future-focused strategy
 :::
+
+<Callout name="Need help moving forward?">
+  <button type="button" x-bind="toggleContactModal" class="inline-flex items-center text-3xl md:text-5xl">
+    Get in touch
+    <Icon name="arrow-45" class="text-3xl ml-2" />
+  </button>
+</Callout>

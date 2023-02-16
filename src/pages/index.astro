@@ -1,79 +1,32 @@
 ---
-import { SITE } from '@/config'
+import { getEntryBySlug } from 'astro:content'
+
 import Default from '@/layouts/Default.astro'
-import { Section, Prose } from '@/components/index.astro'
-import Work from '@/containers/Work.astro'
+import { SITE } from '@/config'
 
-const meta = {
-  title: `${SITE.name} ___A business innovation company.`,
-  description: 'Design the future. Create it now. Repeat.',
-}
+const entry = await getEntryBySlug('page', 'home')
 
-const callout = {
-  name: 'Is it the right approach for you?',
-  url: { name: 'Get in touch', href: null, 'x-bind': 'toggleContactModal' },
-}
+const { data, slug: url } = entry
+const { name, description, image } = data
+
+const { Content } = await entry.render()
 ---
 
-<Default {...meta}>
+<Default
+  title={`${name} - ${SITE.name}`}
+  description={description}
+  url={url}
+  image={image}
+>
   <article>
-    <div class="py-20">
-      <div class="container">
-        <div class="grid gap-4 md:gap-10 md:grid-cols-8">
-          <div class="md:col-span-2"></div>
-          <div class="md:col-span-6 border-b border-gray pb-12">
-            <p class="h0 mb-10">
-              <span class="font-black block">Design the future.</span>
-              <span class="font-bold block">Create it now.</span>
-              <span>Repeat.</span>
-            </p>
-            <Prose>
-              <p class="h2">
-                We design the future of companies, services and products.
-              </p>
-              <p class="h2">
-                Our work is exclusively focused on enabling companies to take
-                big leaps forward; to invent their future and make it happen.
-                We’ll help you see past the short-term roadmap to do to your
-                market what a disruptor would do to you.
-              </p>
-            </Prose>
-          </div>
+    <div class="container py-12">
+      <div class="lg:grid lg:grid-cols-10 lg:gap-10">
+        <div class="lg:col-start-4 lg:col-span-7">
+          <h1 class="text-[80px] font-bold mb-6">We’re Futurestate.</h1>
+          <p class="text-[80px]">We design the future of companies, services and products.</p>
         </div>
       </div>
     </div>
-
-    <Work />
-
-    <Section name="How we work">
-      <p>
-        From a single board advisor to a complete team project. Our core team of
-        innovation specialists can call on an extensive network of expert
-        practitioners, subject matter experts and partner companies to support
-        almost any need with top-tier people.
-      </p>
-
-      <img src="images/how-we-work.svg" alt="" />
-
-      <p>
-        We’re offering our time, our networks, and our skills to help
-        entrepreneurs and businesses start and scale purpose-driven
-        organisations for sustainable, long-term growth.
-      </p>
-
-      <h3 class="h4">20 years, 35 companies etc... copy to follow</h3>
-
-      <p>
-        Our core team of innovation specialists can call on an extensive network
-        of expert practitioners, subject matter experts and partner companies to
-        support almost any need with top-tier people.
-      </p>
-
-      <p>
-        We’ve worked with a lot of great people over the years (and plenty who
-        were not so great) and we only want our clients to work with specialists
-        and partners who we trust to do an exceptional job.
-      </p>
-    </Section>
+    <Content />
   </article>
 </Default>

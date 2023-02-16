@@ -5,8 +5,8 @@ import GoogleTagManager from './Head/GoogleTagManager.astro'
 import TypeKit from './Head/TypeKit.astro'
 // import Pre from './Pre.astro'
 
-const TYPEKIT_ID = import.meta.env.PUBLIC_TYPEKIT_ID
-const GTM_ID = import.meta.env.PUBLIC_GTM_ID
+// const TYPEKIT_ID = import.meta.env.PUBLIC_TYPEKIT_ID
+// const GTM_ID = import.meta.env.PUBLIC_GTM_ID
 // console.log(import.meta.env)
 
 export interface Props {
@@ -100,6 +100,6 @@ const {
       document.documentElement.classList.remove('dark')
     }
   </script>
-  {import.meta.env.production && <GoogleTagManager gtmId={GTM_ID} />}
-  <TypeKit kitId={TYPEKIT_ID} />
+  <GoogleTagManager />
+  <TypeKit />
 </head>

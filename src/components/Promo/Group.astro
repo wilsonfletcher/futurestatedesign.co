@@ -10,9 +10,9 @@ interface Props {
 const { icon, name, class: className } = Astro.props as Props
 ---
 
-<section class:list={['not-prose border-y border-gray py-8', className]}>
-  <div class="flex items-center mb-6">
-    <Icon name={icon} class="mr-8 text-[56px]" />
+<section class:list={['not-prose', className]}>
+  <div class="flex items-center mb-6 border-b border-gray pb-4">
+    <Icon name={icon} class="mr-3 text-[56px]" />
     <h3 class="h2">{name}</h3>
   </div>
   <div class="grid gap-8">

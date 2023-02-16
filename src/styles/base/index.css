@@ -46,4 +46,8 @@
   details[open]:not(.closed) > summary:after {
     @apply bg-minus;
   }
+
+  html:has(dialog[open][modal-mode='mega']) {
+    overflow: hidden;
+  }
 }

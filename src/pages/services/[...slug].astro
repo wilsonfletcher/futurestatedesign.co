@@ -13,16 +13,18 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props
-const { data } = entry
-const { name, description } = data
+const { data, slug: url } = entry
+const { name, description, image, theme } = data
+
 const { Content } = await entry.render()
 ---
 
 <Default
-  {...entry.data}
   title={`${name} - ${SITE.name}`}
-  description={`${name}, ${description}`}
-  url={entry.slug}
+  description={description}
+  url={url}
+  image={image}
+  class={theme == 'white' ? 'bg-qux text-white' : ''}
 >
   <article id={entry.data.slug}>
     <div class="container py-12">

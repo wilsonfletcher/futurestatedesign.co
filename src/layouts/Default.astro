@@ -10,8 +10,8 @@ import Subscribe from '@/components/Subscribe.astro'
 import Contact from '@/components/Contact.astro'
 import NavSecondary from '@/components/Nav/Secondary.astro'
 import Footer from '@/components/Footer.astro'
-import ModalMenu from '@/components/Modal/Menu.astro'
-import ModalContact from '@/components/Modal/Contact.astro'
+import DialogMenu from '@/components/Dialog/Menu.astro'
+import DialogContact from '@/components/Dialog/Contact.astro'
 // import LayoutGrid from '@/components/LayoutGrid.astro'
 
 export interface Props {
@@ -47,20 +47,14 @@ const contact = {
 }
 ---
 
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" dir="ltr">
   <BaseHead {...meta}>
     <slot name="head" />
   </BaseHead>
-  <body
-    class:list={[className, 'dark:bg-qux dark:text-white']}
-    x-data="modals"
-    x-bind:class="menuModal ? 'overflow-hidden h-full' : ''"
-  >
+  <body class:list={[className, 'dark:bg-qux dark:text-white']}>
     <div class="flex flex-col w-full min-h-screen">
-      <Header>
-        <div class="h2">___A business innovation company.</div>
-      </Header>
+      <Header />
       <main class="flex-auto">
         <slot />
       </main>
@@ -69,10 +63,23 @@ const contact = {
       {navSecondary && <NavSecondary nav={navSecondary} />}
       <Footer />
     </div>
-    <ModalMenu />
-    <ModalContact />
-    <script hoist>
+    <DialogMenu />
+    <DialogContact />
+    <!-- <script hoist>
       import '@/scripts/bundle.js'
+    </script> -->
+    <script is:inline>
+      const dialogMenu = document.querySelector('#dialog-menu')
+      const openDialogMenu = document.querySelector('.open-dialog-menu')
+      openDialogMenu.addEventListener('click', () => {
+        dialogMenu.showModal()
+      })
+
+      const dialogContact = document.querySelector('#dialog-contact')
+      const openDialogContact = document.querySelector('.open-dialog-contact')
+      openDialogContact.addEventListener('click', () => {
+        dialogContact.showModal()
+      })
     </script>
   </body>
 </html>

@@ -37,8 +37,7 @@ const {
 ---
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
+  <meta charset="utf-8" />
   <SEO
     canonical={`${SITE.url}/${url}`}
     title={title}
@@ -88,6 +87,10 @@ const {
       meta: [{ name: 'theme-color', content: SITE.themeColor }],
     }}
   />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="Canvas" />
+  <meta name="color-scheme" content="light dark" />
   <slot />
   <script is:inline>
     if (

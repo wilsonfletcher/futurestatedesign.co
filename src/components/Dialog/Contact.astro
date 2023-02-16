@@ -8,29 +8,18 @@ const label = `${id}_label`
 const desc = `${id}_desc`
 ---
 
-<div
-  role="alertdialog"
-  aria-modal="true"
-  aria-hidden="true"
-  aria-labelledby={label}
-  aria-describedby={desc}
-  x-show="contactModal"
-  x-cloak
-  class="fixed inset-0 bg-qux text-white z-50 w-full py-8 h-full"
->
+<dialog id="dialog-contact" aria-labelledby={label} aria-describedby={desc}>
   <div class="container flex flex-col">
-    <button
-      type="button"
-      class="flex items-center self-end p-2"
-      x-bind="toggleContactModal"
-    >
-      Close
-      <Icon name="close" class="ml-4" />
-    </button>
+    <form method="dialog">
+      <button class="flex items-center self-end p-2">
+        Close
+        <Icon name="close" class="ml-4" />
+      </button>
+    </form>
 
     <div class="lg:grid lg:grid-cols-10 lg:gap-10">
       <div class="lg:col-span-6">
-        <h2 class="h0 mb-8" id={label}>Let’s talak</h2>
+        <h2 class="h0 mb-8" id={label}>Let’s talk</h2>
         <Prose class="mb-8">
           <p id={desc}>
             If you still have questions about what you need, what’s right for
@@ -42,4 +31,4 @@ const desc = `${id}_desc`
       </div>
     </div>
   </div>
-</div>
+</dialog>

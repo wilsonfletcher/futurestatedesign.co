@@ -1,0 +1,102 @@
+---
+import { getEntryBySlug } from 'astro:content'
+import { Icon } from 'astro-icon'
+
+import { SITE } from '@/config'
+import NavTertiary from '@/components/Nav/Tertiary.astro'
+import NavPrimary from '@/components/Nav/Primary.astro'
+import Logo from '../Logo.astro'
+
+const navPrimary = await getEntryBySlug('menu', 'primary')
+const navTertiary = await getEntryBySlug('menu', 'tertiary')
+
+const social = [
+  {
+    name: 'Linkedin',
+    url: SITE.linkedin,
+    icon: {
+      name: 'linkedin',
+    },
+  },
+  {
+    name: 'Substack',
+    url: SITE.substack,
+    icon: { name: 'substack' },
+  },
+]
+
+const id = 'modal_contact'
+const label = `${id}_label`
+const desc = `${id}_desc`
+---
+
+<dialog id="dialog-menu" aria-labelledby={label} aria-describedby={desc}>
+  <div class="container">
+    <div class="flex flex-col">
+      <button
+        onclick="this.closest('dialog').close('close')"
+        type="button"
+        title="Close dialog"
+        class="flex items-center self-end"
+      >
+        <title>Close dialog icon</title>
+        <Icon name="close" class="ml-4" />
+      </button>
+
+      <div class="flex flex-col">
+        <div class="grid md:grid-cols-2 md:gap-10 pb-10">
+          <div class="flex flex-col md:justify-between">
+            <a href="/">
+              <Logo />
+            </a>
+            <h2 class="h1 md:col-start-1" id="modal_label">Menu</h2>
+          </div>
+
+          <div class="flex flex-col md:justify-between space-y-6">
+            <p class="text-lg text-white/50">
+              {SITE.address.streetAddress}
+              <br />
+              {SITE.address.addressLocality}
+              <br />
+              {SITE.address.addressRegion}
+              <br />
+              {SITE.address.postalCode}
+            </p>
+            <div class="h4">
+              <a href={SITE.tel} class="text-yellow lead">{SITE.telephone}</a>
+              <br />
+              <a href={`mailto:${SITE.email}`} class="text-yellow"
+                >{SITE.email}</a
+              >
+            </div>
+            <nav>
+              <ul class="flex flex-col sm:flex-row sm:items-start -ml-2">
+                {
+                  social.map(({ icon, name, url }) => (
+                    <li>
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-[32px] p-2 block md:text-[24px]"
+                        title={name}
+                      >
+                        <span class="sr-only">{name}</span>
+                        <Icon {...icon} />
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 md:gap-10 border-t border-white/40 pt-4">
+        {navTertiary && <NavTertiary nav={navTertiary} />}
+        {navPrimary && <NavPrimary nav={navPrimary} />}
+      </div>
+    </div>
+  </div>
+</dialog>

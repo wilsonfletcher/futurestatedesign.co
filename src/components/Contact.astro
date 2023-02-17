@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon';
 import Prose from './Prose.astro';
 
 interface Props {
@@ -22,13 +23,19 @@ const {
     <div class="lg:grid lg:grid-cols-10 lg:gap-10">
       <div class="lg:col-span-5 lg:col-start-4">
         <Prose>
-          <h2>
-            <button type="button" class="open-dialog-contact">{name}</button>
-          </h2>
           <p class="h3">
             {description}
           </p>
         </Prose>
+        <h2>
+          <button
+            type="button"
+            class="open-dialog-contact font-light inline-flex items-center text-[60px]"
+          >
+            <span class="underline">{name}</span>
+            <Icon name="arrow-45" />
+          </button>
+        </h2>
       </div>
     </div>
   </div>

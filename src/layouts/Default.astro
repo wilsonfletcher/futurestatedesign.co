@@ -26,6 +26,7 @@ export interface Props {
   };
   noindex?: boolean;
   class?: string;
+  scope?: string;
 }
 
 const navSecondary = await getEntryBySlug('menu', 'secondary');
@@ -37,6 +38,7 @@ const {
   image,
   noindex = false,
   class: className,
+  scope,
 } = Astro.props as Props;
 
 const meta = { title, description, url, image, noindex };
@@ -52,7 +54,7 @@ const contact = {
   <BaseHead {...meta}>
     <slot name="head" />
   </BaseHead>
-  <body class:list={[className, 'dark:bg-qux dark:text-white']}>
+  <body class:list={[className, 'dark:bg-qux dark:text-white', scope]}>
     <div class="flex min-h-screen w-full flex-col">
       <Header />
       <main class="flex-auto">
@@ -65,9 +67,7 @@ const contact = {
     </div>
     <DialogMenu />
     <DialogContact />
-    <!-- <script hoist>
-      import '@/scripts/bundle.js'
-    </script> -->
+    <script src="https://substackapi.com/widget.js" async></script>
     <script is:inline>
       const dialogMenu = document.querySelector('#dialog-menu');
       const openDialogMenu = document.querySelector('.open-dialog-menu');
@@ -76,10 +76,24 @@ const contact = {
       });
 
       const dialogContact = document.querySelector('#dialog-contact');
+
       const openDialogContact = document.querySelector('.open-dialog-contact');
       openDialogContact.addEventListener('click', () => {
         dialogContact.showModal();
       });
+
+      window.CustomSubstackWidget = {
+        substackUrl: 'insights.futurestatedesign.co',
+        placeholder: 'Type your email...',
+        buttonText: 'Subscribe',
+        theme: 'custom',
+        colors: {
+          primary: '#11c338',
+          input: '#F7F7F70',
+          email: '#000',
+          text: '#fff',
+        },
+      };
     </script>
   </body>
 </html>

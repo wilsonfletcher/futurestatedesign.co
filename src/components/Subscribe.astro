@@ -1,29 +1,46 @@
 ---
+import { Icon } from 'astro-icon';
 import { Prose } from '@/components/index.astro';
-import LargeLink from './LargeLink.astro';
 ---
 
-<section class="bg-[#19333c] py-6 text-white lg:py-20">
+<section class="bg-grey-light py-6 text-black lg:py-20">
   <div class="container">
     <div class="lg:grid lg:grid-cols-10 lg:gap-10">
       <div class="lg:col-span-5 lg:col-start-4">
-        <h2 class="h2">The Futuremakers</h2>
         <Prose>
+          <h2>Futurestate Insights</h2>
           <p>
             Insights into new innovations in digital business, interesting
             trends and new ways of thinking about them.
           </p>
-          <LargeLink
-            href="https://insights.futurestatedesign.co/s/the-wrap"
-            target="_blank"
-            class="not-prose"
-          >
-            Let me read it first
-          </LargeLink>
+          <p>
+            <a
+              href="https://insights.futurestatedesign.co/s/the-wrap"
+              target="_blank"
+              class="not-prose text-4xl inline-flex items-center"
+            >
+              Let me read it first
+              <Icon name="arrow-45" class="ml-[0.25em]" />
+            </a>
+          </p>
+          <div id="custom-substack-embed"></div>
         </Prose>
-
-        <iframe src="https://insights.futurestatedesign.co/embed"></iframe>
+        <!-- <iframe src="https://insights.futurestatedesign.co/embed"></iframe> -->
       </div>
     </div>
   </div>
 </section>
+
+<style is:global>
+  #custom-substack-embed {
+    @apply font-sans font-light;
+
+    .csw-substack-gradient-custom {
+      @apply rounded-none border !important;
+    }
+
+    button {
+      @apply font-sans font-light;
+    }
+  }
+</style>

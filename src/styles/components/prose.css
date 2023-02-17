@@ -1,0 +1,13 @@
+@layer components {
+  .prose {
+    @apply text-lg text-current;
+
+    img {
+      @apply my-6 border;
+    }
+
+    @screen md {
+      @apply text-2xl;
+    }
+  }
+}

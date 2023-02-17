@@ -1,33 +1,29 @@
 @layer components {
   .h0 {
-    @apply text-7xl font-regular tracking-tight md:text-9xl; /* 72px/68px / 110px/110px */
+    @apply text-7xl font-light tracking-tight md:text-9xl; /* 72px/68px / 110px/110px */
   }
 
   .h1 {
-    @apply text-6xl font-regular md:text-8xl; /* 64px/62px / 90px/80px */
+    @apply text-6xl font-light md:text-8xl; /* 64px/62px / 90px/80px */
   }
 
   .h2 {
-    @apply text-4xl font-regular md:text-5xl; /* 35px/40px / 48px/50px */
+    @apply text-3xl font-light md:text-5xl; /* 32px/34px / 48px/50px */
   }
 
   .h3 {
-    @apply text-[30px] font-regular md:text-5xl; /* 30px/30px / 48px/50px */
-
-    p& {
-      @apply font-light;
-    }
+    @apply text-[30px] font-light md:text-5xl; /* 30px/30px / 48px/50px */
   }
 
   .h4 {
-    @apply text-[21px] leading-[28px] md:text-[35px] md:leading-[40px];
+    @apply text-[21px] font-light leading-[28px] md:text-[35px] md:leading-[40px];
   }
 
   .h5 {
-    @apply text-lg md:text-2xl; /* 18px/24px / 24px/32px */
+    @apply text-lg font-light md:text-2xl; /* 18px/24px / 24px/32px */
   }
 
   .h6 {
-    @apply text-[18px] leading-[20px];
+    @apply text-[18px] font-light leading-[20px];
   }
 }

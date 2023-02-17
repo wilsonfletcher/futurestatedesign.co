@@ -31,6 +31,7 @@ module.exports = {
         yellow: '#F5FF51',
         qux: '#001E20',
         gray: {
+          light: '#f7f7f7',
           DEFAULT: '#8F8F8F',
         },
         red: {
@@ -62,7 +63,7 @@ module.exports = {
         '6xl': [rem(64), rem(62)],
         '7xl': [rem(72), rem(68)],
         '8xl': [rem(90), rem(80)],
-        '9xl': [rem(110), rem(110)],
+        '9xl': [rem(110), rem(90)],
       },
       fontFamily: {
         sans: ['neue-haas-grotesk-display', 'sans-serif'],
@@ -86,7 +87,7 @@ module.exports = {
         // '16': 'repeat(16, minmax(0, 1fr))',
 
         // Complex site-specific column configuration
-        default: '2fr, 6fr',
+        default: '3fr, 7fr',
       },
       typography: ({ theme }) => ({
         default: {
@@ -182,6 +183,8 @@ module.exports = {
                 fontSize: em(18, 18),
                 lineHeight: round(18 / 18),
                 paddingLeft: em(10, 18),
+                marginTop: em(24, 18),
+                marginBottom: em(24, 18),
               },
               hr: {
                 marginTop: em(24, 18),
@@ -212,10 +215,10 @@ module.exports = {
                 marginBottom: em(32, 35),
               },
               h1: {
-                fontSize: em(110, 24),
-                lineHeight: round(110 / 110),
-                marginTop: em(16, 110),
-                marginBottom: em(16, 110),
+                fontSize: em(90, 24),
+                lineHeight: round(80 / 90),
+                marginTop: em(16, 90),
+                marginBottom: em(16, 90),
               },
               h2: {
                 fontSize: em(48, 24),
@@ -293,9 +296,9 @@ module.exports = {
           paddingLeft: '1rem',
           paddingRight: '1rem',
           '@screen md': {
-            maxWidth: 1280,
-            paddingLeft: 40,
-            paddingRight: 40,
+            maxWidth: rem(1280),
+            paddingLeft: rem(40),
+            paddingRight: rem(40),
           },
         },
       })
@@ -317,4 +320,4 @@ module.exports = {
   ],
 }
 
-// http://gridcalculator.dk/#/1280/8/40/40 / 115
+// http://gridcalculator.dk/#/1280/10/40/40 / 115

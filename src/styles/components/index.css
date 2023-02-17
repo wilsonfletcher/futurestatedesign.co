@@ -1,5 +1,6 @@
 @import url('typography');
 @import url('layout');
+/* @import url('prose'); */
 
 @layer components {
   .button {
@@ -25,7 +26,7 @@
   }
 
   [astro-icon] {
-    @apply h-[1em] w-[1em] text-current outline;
+    @apply h-[1em] w-[1em] text-current;
   }
 
   .list-1 {
@@ -58,11 +59,15 @@
         &::before {
           @apply absolute left-0 top-0 block h-8 w-8 bg-arrow bg-contain bg-no-repeat outline content-[""];
         }
+
+        a {
+          @apply underline;
+        }
       }
     }
   }
 
-  .wtf .list-2 ul {
+  .s-index .list-2 ul {
     @screen sm {
       @apply grid grid-cols-2;
     }

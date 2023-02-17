@@ -25,7 +25,7 @@
   }
 
   [astro-icon] {
-    @apply bg-slate-200 text-current w-[1em] h-[1em];
+    @apply outline text-current w-[1em] h-[1em];
   }
 
   .list-1 {
@@ -61,20 +61,28 @@
       }
     }
   }
-}
 
-dialog {
-  @apply bg-qux text-white fixed inset-0 w-full h-full;
-
-  max-inline-size: min(100vw);
-  max-block-size: min(100vh, 100%);
-  max-block-size: min(100dvb, 100%);
-
-  &[open] {
-    @apply opacity-100 translate-y-0;
+  .wtf .list-2 ul {
+    @screen sm {
+      @apply grid grid-cols-2;
+    }
   }
 
-  &::backdrop {
-    @apply bg-qux;
+  .large-link {
+    @apply text-[60px] inline-flex items-center text-current;
+
+    &:hover {
+      span {
+        @apply underline;
+      }
+    }
+  }
+
+  .action {
+    @apply p-2 block cursor-pointer;
+
+    svg {
+      @apply text-[32px] md:text-[24px];
+    }
   }
 }

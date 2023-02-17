@@ -6,6 +6,7 @@ import { SITE } from '@/config'
 import NavTertiary from '@/components/Nav/Tertiary.astro'
 import NavPrimary from '@/components/Nav/Primary.astro'
 import Logo from '../Logo.astro'
+import Action from '@/components/Action.astro'
 
 const navPrimary = await getEntryBySlug('menu', 'primary')
 const navTertiary = await getEntryBySlug('menu', 'tertiary')
@@ -33,15 +34,14 @@ const desc = `${id}_desc`
 <dialog id="dialog-menu" aria-labelledby={label} aria-describedby={desc}>
   <div class="container">
     <div class="flex flex-col">
-      <button
+      <Action
         onclick="this.closest('dialog').close('close')"
         type="button"
         title="Close dialog"
-        class="flex items-center self-end"
+        icon="close"
       >
-        <title>Close dialog icon</title>
-        <Icon name="close" class="ml-4" />
-      </button>
+        Close
+      </Action>
 
       <div class="flex flex-col">
         <div class="grid md:grid-cols-2 md:gap-10 pb-10">
@@ -74,16 +74,15 @@ const desc = `${id}_desc`
                 {
                   social.map(({ icon, name, url }) => (
                     <li>
-                      <a
+                      <Action
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="text-[32px] p-2 block md:text-[24px]"
                         title={name}
+                        icon={icon.name}
                       >
                         <span class="sr-only">{name}</span>
-                        <Icon {...icon} />
-                      </a>
+                      </Action>
                     </li>
                   ))
                 }

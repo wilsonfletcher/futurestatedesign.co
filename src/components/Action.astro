@@ -1,0 +1,23 @@
+---
+import { Icon } from 'astro-icon'
+
+interface Props {
+  tag: string
+  icon?: string
+  class?: string
+}
+
+const {
+  tag: Tag = 'a',
+  icon,
+  class: className,
+  ...props
+} = Astro.props as Props
+---
+
+<Tag class:list={['action', className]} {...props}>
+  <span class="flex items-center">
+    <slot />
+    {icon && <Icon name={icon} />}
+  </span>
+</Tag>

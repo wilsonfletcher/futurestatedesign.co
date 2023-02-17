@@ -13,7 +13,7 @@ import remarkDirective from 'remark-directive'
 // import remarkDirectiveRehype from 'remark-directive-rehype'
 // import remarkParse from 'remark-parse'
 // import remarkRehype from 'remark-rehype'
-// import remarkToc from 'remark-toc'
+import remarkToc from 'remark-toc'
 // import astroLayouts from 'astro-layouts'
 
 import { myRemarkPlugin, myRemarkPlugin3 } from './src/plugins'
@@ -26,6 +26,16 @@ export default defineConfig({
   site: 'https://website--futurestatedesignco.netlify.app',
   markdown: {
     drafts: false,
+    remarkPlugins: [
+      // [astroLayouts, layoutOptions],
+      remarkToc,
+      // remarkParse,
+      remarkDirective,
+      // remarkRehype,
+      myRemarkPlugin,
+      myRemarkPlugin3,
+    ],
+    rehypePlugins: [rehypeExternalLinks],
   },
   vite: {
     // plugins: [yaml()],
@@ -34,12 +44,7 @@ export default defineConfig({
     mdx({
       remarkPlugins: [
         // [astroLayouts, layoutOptions],
-        // [
-        //   remarkToc,
-        //   {
-        //     heading: 'contents',
-        //   },
-        // ],
+        remarkToc,
         // remarkParse,
         remarkDirective,
         // remarkRehype,

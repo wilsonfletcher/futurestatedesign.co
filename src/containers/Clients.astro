@@ -3,14 +3,15 @@ import { getCollection } from 'astro:content'
 
 import { Section } from '@/components/index.astro'
 
-const clients = await getCollection('client', ({ data }) => {
-  return data.draft !== true
+const clients = await getCollection('client', ({ data, slug }) => {
+  return data.draft !== true && slug === 'ap'
 })
 
 clients.sort((a, b) => a.data.sortOrder - b.data.sortOrder)
 ---
 
 <Section name="Selected clients">
+  <pre>{JSON.stringify(clients, null, 2)}</pre>
   <div class="grid gap-4 grid-cols-4 md:grid-cols-5 md:gap-[30px]">
     {
       clients.map(({ data: { name, image, logo } }) => {

@@ -2,6 +2,7 @@
 import { SITE } from '@/config'
 import Logo from '@/components/Logo.astro'
 import { Icon } from 'astro-icon'
+import Action from '@/components/Action.astro'
 // import Overlay from '@/components/Overlay.svelte'
 
 export interface Props {
@@ -13,7 +14,9 @@ const { class: className, ...attrs } = Astro.props as Props
 
 <div role="banner" class:list={['py-8 relatie', className]} {...attrs}>
   <div class="container">
-    <div class="flex justify-between lg:grid md:gap-x-10 md:gap-y-20 md:grid-cols-8">
+    <div
+      class="flex justify-between lg:grid md:gap-x-10 md:gap-y-20 md:grid-cols-8"
+    >
       <div class="lg:col-span-2">
         <a href="/" title={`Return to the ${SITE.name} homepage`}>
           <Logo class="max-w-[180px] lg:absolute lg:top-[152px]" />
@@ -50,13 +53,14 @@ const { class: className, ...attrs } = Astro.props as Props
             />
           </button>
 
-          <button
+          <Action
+            tag="button"
             type="button"
-            class="open-dialog-menu inline-flex items-center justify-center text-[32px]"
+            icon="menu"
+            class="open-dialog-menu"
           >
             <span class="sr-only">Open menu</span>
-            <Icon name="menu" />
-          </button>
+          </Action>
         </div>
       </div>
     </div>

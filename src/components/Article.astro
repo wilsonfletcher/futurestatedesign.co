@@ -5,7 +5,7 @@ interface Props {
   class?: string
 }
 
-const { class: className = 'py-6 lg:py-12', ...attrs } = Astro.props as Props
+const { class: className = 'py-10 lg:py-20', ...attrs } = Astro.props as Props
 ---
 
 <div class:list={[className]} {...attrs}>

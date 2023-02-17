@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon'
 import { SITE } from '@/config'
+import Action from './Action.astro';
 
 const social = [
   {
@@ -26,16 +27,15 @@ const social = [
           {
             social.map(({ icon, name, url }) => (
               <li>
-                <a
+                <Action
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-[32px] p-2 block md:text-[24px]"
                   title={name}
+                  icon={icon.name}
                 >
                   <span class="sr-only">{name}</span>
-                  <Icon {...icon} />
-                </a>
+                </Action>
               </li>
             ))
           }

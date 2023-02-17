@@ -50,4 +50,20 @@
   html:has(dialog[open][modal-mode='mega']) {
     overflow: hidden;
   }
+
+  dialog {
+    @apply bg-qux text-white fixed inset-0 w-full h-full;
+
+    max-inline-size: min(100vw);
+    max-block-size: min(100vh, 100%);
+    max-block-size: min(100dvb, 100%);
+
+    &[open] {
+      @apply opacity-100 translate-y-0;
+    }
+
+    &::backdrop {
+      @apply bg-qux;
+    }
+  }
 }

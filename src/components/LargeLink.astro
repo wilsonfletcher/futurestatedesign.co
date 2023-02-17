@@ -15,15 +15,3 @@ const { tag: Tag = 'a', class: className, ...props } = Astro.props as Props
   </span>
   <Icon name="arrow-45" class="text-[30px] ml-4" />
 </Tag>
-
-<style>
-  .large-link {
-    @apply text-[60px] inline-flex items-center text-current;
-
-    &:hover {
-      span {
-        @apply underline;
-      }
-    }
-  }
-</style>

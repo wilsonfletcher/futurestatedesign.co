@@ -1,6 +1,5 @@
 ---
-import { Icon } from 'astro-icon'
-import { Prose } from '@/components/index.astro'
+import { Prose, Action } from '@/components/index.astro'
 import FormContact from '@/components/Form/Contact.astro'
 
 const id = 'modal_contact'
@@ -10,12 +9,14 @@ const desc = `${id}_desc`
 
 <dialog id="dialog-contact" aria-labelledby={label} aria-describedby={desc}>
   <div class="container flex flex-col">
-    <form method="dialog">
-      <button class="flex items-center self-end p-2">
-        Close
-        <Icon name="close" class="ml-4" />
-      </button>
-    </form>
+    <Action
+      onclick="this.closest('dialog').close('close')"
+      type="button"
+      title="Close dialog"
+      icon="close"
+    >
+      Close
+    </Action>
 
     <div class="lg:grid lg:grid-cols-10 lg:gap-10">
       <div class="lg:col-span-6">

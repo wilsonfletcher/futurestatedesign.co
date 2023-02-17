@@ -1,6 +1,6 @@
-const BASE_URL = import.meta.env.PUBLIC_BASE_URL
+const BASE_URL = import.meta.env.PUBLIC_BASE_URL;
 
-const name = 'Futurestate Design Co.'
+const name = 'Futurestate Design Co.';
 
 export const SITE = {
   id: `${BASE_URL}#futurestate-design-co`,
@@ -26,10 +26,10 @@ export const SITE = {
     postalCode: 'N1 7BJ',
     addressCountry: 'United Kingdom',
   },
-}
+};
 
-export type Site = Mapped<typeof SITE>
+export type Site = Mapped<typeof SITE>;
 
 type Mapped<T> = {
-  [P in keyof T]?: any
-}
+  [P in keyof T]?: any;
+};

@@ -1,15 +1,15 @@
 ---
-import { getEntryBySlug } from 'astro:content'
-import { Icon } from 'astro-icon'
+import { getEntryBySlug } from 'astro:content';
+import { Icon } from 'astro-icon';
 
-import { SITE } from '@/config'
-import NavTertiary from '@/components/Nav/Tertiary.astro'
-import NavPrimary from '@/components/Nav/Primary.astro'
-import Logo from '../Logo.astro'
-import Action from '@/components/Action.astro'
+import { SITE } from '@/config';
+import NavTertiary from '@/components/Nav/Tertiary.astro';
+import NavPrimary from '@/components/Nav/Primary.astro';
+import Logo from '../Logo.astro';
+import Action from '@/components/Action.astro';
 
-const navPrimary = await getEntryBySlug('menu', 'primary')
-const navTertiary = await getEntryBySlug('menu', 'tertiary')
+const navPrimary = await getEntryBySlug('menu', 'primary');
+const navTertiary = await getEntryBySlug('menu', 'tertiary');
 
 const social = [
   {
@@ -24,11 +24,11 @@ const social = [
     url: SITE.substack,
     icon: { name: 'substack' },
   },
-]
+];
 
-const id = 'modal_contact'
-const label = `${id}_label`
-const desc = `${id}_desc`
+const id = 'modal_contact';
+const label = `${id}_label`;
+const desc = `${id}_desc`;
 ---
 
 <dialog id="dialog-menu" aria-labelledby={label} aria-describedby={desc}>
@@ -44,7 +44,7 @@ const desc = `${id}_desc`
       </Action>
 
       <div class="flex flex-col">
-        <div class="grid md:grid-cols-2 md:gap-10 pb-10">
+        <div class="grid pb-10 md:grid-cols-2 md:gap-10">
           <div class="flex flex-col md:justify-between">
             <a href="/">
               <Logo />
@@ -52,7 +52,7 @@ const desc = `${id}_desc`
             <h2 class="h1 md:col-start-1" id="modal_label">Menu</h2>
           </div>
 
-          <div class="flex flex-col md:justify-between space-y-6">
+          <div class="flex flex-col space-y-6 md:justify-between">
             <p class="text-lg text-white/50">
               {SITE.address.streetAddress}
               <br />
@@ -63,14 +63,14 @@ const desc = `${id}_desc`
               {SITE.address.postalCode}
             </p>
             <div class="h4">
-              <a href={SITE.tel} class="text-yellow lead">{SITE.telephone}</a>
+              <a href={SITE.tel} class="lead text-yellow">{SITE.telephone}</a>
               <br />
               <a href={`mailto:${SITE.email}`} class="text-yellow"
                 >{SITE.email}</a
               >
             </div>
             <nav>
-              <ul class="flex flex-col sm:flex-row sm:items-start -ml-2">
+              <ul class="-ml-2 flex flex-col sm:flex-row sm:items-start">
                 {
                   social.map(({ icon, name, url }) => (
                     <li>
@@ -92,7 +92,7 @@ const desc = `${id}_desc`
         </div>
       </div>
 
-      <div class="grid md:grid-cols-2 md:gap-10 border-t border-white/40 pt-4">
+      <div class="grid border-t border-white/40 pt-4 md:grid-cols-2 md:gap-10">
         {navTertiary && <NavTertiary nav={navTertiary} />}
         {navPrimary && <NavPrimary nav={navPrimary} />}
       </div>

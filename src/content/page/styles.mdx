@@ -3,22 +3,21 @@ name: Styles
 draft: true
 ---
 
-import { Prose, Article } from '@/components/index.astro'
+import { Prose, Article } from '@/components/index.astro';
 
 export const authors = [
   { name: 'Jane', email: 'hi@jane.com' },
-  { name: 'John', twitter: '@john2002' }
-]
+  { name: 'John', twitter: '@john2002' },
+];
 
-export const published = new Date('2022-02-01')
+export const published = new Date('2022-02-01');
 
 <Article>
 
 ## Table of contents
 
 <details>
-  <summary>Foo</summary>
-  > sdsdsd
+  <summary>Foo</summary>> sdsdsd
 </details>
 
 | Name | Mobile | Desktop |
@@ -36,20 +35,25 @@ export const published = new Date('2022-02-01')
 ## Typography
 
 # Heading 1
+
 ## Heading 2
+
 ### Heading 3
+
 #### Heading 4
+
 ##### Heading 5
+
 ###### Heading 6
 
 <div class="not-prose">
-<p class="h0">Heading 0</p>
-<p class="h1">Heading 1</p>
-<p class="h2">Heading 2</p>
-<p class="h3">Heading 3</p>
-<p class="h4">Heading 4</p>
-<p class="h5">Heading 5</p>
-<p class="h6">Heading 6</p>
+  <p class="h0">Heading 0</p>
+  <p class="h1">Heading 1</p>
+  <p class="h2">Heading 2</p>
+  <p class="h3">Heading 3</p>
+  <p class="h4">Heading 4</p>
+  <p class="h5">Heading 5</p>
+  <p class="h6">Heading 6</p>
 </div>
 
 ---
@@ -74,8 +78,8 @@ export const published = new Date('2022-02-01')
 
 ```html
 <ul>
-  <li>Identifying new opportunities...<li>
-  ...
+  <li>Identifying new opportunities...</li>
+  <li>...</li>
 </ul>
 ```
 
@@ -108,20 +112,21 @@ Some of the key techniques we use in our work:
 - Customer migration
 - Innovation culture
 - Leadership mentoring
-:::
+  :::
 
 ### List 2
 
 :::div{.list-2.not-prose}
+
 - Embed the digital business practices used by world-leading companies
 - Rapidly accelerate your product maturity and align it with real-world commercial strategies
 - Teach you vital techniques and shortcuts you won’t find in text books
 - Support key decisions with behind-the-scenes insights and lessons learned from leading organisations
 - Ensure you avoid common mistakes, hidden pitfalls and costly missteps
 - Support you with objective advice when you need it and connect you with people and partners you can trust
-:::
----
+  :::
 
+---
 
 Written by: {new Intl.ListFormat('en').format(authors.map(d => d.name))}.
 
@@ -224,4 +229,3 @@ if you chose xxx, you should also use yyy somewhere…
   :::
 
 </Article>
-

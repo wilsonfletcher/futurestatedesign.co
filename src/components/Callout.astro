@@ -1,23 +1,23 @@
 ---
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon';
 
 export interface Props {
-  name: string
+  name: string;
   url?: {
-    name?: string
-    href?: string
-    target?: string
-  }
+    name?: string;
+    href?: string;
+    target?: string;
+  };
   image?: {
-    src?: string
-    width?: string
-    height?: string
-    alt?: string
-  }
-  class?: string
+    src?: string;
+    width?: string;
+    height?: string;
+    alt?: string;
+  };
+  class?: string;
 }
 
-const { name, url, image, class: className } = Astro.props as Props
+const { name, url, image, class: className } = Astro.props as Props;
 ---
 
 <article class:list={className}>

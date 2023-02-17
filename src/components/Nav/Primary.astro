@@ -1,14 +1,14 @@
 ---
-import type { CollectionEntry } from 'astro:content'
+import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-  nav: CollectionEntry<'menu'>
-  class?: string
+  nav: CollectionEntry<'menu'>;
+  class?: string;
 }
 
-const { nav, class: className, ...props } = Astro.props as Props
-const { id, data } = nav
-const { name, items } = data
+const { nav, class: className, ...props } = Astro.props as Props;
+const { id, data } = nav;
+const { name, items } = data;
 ---
 
 <nav id={id} class:list={[className]} {...props}>

@@ -1,8 +1,8 @@
 ---
-import { SEO } from 'astro-seo'
-import { SITE } from '@/config'
-import GoogleTagManager from './Head/GoogleTagManager.astro'
-import TypeKit from './Head/TypeKit.astro'
+import { SEO } from 'astro-seo';
+import { SITE } from '@/config';
+import GoogleTagManager from './Head/GoogleTagManager.astro';
+import TypeKit from './Head/TypeKit.astro';
 // import Pre from './Pre.astro'
 
 // const TYPEKIT_ID = import.meta.env.PUBLIC_TYPEKIT_ID
@@ -10,16 +10,16 @@ import TypeKit from './Head/TypeKit.astro'
 // console.log(import.meta.env)
 
 export interface Props {
-  title: string
-  description?: string
-  url?: string
+  title: string;
+  description?: string;
+  url?: string;
   image?: {
-    url?: string
-    width?: number
-    height?: number
-    alt?: string
-  }
-  noindex?: boolean
+    url?: string;
+    width?: number;
+    height?: number;
+    alt?: string;
+  };
+  noindex?: boolean;
 }
 
 const {
@@ -33,7 +33,7 @@ const {
     alt: 'Futurestate Design Co logo',
   },
   noindex = false,
-} = Astro.props as Props
+} = Astro.props as Props;
 ---
 
 <head>
@@ -98,9 +98,9 @@ const {
       (!('color-theme' in localStorage) &&
         window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      document.documentElement.classList.add('dark')
+      document.documentElement.classList.add('dark');
     } else {
-      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.remove('dark');
     }
   </script>
   <GoogleTagManager />

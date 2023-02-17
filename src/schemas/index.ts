@@ -1,4 +1,4 @@
-import { z } from 'astro:content'
+import { z } from 'astro:content';
 
 export const clientSchema = z.object({
   name: z.string(),
@@ -6,21 +6,23 @@ export const clientSchema = z.object({
   image: z.string().optional(),
   sortOrder: z.number(),
   draft: z.boolean().optional(),
-})
+});
 
 export const manifestoSchema = z.object({
   description: z.string(),
   draft: z.boolean().optional(),
-})
+});
 
 export const menuSchema = z.object({
   name: z.string(),
-  items: z.array(z.object({
-    name: z.string(),
-    url: z.string(),
-    external: z.boolean().optional(),
-  })),
-})
+  items: z.array(
+    z.object({
+      name: z.string(),
+      url: z.string(),
+      external: z.boolean().optional(),
+    })
+  ),
+});
 
 export const pageSchema = z.object({
   name: z.string(),
@@ -34,20 +36,26 @@ export const pageSchema = z.object({
       alt: z.string().optional(),
     })
     .optional(),
-  menu: z.object({
-    primary: z.object({
-      name: z.string(),
-      weight: z.number(),
-    }).optional(),
-    secondary: z.object({
-      name: z.string(),
-      weight: z.number(),
-    }).optional(),
-  }).optional(),
+  menu: z
+    .object({
+      primary: z
+        .object({
+          name: z.string(),
+          weight: z.number(),
+        })
+        .optional(),
+      secondary: z
+        .object({
+          name: z.string(),
+          weight: z.number(),
+        })
+        .optional(),
+    })
+    .optional(),
   draft: z.boolean().optional(),
   type: z.string().optional(),
   theme: z.string().optional(),
-})
+});
 
 export const serviceSchema = z.object({
   name: z.string(),
@@ -62,13 +70,13 @@ export const serviceSchema = z.object({
     .optional(),
   sortOrder: z.number().optional(),
   draft: z.boolean().optional(),
-})
+});
 
 export const workSchema = z.object({
   number: z.string(),
   name: z.string(),
   draft: z.boolean().optional(),
-})
+});
 
 export const testimonialSchema = z.object({
   reviewBody: z.string(),
@@ -85,4 +93,4 @@ export const testimonialSchema = z.object({
       .optional(),
   }),
   draft: z.boolean().optional(),
-})
+});

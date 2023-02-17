@@ -9,6 +9,7 @@ import htmlBeautifier from 'astro-html-beautifier'
 // import rehypeFigure from 'rehype-figure'
 // import rehypeStringify from 'rehype-stringify'
 // import rehypeComponents from 'rehype-components'
+import remarkCollapse from "remark-collapse";
 import remarkDirective from 'remark-directive'
 // import remarkDirectiveRehype from 'remark-directive-rehype'
 // import remarkParse from 'remark-parse'
@@ -24,19 +25,19 @@ import { myRemarkPlugin, myRemarkPlugin3 } from './src/plugins'
 
 export default defineConfig({
   site: 'https://website--futurestatedesignco.netlify.app',
-  markdown: {
-    drafts: false,
-    remarkPlugins: [
-      // [astroLayouts, layoutOptions],
-      remarkToc,
-      // remarkParse,
-      remarkDirective,
-      // remarkRehype,
-      myRemarkPlugin,
-      myRemarkPlugin3,
-    ],
-    rehypePlugins: [rehypeExternalLinks],
-  },
+  // markdown: {
+  //   drafts: false,
+  //   remarkPlugins: [
+  //     // [astroLayouts, layoutOptions],
+  //     remarkToc,
+  //     // remarkParse,
+  //     remarkDirective,
+  //     // remarkRehype,
+  //     myRemarkPlugin,
+  //     myRemarkPlugin3,
+  //   ],
+  //   rehypePlugins: [rehypeExternalLinks],
+  // },
   vite: {
     // plugins: [yaml()],
   },
@@ -45,6 +46,12 @@ export default defineConfig({
       remarkPlugins: [
         // [astroLayouts, layoutOptions],
         remarkToc,
+        [
+          remarkCollapse,
+          {
+            test: "Table of contents",
+          },
+        ],
         // remarkParse,
         remarkDirective,
         // remarkRehype,

@@ -6,7 +6,7 @@
   }
 
   body {
-    @apply font-sans text-base leading-none font-light text-optimize;
+    @apply font-sans text-base font-light leading-none text-optimize;
   }
 
   h1,
@@ -32,14 +32,14 @@
   }
 
   summary {
-    @apply relative text-4xl cursor-pointer font-regular flex items-start justify-between py-4 md:text-5xl;
+    @apply relative flex cursor-pointer items-start justify-between py-4 text-4xl font-regular md:text-5xl;
 
     &::-webkit-details-marker {
       @apply hidden;
     }
 
     &:after {
-      @apply content-[""] block text-center w-6 h-6 mt-2 bg-plus bg-cover bg-center;
+      @apply mt-2 block h-6 w-6 bg-plus bg-cover bg-center text-center content-[""];
     }
   }
 
@@ -47,23 +47,23 @@
     @apply bg-minus;
   }
 
-  html:has(dialog[open][modal-mode='mega']) {
+  html:has(dialog[open]) {
     overflow: hidden;
   }
 
   dialog {
-    @apply bg-qux text-white fixed inset-0 w-full h-full;
+    @apply fixed inset-0 h-full w-full bg-qux text-white;
 
     max-inline-size: min(100vw);
     max-block-size: min(100vh, 100%);
     max-block-size: min(100dvb, 100%);
 
-    &[open] {
+    /* &[open] {
       @apply opacity-100 translate-y-0;
-    }
+    } */
 
-    &::backdrop {
+    /* &::backdrop {
       @apply bg-qux;
-    }
+    } */
   }
 }

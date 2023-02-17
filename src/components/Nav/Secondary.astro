@@ -1,22 +1,22 @@
 ---
-import type { CollectionEntry } from 'astro:content'
+import type { CollectionEntry } from 'astro:content';
 
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon';
 
 interface Props {
-  nav: CollectionEntry<'menu'>
-  class?: string
+  nav: CollectionEntry<'menu'>;
+  class?: string;
 }
 
-const { nav, class: className, ...props } = Astro.props as Props
-const { slug: id, data } = nav
-const { name, items } = data
+const { nav, class: className, ...props } = Astro.props as Props;
+const { slug: id, data } = nav;
+const { name, items } = data;
 
-const heading = `${id}-heading`
+const heading = `${id}-heading`;
 ---
 
 <nav
-  class="pt-8 pb-12 lg:py-24 bg-qux text-white"
+  class="bg-qux pt-8 pb-12 text-white lg:py-24"
   id={id}
   class:list={[className]}
   aria-labelledby={heading}
@@ -24,15 +24,15 @@ const heading = `${id}-heading`
 >
   <div class="container">
     <div class="grid gap-4 md:grid-cols-10 md:gap-10">
-      <div class="md:col-start-4 md:col-span-7">
+      <div class="md:col-span-7 md:col-start-4">
         <h2 id={heading} class="h3 mb-12 lg:mb-24">{name}</h2>
         <ul>
           {
-            items.map((item) => (
+            items.map(item => (
               <li class="border-b-2 border-white/30">
                 <a
                   href={item.url}
-                  class="h3 leading-none flex items-center py-5 justify-between"
+                  class="h3 flex items-center justify-between py-5 leading-none"
                 >
                   <span class="underline" set:html={item.name} />
                   <Icon name="arrow-45" class="text-[64px]" />

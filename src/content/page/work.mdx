@@ -1,15 +1,20 @@
 ---
 name: You
 description: We’ve learned our craft by working with smart, progressive thinkers in a diverse family of companies worldwide. If that sounds like you, we’d love to talk.
+draft: false
 ---
 
-import { Article, Prose, Section } from '@/components/index.astro'
-import Clients from '@/containers/Clients.astro'
-import Testimonials from '@/containers/Testimonials.astro'
+import { Article, Prose, Section } from '@/components/index.astro';
+import Clients from '@/containers/Clients.astro';
+import Testimonials from '@/containers/Testimonials.astro';
 
 <Article>
-<p class="lead"><span class="text-lime hidden lg:inline">You.</span> We’ve learned our craft by working with smart, progressive thinkers in a diverse family of companies worldwide.</p>
-<p class="lead">If that sounds like you, we’d love to talk.</p>
+  <p class="lead">
+    <span class="hidden text-lime lg:inline">You.</span> We’ve learned our craft
+    by working with smart, progressive thinkers in a diverse family of companies
+    worldwide.
+  </p>
+  <p class="lead">If that sounds like you, we’d love to talk.</p>
 </Article>
 
 <Clients />
@@ -19,7 +24,7 @@ export const work = [
   'We’ve helped to launch more than a dozen major media ventures, <em class="not-italic text-gray">changing the way news and entertainment are distributed and consumed around the world.</em>',
   'We’ve developed innovation-led business strategies for more than 20 years, <em class="not-italic text-gray">future-proofing dozens of the world’s best-known companies</em>',
   'We’ve helped hundreds of leaders to learn and adopt new ways to think, <em class="not-italic text-gray">enabling companies all over the world to grow and adapt to business in the innovation economy</em>'
-]
+];
 
 <Section name="The impact of our work" class="bg-qux text-white">
 Our clients trust us with helping to shape their future. We consider that a privilege.
@@ -36,15 +41,14 @@ Yeah, we love what we do.
 </Section>
 
 <Section name="We work best with">
-  <p class="lead">We work best with people who fit a few basic criteria. If you recognise yourself here, we’ll get on just fine.</p>
+<p class="lead">We work best with people who fit a few basic criteria. If you recognise yourself here, we’ll get on just fine.</p>
 
-  - Forward-thinking senior leaders who genuinely want to build a business fit for the future
-  - Leaders of critical initiatives who want to do everything possible to make them a success
-  - Open-minded business leaders who want to be challenged to think differently, explore new perspectives and inject new ideas
-    vAuthentic, genuine humans who want to work with authentic, genuine humans – and enjoy the process
-  - You’re in an established company who wants to become or remain a market leader and is committed to innovation-driven growth
-  - Or, you’re in a young company who needs to grow from having a great product to become world-class digital business
-  - You probably have plenty of expertise and in-house skills but you want expert support to complement or supplement what you have
+- Forward-thinking senior leaders who genuinely want to build a business fit for the future
+- Leaders of critical initiatives who want to do everything possible to make them a success
+- Open-minded business leaders who want to be challenged to think differently, explore new perspectives and inject new ideas vAuthentic, genuine humans who want to work with authentic, genuine humans – and enjoy the process
+- You’re in an established company who wants to become or remain a market leader and is committed to innovation-driven growth
+- Or, you’re in a young company who needs to grow from having a great product to become world-class digital business
+- You probably have plenty of expertise and in-house skills but you want expert support to complement or supplement what you have
 </Section>
 
 <Testimonials />

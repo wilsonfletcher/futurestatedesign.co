@@ -1,14 +1,14 @@
 ---
-import type { CollectionEntry } from 'astro:content'
+import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-  testimonial: CollectionEntry<'testimonial'>
-  class?: string
+  testimonial: CollectionEntry<'testimonial'>;
+  class?: string;
 }
 
-const { testimonial, class: className } = Astro.props as Props
-const { data } = testimonial
-const { author, reviewBody } = data
+const { testimonial, class: className } = Astro.props as Props;
+const { data } = testimonial;
+const { author, reviewBody } = data;
 ---
 
 <figure
@@ -22,16 +22,16 @@ const { author, reviewBody } = data
       <img
         src={author.image.url}
         alt={author.image.alt}
-        class="object-center object-cover"
+        class="object-cover object-center"
       />
     )
   }
 
   <blockquote>
-    <p class="text-4xl text-center">{reviewBody}</p>
+    <p class="text-center text-4xl">{reviewBody}</p>
   </blockquote>
 
-  <figcaption class="text-black/50 text-2xl">
+  <figcaption class="text-2xl text-black/50">
     {author.name}, {author.worksFor}
   </figcaption>
 </figure>

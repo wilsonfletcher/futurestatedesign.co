@@ -1,18 +1,17 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection } from 'astro:content';
 
-import { Section } from '@/components/index.astro'
+import { Section } from '@/components/index.astro';
 
 const clients = await getCollection('client', ({ data, slug }) => {
-  return data.draft !== true && slug === 'ap'
-})
+  return data.draft !== true;
+});
 
-clients.sort((a, b) => a.data.sortOrder - b.data.sortOrder)
+clients.sort((a, b) => a.data.sortOrder - b.data.sortOrder);
 ---
 
 <Section name="Selected clients">
-  <pre>{JSON.stringify(clients, null, 2)}</pre>
-  <div class="grid gap-4 grid-cols-4 md:grid-cols-5 md:gap-[30px]">
+  <div class="grid grid-cols-4 gap-4 md:grid-cols-5 md:gap-[30px]">
     {
       clients.map(({ data: { name, image, logo } }) => {
         return (
@@ -25,7 +24,7 @@ clients.sort((a, b) => a.data.sortOrder - b.data.sortOrder)
             )}
             {logo && <div class="aspect-w-15 aspect-h-9" set:html={logo} />}
           </article>
-        )
+        );
       })
     }
   </div>

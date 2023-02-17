@@ -1,14 +1,14 @@
 ---
-import { Section } from '@/components/index.astro'
+import { Section } from '@/components/index.astro';
 
-const areas = await Astro.glob('../content/work/*.{mdx,md}')
-areas.sort((a, b) => a.frontmatter.number - b.frontmatter.number)
+const areas = await Astro.glob('../content/work/*.{mdx,md}');
+areas.sort((a, b) => a.frontmatter.number - b.frontmatter.number);
 ---
 
 <Section name="How we help">
-  <div class="divide-y divide-gray space-y-6 border-b border-gray not-prose">
+  <div class="not-prose space-y-6 divide-y divide-gray border-b border-gray">
     {
-      areas.map((area) => (
+      areas.map(area => (
         <article class="space-y-10 pb-10">
           <h3 class="h2">
             <span class="h0 block">{area.frontmatter.number}</span>

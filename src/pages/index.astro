@@ -1,15 +1,15 @@
 ---
-import { getEntryBySlug } from 'astro:content'
+import { getEntryBySlug } from 'astro:content';
 
-import Default from '@/layouts/Default.astro'
-import { SITE } from '@/config'
+import Default from '@/layouts/Default.astro';
+import { SITE } from '@/config';
 
-const entry = await getEntryBySlug('page', 'home')
+const entry = await getEntryBySlug('page', 'home');
 
-const { data, slug: url } = entry
-const { name, description, image } = data
+const { data, slug: url } = entry;
+const { name, description, image } = data;
 
-const { Content } = await entry.render()
+const { Content } = await entry.render();
 ---
 
 <Default
@@ -21,9 +21,11 @@ const { Content } = await entry.render()
   <article>
     <div class="container py-12">
       <div class="lg:grid lg:grid-cols-10 lg:gap-10">
-        <div class="lg:col-start-4 lg:col-span-7">
-          <h1 class="text-[80px] font-bold mb-6">We’re Futurestate.</h1>
-          <p class="text-[80px]">We design the future of companies, services and products.</p>
+        <div class="lg:col-span-7 lg:col-start-4">
+          <h1 class="mb-6 text-[80px] font-bold">We’re Futurestate.</h1>
+          <p class="text-[80px]">
+            We design the future of companies, services and products.
+          </p>
         </div>
       </div>
     </div>

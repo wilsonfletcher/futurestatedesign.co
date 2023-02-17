@@ -1,16 +1,17 @@
 ---
 name: Todo
+draft: true
 ---
-import { Article } from '@/components/index.astro'
 
-  <article>
-    <div class="container py-12">
-      <div class="lg:grid lg:grid-cols-10 lg:gap-10">
-        <div class="lg:col-start-4 lg:col-span-7">
-          <h1 class="h1 mb-4">Todo</h1>
-          - [ ] Check typekit font weights
-          - [ ] done
-        </div>
+import { Article } from '@/components/index.astro';
+
+{' '}
+<article>
+  <div class="container py-12">
+    <div class="lg:grid lg:grid-cols-10 lg:gap-10">
+      <div class="lg:col-span-7 lg:col-start-4">
+        <h1 class="h1 mb-4">Todo</h1>- [ ] Check typekit font weights - [ ] done
       </div>
     </div>
+  </div>
 </article>

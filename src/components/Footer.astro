@@ -1,6 +1,5 @@
 ---
-import { Icon } from 'astro-icon'
-import { SITE } from '@/config'
+import { SITE } from '@/config';
 import Action from './Action.astro';
 
 const social = [
@@ -16,14 +15,14 @@ const social = [
     url: SITE.substack,
     icon: { name: 'substack' },
   },
-]
+];
 ---
 
 <div role="contentinfo" class="bg-qux text-white">
   <div class="container">
     <div class="py-5">
       <nav>
-        <ul class="flex flex-col sm:flex-row sm:items-start -ml-2">
+        <ul class="-ml-2 flex flex-col sm:flex-row sm:items-start">
           {
             social.map(({ icon, name, url }) => (
               <li>

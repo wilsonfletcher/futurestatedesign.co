@@ -1,15 +1,15 @@
 ---
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon';
 
 export interface Props {
-  name: string
-  url: string
+  name: string;
+  url: string;
 }
 
-const { name, url, ...attrs } = Astro.props as Props
+const { name, url, ...attrs } = Astro.props as Props;
 ---
 
-<a class="text-[60px] flex items-center" href={url} {...attrs}>
+<a class="flex items-center text-[60px]" href={url} {...attrs}>
   <span>{name}</span>
   <Icon name="arrow-45" />
 </a>

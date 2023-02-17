@@ -1,12 +1,12 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection } from 'astro:content';
 
 const manifesto = await getCollection('manifesto', ({ data }) => {
-  return data.draft !== true
-})
+  return data.draft !== true;
+});
 ---
 
-<div class="grid md:grid-cols-2 md:gap-10 lg:gap-24 not-prose mb-20">
+<div class="not-prose mb-20 grid md:grid-cols-2 md:gap-10 lg:gap-24">
   {
     manifesto.map(({ slug, data: { description } }) => (
       <article class="border-t-2 border-white/30 py-8">

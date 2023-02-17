@@ -1,2 +1,1 @@
-
-export default modal
+export default modal;

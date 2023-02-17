@@ -1,29 +1,29 @@
-import Alpine from 'alpinejs'
+import Alpine from 'alpinejs';
 
-import './dark-mode'
+import './dark-mode';
 
 const modals = () => ({
   menuModal: false,
   contactModal: false,
 
   init() {
-    console.log('XD')
+    console.log('XD');
   },
 
   toggleMenuModal: {
     ['@click']() {
-      this.menuModal = !this.menuModal
+      this.menuModal = !this.menuModal;
     },
   },
   toggleContactModal: {
     ['@click']() {
-      this.contactModal = !this.contactModal
+      this.contactModal = !this.contactModal;
     },
   },
-})
+});
 
-window.Alpine = Alpine
+window.Alpine = Alpine;
 
-Alpine.data('modals', modals)
+Alpine.data('modals', modals);
 
-Alpine.start()
+Alpine.start();

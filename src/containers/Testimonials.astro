@@ -1,19 +1,19 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection } from 'astro:content';
 
-import Testimonial from '@/components/Testimonial.astro'
+import Testimonial from '@/components/Testimonial.astro';
 
 const testimonials = await getCollection('testimonial', ({ data }) => {
-  return data.draft !== true
-})
+  return data.draft !== true;
+});
 ---
 
-<section class="bg-qux text-white pt-48 pb-24">
+<section class="bg-qux pt-48 pb-24 text-white">
   <h2 class="sr-only">Testimonials</h2>
-  <div class="relative w-full flex gap-14 snap-x overflow-x-auto">
+  <div class="relative flex w-full snap-x gap-14 overflow-x-auto">
     {
-      testimonials.map((testimonial) => (
-        <div class="snap-center shrink-0 first:pl-24 last:pr-24">
+      testimonials.map(testimonial => (
+        <div class="shrink-0 snap-center first:pl-24 last:pr-24">
           <Testimonial testimonial={testimonial} class="w-80 lg:w-[730px]" />
         </div>
       ))

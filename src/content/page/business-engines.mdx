@@ -6,11 +6,18 @@ image:
   width: 378
   height: 365
   alt: Foo
+draft: false
 ---
 
-import { Article, Prose, Promo, Figure, PromoGroup } from '@/components/index.astro'
+import {
+  Article,
+  Prose,
+  Promo,
+  Figure,
+  PromoGroup,
+} from '@/components/index.astro';
 
-import * as podcast from '../podcast/6.mdx'
+import * as podcast from '../podcast/6.mdx';
 
 <Article>
 <p class="lead"><span class="text-lime">Business Engines</span> All successful businesses need momentum. Companies will only build that momentum if they keep adding new engines to power growth. In the modern economy, most new business engines will be digital.</p>
@@ -25,16 +32,19 @@ It needs to be designed cleverly to meet future customer needs (innovative produ
 
 It needs to be built with the simplest and best possible components (proven platforms + new technologies) and run on the right fuel (content, data and business services). Finally, it needs to start first time (launch strategy), accelerate smoothly (growth strategy) and generate plenty of energy returns (a smart business model).
 
-<Figure src={frontmatter.image.url}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ac magna tristique auctor. Duis a semper tortor, sit amet laoreet mi. Morbi a lectus id metus faucibus porttitor non id dolor. Duis volutpat, elit quis condimentum gravida, nunc nulla lacinia erat, quis ullamcorper tellus justo quis nulla.</Figure>
+<Figure src={frontmatter.image.url}>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ac
+  magna tristique auctor. Duis a semper tortor, sit amet laoreet mi. Morbi a
+  lectus id metus faucibus porttitor non id dolor. Duis volutpat, elit quis
+  condimentum gravida, nunc nulla lacinia erat, quis ullamcorper tellus justo
+  quis nulla.
+</Figure>
 
-<PromoGroup name="Read" icon="article">
-</PromoGroup>
+<PromoGroup name="Read" icon="article"></PromoGroup>
 
-<PromoGroup name="Listen" icon="listen">
-</PromoGroup>
+<PromoGroup name="Listen" icon="listen"></PromoGroup>
 
-<PromoGroup name="Watch" icon="watch">
-</PromoGroup>
+<PromoGroup name="Watch" icon="watch"></PromoGroup>
 
 Within each of these building blocks are many smaller elements that need work. Too many good ideas fail to become successful innovations because they don’t get all the moving parts to work together. They fail because of a lack of holistic thinking.
 

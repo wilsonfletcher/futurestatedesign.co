@@ -1,12 +1,12 @@
 ---
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon';
 
 interface Props {
-  tag?: string
-  class?: string
+  tag?: string;
+  class?: string;
 }
 
-const { tag: Tag = 'a', class: className, ...props } = Astro.props as Props
+const { tag: Tag = 'a', class: className, ...props } = Astro.props as Props;
 ---
 
 <Tag class:list={['large-link', className]} {...props}>

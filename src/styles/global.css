@@ -15,5 +15,5 @@
 }
 
 [astro-icon] {
-  @apply text-current w-[1em] h-[1em];
+  @apply h-[1em] w-[1em] text-current;
 }

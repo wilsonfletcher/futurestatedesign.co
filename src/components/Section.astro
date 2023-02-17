@@ -1,14 +1,14 @@
 ---
-import { Icon } from 'astro-icon'
-import { slugify } from 'src/utils'
-import { Prose } from '@/components/index.astro'
+import { Icon } from 'astro-icon';
+import { slugify } from 'src/utils';
+import { Prose } from '@/components/index.astro';
 
 interface Props {
-  name: string
-  class?: string
-  tag?: string
-  padding?: string
-  inline?: boolean
+  name: string;
+  class?: string;
+  tag?: string;
+  padding?: string;
+  inline?: boolean;
 }
 
 const {
@@ -18,25 +18,25 @@ const {
   padding = 'py-10 lg:py-20',
   inline = false,
   ...props
-} = Astro.props as Props
+} = Astro.props as Props;
 
-const id = name && slugify(name)
-const heading = `${id}-heading`
+const id = name && slugify(name);
+const heading = `${id}-heading`;
 ---
 
 <Tag
   id={id}
   aria-labelledby={heading}
-  class:list={['relative', padding, className]}
+  class:list={[padding, className]}
   {...props}
 >
   <div class="container">
-    <div class="grid gap-6 lg:gap-10 lg:grid-cols-10">
+    <div class="grid gap-6 lg:grid-cols-10 lg:gap-10">
       {
         inline == false && (
           <h2 id={heading} class="h4 lg:col-span-3">
             {name}
-            <Icon name="arrow" class="hidden lg:block text-[48px]" />
+            <Icon name="arrow" class="hidden text-[48px] lg:block" />
           </h2>
         )
       }

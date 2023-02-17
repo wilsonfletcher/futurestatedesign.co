@@ -1,15 +1,15 @@
 ---
-import { getEntryBySlug } from 'astro:content'
+import { getEntryBySlug } from 'astro:content';
 
-import Default from '@/layouts/Default.astro'
-import { SITE } from '@/config'
+import Default from '@/layouts/Default.astro';
+import { SITE } from '@/config';
 
-const entry = await getEntryBySlug('service', 'experience-mapping')
+const entry = await getEntryBySlug('service', 'experience-mapping');
 
-const { data, slug: url } = entry
-const { name, description, image } = data
+const { data, slug: url } = entry;
+const { name, description, image } = data;
 
-const { Content } = await entry.render()
+const { Content } = await entry.render();
 ---
 
 <Default
@@ -22,7 +22,7 @@ const { Content } = await entry.render()
   <article>
     <div class="container py-12">
       <div class="lg:grid lg:grid-cols-10 lg:gap-10">
-        <div class="lg:col-start-4 lg:col-span-7">
+        <div class="lg:col-span-7 lg:col-start-4">
           <h1 class="h3">{name}</h1>
         </div>
       </div>

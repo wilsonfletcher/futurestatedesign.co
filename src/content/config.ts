@@ -1,4 +1,4 @@
-import { defineCollection } from 'astro:content'
+import { defineCollection } from 'astro:content';
 
 import {
   clientSchema,
@@ -8,15 +8,15 @@ import {
   serviceSchema,
   testimonialSchema,
   workSchema,
-} from '../schemas'
+} from '../schemas';
 
-const clientCollection = defineCollection({ schema: clientSchema })
-const manifestoCollection = defineCollection({ schema: manifestoSchema })
-const menuCollection = defineCollection({ schema: menuSchema })
-const pageCollection = defineCollection({ schema: pageSchema })
-const serviceCollection = defineCollection({ schema: serviceSchema })
-const testimonialCollection = defineCollection({ schema: testimonialSchema })
-const workCollection = defineCollection({ schema: workSchema })
+const clientCollection = defineCollection({ schema: clientSchema });
+const manifestoCollection = defineCollection({ schema: manifestoSchema });
+const menuCollection = defineCollection({ schema: menuSchema });
+const pageCollection = defineCollection({ schema: pageSchema });
+const serviceCollection = defineCollection({ schema: serviceSchema });
+const testimonialCollection = defineCollection({ schema: testimonialSchema });
+const workCollection = defineCollection({ schema: workSchema });
 
 export const collections = {
   client: clientCollection,
@@ -26,6 +26,4 @@ export const collections = {
   service: serviceCollection,
   testimonial: testimonialCollection,
   work: workCollection,
-}
-
-
+};

@@ -1,2 +1,2 @@
-import './dark-mode'
-import './details'
+import './dark-mode';
+import './details';

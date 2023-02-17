@@ -13,7 +13,7 @@
 
   .h3 {
     @apply text-[30px] font-regular md:text-5xl; /* 30px/30px / 48px/50px */
-  
+
     p& {
       @apply font-light;
     }

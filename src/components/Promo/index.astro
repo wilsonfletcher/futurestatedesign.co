@@ -1,16 +1,16 @@
 ---
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon';
 
 interface Props {
-  name?: string
-  author?: string
-  description?: string
+  name?: string;
+  author?: string;
+  description?: string;
   url: {
-    name: string
-    url: string
-    external: boolean
-  }
-  class?: string
+    name: string;
+    url: string;
+    external: boolean;
+  };
+  class?: string;
 }
 
 const {
@@ -20,7 +20,7 @@ const {
   url,
   class: className,
   ...attrs
-} = Astro.props as Props
+} = Astro.props as Props;
 ---
 
 <article class:list={[className, 'promo']} {...attrs}>
@@ -35,7 +35,7 @@ const {
     url && (
       <a
         href={url.url}
-        class="text-[30px] flex items-center"
+        class="flex items-center text-[30px]"
         rel={url.external ? 'noopener noreferer' : null}
         target={url.external ? '_blank' : ''}
       >

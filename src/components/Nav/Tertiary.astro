@@ -1,20 +1,20 @@
 ---
-import type { CollectionEntry } from 'astro:content'
+import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-  nav: CollectionEntry<'menu'>
-  class?: string
+  nav: CollectionEntry<'menu'>;
+  class?: string;
 }
 
-const { nav, class: className, ...props } = Astro.props as Props
-const { slug: id, data } = nav
-const { name, items } = data
+const { nav, class: className, ...props } = Astro.props as Props;
+const { slug: id, data } = nav;
+const { name, items } = data;
 
-const heading = `${id}-heading`
+const heading = `${id}-heading`;
 ---
 
 <nav id={id} class:list={[className]} {...props} aria-labelledby={heading}>
-  <h3 class="h5 text-white/50 mb-4" id={heading}>{name}</h3>
+  <h3 class="h5 mb-4 text-white/50" id={heading}>{name}</h3>
   <ul>
     {
       items.map(({ name, url }) => (

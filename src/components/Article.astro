@@ -1,17 +1,17 @@
 ---
-import { Prose } from '@/components/index.astro'
+import { Prose } from '@/components/index.astro';
 
 interface Props {
-  class?: string
+  class?: string;
 }
 
-const { class: className = 'py-10 lg:py-20', ...attrs } = Astro.props as Props
+const { class: className = 'py-10 lg:py-20', ...attrs } = Astro.props as Props;
 ---
 
 <div class:list={[className]} {...attrs}>
   <div class="container">
-    <div class="lg:grid lg:gap-10 lg:grid-cols-10">
-      <div class="lg:col-start-4 lg:col-span-7">
+    <div class="lg:grid lg:grid-cols-10 lg:gap-10">
+      <div class="lg:col-span-7 lg:col-start-4">
         <Prose>
           <slot />
         </Prose>

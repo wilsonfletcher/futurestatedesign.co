@@ -1,39 +1,43 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection } from 'astro:content';
 
-import Default from '@/layouts/Default.astro'
-import { SITE } from '@/config'
+import Default from '@/layouts/Default.astro';
+import { SITE } from '@/config';
 
 export async function getStaticPaths() {
-  const pageEntries = await getCollection('page')
-  return pageEntries.map((entry) => ({
+  const pageEntries = await getCollection('page');
+  return pageEntries.map(entry => ({
     params: { slug: entry.slug },
     props: { entry },
-  }))
+  }));
 }
 
-const { entry } = Astro.props
-const { data, slug: url } = entry
-const { name, description, image, theme } = data
+const { entry } = Astro.props;
+const { data, slug: url } = entry;
+const { name, description, image, theme } = data;
 
-const { Content } = await entry.render()
+const { Content } = await entry.render();
 ---
 
-<Default
-  title={`${name} - ${SITE.name}`}
-  description={description}
-  url={url}
-  image={image}
-  class={theme == 'white' ? 'bg-qux text-white' : ''}
->
-  <article>
-    <div class="container">
-      <div class="lg:grid lg:grid-cols-10 lg:grid-gap-10">
-        <div class="lg:col-start-4 lg:col-span-7">
-          <h1 class="h0 lg:sr-only">{name}</h1>
+{
+  entry && (
+    <Default
+      title={`${name} - ${SITE.name}`}
+      description={description}
+      url={url}
+      image={image}
+      class={theme == 'white' ? 'bg-qux text-white' : ''}
+    >
+      <article>
+        <div class="container">
+          <div class="lg:grid-gap-10 lg:grid lg:grid-cols-10">
+            <div class="lg:col-span-7 lg:col-start-4">
+              <h1 class="h0 lg:sr-only">{name}</h1>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <Content />
-  </article>
-</Default>
+        <Content />
+      </article>
+    </Default>
+  )
+}

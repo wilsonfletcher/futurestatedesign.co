@@ -1,15 +1,15 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection } from 'astro:content';
 
-const services = await getCollection('service')
+const services = await getCollection('service');
 
-services.sort((a, b) => a.data.sortOrder - b.data.sortOrder)
+services.sort((a, b) => a.data.sortOrder - b.data.sortOrder);
 
 export interface Props {
-  name: string
+  name: string;
 }
 
-const { name, ...attrs } = Astro.props as Props
+const { name, ...attrs } = Astro.props as Props;
 ---
 
 <div class="list not-prose" {...attrs}>

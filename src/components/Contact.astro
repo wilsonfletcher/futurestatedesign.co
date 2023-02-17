@@ -1,11 +1,11 @@
 ---
-import Prose from './Prose.astro'
+import Prose from './Prose.astro';
 
 interface Props {
-  name: string
-  description: string
-  url?: string
-  class?: string
+  name: string;
+  description: string;
+  url?: string;
+  class?: string;
 }
 
 const {
@@ -14,13 +14,13 @@ const {
   url,
   class: className = 'py-24 bg-yellow text-black',
   ...attrs
-} = Astro.props as Props
+} = Astro.props as Props;
 ---
 
 <section class:list={[className]} {...attrs}>
   <div class="container">
     <div class="lg:grid lg:grid-cols-10 lg:gap-10">
-      <div class="lg:col-start-4 lg:col-span-5">
+      <div class="lg:col-span-5 lg:col-start-4">
         <Prose>
           <h2>
             <button type="button" class="open-dialog-contact">{name}</button>

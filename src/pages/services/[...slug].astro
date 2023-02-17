@@ -1,22 +1,22 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection } from 'astro:content';
 
-import Default from '@/layouts/Default.astro'
-import { SITE } from '@/config'
+import Default from '@/layouts/Default.astro';
+import { SITE } from '@/config';
 
 export async function getStaticPaths() {
-  const pageEntries = await getCollection('service')
-  return pageEntries.map((entry) => ({
+  const pageEntries = await getCollection('service');
+  return pageEntries.map(entry => ({
     params: { slug: entry.slug },
     props: { entry },
-  }))
+  }));
 }
 
-const { entry } = Astro.props
-const { data, slug: url } = entry
-const { name, description, image, theme } = data
+const { entry } = Astro.props;
+const { data, slug: url } = entry;
+const { name, description, image, theme } = data;
 
-const { Content } = await entry.render()
+const { Content } = await entry.render();
 ---
 
 <Default
@@ -29,7 +29,7 @@ const { Content } = await entry.render()
   <article id={entry.data.slug}>
     <div class="container py-12">
       <div class="lg:grid lg:grid-cols-10 lg:gap-10">
-        <div class="lg:col-start-4 lg:col-span-7">
+        <div class="lg:col-span-7 lg:col-start-4">
           <h1 class="sr-only">{name}</h1>
           <p class="h3">{description}</p>
         </div>

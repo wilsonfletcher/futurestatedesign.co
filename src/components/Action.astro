@@ -1,10 +1,10 @@
 ---
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon';
 
 interface Props {
-  tag: string
-  icon?: string
-  class?: string
+  tag: string;
+  icon?: string;
+  class?: string;
 }
 
 const {
@@ -12,7 +12,7 @@ const {
   icon,
   class: className,
   ...props
-} = Astro.props as Props
+} = Astro.props as Props;
 ---
 
 <Tag class:list={['action', className]} {...props}>

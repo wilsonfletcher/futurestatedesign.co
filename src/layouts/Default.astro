@@ -1,34 +1,34 @@
 ---
-import { getEntryBySlug } from 'astro:content'
+import { getEntryBySlug } from 'astro:content';
 // import { Schema } from 'astro-seo-schema'
 
-import '@/styles/global.css'
+import '@/styles/global.css';
 
-import BaseHead from '@/components/BaseHead.astro'
-import Header from '@/components/Header.astro'
-import Subscribe from '@/components/Subscribe.astro'
-import Contact from '@/components/Contact.astro'
-import NavSecondary from '@/components/Nav/Secondary.astro'
-import Footer from '@/components/Footer.astro'
-import DialogMenu from '@/components/Dialog/Menu.astro'
-import DialogContact from '@/components/Dialog/Contact.astro'
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Subscribe from '@/components/Subscribe.astro';
+import Contact from '@/components/Contact.astro';
+import NavSecondary from '@/components/Nav/Secondary.astro';
+import Footer from '@/components/Footer.astro';
+import DialogMenu from '@/components/Dialog/Menu.astro';
+import DialogContact from '@/components/Dialog/Contact.astro';
 // import LayoutGrid from '@/components/LayoutGrid.astro'
 
 export interface Props {
-  title: string
-  description?: string
-  url?: string
+  title: string;
+  description?: string;
+  url?: string;
   image?: {
-    url?: string
-    width?: number
-    height?: number
-    alt?: string
-  }
-  noindex?: boolean
-  class?: string
+    url?: string;
+    width?: number;
+    height?: number;
+    alt?: string;
+  };
+  noindex?: boolean;
+  class?: string;
 }
 
-const navSecondary = await getEntryBySlug('menu', 'secondary')
+const navSecondary = await getEntryBySlug('menu', 'secondary');
 
 const {
   title,
@@ -37,23 +37,23 @@ const {
   image,
   noindex = false,
   class: className,
-} = Astro.props as Props
+} = Astro.props as Props;
 
-const meta = { title, description, url, image, noindex }
+const meta = { title, description, url, image, noindex };
 
 const contact = {
   name: 'Let’s talk',
   description: 'Tell us where you want to be. We’ll make sure you get there.',
-}
+};
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <BaseHead {...meta}>
     <slot name="head" />
   </BaseHead>
   <body class:list={[className, 'dark:bg-qux dark:text-white']}>
-    <div class="flex flex-col w-full min-h-screen">
+    <div class="flex min-h-screen w-full flex-col">
       <Header />
       <main class="flex-auto">
         <slot />
@@ -69,17 +69,17 @@ const contact = {
       import '@/scripts/bundle.js'
     </script> -->
     <script is:inline>
-      const dialogMenu = document.querySelector('#dialog-menu')
-      const openDialogMenu = document.querySelector('.open-dialog-menu')
+      const dialogMenu = document.querySelector('#dialog-menu');
+      const openDialogMenu = document.querySelector('.open-dialog-menu');
       openDialogMenu.addEventListener('click', () => {
-        dialogMenu.showModal()
-      })
+        dialogMenu.showModal();
+      });
 
-      const dialogContact = document.querySelector('#dialog-contact')
-      const openDialogContact = document.querySelector('.open-dialog-contact')
+      const dialogContact = document.querySelector('#dialog-contact');
+      const openDialogContact = document.querySelector('.open-dialog-contact');
       openDialogContact.addEventListener('click', () => {
-        dialogContact.showModal()
-      })
+        dialogContact.showModal();
+      });
     </script>
   </body>
 </html>

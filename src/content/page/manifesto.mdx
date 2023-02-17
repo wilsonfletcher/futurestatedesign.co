@@ -7,12 +7,17 @@ image:
   height: 628
   alt: Foo
 theme: white
+draft: false
 ---
 
-import { Article, Prose } from '@/components/index.astro'
-import Manifesto from '@/containers/Manifesto.astro'
+import { Article, Prose } from '@/components/index.astro';
+import Manifesto from '@/containers/Manifesto.astro';
 
 <Article>
-<p class="lead">The <span class="text-lime">Futurestate Manifesto</span> is a set of principles that underpin how we think and work. Work with us and these will inform everything we do together.</p>
-<Manifesto />
+  <p class="lead">
+    The <span class="text-lime">Futurestate Manifesto</span> is a set of
+    principles that underpin how we think and work. Work with us and these will
+    inform everything we do together.
+  </p>
+  <Manifesto />
 </Article>

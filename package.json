@@ -4,14 +4,17 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "astro": "astro",
-    "build": "NODE_ENV=production astro build",
-    "check": "astro check",
     "dev": "astro dev",
-    "format": "yarn prettier -w .",
-    "preview": "astro preview",
     "start": "astro dev",
-    "sync": "astro sync"
+    "build": "astro build",
+    "preview": "astro preview",
+    "sync": "astro sync",
+    "astro": "astro",
+    "format:check": "prettier --plugin-search-dir=. --check .",
+    "format": "prettier --plugin-search-dir=. --write .",
+    "cz": "cz",
+    "prepare": "husky install",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@alpinejs/collapse": "^3.11.1",
@@ -31,6 +34,7 @@
     "hastscript": "^7.2.0",
     "prettier": "^2.8.4",
     "prettier-plugin-astro": "^0.8.0",
+    "prettier-plugin-tailwindcss": "^0.2.3",
     "rehype-components": "github:marekweb/rehype-components",
     "rehype-external-links": "^2.0.1",
     "rehype-stringify": "^9.0.3",

@@ -1,11 +1,11 @@
 ---
-import { Icon } from 'astro-icon'
-import { Prose } from '@/components/index.astro'
-import FormContact from '@/components/Form/Contact.astro'
+import { Icon } from 'astro-icon';
+import { Prose } from '@/components/index.astro';
+import FormContact from '@/components/Form/Contact.astro';
 
-const id = 'modal_contact'
-const label = `${id}_label`
-const desc = `${id}_desc`
+const id = 'modal_contact';
+const label = `${id}_label`;
+const desc = `${id}_desc`;
 ---
 
 <div
@@ -16,13 +16,10 @@ const desc = `${id}_desc`
   aria-describedby={desc}
   x-show="contactModal"
   x-cloak
-  class="fixed inset-0 bg-qux text-white z-50 w-full py-8 h-full"
+  class="fixed inset-0 z-50 h-full w-full bg-qux py-8 text-white"
 >
   <div class="container flex flex-col">
-    <button
-      type="button"
-      class="flex items-center self-end p-2"
-    >
+    <button type="button" class="flex items-center self-end p-2">
       Close
       <Icon name="close" class="ml-4" />
     </button>

@@ -1,11 +1,11 @@
 ---
 interface Props {
-  src: string
-  width?: number
-  height?: number
-  alt: string
-  loading?: string
-  class?: string
+  src: string;
+  width?: number;
+  height?: number;
+  alt: string;
+  loading?: string;
+  class?: string;
 }
 
 const {
@@ -16,7 +16,7 @@ const {
   loading = 'lazy',
   class: className,
   ...props
-} = Astro.props as Props
+} = Astro.props as Props;
 ---
 
 <figure class:list={['figure', 'not-prose', className]} {...props}>

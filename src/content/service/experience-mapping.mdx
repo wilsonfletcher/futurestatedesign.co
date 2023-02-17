@@ -9,16 +9,16 @@ image:
 type: landing
 ---
 
-import { Article, Prose, Section, Callout } from '@/components/index.astro'
+import { Article, Prose, Section, Callout } from '@/components/index.astro';
 
-export const em = (props) => <em class="text-gray not-italic" {...props} />
+export const em = props => <em class="not-italic text-gray" {...props} />;
 
-export const components = { em }
+export const components = { em };
 
 export const callout = {
   name: 'Is it the right approach for you?',
   url: { href: '#', name: 'Get in touch' },
-}
+};
 
 <Section name="How it works">
   <Prose>
@@ -87,7 +87,7 @@ export const callout = {
   </Prose>
 </Section>
 
-import Clients from '@/containers/Clients.astro'
+import Clients from '@/containers/Clients.astro';
 
 <Clients />
 

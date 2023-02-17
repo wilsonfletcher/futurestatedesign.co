@@ -1,17 +1,17 @@
 ---
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon';
 
 interface Props {
-  icon: string
-  name: string
-  class?: string
+  icon: string;
+  name: string;
+  class?: string;
 }
 
-const { icon, name, class: className } = Astro.props as Props
+const { icon, name, class: className } = Astro.props as Props;
 ---
 
 <section class:list={['not-prose', className]}>
-  <div class="flex items-center mb-6 border-b border-gray pb-4">
+  <div class="mb-6 flex items-center border-b border-gray pb-4">
     <Icon name={icon} class="mr-3 text-[56px]" />
     <h3 class="h2">{name}</h3>
   </div>

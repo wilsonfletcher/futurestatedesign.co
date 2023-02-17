@@ -6,6 +6,7 @@ image:
   width: 890
   height: 522
   alt: Foo
+draft: false
 ---
 
 import {
@@ -14,7 +15,7 @@ import {
   Section,
   Callout,
   Figure,
-} from '@/components/index.astro'
+} from '@/components/index.astro';
 
 export const book = {
   name: 'Do you want to get a taste what Futurestate Design is all about? Read Mark’s book',
@@ -29,24 +30,39 @@ export const book = {
     width: 274,
     height: 241,
   },
-}
+};
 
 <Article>
 <p class="lead"><span class="text-lime hidden lg:inline">{frontmatter.name}</span> It’s really very simple. If you don’t make your future happen, the future will be done to you.</p>
 <p class="lead">That’s unlikely to go well.</p>
 
-<Figure src="/images/futurestate-design.svg" width={frontmatter.image.width} height={frontmatter.image.height}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ac magna tristique auctor. Duis a semper tortor, sit amet laoreet mi. Morbi a lectus id metus faucibus porttitor non id dolor. Duis volutpat, elit quis condimentum gravida, nunc nulla lacinia erat, quis ullamcorper tellus justo quis nulla.</Figure>
+<Figure
+  src="/images/futurestate-design.svg"
+  width={frontmatter.image.width}
+  height={frontmatter.image.height}
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ac
+  magna tristique auctor. Duis a semper tortor, sit amet laoreet mi. Morbi a
+  lectus id metus faucibus porttitor non id dolor. Duis volutpat, elit quis
+  condimentum gravida, nunc nulla lacinia erat, quis ullamcorper tellus justo
+  quis nulla.
+</Figure>
 
-<p class="h3">Customer-led, data-informed design should be your go-to method for everything
+<p class="h3">
+  Customer-led, data-informed design should be your go-to method for everything
   you’re currently doing. Futurestate design is for everything you need to do as
-  well as, or instead of, the things you do today.</p>
+  well as, or instead of, the things you do today.
+</p>
 
-<p class="h3">To achieve the big leaps forward that unlock real growth, you must activate
+<p class="h3">
+  To achieve the big leaps forward that unlock real growth, you must activate
   new behaviours in future customers. If you design for what customers say they
   want today, you’ll never invent the thing they didn’t know they needed until
-  they have it.</p>
+  they have it.
+</p>
 
 Futurestate design is at the heart of how we think and work, and it’s crucial to the future-making mindset we instil in our clients. It’s both a thinking discipline and a set of practical methods. It’s not speculative, theoretical, future-fantasy: it’s all about using near-future thinking to shape what you do next.
+
 </Article>
 
 <Section name="Some of the ways we use it" class="bg-qux text-white">
@@ -92,8 +108,9 @@ Futurestate thinking days for leaders to help them de-program their brain from o
 We use futurestate design to help companies think beyond current constraints; to leave legacy behind and invent on behalf of future customers. We use it to help visualise and realise the full potential of new ideas; to drive real innovation. We use it to help companies make the future happen.
 
 The real power of futurestate design is that we’re in an age where almost anything you can think of making waves in a few years’ time, you can make happen now.
+
 </Article>
 
-<div class="max-w-container mx-auto">
+<div class="mx-auto max-w-container">
   <img src="/images/futurestate-design.jpg" alt="" />
 </div>

@@ -1,21 +1,21 @@
 ---
-import { SITE } from '@/config'
-import Logo from '@/components/Logo.astro'
-import { Icon } from 'astro-icon'
-import Action from '@/components/Action.astro'
+import { SITE } from '@/config';
+import Logo from '@/components/Logo.astro';
+import { Icon } from 'astro-icon';
+import Action from '@/components/Action.astro';
 // import Overlay from '@/components/Overlay.svelte'
 
 export interface Props {
-  class?: string
+  class?: string;
 }
 
-const { class: className, ...attrs } = Astro.props as Props
+const { class: className, ...attrs } = Astro.props as Props;
 ---
 
 <div role="banner" class:list={['py-8 relatie', className]} {...attrs}>
   <div class="container">
     <div
-      class="flex justify-between lg:grid md:gap-x-10 md:gap-y-20 md:grid-cols-8"
+      class="flex justify-between md:grid-cols-8 md:gap-x-10 md:gap-y-20 lg:grid"
     >
       <div class="lg:col-span-2">
         <a href="/" title={`Return to the ${SITE.name} homepage`}>
@@ -26,7 +26,7 @@ const { class: className, ...attrs } = Astro.props as Props
       <div
         class="flex items-start justify-end md:col-span-6 md:justify-between"
       >
-        <div class="hidden lg:flex items-start gap-16">
+        <div class="hidden items-start gap-16 lg:flex">
           <a
             href={`mailto:${SITE.email}`}
             class="text-2xl font-bold hover:underline">{SITE.email}</a
@@ -39,7 +39,7 @@ const { class: className, ...attrs } = Astro.props as Props
           <button
             id="theme-toggle"
             type="button"
-            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+            class="rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
           >
             <Icon
               name="dark"

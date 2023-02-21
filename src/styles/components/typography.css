@@ -1,6 +1,7 @@
 @layer components {
   .h0 {
     @apply text-7xl font-light tracking-tight md:text-9xl; /* 72px/68px / 110px/110px */
+    font-size: clamp(72px, 10vw + 1rem, 110px);
   }
 
   .h1 {
@@ -25,5 +26,9 @@
 
   .h6 {
     @apply text-[18px] font-light leading-[20px];
+  }
+
+  .label {
+    @apply text-[1rem] leading-tight text-gray;
   }
 }

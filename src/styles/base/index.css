@@ -1,8 +1,10 @@
-/* @import url('fonts'); */
-
 @layer base {
   html {
     @apply scroll-smooth;
+
+    &:has(dialog[open]) {
+      overflow: hidden;
+    }
   }
 
   body {
@@ -15,7 +17,7 @@
   h4,
   h5,
   h6 {
-    @apply font-regular;
+    @apply font-light;
   }
 
   abbr {
@@ -32,7 +34,7 @@
   }
 
   summary {
-    @apply relative flex cursor-pointer items-start justify-between py-4 text-4xl font-regular md:text-5xl;
+    @apply relative flex cursor-pointer items-start justify-between py-4 text-4xl font-light md:text-5xl;
 
     &::-webkit-details-marker {
       @apply hidden;
@@ -45,10 +47,6 @@
 
   details[open]:not(.closed) > summary:after {
     @apply bg-minus;
-  }
-
-  html:has(dialog[open]) {
-    overflow: hidden;
   }
 
   dialog {

@@ -8,10 +8,11 @@ image:
   alt: PromoGroup
 draft: false
 ---
-
 import {
   Article,
+  Contact,
   Figure,
+  Lead,
   Promo,
   PromoGroup,
   Prose,
@@ -19,11 +20,11 @@ import {
 } from '@/components/index.astro';
 
 <Article>
-<p class="lead"><span class="text-lime hidden lg:inline">Us?</span> We’ve been making new ideas work for 20 years. In that time, we’ve worked with over 150 organisations, in 10 countries, delivering over 350 successful programmes.</p>
+<p class="lead"><span class="text-lime">Us?</span> We’ve been making new ideas work for 20 years. In that time, we’ve worked with over 150 organisations, in 10 countries, delivering over 350 successful programmes.</p>
 
 Founded as Wilson Fletcher by Mark Wilson and Stephanie Fletcher, we [became Futurestate Design Co.] to mark our 20th anniversary.
 
-![Photo of Steph and Mark](/images/steph-mark.jpg)
+<img src="/images/steph-mark.jpg" loading="lazy" width="1280" height="523" />
 
 Since day one, our work has been focused on helping companies drive innovation-led growth.
 
@@ -40,9 +41,9 @@ Well, the clue’s in the name. There are three grades of innovation that every 
 
 Work with us when you need to see what your future could look like and how to start making it happen now, whether that’s reinventing what you are, or do, today or inventing something completely new.
 
-<Figure src="/images/grades-of-innovation.svg">The grades of innovation</Figure>
+![alt](/images/grades-of-innovation.svg)
 
-<PromoGroup name="Read articles" icon="article" class="mb-16">
+<PromoGroup name="Read" icon="article" class="mb-16">
   <Promo
     name="The Futurestate Manifesto"
     description="10 guiding principles behind our work"
@@ -53,19 +54,6 @@ Work with us when you need to see what your future could look like and how to st
     description="What it is and why we use it"
     url={{ name: 'Read now', url: '/futurestate-design' }}
   />
-  <Promo
-    name="Business Engines"
-    description="How digital services power growth"
-    url={{ name: 'Read now', url: 'business-engines' }}
-  />
-</PromoGroup>
-<PromoGroup name="Read the book" icon="book">
-  <Promo
-    name="Futurestate Design"
-    author="Mark Wilson"
-    description="Our own methodology developed over 20 years and hundreds of successful digital innovation programmes."
-    url={{ name: 'Buy on Amazon', url: 'https://www.amazon.co.uk/dp/1399922106', external: true  }}
-  />
 </PromoGroup>
 </Section>
 
@@ -74,10 +62,10 @@ Businesses are increasingly borderless, operating more flexibly, and subject to 
 
 We’ve built Futurestate to support the diverse, individual needs that these conditions create.
 
-- If you need a board advisor to add specialist expertise to your leadership team, [we do that](/PromoGroup).
-- If you need a team of specialists to work intensively on one critical programme for a few weeks or months, [we do that](/PromoGroup).
-- If you need help to design and deliver a multi-year strategy, with spikes in support at critical points, [we do that](/PromoGroup).
-- If you need a short, sharp intervention to overcome an urgent issue or de-risk a major initiative, [we do that](/PromoGroup).
+- If you need a board advisor to add specialist expertise to your leadership team, we do that.
+- If you need a team of specialists to work intensively on one critical programme for a few weeks or months, we do that.
+- If you need help to design and deliver a multi-year strategy, with spikes in support at critical points, we do that.
+- If you need a short, sharp intervention to overcome an urgent issue or de-risk a major initiative, we do that.
 
 We’ll always help you shape your future, but in the way you, specifically, need support.
 
@@ -91,15 +79,14 @@ The calibre of people who work with us means that those teams are usually much s
 
 We can introduce additional partners you can trust, help you hire into key internal roles, and connect you with peers in client organisations who have faced similar challenges. We run frequent round-table dinners within our client network under strict privacy rules where everyone can exchange experiences with other senior leaders.
 
+<p class="h3">Some of the key techniques we use in our work:</p>
 :::div{.list-1.not-prose.h4}
-Some of the key techniques we use in our work:
-
 - Futurestate visioning
 - Commercial strategy
 - Service strategy
 - Business architecture
 - Business model design
-- [Experience mapping](/services/experience-mapping)
+- [Experience mapping](/experience-mapping)
 - Market influences research
 - Competitive positioning
 - Proposition development
@@ -118,8 +105,8 @@ Some of the key techniques we use in our work:
 - Customer migration
 - Innovation culture
 - Leadership mentoring
-  :::
-  </Section>
+:::
+</Section>
 
 <div class="mx-auto max-w-container">
   <img src="/images/about.jpg" class="" loading="lazy" alt="" />
@@ -135,3 +122,5 @@ The coffee is lethal, the wine is plentiful, the biscuits are outstanding and th
 Our place, your place or virtual. We hope to see you there.
 
 </Section>
+
+<Contact name="Let's talk" description="Tell us where you want to be. We’ll make sure you get there." theme="bg-lime" />

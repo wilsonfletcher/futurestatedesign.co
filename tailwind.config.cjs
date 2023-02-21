@@ -15,7 +15,7 @@ module.exports = {
     './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
     './node_modules/flowbite/**/*.js',
   ],
-  // safelist: [{ pattern: /text-gray/ }],
+  safelist: [{ pattern: /prose-(lime|yellow)/ }],
   theme: {
     extend: {
       backgroundImage: {
@@ -39,7 +39,7 @@ module.exports = {
           light: '#FF5C00',
         },
         lime: {
-          DEFAULT: '#11c338'
+          DEFAULT: '#2CE07D'
         },
         screens: {
           md: '760px',
@@ -90,7 +90,26 @@ module.exports = {
         default: '3fr, 7fr',
       },
       typography: ({ theme }) => ({
-        default: {
+        lime: {
+          css: {
+            '--tw-prose-quote-borders': theme('colors.lime.DEFAULT'),
+            figcaption: {
+              color: theme('colors.gray'),
+              borderLeftColor: theme('colors.lime.DEFAULT'),
+            },
+          },
+        },
+        yellow: {
+          css: {
+            '--tw-prose-quote-borders': theme('colors.yellow'),
+            figcaption: {
+              color: theme('colors.gray'),
+              borderLeftColor: theme('colors.yellow'),
+            },
+          },
+        },
+        DEFAULT: {
+          // https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
           css: {
             '--tw-prose-body': theme('colors.current'),
             '--tw-prose-headings': theme('colors.current'),
@@ -98,22 +117,15 @@ module.exports = {
             '--tw-prose-links': theme('colors.gray'),
             '--tw-prose-bold': theme('colors.current'),
             '--tw-prose-quotes': theme('colors.current'),
-            '--tw-prose-quote-borders': theme('colors.lime.DEFAULT'),
             '--tw-prose-bullets': theme('colors.current'),
             '--tw-prose-counters': theme('colors.current'),
             '--tw-prose-hr': theme('colors.gray.DEFAULT'),
-            figcaption: {
-              borderLeftColor: theme('colors.lime.DEFAULT'),
-            },
-          },
-        },
-        DEFAULT: {
-          // https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
-          css: {
             lineHeight: round(24 / 16),
             fontWeight: theme('fontWeight.light'),
             '[class~="lead"]': {
-              fontWeight: theme('fontWeight.regular'),
+              fontSize: em(32, 16),
+              lineHeight: round(36 / 32),
+              fontWeight: theme('fontWeight.light'),
             },
             // p: {
             //   em: {
@@ -150,125 +162,87 @@ module.exports = {
             },
           },
         },
-        lg: {
-          css: [
-            {
-              fontSize: rem(18),
-              lineHeight: round(24 / 18),
-              p: {
-                marginTop: em(24, 18),
-                marginBottom: em(24, 18),
-              },
-              '[class~="lead"]': {
-                fontSize: em(32, 18),
-                lineHeight: round(34 / 32),
-                marginTop: em(24, 32),
-                marginBottom: em(24, 32),
-              },
-              '[class~="h3"]': {
-                fontSize: em(24, 18),
-                lineHeight: round(34 / 24),
-                marginTop: em(24, 24),
-                marginBottom: em(24, 24),
-              },
-              h3: {
-                fontSize: em(30, 18),
-                lineHeight: round(30 / 30),
-              },
-              img: {
-                marginTop: 0,
-                marginBottom: 0,
-              },
-              blockquote: {
-                fontSize: em(18, 18),
-                lineHeight: round(18 / 18),
-                paddingLeft: em(10, 18),
-                marginTop: em(24, 18),
-                marginBottom: em(24, 18),
-              },
-              hr: {
-                marginTop: em(24, 18),
-                marginBottom: em(24, 18),
-              },
-            },
-          ],
-        },
         xl: {
           css: [
             {
-              fontSize: rem(24),
-              lineHeight: round(32 / 24),
+              fontSize: rem(22),
+              lineHeight: round(29 / 22),
               p: {
-                marginTop: em(32, 24),
-                marginBottom: em(32, 24),
+                marginTop: em(32, 22),
+                marginBottom: em(32, 22),
               },
               '[class~="lead"]': {
-                fontSize: em(48, 24),
-                lineHeight: round(50 / 48),
+                fontSize: em(48, 22),
+                lineHeight: round(54 / 48),
                 marginTop: em(32, 48),
                 marginBottom: em(32, 48),
               },
               '[class~="h3"]': {
-                fontSize: em(35, 24),
+                fontSize: em(35, 22),
                 lineHeight: round(40 / 35),
                 marginTop: em(32, 35),
                 marginBottom: em(32, 35),
               },
               h1: {
-                fontSize: em(90, 24),
+                fontSize: em(90, 22),
                 lineHeight: round(80 / 90),
                 marginTop: em(16, 90),
                 marginBottom: em(16, 90),
               },
               h2: {
-                fontSize: em(48, 24),
+                fontSize: em(48, 22),
                 lineHeight: round(50 / 48),
                 marginTop: em(32, 48),
                 marginBottom: em(32, 48),
               },
               h3: {
-                fontSize: em(35, 24),
+                fontSize: em(35, 22),
                 lineHeight: round(40 / 35),
                 marginTop: em(32, 35),
                 marginBottom: em(32, 35),
               },
               h4: {
-                fontSize: em(35, 24),
+                fontSize: em(35, 22),
                 lineHeight: round(40 / 35),
                 marginTop: em(32, 35),
                 marginBottom: em(32, 35),
               },
               img: {
-                marginTop: 0,
-                marginBottom: 0,
+                marginTop: em(32, 22),
+                marginBottom: em(32, 22),
               },
               blockquote: {
-                fontSize: rem(35),
+                fontSize: em(35, 22),
                 lineHeight: round(44 / 35),
                 paddingLeft: em(12, 35),
                 borderLeftWidth: em(8, 35),
+                marginTop: em(32, 35),
+                marginBottom: em(32, 35),
               },
               figure: {
-                marginTop: em(32, 24),
-                marginBottom: em(32, 24),
+                marginTop: em(32, 22),
+                marginBottom: em(32, 22),
               },
               figcaption: {
-                fontSize: em(18, 24),
-                lineHeight: round(20 / 18),
-                paddingLeft: em(10, 18),
+                fontSize: em(16, 22),
+                lineHeight: round(22 / 16),
+                paddingLeft: em(12, 16),
+                borderLeftWidth: em(8, 16),
+                marginTop: em(32, 16),
+                maxWidth: rem(580)
               },
               ul: {
-                marginTop: em(32, 24),
-                marginBottom: em(32, 24),
-                paddingLeft: em(32, 24),
+                marginTop: em(32, 22),
+                marginBottom: em(32, 22),
+                paddingLeft: em(32, 22),
               },
               li: {
-                marginTop: em(16, 24),
-                marginBottom: em(16, 24),
+                marginTop: em(16, 22),
+                marginBottom: em(16, 22),
               },
               hr: {
-                marginTop: em(32, 24),
-                marginBottom: em(32, 24),
+                marginTop: em(32, 22),
+                marginBottom: em(32, 22),
               },
             },
           ],

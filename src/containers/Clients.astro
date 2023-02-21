@@ -3,8 +3,10 @@ import { getCollection } from 'astro:content';
 
 import { Section } from '@/components/index.astro';
 
-const clients = await getCollection('client', ({ data, slug }) => {
+const clients = await getCollection('client', ({ data, slug, id }) => {
   return data.draft !== true;
+  // return slug === 'ap' || slug === 'bfi';
+  // return id.startsWith('b')
 });
 
 clients.sort((a, b) => a.data.sortOrder - b.data.sortOrder);

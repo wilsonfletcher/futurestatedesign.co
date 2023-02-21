@@ -3,7 +3,7 @@ name: Styles
 draft: true
 ---
 
-import { Prose, Article } from '@/components/index.astro';
+import { Prose, Article, Figure } from '@/components/index.astro';
 
 export const authors = [
   { name: 'Jane', email: 'hi@jane.com' },
@@ -12,12 +12,27 @@ export const authors = [
 
 export const published = new Date('2022-02-01');
 
-<Article>
+export const components = { code: (props) => <span class="block text-red-light" {...props }/>}
 
-## Table of contents
+<Article theme="lime" class="py-0">
+  > Remember, anything new worth taking to market only has to do one job: build new momentum to move your business forward.
 
+  <Figure src="/images/grades-of-innovation.svg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ac magna tristique auctor. Duis a semper tortor, sit amet laoreet mi. Morbi a lectus id metus faucibus porttitor non id dolor. Duis volutpat, elit quis condimentum gravida, nunc nulla lacinia erat, quis ullamcorper tellus justo quis nulla.</Figure>
 
-<div class="text-red-light label">H1</div>
+  ---
+</Article>
+
+<Article theme="yellow" class="py-0">
+  > Remember, anything new worth taking to market only has to do one job: build new momentum to move your business forward.
+
+  <Figure src="/images/grades-of-innovation.svg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ac magna tristique auctor. Duis a semper tortor, sit amet laoreet mi. Morbi a lectus id metus faucibus porttitor non id dolor. Duis volutpat, elit quis condimentum gravida, nunc nulla lacinia erat, quis ullamcorper tellus justo quis nulla.</Figure>
+
+  ---
+</Article>
+
+<Article theme='lime'>
+
+`H1`
 
 :::div{.md:hidden}
 # Landing pages titles 64/62
@@ -27,7 +42,7 @@ export const published = new Date('2022-02-01');
 # Landing pages titles 90/80
 :::
 
-<div class="text-red-light label">H2</div>
+`H2`
 
 :::div{.md:hidden}
 ## Section headings and body titles 32/34
@@ -35,6 +50,42 @@ export const published = new Date('2022-02-01');
 
 :::div{.hidden.md:block}
 ## Section headings and body titles 48/50
+:::
+
+`H3`
+
+:::div{.md:hidden}
+### Section headings and body titles 30/30
+:::
+
+:::div{.hidden.md:block}
+### Section headings and body titles 48/50
+:::
+
+`H4`
+
+:::div{.md:hidden}
+#### Section headings and body titles 21/28
+:::
+
+:::div{.hidden.md:block}
+#### Section headings and body titles 35/44
+:::
+
+---
+
+`intro`
+
+:::div{.md:hidden}
+<p class="lead">Intro mobile 32/36</p>
+:::
+
+:::div{.hidden.md:block}
+<p class="lead">Desktop mobile 48/54</p>
+:::
+
+:::div{.not-prose}
+<p class="label">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac sapien ac magna tristique auctor. Duis a semper tortor, sit amet laoreet mi. Morbi a lectus id metus faucibus porttitor non id dolor. Duis volutpat, elit quis condimentum gravida, nunc nulla lacinia erat, quis ullamcorper tellus justo quis nulla.</p>
 :::
 
 

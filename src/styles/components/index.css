@@ -1,5 +1,4 @@
 @import url('typography');
-@import url('layout');
 /* @import url('prose'); */
 
 @layer components {
@@ -17,7 +16,8 @@
     }
 
     figcaption {
-      @apply max-w-xl border-l-8 border-lime pl-3 text-[1rem] leading-[1.375rem] text-gray;
+      border-left-color: var(--tw-prose-quote-borders);
+      @apply max-w-xl border-l-8 pl-3 text-[1rem] leading-[1.375rem] text-gray;
 
       a {
         @apply underline;
@@ -30,6 +30,8 @@
   }
 
   .list-1 {
+    @apply text-gray;
+
     > ul {
       @apply flex flex-wrap;
 
@@ -45,7 +47,7 @@
         }
 
         a {
-          @apply text-gray underline;
+          @apply underline;
         }
       }
     }
@@ -57,7 +59,7 @@
         @apply relative mb-8 min-h-[48px] pl-10;
 
         &::before {
-          @apply absolute left-0 top-0 block h-8 w-8 bg-arrow bg-contain bg-no-repeat outline content-[""];
+          @apply absolute left-0 top-0 block h-8 w-8 bg-arrow bg-contain bg-no-repeat content-[""];
         }
 
         a {
@@ -89,5 +91,17 @@
     svg {
       @apply text-[32px] md:text-[24px];
     }
+  }
+}
+
+#custom-substack-embed {
+  @apply font-sans font-light !important;
+
+  /* .csw-substack-gradient-custom {
+    @apply rounded-none !important;
+  } */
+
+  button {
+    @apply font-sans font-light !important;
   }
 }

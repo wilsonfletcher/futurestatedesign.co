@@ -1,14 +1,14 @@
 ---
 interface Props {
-  class?: string;
   tag?: string;
+  theme?: string;
 }
 
-const { tag: Tag = 'div', class: className, ...attrs } = Astro.props as Props;
+const { tag: Tag = 'div', theme = 'yellow', ...attrs } = Astro.props as Props;
 ---
 
 <Tag
-  class:list={['prose', 'prose-default', 'prose-lg', 'md:prose-xl', className]}
+  class:list={['prose', 'md:prose-xl', `prose-${theme}`]}
   {...attrs}
 >
   <slot />

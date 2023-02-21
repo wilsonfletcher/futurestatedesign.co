@@ -3,17 +3,3 @@
 @import url('tailwindcss/components');
 @import url('components');
 @import url('tailwindcss/utilities');
-
-/* @import url('utilities'); */
-
-:root {
-  --color-yellow: 245, 255, 81;
-}
-
-[x-cloak] {
-  display: none !important;
-}
-
-[astro-icon] {
-  @apply h-[1em] w-[1em] text-current;
-}

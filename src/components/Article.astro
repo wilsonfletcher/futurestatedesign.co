@@ -3,16 +3,17 @@ import { Prose } from '@/components/index.astro';
 
 interface Props {
   class?: string;
+  theme?: string;
 }
 
-const { class: className = 'py-10', ...attrs } = Astro.props as Props;
+const { class: className = 'py-10 lg:pt-28', theme, ...attrs } = Astro.props as Props;
 ---
 
 <div class:list={[className]} {...attrs}>
   <div class="container">
     <div class="lg:grid lg:grid-cols-10 lg:gap-10">
       <div class="lg:col-span-7 lg:col-start-4">
-        <Prose>
+        <Prose theme={theme}>
           <slot />
         </Prose>
       </div>

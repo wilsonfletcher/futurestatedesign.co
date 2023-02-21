@@ -49,12 +49,10 @@ export default defineConfig({
         [
           remarkCollapse,
           {
-            test: "Table of contents",
+            test: 'toc',
           },
         ],
-        // remarkParse,
         remarkDirective,
-        // remarkRehype,
         myRemarkPlugin,
         myRemarkPlugin3,
       ],

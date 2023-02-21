@@ -19,7 +19,7 @@ const {
 } = Astro.props as Props;
 ---
 
-<figure class:list={['figure', 'not-prose', className]} {...props}>
+<figure class:list={[className]} {...props}>
   <img src={src} width={width} height={height} alt={alt} loading="lazy" />
   <figcaption>
     <slot />

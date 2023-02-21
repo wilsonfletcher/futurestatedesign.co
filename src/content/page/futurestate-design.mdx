@@ -7,33 +7,20 @@ image:
   height: 522
   alt: Foo
 draft: false
+theme: lime
 ---
 
 import {
   Article,
+  Callout,
+  Contact,
+  Figure,
   Prose,
   Section,
-  Callout,
-  Figure,
 } from '@/components/index.astro';
 
-export const book = {
-  name: 'Do you want to get a taste what Futurestate Design is all about? Read Mark’s book',
-  url: {
-    name: 'Buy on Amazon',
-    href: 'https://www.amazon.co.uk/dp/1399922106',
-    target: '_blank',
-  },
-  image: {
-    src: '/images/book.png',
-    alt: 'Photo of the Futurestate Design book',
-    width: 274,
-    height: 241,
-  },
-};
-
 <Article>
-<p class="lead"><span class="text-lime hidden lg:inline">{frontmatter.name}</span> It’s really very simple. If you don’t make your future happen, the future will be done to you.</p>
+<p class="lead"><span class="text-lime hidden lg:inline">Futurestate Design™</span> It’s really very simple. If you don’t make your future happen, the future will be done to you.</p>
 <p class="lead">That’s unlikely to go well.</p>
 
 <Figure
@@ -102,15 +89,32 @@ Futurestate thinking days for leaders to help them de-program their brain from o
 
 </Section>
 
-<Article>
-<Callout {...book} class="not-prose" />
+export const book = {
+  name: 'Do you want to get a taste what Futurestate Design is all about? Read Mark’s book',
+  url: {
+    name: 'Buy on Amazon',
+    href: 'https://www.amazon.co.uk/dp/1399922106',
+    target: '_blank',
+  },
+  image: {
+    src: '/images/book.png',
+    alt: 'Photo of the Futurestate Design book',
+    width: 274,
+    height: 241,
+  },
+};
 
+<Article>
 We use futurestate design to help companies think beyond current constraints; to leave legacy behind and invent on behalf of future customers. We use it to help visualise and realise the full potential of new ideas; to drive real innovation. We use it to help companies make the future happen.
 
 The real power of futurestate design is that we’re in an age where almost anything you can think of making waves in a few years’ time, you can make happen now.
 
+<Callout {...book} class="not-prose" />
+
 </Article>
 
 <div class="mx-auto max-w-container">
-  <img src="/images/futurestate-design.jpg" alt="" />
+  <img src="/images/futurestate-design.jpg" alt="" loading="lazy" />
 </div>
+
+<Contact name="Let's talk" description="Tell us where you want to be. We’ll make sure you get there." theme="bg-lime" />

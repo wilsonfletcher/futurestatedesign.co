@@ -3,7 +3,6 @@ import { SITE } from '@/config';
 import Logo from '@/components/Logo.astro';
 import { Icon } from 'astro-icon';
 import Action from '@/components/Action.astro';
-// import Overlay from '@/components/Overlay.svelte'
 
 export interface Props {
   class?: string;
@@ -12,19 +11,19 @@ export interface Props {
 const { class: className, ...attrs } = Astro.props as Props;
 ---
 
-<div role="banner" class:list={['py-8 relatie', className]} {...attrs}>
+<div role="banner" class:list={['py-8 relative', className]} {...attrs}>
   <div class="container">
     <div
-      class="flex justify-between md:grid-cols-8 md:gap-x-10 md:gap-y-20 lg:grid"
+      class="flex justify-between md:grid-cols-10 md:gap-x-10 md:gap-y-20 lg:grid"
     >
-      <div class="lg:col-span-2">
+      <div class="md:col-span-3">
         <a href="/" title={`Return to the ${SITE.name} homepage`}>
-          <Logo class="max-w-[180px] lg:absolute lg:top-[152px]" />
+          <Logo class="max-w-[180px] lg:absolute lg:top-[224px]" />
         </a>
       </div>
 
       <div
-        class="flex items-start justify-end md:col-span-6 md:justify-between"
+        class="flex items-start justify-end md:col-span-7 md:justify-between md:items-center"
       >
         <div class="hidden items-start gap-16 lg:flex">
           <a
@@ -36,7 +35,7 @@ const { class: className, ...attrs } = Astro.props as Props;
           >
         </div>
         <div class="flex items-start">
-          <button
+          <!-- <button
             id="theme-toggle"
             type="button"
             class="rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
@@ -51,7 +50,7 @@ const { class: className, ...attrs } = Astro.props as Props;
               class="hidden w-5 h-5"
               name="light"
             />
-          </button>
+          </button> -->
 
           <Action
             tag="button"

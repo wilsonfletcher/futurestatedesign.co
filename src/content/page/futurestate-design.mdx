@@ -11,6 +11,7 @@ theme: lime
 ---
 
 import {
+  Banner,
   Article,
   Callout,
   Contact,
@@ -19,8 +20,8 @@ import {
   Section,
 } from '@/components/index.astro';
 
-<Article>
-<p class="lead"><span class="text-lime hidden lg:inline">Futurestate Design™</span> It’s really very simple. If you don’t make your future happen, the future will be done to you.</p>
+<Banner theme="lime">
+<p class="lead"><span class="text-lime">Futurestate Design™</span> It’s really very simple. If you don’t make your future happen, the future will be done to you.</p>
 <p class="lead">That’s unlikely to go well.</p>
 
 <Figure
@@ -50,7 +51,7 @@ import {
 
 Futurestate design is at the heart of how we think and work, and it’s crucial to the future-making mindset we instil in our clients. It’s both a thinking discipline and a set of practical methods. It’s not speculative, theoretical, future-fantasy: it’s all about using near-future thinking to shape what you do next.
 
-</Article>
+</Banner>
 
 <Section name="Some of the ways we use it" class="bg-qux text-white">
 ### Team workshops
@@ -104,7 +105,7 @@ export const book = {
   },
 };
 
-<Article>
+<Article theme="lime">
 We use futurestate design to help companies think beyond current constraints; to leave legacy behind and invent on behalf of future customers. We use it to help visualise and realise the full potential of new ideas; to drive real innovation. We use it to help companies make the future happen.
 
 The real power of futurestate design is that we’re in an age where almost anything you can think of making waves in a few years’ time, you can make happen now.

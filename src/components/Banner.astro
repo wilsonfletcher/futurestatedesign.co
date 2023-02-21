@@ -1,0 +1,27 @@
+---
+import { Prose, Logo } from '@/components/index.astro';
+
+interface Props {
+  class?: string;
+  theme?: string;
+}
+
+const { class: className = '', theme } = Astro.props as Props;
+---
+
+<div class:list={[className]}>
+  <div class="container">
+    <div class="grid gap-6 lg:grid-cols-10 lg:gap-10">
+      <div class="lg:col-span-3 lg:pt-2" role="banner">
+        <a href="/">
+          <Logo />
+        </a>
+      </div>
+      <div class="lg:col-span-7">
+        <Prose theme={theme}>
+          <slot />
+        </Prose>
+      </div>
+    </div>
+  </div>
+</div>

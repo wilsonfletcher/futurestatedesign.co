@@ -20,13 +20,7 @@ const { Content } = await entry.render();
   class="bg-yellow text-black"
 >
   <article>
-    <div class="container lg:pt-28">
-      <div class="lg:grid lg:grid-cols-10 lg:gap-10">
-        <div class="lg:col-span-7 lg:col-start-4">
-          <h1 class="h2">{description}</h1>
-        </div>
-      </div>
-    </div>
+    <h1 class="sr-only">{name}</h1>
     <Content />
   </article>
 </Default>

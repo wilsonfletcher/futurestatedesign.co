@@ -1,8 +1,6 @@
 ---
 import { SITE } from '@/config';
-import Logo from '@/components/Logo.astro';
 import { Icon } from 'astro-icon';
-import Action from '@/components/Action.astro';
 
 export interface Props {
   class?: string;
@@ -11,21 +9,13 @@ export interface Props {
 const { class: className, ...attrs } = Astro.props as Props;
 ---
 
-<div role="banner" class:list={['py-8 relative', className]} {...attrs}>
+<div class:list={['py-8 lg:py-20', className]} {...attrs}>
   <div class="container">
-    <div
-      class="flex justify-between md:grid-cols-10 md:gap-x-10 md:gap-y-20 lg:grid"
-    >
-      <div class="md:col-span-3">
-        <a href="/" title={`Return to the ${SITE.name} homepage`}>
-          <Logo class="max-w-[180px] lg:absolute lg:top-[224px]" />
-        </a>
-      </div>
-
+    <div class="lg:grid lg:grid-cols-10 lg:gap-10">
       <div
-        class="flex items-start justify-end md:col-span-7 md:justify-between md:items-center"
+        class="flex items-center justify-end lg:col-span-7 lg:col-start-4 lg:justify-between"
       >
-        <div class="hidden items-start gap-16 lg:flex">
+        <div class="hidden lg:flex lg:gap-16">
           <a
             href={`mailto:${SITE.email}`}
             class="text-2xl font-bold hover:underline">{SITE.email}</a
@@ -34,33 +24,10 @@ const { class: className, ...attrs } = Astro.props as Props;
             >{SITE.telephone}</a
           >
         </div>
-        <div class="flex items-start">
-          <!-- <button
-            id="theme-toggle"
-            type="button"
-            class="rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-          >
-            <Icon
-              name="dark"
-              id="theme-toggle-dark-icon"
-              class="hidden w-5 h-5"
-            />
-            <Icon
-              id="theme-toggle-light-icon"
-              class="hidden w-5 h-5"
-              name="light"
-            />
-          </button> -->
-
-          <Action
-            tag="button"
-            type="button"
-            icon="menu"
-            class="open-dialog-menu"
-          >
-            <span class="sr-only">Open menu</span>
-          </Action>
-        </div>
+        <button type="button" class="open-dialog-menu text-[32px]">
+          <Icon name="menu" />
+          <span class="sr-only">Open menu</span>
+        </button>
       </div>
     </div>
   </div>

@@ -9,7 +9,7 @@ image:
 type: landing
 ---
 
-import { Article, Prose, Section, Callout } from '@/components/index.astro';
+import { Article, Banner, Prose, Section, Callout } from '@/components/index.astro';
 
 export const em = props => <em class="not-italic text-gray" {...props} />;
 
@@ -19,6 +19,9 @@ export const callout = {
   name: 'Is it the right approach for you?',
   url: { href: '#', name: 'Get in touch' },
 };
+
+<Banner>
+</Banner>
 
 <Section name="How it works">
   <Prose>

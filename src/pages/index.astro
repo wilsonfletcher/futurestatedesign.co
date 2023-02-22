@@ -3,6 +3,7 @@ import { getEntryBySlug } from 'astro:content';
 
 import Default from '@/layouts/Default.astro';
 import { SITE } from '@/config';
+import { Logo } from '@/components/index.astro';
 
 const entry = await getEntryBySlug('page', 'home');
 
@@ -22,9 +23,14 @@ const { Content } = await entry.render();
   <article>
     <div class="container lg:pt-28">
       <div class="lg:grid lg:grid-cols-10 lg:gap-10">
+        <div class="lg:col-span-3">
+          <Logo />
+        </div>
         <div class="lg:col-span-7 lg:col-start-4">
-          <h1 class="mb-6 text-[80px] font-bold">We’re Futurestate.</h1>
-          <p class="text-[80px]">
+          <h1 class="mb-6 text-[80px] font-bold leading-none text-lime">
+            We’re Futurestate.
+          </h1>
+          <p class="text-[80px] leading-none">
             We design the future of companies, services and products.
           </p>
         </div>

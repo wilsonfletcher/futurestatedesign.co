@@ -15,7 +15,7 @@ module.exports = {
     './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
     './node_modules/flowbite/**/*.js',
   ],
-  safelist: [{ pattern: /prose-(lime|yellow)/ }],
+  safelist: [{ pattern: /prose-(lime|yellow)/ }, { pattern: /border-(lime|yellow)/ }],
   theme: {
     extend: {
       backgroundImage: {
@@ -55,7 +55,7 @@ module.exports = {
         black: 900,
       },
       fontSize: {
-        base: [rem(16), rem(24)],
+        base: [rem(16), round(24 / 16)],
         lg: [rem(18), rem(24)],
         '3xl': [rem(32), rem(34)],
         '4xl': [rem(35), rem(40)],
@@ -196,16 +196,28 @@ module.exports = {
                 marginBottom: em(32, 48),
               },
               h3: {
-                fontSize: em(35, 22),
-                lineHeight: round(40 / 35),
-                marginTop: em(32, 35),
-                marginBottom: em(32, 35),
+                fontSize: em(48, 22),
+                lineHeight: round(50 / 48),
+                marginTop: em(32, 48),
+                marginBottom: em(32, 48),
               },
               h4: {
                 fontSize: em(35, 22),
-                lineHeight: round(40 / 35),
+                lineHeight: round(44 / 35),
                 marginTop: em(32, 35),
                 marginBottom: em(32, 35),
+              },
+              h5: {
+                fontSize: em(22, 22),
+                lineHeight: round(29 / 22),
+                marginTop: em(32, 22),
+                marginBottom: em(32, 22),
+              },
+              h6: {
+                fontSize: em(16, 22),
+                lineHeight: round(22 / 16),
+                marginTop: em(32, 22),
+                marginBottom: em(32, 22),
               },
               img: {
                 marginTop: em(32, 22),

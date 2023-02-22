@@ -3,6 +3,7 @@ name: Styles
 draft: true
 ---
 
+import { Icon } from 'astro-icon'
 import { Prose, Article, Figure } from '@/components/index.astro';
 
 export const authors = [
@@ -13,6 +14,16 @@ export const authors = [
 export const published = new Date('2022-02-01');
 
 export const components = { code: (props) => <span class="block text-red-light" {...props }/>}
+
+<Article>
+  <Icon name="arrow/45/24" class="bg-slate-200" />
+  <Icon name="arrow/45/32" class="bg-slate-200"/>
+  <Icon name="arrow/45/48" class="bg-slate-200"/>
+  <Icon name="arrow/45/52" class="bg-slate-200"/>
+  <Icon name="arrow/90/24" class="bg-slate-200"/>
+  <Icon name="arrow/90/32" class="bg-slate-200"/>
+  <Icon name="arrow/90/48" class="bg-slate-200"/>
+</Article>
 
 <Article theme="lime" class="py-0">
   > Remember, anything new worth taking to market only has to do one job: build new momentum to move your business forward.

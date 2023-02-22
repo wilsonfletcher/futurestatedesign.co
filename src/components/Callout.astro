@@ -15,9 +15,16 @@ export interface Props {
     alt?: string;
   };
   class?: string;
+  theme?: string;
 }
 
-const { name, url, image, class: className } = Astro.props as Props;
+const {
+  name,
+  url,
+  image,
+  class: className,
+  theme = 'yellow',
+} = Astro.props as Props;
 ---
 
 <article class:list={className}>
@@ -29,14 +36,14 @@ const { name, url, image, class: className } = Astro.props as Props;
         </div>
       )
     }
-    <div class="border-l-8 border-yellow pl-3 md:flex-auto">
+    <div class={`border-l-8 pl-3 md:flex-auto border-${theme}`}>
       <h3 class="h4">{name}</h3>
       <slot>
         {
           url && (
             <a {...url} class="inline-flex items-center text-3xl md:text-5xl">
               <span class="underline">{url.name}</span>
-              <Icon name="arrow-45" class="text-3xl" />
+              <Icon name="arrow/45/32" />
             </a>
           )
         }

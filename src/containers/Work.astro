@@ -5,7 +5,7 @@ const areas = await Astro.glob('../content/work/*.{mdx,md}');
 areas.sort((a, b) => a.frontmatter.number - b.frontmatter.number);
 ---
 
-<Section name="How we help">
+<Section name="How we help" theme="lime">
   <div class="not-prose space-y-6 divide-y divide-gray border-b border-gray">
     {
       areas.map(area => (

@@ -11,11 +11,9 @@ const { icon, name, class: className } = Astro.props as Props;
 ---
 
 <section class:list={['not-prose', className]}>
-  <div class="mb-6 flex items-center border-b border-gray pb-4">
-    <Icon name={icon} class="mr-3 text-[56px]" />
-    <h3 class="h2">{name}</h3>
+  <div class="flex items-center border-b border-gray pb-4">
+    <Icon name={icon} class="mr-1 text-[3.5rem]" />
+    <h3 class="h4">{name}</h3>
   </div>
-  <div class="grid gap-8">
-    <slot />
-  </div>
+  <slot />
 </section>

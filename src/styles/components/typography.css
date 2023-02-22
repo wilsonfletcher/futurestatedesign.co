@@ -1,7 +1,7 @@
 @layer components {
   .h0 {
-    @apply text-7xl font-light tracking-tight md:text-9xl; /* 72px/68px / 110px/110px */
-    font-size: clamp(72px, 10vw + 1rem, 110px);
+    @apply text-7xl font-light tracking-tight md:text-[90px] leading-[1.11111111]; /* 72px/68px / 90px/100px */
+    /* font-size: clamp(72px, 10vw + 1rem, 110px); */
   }
 
   .h1 {
@@ -13,15 +13,15 @@
   }
 
   .h3 {
-    @apply text-[30px] font-light md:text-5xl; /* 30px/30px / 48px/50px */
+    @apply text-[30px] leading-none font-light md:text-5xl; /* 30px/30px / 48px/50px */
   }
 
   .h4 {
-    @apply text-[21px] font-light leading-[28px] md:text-[35px] md:leading-[40px];
+    @apply text-[21px] leading-[1.33333333] font-light md:text-[35px] md:leading-[44px]; /* 21px/28px 35px/44px */
   }
 
   .h5 {
-    @apply text-lg font-light md:text-2xl; /* 18px/24px / 24px/32px */
+    @apply text-base font-light md:text-[1.375rem] leading-[1.31818182]; /* 16px/24px / 22px/29px */
   }
 
   .h6 {

@@ -9,7 +9,7 @@ export interface Props {
 const { class: className, ...attrs } = Astro.props as Props;
 ---
 
-<div class:list={['py-8 lg:py-20', className]} {...attrs}>
+<div class:list={['py-8', className]} {...attrs}>
   <div class="container">
     <div class="lg:grid lg:grid-cols-10 lg:gap-10">
       <div

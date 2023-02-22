@@ -10,7 +10,7 @@
     }
   }
 
-  .figure {
+  /* .figure {
     img {
       @apply mb-4 block;
     }
@@ -23,10 +23,38 @@
         @apply underline;
       }
     }
-  }
+  } */
 
   [astro-icon] {
     @apply h-[1em] w-[1em] text-current;
+  }
+
+  [astro-icon='arrow/45/24'] {
+    @apply text-[24px];
+  }
+
+  [astro-icon='arrow/45/32'] {
+    @apply text-[32px];
+  }
+
+  [astro-icon='arrow/45/48'] {
+    @apply text-[48px];
+  }
+
+  [astro-icon='arrow/45/52'] {
+    @apply text-[52px];
+  }
+
+  [astro-icon='arrow/90/24'] {
+    @apply text-[24px];
+  }
+
+  [astro-icon='arrow/90/32'] {
+    @apply text-[32px];
+  }
+
+  [astro-icon='arrow/90/48'] {
+    @apply text-[48px];
   }
 
   .list-1 {

@@ -17,6 +17,8 @@ import {
   Prose,
   Section,
 } from '@/components/index.astro';
+import Timeline from '@/components/Timeline/Timeline.astro'
+import TimelineItem from '@/components/Timeline/TimelineItem.astro'
 
 <Banner>
   <p class="lead">A specialist advisory and coaching programme for leaders of growth-stage digital startups.</p>
@@ -125,35 +127,25 @@ export const callout = {
   url: { name: 'Book a call', href: 'mailto:info@futurestatedesign.co' },
 };
 
-<Section name="Programme structure" class="bg-qux text-white">
-  ![](/images/overview.svg)
+<Timeline name="Programme structure" class="bg-qux text-white">
+  <img src="/images/overview.svg" slot="foo" alt="" />
+  
+  <TimelineItem name="30 minute chemistry call">
+    First thing’s first – before you sign up, we do a short call to learn about you and to explain the programme. If everything lines up, we’ll get you signed up and we’ll book in the full prep call.
+  </TimelineItem>
 
-### 30 minute chemistry call
+  <TimelineItem name="Day 1: 1 hr prep call">
+    We’ll use this call to dig a bit deeper into what you’ll need support with, and prepare for the full day workshop. We’ll send you some questions in advance so you have a chance to prepare.
+  </TimelineItem>
 
-First thing’s first – before you sign up, we do a short call to learn about you and to explain the programme. If everything lines up, we’ll get you signed up and we’ll book in the full prep call.
+  <TimelineItem name="Every 2 weeks">
+    We run a 1 hr review call to make sure we stay close to what’s going on and can track progress against the plan.
+  </TimelineItem>
 
-{' '}
-<Callout {...callout} class="not-prose" />
-
-### Day 1: 1 hr prep call
-
-We’ll use this call to dig a bit deeper into what you’ll need support with, and prepare for the full day workshop. We’ll send you some questions in advance so you have a chance to prepare.
-
-### Week 1: Immersion workshop
-
-Next comes a full-day workshop with you (remote, or, ideally in-person in our London studios) where we’ll get fully up to speed with the business and your plans, work through any immediate problems, share useful techniques and end up with a plan of attack for the next 3-6 months.
-
-### Every 2 weeks
-
-We run a 1 hr review call to make sure we stay close to what’s going on and can track progress against the plan.
-
-### Every 3 months
-
-The quarterly review is a 2-3 hour session to review and adjust areas of focus for the next 3 months. These can planned in as full-day ‘next step’ workshops at key stages of the business’s development.
-
----
-
-</Section>
+  <TimelineItem name="Every 3 months">
+    The quarterly review is a 2-3 hour session to review and adjust areas of focus for the next 3 months. These can planned in as full-day ‘next step’ workshops at key stages of the business’s development.
+  </TimelineItem>
+</Timeline>
 
 export const support = [
   {

@@ -1,0 +1,8 @@
+---
+import * as prismicH from '@prismicio/helpers';
+
+const { content } = Astro.props;
+const html = prismicH.asHTML(content);
+---
+
+<div class="prose prose-lg prose-yellow md:prose-xl" set:html={html} />

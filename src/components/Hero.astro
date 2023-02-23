@@ -1,0 +1,31 @@
+<div class="hero">
+  <div class="container">
+    <div class="grid lg:grid-cols-10 lg:gap-10">
+      <div class="lg:col-span-7 lg:col-start-4">
+        <div class="prose prose-lime md:prose-xl">
+          <p class="lead">
+            <em>Tomorrow’s leaders need</em> bold strategies, next-generation services
+            and new product concepts, today.
+          </p>
+          <p class="lead">
+            Established companies need to unlock their future potential to be
+            young again – and young companies need to realise their potential to
+            become tomorrow’s established names.
+          </p>
+          <p class="lead">If this sounds like you, we should talk</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style scoped>
+  .hero {
+    @apply flex min-h-screen w-screen items-center justify-center bg-qux text-white;
+    min-height: 100dvh;
+  }
+
+  .lead :global(em) {
+    @apply text-lime;
+  }
+</style>

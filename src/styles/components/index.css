@@ -10,21 +10,6 @@
     }
   }
 
-  /* .figure {
-    img {
-      @apply mb-4 block;
-    }
-
-    figcaption {
-      border-left-color: var(--tw-prose-quote-borders);
-      @apply max-w-xl border-l-8 pl-3 text-[1rem] leading-[1.375rem] text-gray;
-
-      a {
-        @apply underline;
-      }
-    }
-  } */
-
   [astro-icon] {
     @apply h-[1em] w-[1em] text-current;
   }

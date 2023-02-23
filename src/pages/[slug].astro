@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 
 import Default from '@/layouts/Default.astro';
 import { SITE } from '@/config';
-import Logo from '@/components/Logo.astro';
 
 export async function getStaticPaths() {
   const pageEntries = await getCollection('page');

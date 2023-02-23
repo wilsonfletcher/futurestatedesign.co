@@ -1,0 +1,28 @@
+---
+import Section from '@/components/Section.astro';
+
+interface Props {
+  name: string;
+  class?: string;
+}
+
+const { name, class: className } = Astro.props as Props;
+---
+
+<Section name={name} class:list={[className, 'py-10 lg:py-20']}>
+  <slot name="foo" />
+  <div class="timeline">
+    <slot />
+  </div>
+  <hr class="md:my-20" />
+</Section>
+
+<style scoped>
+  .timeline {
+    @apply relative;
+
+    &:after {
+      @apply absolute top-2.5 h-[calc(100%_-_10px)] -left-[36px] block w-[2px] bg-current content-[""];
+    }
+  }
+</style>

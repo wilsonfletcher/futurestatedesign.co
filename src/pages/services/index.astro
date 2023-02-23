@@ -1,0 +1,36 @@
+---
+import Default from '@/layouts/Default.astro';
+import { SITE } from '@/config';
+import { Logo, Prose } from '@/components/index.astro';
+
+import { getAllServices } from '../../prismic';
+
+const services = await getAllServices();
+---
+
+<Default title={`Services - ${SITE.name}`}>
+  <section>
+    <div class="container">
+      <div class="grid lg:grid-cols-10 lg:gap-10">
+        <div class="lg:col-span-3">
+          <Logo />
+        </div>
+        <div class="lg:col-span-7">
+          <h1 class="h0">Services</h1>
+          {
+            services.map(({ id, data }) => (
+              <article>
+                <h2 class="h2">
+                  <a href={`/services/${id}`}>{data.name[0].text}</a>
+                </h2>
+              </article>
+            ))
+          }
+          <Prose>
+            <pre>{JSON.stringify(services, null, 2)}</pre>
+          </Prose>
+        </div>
+      </div>
+    </div>
+  </section>
+</Default>

@@ -1,0 +1,26 @@
+---
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props as Props;
+---
+
+<article class="timeline-item not-prose text-gray">
+  <h3 class="h4 mb-4 text-white">{name}</h3>
+  <slot />
+</article>
+
+<style scoped>
+  .timeline-item {
+    @apply relative pb-8;
+
+    &:before {
+      @apply content-[""] w-6 h-6 rounded-full bg-white block absolute top-2.5 -left-12;
+    }
+
+    &:last-of-type {
+      @apply pb-0;
+    }
+  }
+</style>

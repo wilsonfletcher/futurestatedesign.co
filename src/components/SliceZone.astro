@@ -1,0 +1,14 @@
+---
+import Foo from '@/components/Foo.astro';
+
+const { content } = Astro.props;
+---
+
+{
+  content.map(slice => {
+    switch (slice.slice_type) {
+      case 'timeline':
+        return <Foo slice={slice} />;
+    }
+  })
+}

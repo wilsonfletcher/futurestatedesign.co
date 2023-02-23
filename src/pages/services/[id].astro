@@ -1,0 +1,36 @@
+---
+import Default from '@/layouts/Default.astro';
+import { SITE } from '@/config';
+import { getAllServices } from '../../prismic';
+import PrismicHTML from '@/components/PrismicHTML.astro';
+import SliceZone from '@/components/SliceZone.astro';
+
+export async function getStaticPaths() {
+  const services = await getAllServices();
+  return services.map(service => {
+    return {
+      params: { id: service.id },
+      props: { service },
+    };
+  });
+}
+
+const { service } = Astro.props;
+const { data } = service
+
+const name = data.name[0].text;
+const description = data.body1[0].text;
+---
+
+<Default title={`${name} - Services - ${SITE.name}`} description={description}>
+  <article>
+    <div class="container">
+      <h1 class="h1">{name}</h1>
+      <div class="prose prose-lg max-w-none md:prose-xl">
+        <pre>{JSON.stringify(service, null, 2)}</pre>
+        <PrismicHTML content={data.body1} />
+        <SliceZone content={data.body} />
+      </div>
+    </div>
+  </article>
+</Default>
